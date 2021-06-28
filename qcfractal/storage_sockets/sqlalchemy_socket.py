@@ -211,8 +211,6 @@ class SQLAlchemySocket:
             ServiceSocket,
             WavefunctionSocket,
             ManagerSocket,
-            TaskQueueSocket,
-            ServiceQueueSocket,
             UserSocket,
             RoleSocket,
         )
@@ -227,8 +225,6 @@ class SQLAlchemySocket:
         self.service = ServiceSocket(self)
         self.wavefunction = WavefunctionSocket(self)
         self.manager = ManagerSocket(self)
-        self.task_queue = TaskQueueSocket(self)
-        self.service_queue = ServiceQueueSocket(self)
         self.user = UserSocket(self)
         self.role = RoleSocket(self)
 
