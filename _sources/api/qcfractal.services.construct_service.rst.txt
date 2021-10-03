@@ -1,0 +1,6 @@
+construct_service
+=================
+
+.. currentmodule:: qcfractal.services
+
+.. autofunction:: construct_service

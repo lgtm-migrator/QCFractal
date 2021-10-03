@@ -1,0 +1,19 @@
+FractalSnowflake
+================
+
+.. currentmodule:: qcfractal
+
+.. autoclass:: FractalSnowflake
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~FractalSnowflake.client
+      ~FractalSnowflake.stop
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: client
+   .. automethod:: stop

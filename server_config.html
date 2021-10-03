@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fractal Server Config &mdash; QCFractal 0+untagged.1.ge9cee03 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Fractal Server Start" href="server_start.html" />
+    <link rel="prev" title="Fractal Server Init" href="server_init.html" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> QCFractal
+          </a>
+              <div class="version">
+                0+untagged.1.ge9cee03
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install QCFractal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_quickstart.html">Setup Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_server.html">Server Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_compute.html">Manager Setup</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Records Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="procedures.html">Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flow.html">Fractal Call Flowcharts</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manager Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="managers.html">Fractal Queue Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_config_api.html">Queue Manager API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_hpc.html">Configuration for High-Performance Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_samples.html">Queue Manager Example YAML Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_faq.html">Queue Manager Frequent Questions and Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_detailed.html">Detailed Manager Information</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server CLI and Configuration</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="server_init.html">Fractal Server Init</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Fractal Server Config</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#command-invocation">Command Invocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#command-description">Command Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#options">Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#config-file-complete-options">Config File Complete Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#database"><code class="docutils literal notranslate"><span class="pre">database</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fractal"><code class="docutils literal notranslate"><span class="pre">fractal</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#view"><code class="docutils literal notranslate"><span class="pre">view</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="server_start.html">Fractal Server Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_user.html">Fractal Server User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_upgrade.html">Fractal Server Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_view.html">Server-side Dataset Views</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="qcarchive_overview.html">QCArchive Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">QCFractal API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database_design.html">Database Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_guidelines.html">Development Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">QCFractal</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Fractal Server Config</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/server_config.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="fractal-server-config">
+<h1>Fractal Server Config<a class="headerlink" href="#fractal-server-config" title="Permalink to this headline"></a></h1>
+<p>This page documents the valid options for the YAML file inputs to the <a class="reference internal" href="#"><span class="doc">Config File</span></a>.
+This first section outlines each of the headers (top level objects) and a description for each one.
+The final file will look like the following:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">common</span><span class="p">:</span>
+    <span class="nt">option_1</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">value_for1</span>
+    <span class="nt">another_opt</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">42</span>
+<span class="nt">server</span><span class="p">:</span>
+    <span class="nt">option_for_server</span><span class="p">:</span> <span class="s">&quot;some</span><span class="nv"> </span><span class="s">string&quot;</span>
+</pre></div>
+</div>
+<section id="command-invocation">
+<h2>Command Invocation<a class="headerlink" href="#command-invocation" title="Permalink to this headline"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qcfractal-server config <span class="o">[</span>&lt;options&gt;<span class="o">]</span>
+</pre></div>
+</div>
+</section>
+<section id="command-description">
+<h2>Command Description<a class="headerlink" href="#command-description" title="Permalink to this headline"></a></h2>
+<p>Show the current config file at an optional location.</p>
+<p>Looks in the default location if no arg is provided</p>
+</section>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline"></a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">--base-folder</span> <span class="pre">[&lt;folder&gt;]</span></code></dt><dd><p>The QCFractal base directory to attach to. Default: <code class="docutils literal notranslate"><span class="pre">~/.qca/qcfractal</span></code></p>
+</dd>
+</dl>
+</section>
+<section id="config-file-complete-options">
+<h2>Config File Complete Options<a class="headerlink" href="#config-file-complete-options" title="Permalink to this headline"></a></h2>
+<p>The valid top-level YAML headers are the parameters of the <code class="docutils literal notranslate"><span class="pre">FractalConfig</span></code> class.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="qcfractal.config.FractalConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qcfractal.config.</span></span><span class="sig-name descname"><span class="pre">FractalConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_folder</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'/home/runner/.qca/qcfractal'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">database</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#qcfractal.config.DatabaseSettings" title="qcfractal.config.DatabaseSettings"><span class="pre">qcfractal.config.DatabaseSettings</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">DatabaseSettings(port=5432,</span> <span class="pre">host='localhost',</span> <span class="pre">username=None,</span> <span class="pre">password=None,</span> <span class="pre">directory=None,</span> <span class="pre">database_name='qcfractal_default',</span> <span class="pre">logfile='qcfractal_postgres.log',</span> <span class="pre">own=True)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#qcfractal.config.ViewSettings" title="qcfractal.config.ViewSettings"><span class="pre">qcfractal.config.ViewSettings</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">ViewSettings(enable=True,</span> <span class="pre">directory=None)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fractal</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#qcfractal.config.FractalServerSettings" title="qcfractal.config.FractalServerSettings"><span class="pre">qcfractal.config.FractalServerSettings</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">FractalServerSettings(name='QCFractal</span> <span class="pre">Server',</span> <span class="pre">port=7777,</span> <span class="pre">compress_response=True,</span> <span class="pre">allow_read=True,</span> <span class="pre">security=None,</span> <span class="pre">query_limit=1000,</span> <span class="pre">logfile='qcfractal_server.log',</span> <span class="pre">loglevel='info',</span> <span class="pre">cprofile=None,</span> <span class="pre">service_frequency=60,</span> <span class="pre">max_active_services=20,</span> <span class="pre">heartbeat_frequency=1800,</span> <span class="pre">log_apis=False,</span> <span class="pre">geo_file_path=None)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/qcfractal/config.html#FractalConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.config.FractalConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Top level configuration headers and options for a QCFractal Configuration File</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_folder</strong> (<em>str, Default: /home/runner/.qca/qcfractal</em>) – The QCFractal base instance to attach to. Default will be your home directory</p></li>
+<li><p><strong>database</strong> (<a class="reference internal" href="#qcfractal.config.DatabaseSettings" title="qcfractal.config.DatabaseSettings"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatabaseSettings</span></code></a>, Optional)</p></li>
+<li><p><strong>view</strong> (<a class="reference internal" href="#qcfractal.config.ViewSettings" title="qcfractal.config.ViewSettings"><code class="xref py py-class docutils literal notranslate"><span class="pre">ViewSettings</span></code></a>, Optional)</p></li>
+<li><p><strong>fractal</strong> (<a class="reference internal" href="#qcfractal.config.FractalServerSettings" title="qcfractal.config.FractalServerSettings"><code class="xref py py-class docutils literal notranslate"><span class="pre">FractalServerSettings</span></code></a>, Optional)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="database">
+<h3><code class="docutils literal notranslate"><span class="pre">database</span></code><a class="headerlink" href="#database" title="Permalink to this headline"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="qcfractal.config.DatabaseSettings">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qcfractal.config.</span></span><span class="sig-name descname"><span class="pre">DatabaseSettings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_env_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'&lt;object</span> <span class="pre">object&gt;'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_env_file_encoding</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_secrets_dir</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">5432</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'localhost'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">database_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'qcfractal_default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logfile</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'qcfractal_postgres.log'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">own</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/qcfractal/config.html#DatabaseSettings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.config.DatabaseSettings" title="Permalink to this definition"></a></dt>
+<dd><p>Postgres Database settings</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>port</strong> (<em>int, Default: 5432</em>) – The postgresql default port</p></li>
+<li><p><strong>host</strong> (<em>str, Default: localhost</em>) – Default location for the postgres server. If not localhost, qcfractal command lines cannot manage the instance.</p></li>
+<li><p><strong>username</strong> (<em>str, Optional</em>) – The postgres username to default to.</p></li>
+<li><p><strong>password</strong> (<em>str, Optional</em>) – The postgres password for the give user.</p></li>
+<li><p><strong>directory</strong> (<em>str, Optional</em>) – The physical location of the QCFractal instance data, defaults to the root folder.</p></li>
+<li><p><strong>database_name</strong> (<em>str, Default: qcfractal_default</em>) – The database name to connect to.</p></li>
+<li><p><strong>logfile</strong> (<em>str, Default: qcfractal_postgres.log</em>) – The logfile to write postgres logs.</p></li>
+<li><p><strong>own</strong> (<em>bool, Default: True</em>) – If own is True, QCFractal will control the database instance. If False Postgres will expect a booted server at the database specification.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="fractal">
+<h3><code class="docutils literal notranslate"><span class="pre">fractal</span></code><a class="headerlink" href="#fractal" title="Permalink to this headline"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="qcfractal.config.FractalServerSettings">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qcfractal.config.</span></span><span class="sig-name descname"><span class="pre">FractalServerSettings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_env_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'&lt;object</span> <span class="pre">object&gt;'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_env_file_encoding</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_secrets_dir</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'QCFractal</span> <span class="pre">Server'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">7777</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compress_response</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_read</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">security</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_limit</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logfile</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'qcfractal_server.log'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loglevel</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'info'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cprofile</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service_frequency</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">60</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_active_services</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heartbeat_frequency</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1800</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_apis</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geo_file_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/qcfractal/config.html#FractalServerSettings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.config.FractalServerSettings" title="Permalink to this definition"></a></dt>
+<dd><p>Fractal Server settings</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str, Default: QCFractal Server</em>) – The QCFractal server default name.</p></li>
+<li><p><strong>port</strong> (<em>int, Default: 7777</em>) – The QCFractal default port.</p></li>
+<li><p><strong>compress_response</strong> (<em>bool, Default: True</em>) – Compress REST responses or not, should be True unless behind a proxy.</p></li>
+<li><p><strong>allow_read</strong> (<em>bool, Default: True</em>) – Always allows read access to record tables.</p></li>
+<li><p><strong>security</strong> (<em>str, Optional</em>) – Optional user authentication. Specify ‘local’ to enable authentication through locally stored usernames. User permissions may be manipulated through the <code class="docutils literal notranslate"><span class="pre">qcfractal-server</span> <span class="pre">user</span></code> CLI.</p></li>
+<li><p><strong>query_limit</strong> (<em>int, Default: 1000</em>) – The maximum number of records to return per query.</p></li>
+<li><p><strong>logfile</strong> (<em>str, Default: qcfractal_server.log</em>) – The logfile to write server logs.</p></li>
+<li><p><strong>loglevel</strong> (<em>str, Default: info</em>) – Level of logging to enable (debug, info, warning, error, critical)</p></li>
+<li><p><strong>cprofile</strong> (<em>str, Optional</em>) – Enable profiling via cProfile, and output cprofile data to this path</p></li>
+<li><p><strong>service_frequency</strong> (<em>int, Default: 60</em>) – The frequency to update the QCFractal services.</p></li>
+<li><p><strong>max_active_services</strong> (<em>int, Default: 20</em>) – The maximum number of concurrent active services.</p></li>
+<li><p><strong>heartbeat_frequency</strong> (<em>int, Default: 1800</em>) – The frequency (in seconds) to check the heartbeat of workers.</p></li>
+<li><p><strong>log_apis</strong> (<em>bool, Default: False</em>) – True or False. Store API access in the Database. This is an advanced option for servers accessed by external users through QCPortal.</p></li>
+<li><p><strong>geo_file_path</strong> (<em>str, Optional</em>) – Geoip2 cites file path (.mmdb) for resolving IP addresses. Defaults to [base_folder]/GeoLite2-City.mmdb</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="view">
+<h3><code class="docutils literal notranslate"><span class="pre">view</span></code><a class="headerlink" href="#view" title="Permalink to this headline"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="qcfractal.config.ViewSettings">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qcfractal.config.</span></span><span class="sig-name descname"><span class="pre">ViewSettings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_env_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'&lt;object</span> <span class="pre">object&gt;'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_env_file_encoding</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_secrets_dir</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/qcfractal/config.html#ViewSettings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.config.ViewSettings" title="Permalink to this definition"></a></dt>
+<dd><p>HDF5 view settings</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>enable</strong> (<em>bool, Default: True</em>) – Enable frozen-views.</p></li>
+<li><p><strong>directory</strong> (<em>str, Optional</em>) – Location of frozen-view data. If None, defaults to base_folder/views.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="server_init.html" class="btn btn-neutral float-left" title="Fractal Server Init" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="server_start.html" class="btn btn-neutral float-right" title="Fractal Server Start" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2021, The Molecular Sciences Software Institute.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

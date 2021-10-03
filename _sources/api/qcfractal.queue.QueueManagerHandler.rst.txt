@@ -1,0 +1,23 @@
+QueueManagerHandler
+===================
+
+.. currentmodule:: qcfractal.queue
+
+.. autoclass:: QueueManagerHandler
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~QueueManagerHandler.get
+      ~QueueManagerHandler.insert_complete_tasks
+      ~QueueManagerHandler.post
+      ~QueueManagerHandler.put
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: get
+   .. automethod:: insert_complete_tasks
+   .. automethod:: post
+   .. automethod:: put

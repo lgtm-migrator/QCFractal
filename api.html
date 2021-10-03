@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QCFractal API &mdash; QCFractal 0+untagged.1.ge9cee03 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="storage_socket_factory" href="api/qcfractal.storage_socket_factory.html" />
+    <link rel="prev" title="QCArchive Design" href="qcarchive_overview.html" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> QCFractal
+          </a>
+              <div class="version">
+                0+untagged.1.ge9cee03
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install QCFractal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_quickstart.html">Setup Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_server.html">Server Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_compute.html">Manager Setup</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Records Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="procedures.html">Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flow.html">Fractal Call Flowcharts</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manager Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="managers.html">Fractal Queue Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_config_api.html">Queue Manager API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_hpc.html">Configuration for High-Performance Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_samples.html">Queue Manager Example YAML Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_faq.html">Queue Manager Frequent Questions and Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_detailed.html">Detailed Manager Information</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server CLI and Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="server_init.html">Fractal Server Init</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_config.html">Fractal Server Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_start.html">Fractal Server Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_user.html">Fractal Server User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_upgrade.html">Fractal Server Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_view.html">Server-side Dataset Views</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="qcarchive_overview.html">QCArchive Design</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">QCFractal API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-qcfractal">qcfractal Package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/qcfractal.storage_socket_factory.html">storage_socket_factory</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#classes">Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/qcfractal.FractalServer.html">FractalServer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/qcfractal.FractalSnowflake.html">FractalSnowflake</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/qcfractal.FractalSnowflakeHandler.html">FractalSnowflakeHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/qcfractal.PostgresHarness.html">PostgresHarness</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/qcfractal.QueueManager.html">QueueManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/qcfractal.TemporaryPostgres.html">TemporaryPostgres</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#class-inheritance-diagram">Class Inheritance Diagram</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-qcfractal.queue">qcfractal.queue Package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/qcfractal.queue.build_queue_adapter.html">build_queue_adapter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/qcfractal.queue.ComputeManagerHandler.html">ComputeManagerHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/qcfractal.queue.QueueManager.html">QueueManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/qcfractal.queue.QueueManagerHandler.html">QueueManagerHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/qcfractal.queue.ServiceQueueHandler.html">ServiceQueueHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/qcfractal.queue.TaskQueueHandler.html">TaskQueueHandler</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Class Inheritance Diagram</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-qcfractal.services">qcfractal.services Package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/qcfractal.services.construct_service.html">construct_service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/qcfractal.services.initialize_service.html">initialize_service</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="database_design.html">Database Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_guidelines.html">Development Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">QCFractal</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>QCFractal API</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="qcfractal-api">
+<h1>QCFractal API<a class="headerlink" href="#qcfractal-api" title="Permalink to this headline"></a></h1>
+<section id="module-qcfractal">
+<span id="qcfractal-package"></span><h2>qcfractal Package<a class="headerlink" href="#module-qcfractal" title="Permalink to this headline"></a></h2>
+<p>Main init function for qcfractal</p>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/qcfractal.storage_socket_factory.html#qcfractal.storage_socket_factory" title="qcfractal.storage_socket_factory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">storage_socket_factory</span></code></a>(uri[, project_name, ...])</p></td>
+<td><p>Factory for generating storage sockets.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline"></a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/qcfractal.FractalServer.html#qcfractal.FractalServer" title="qcfractal.FractalServer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FractalServer</span></code></a>([name, port, loop, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/qcfractal.FractalSnowflake.html#qcfractal.FractalSnowflake" title="qcfractal.FractalSnowflake"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FractalSnowflake</span></code></a>([max_workers, storage_uri, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/qcfractal.FractalSnowflakeHandler.html#qcfractal.FractalSnowflakeHandler" title="qcfractal.FractalSnowflakeHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FractalSnowflakeHandler</span></code></a>([ncores])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/qcfractal.PostgresHarness.html#qcfractal.PostgresHarness" title="qcfractal.PostgresHarness"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PostgresHarness</span></code></a>(config, Any], ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/qcfractal.QueueManager.html#qcfractal.QueueManager" title="qcfractal.QueueManager"><code class="xref py py-obj docutils literal notranslate"><span class="pre">QueueManager</span></code></a>(client, queue_client[, logger, ...])</p></td>
+<td><p>This object maintains a computational queue and watches for finished tasks for different queue backends.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/qcfractal.TemporaryPostgres.html#qcfractal.TemporaryPostgres" title="qcfractal.TemporaryPostgres"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TemporaryPostgres</span></code></a>(database_name, tmpdir, ...)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="class-inheritance-diagram">
+<h3>Class Inheritance Diagram<a class="headerlink" href="#class-inheritance-diagram" title="Permalink to this headline"></a></h3>
+digraph inheritance6df8b9317b {
+bgcolor=transparent;
+rankdir=LR;
+size=&quot;8.0, 12.0&quot;;
+  &quot;FractalServer&quot; [URL=&quot;api/qcfractal.FractalServer.html#qcfractal.FractalServer&quot;,fillcolor=white,fontname=&quot;Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans&quot;,fontsize=10,height=0.25,shape=box,style=&quot;setlinewidth(0.5),filled&quot;,target=&quot;_top&quot;];
+  &quot;FractalSnowflake&quot; [URL=&quot;api/qcfractal.FractalSnowflake.html#qcfractal.FractalSnowflake&quot;,fillcolor=white,fontname=&quot;Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans&quot;,fontsize=10,height=0.25,shape=box,style=&quot;setlinewidth(0.5),filled&quot;,target=&quot;_top&quot;];
+  &quot;FractalServer&quot; -&gt; &quot;FractalSnowflake&quot; [arrowsize=0.5,style=&quot;setlinewidth(0.5)&quot;];
+  &quot;FractalSnowflakeHandler&quot; [URL=&quot;api/qcfractal.FractalSnowflakeHandler.html#qcfractal.FractalSnowflakeHandler&quot;,fillcolor=white,fontname=&quot;Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans&quot;,fontsize=10,height=0.25,shape=box,style=&quot;setlinewidth(0.5),filled&quot;,target=&quot;_top&quot;];
+  &quot;PostgresHarness&quot; [URL=&quot;api/qcfractal.PostgresHarness.html#qcfractal.PostgresHarness&quot;,fillcolor=white,fontname=&quot;Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans&quot;,fontsize=10,height=0.25,shape=box,style=&quot;setlinewidth(0.5),filled&quot;,target=&quot;_top&quot;];
+  &quot;QueueManager&quot; [URL=&quot;api/qcfractal.queue.QueueManager.html#qcfractal.queue.QueueManager&quot;,fillcolor=white,fontname=&quot;Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans&quot;,fontsize=10,height=0.25,shape=box,style=&quot;setlinewidth(0.5),filled&quot;,target=&quot;_top&quot;,tooltip=&quot;This object maintains a computational queue and watches for finished tasks for different&quot;];
+  &quot;TemporaryPostgres&quot; [URL=&quot;api/qcfractal.TemporaryPostgres.html#qcfractal.TemporaryPostgres&quot;,fillcolor=white,fontname=&quot;Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans&quot;,fontsize=10,height=0.25,shape=box,style=&quot;setlinewidth(0.5),filled&quot;,target=&quot;_top&quot;];
+}
+</section>
+</section>
+<section id="module-qcfractal.queue">
+<span id="qcfractal-queue-package"></span><h2>qcfractal.queue Package<a class="headerlink" href="#module-qcfractal.queue" title="Permalink to this headline"></a></h2>
+<p>Initializer for the queue_handler folder</p>
+<section id="id1">
+<h3>Functions<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/qcfractal.queue.build_queue_adapter.html#qcfractal.queue.build_queue_adapter" title="qcfractal.queue.build_queue_adapter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_queue_adapter</span></code></a>(workflow_client[, logger])</p></td>
+<td><p>Constructs a queue manager based off the incoming queue socket type.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id2">
+<h3>Classes<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/qcfractal.queue.ComputeManagerHandler.html#qcfractal.queue.ComputeManagerHandler" title="qcfractal.queue.ComputeManagerHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ComputeManagerHandler</span></code></a>(application, request, ...)</p></td>
+<td><p>Handles management/status querying of managers</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/qcfractal.queue.QueueManager.html#qcfractal.queue.QueueManager" title="qcfractal.queue.QueueManager"><code class="xref py py-obj docutils literal notranslate"><span class="pre">QueueManager</span></code></a>(client, queue_client[, logger, ...])</p></td>
+<td><p>This object maintains a computational queue and watches for finished tasks for different queue backends.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/qcfractal.queue.QueueManagerHandler.html#qcfractal.queue.QueueManagerHandler" title="qcfractal.queue.QueueManagerHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">QueueManagerHandler</span></code></a>(application, request, ...)</p></td>
+<td><p>Manages the task queue.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/qcfractal.queue.ServiceQueueHandler.html#qcfractal.queue.ServiceQueueHandler" title="qcfractal.queue.ServiceQueueHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ServiceQueueHandler</span></code></a>(application, request, ...)</p></td>
+<td><p>Handles service management (querying/add/modifying)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/qcfractal.queue.TaskQueueHandler.html#qcfractal.queue.TaskQueueHandler" title="qcfractal.queue.TaskQueueHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TaskQueueHandler</span></code></a>(application, request, **kwargs)</p></td>
+<td><p>Handles task management (querying/adding/modifying tasks)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id3">
+<h3>Class Inheritance Diagram<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h3>
+digraph inheritance0150352c04 {
+bgcolor=transparent;
+rankdir=LR;
+size=&quot;8.0, 12.0&quot;;
+  &quot;APIHandler&quot; [fillcolor=white,fontname=&quot;Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans&quot;,fontsize=10,height=0.25,shape=box,style=&quot;setlinewidth(0.5),filled&quot;,tooltip=&quot;A requests handler for API calls.&quot;];
+  &quot;RequestHandler&quot; -&gt; &quot;APIHandler&quot; [arrowsize=0.5,style=&quot;setlinewidth(0.5)&quot;];
+  &quot;ComputeManagerHandler&quot; [URL=&quot;api/qcfractal.queue.ComputeManagerHandler.html#qcfractal.queue.ComputeManagerHandler&quot;,fillcolor=white,fontname=&quot;Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans&quot;,fontsize=10,height=0.25,shape=box,style=&quot;setlinewidth(0.5),filled&quot;,target=&quot;_top&quot;,tooltip=&quot;Handles management/status querying of managers&quot;];
+  &quot;APIHandler&quot; -&gt; &quot;ComputeManagerHandler&quot; [arrowsize=0.5,style=&quot;setlinewidth(0.5)&quot;];
+  &quot;QueueManager&quot; [URL=&quot;api/qcfractal.queue.QueueManager.html#qcfractal.queue.QueueManager&quot;,fillcolor=white,fontname=&quot;Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans&quot;,fontsize=10,height=0.25,shape=box,style=&quot;setlinewidth(0.5),filled&quot;,target=&quot;_top&quot;,tooltip=&quot;This object maintains a computational queue and watches for finished tasks for different&quot;];
+  &quot;QueueManagerHandler&quot; [URL=&quot;api/qcfractal.queue.QueueManagerHandler.html#qcfractal.queue.QueueManagerHandler&quot;,fillcolor=white,fontname=&quot;Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans&quot;,fontsize=10,height=0.25,shape=box,style=&quot;setlinewidth(0.5),filled&quot;,target=&quot;_top&quot;,tooltip=&quot;Manages the task queue.&quot;];
+  &quot;APIHandler&quot; -&gt; &quot;QueueManagerHandler&quot; [arrowsize=0.5,style=&quot;setlinewidth(0.5)&quot;];
+  &quot;RequestHandler&quot; [fillcolor=white,fontname=&quot;Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans&quot;,fontsize=10,height=0.25,shape=box,style=&quot;setlinewidth(0.5),filled&quot;,tooltip=&quot;Base class for HTTP request handlers.&quot;];
+  &quot;ServiceQueueHandler&quot; [URL=&quot;api/qcfractal.queue.ServiceQueueHandler.html#qcfractal.queue.ServiceQueueHandler&quot;,fillcolor=white,fontname=&quot;Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans&quot;,fontsize=10,height=0.25,shape=box,style=&quot;setlinewidth(0.5),filled&quot;,target=&quot;_top&quot;,tooltip=&quot;Handles service management (querying/add/modifying)&quot;];
+  &quot;APIHandler&quot; -&gt; &quot;ServiceQueueHandler&quot; [arrowsize=0.5,style=&quot;setlinewidth(0.5)&quot;];
+  &quot;TaskQueueHandler&quot; [URL=&quot;api/qcfractal.queue.TaskQueueHandler.html#qcfractal.queue.TaskQueueHandler&quot;,fillcolor=white,fontname=&quot;Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans&quot;,fontsize=10,height=0.25,shape=box,style=&quot;setlinewidth(0.5),filled&quot;,target=&quot;_top&quot;,tooltip=&quot;Handles task management (querying/adding/modifying tasks)&quot;];
+  &quot;APIHandler&quot; -&gt; &quot;TaskQueueHandler&quot; [arrowsize=0.5,style=&quot;setlinewidth(0.5)&quot;];
+}
+</section>
+</section>
+<section id="module-qcfractal.services">
+<span id="qcfractal-services-package"></span><h2>qcfractal.services Package<a class="headerlink" href="#module-qcfractal.services" title="Permalink to this headline"></a></h2>
+<p>Base import for services</p>
+<section id="id4">
+<h3>Functions<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/qcfractal.services.construct_service.html#qcfractal.services.construct_service" title="qcfractal.services.construct_service"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_service</span></code></a>(storage_socket, logger, data)</p></td>
+<td><p>Initializes a service from a JSON blob.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/qcfractal.services.initialize_service.html#qcfractal.services.initialize_service" title="qcfractal.services.initialize_service"><code class="xref py py-obj docutils literal notranslate"><span class="pre">initialize_service</span></code></a>(storage_socket, logger, ...)</p></td>
+<td><p>Initializes a service from a API call.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="qcarchive_overview.html" class="btn btn-neutral float-left" title="QCArchive Design" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="api/qcfractal.storage_socket_factory.html" class="btn btn-neutral float-right" title="storage_socket_factory" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2021, The Molecular Sciences Software Institute.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

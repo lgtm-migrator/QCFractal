@@ -1,0 +1,17 @@
+ComputeManagerHandler
+=====================
+
+.. currentmodule:: qcfractal.queue
+
+.. autoclass:: ComputeManagerHandler
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~ComputeManagerHandler.get
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: get

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>qcfractal.queue.handlers &mdash; QCFractal 0+untagged.1.ge9cee03 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> QCFractal
+          </a>
+              <div class="version">
+                0+untagged.1.ge9cee03
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">Install QCFractal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart.html">Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../setup_quickstart.html">Setup Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../setup_server.html">Server Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../setup_compute.html">Manager Setup</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Records Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../procedures.html">Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../flow.html">Fractal Call Flowcharts</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manager Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../managers.html">Fractal Queue Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../managers_config_api.html">Queue Manager API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../managers_hpc.html">Configuration for High-Performance Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../managers_samples.html">Queue Manager Example YAML Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../managers_faq.html">Queue Manager Frequent Questions and Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../managers_detailed.html">Detailed Manager Information</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server CLI and Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../server_init.html">Fractal Server Init</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../server_config.html">Fractal Server Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../server_start.html">Fractal Server Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../server_user.html">Fractal Server User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../server_upgrade.html">Fractal Server Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../server_view.html">Server-side Dataset Views</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../qcarchive_overview.html">QCArchive Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">QCFractal API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../database_design.html">Database Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev_guidelines.html">Development Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">QCFractal</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      <li>qcfractal.queue.handlers</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for qcfractal.queue.handlers</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Queue backend abstraction manager.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">collections</span>
+<span class="kn">import</span> <span class="nn">traceback</span>
+
+<span class="kn">import</span> <span class="nn">tornado.web</span>
+
+<span class="kn">from</span> <span class="nn">..interface.models.rest_models</span> <span class="kn">import</span> <span class="n">rest_model</span>
+<span class="kn">from</span> <span class="nn">..interface.models.task_models</span> <span class="kn">import</span> <span class="n">PriorityEnum</span><span class="p">,</span> <span class="n">TaskStatusEnum</span>
+<span class="kn">from</span> <span class="nn">..interface.models.records</span> <span class="kn">import</span> <span class="n">RecordStatusEnum</span>
+<span class="kn">from</span> <span class="nn">..interface.models.model_builder</span> <span class="kn">import</span> <span class="n">build_procedure</span>
+<span class="kn">from</span> <span class="nn">..procedures</span> <span class="kn">import</span> <span class="n">check_procedure_available</span><span class="p">,</span> <span class="n">get_procedure_parser</span>
+<span class="kn">from</span> <span class="nn">..services</span> <span class="kn">import</span> <span class="n">initialize_service</span>
+<span class="kn">from</span> <span class="nn">..web_handlers</span> <span class="kn">import</span> <span class="n">APIHandler</span>
+
+
+<div class="viewcode-block" id="TaskQueueHandler"><a class="viewcode-back" href="../../../api/qcfractal.queue.TaskQueueHandler.html#qcfractal.queue.TaskQueueHandler">[docs]</a><span class="k">class</span> <span class="nc">TaskQueueHandler</span><span class="p">(</span><span class="n">APIHandler</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Handles task management (querying/adding/modifying tasks)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_required_auth</span> <span class="o">=</span> <span class="s2">&quot;compute&quot;</span>
+
+<div class="viewcode-block" id="TaskQueueHandler.post"><a class="viewcode-back" href="../../../api/qcfractal.queue.TaskQueueHandler.html#qcfractal.queue.TaskQueueHandler.post">[docs]</a>    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Posts new tasks to the task queue.&quot;&quot;&quot;</span>
+
+        <span class="n">body_model</span><span class="p">,</span> <span class="n">response_model</span> <span class="o">=</span> <span class="n">rest_model</span><span class="p">(</span><span class="s2">&quot;task_queue&quot;</span><span class="p">,</span> <span class="s2">&quot;post&quot;</span><span class="p">)</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parse_bodymodel</span><span class="p">(</span><span class="n">body_model</span><span class="p">)</span>
+
+        <span class="c1"># Format and submit tasks</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">check_procedure_available</span><span class="p">(</span><span class="n">body</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">procedure</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">tornado</span><span class="o">.</span><span class="n">web</span><span class="o">.</span><span class="n">HTTPError</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="s2">&quot;Unknown procedure </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">body</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">procedure</span><span class="p">))</span>
+
+        <span class="n">procedure_parser</span> <span class="o">=</span> <span class="n">get_procedure_parser</span><span class="p">(</span><span class="n">body</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">procedure</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="p">)</span>
+
+        <span class="c1"># Verify the procedure</span>
+        <span class="n">verify</span> <span class="o">=</span> <span class="n">procedure_parser</span><span class="o">.</span><span class="n">verify_input</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">verify</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">tornado</span><span class="o">.</span><span class="n">web</span><span class="o">.</span><span class="n">HTTPError</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="n">verify</span><span class="p">)</span>
+
+        <span class="n">payload</span> <span class="o">=</span> <span class="n">procedure_parser</span><span class="o">.</span><span class="n">submit_tasks</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">response_model</span><span class="p">(</span><span class="o">**</span><span class="n">payload</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;POST: TaskQueue -  Added </span><span class="si">{}</span><span class="s2"> tasks.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">n_inserted</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TaskQueueHandler.get"><a class="viewcode-back" href="../../../api/qcfractal.queue.TaskQueueHandler.html#qcfractal.queue.TaskQueueHandler.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Gets task information from the task queue&quot;&quot;&quot;</span>
+
+        <span class="n">body_model</span><span class="p">,</span> <span class="n">response_model</span> <span class="o">=</span> <span class="n">rest_model</span><span class="p">(</span><span class="s2">&quot;task_queue&quot;</span><span class="p">,</span> <span class="s2">&quot;get&quot;</span><span class="p">)</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parse_bodymodel</span><span class="p">(</span><span class="n">body_model</span><span class="p">)</span>
+
+        <span class="n">tasks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">get_queue</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="o">**</span><span class="n">body</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">dict</span><span class="p">(),</span> <span class="o">**</span><span class="n">body</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">dict</span><span class="p">()})</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">response_model</span><span class="p">(</span><span class="o">**</span><span class="n">tasks</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;GET: TaskQueue - </span><span class="si">{}</span><span class="s2"> pulls.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="p">)))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TaskQueueHandler.put"><a class="viewcode-back" href="../../../api/qcfractal.queue.TaskQueueHandler.html#qcfractal.queue.TaskQueueHandler.put">[docs]</a>    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Modifies tasks in the task queue&quot;&quot;&quot;</span>
+
+        <span class="n">body_model</span><span class="p">,</span> <span class="n">response_model</span> <span class="o">=</span> <span class="n">rest_model</span><span class="p">(</span><span class="s2">&quot;task_queue&quot;</span><span class="p">,</span> <span class="s2">&quot;put&quot;</span><span class="p">)</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parse_bodymodel</span><span class="p">(</span><span class="n">body_model</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">body</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">body</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">base_result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">tornado</span><span class="o">.</span><span class="n">web</span><span class="o">.</span><span class="n">HTTPError</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="s2">&quot;Id or ResultId must be specified.&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">body</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">operation</span> <span class="o">==</span> <span class="s2">&quot;restart&quot;</span><span class="p">:</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="n">body</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">dict</span><span class="p">()</span>
+            <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;new_tag&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;new_priority&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="n">tasks_updated</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">queue_reset_status</span><span class="p">(</span><span class="o">**</span><span class="n">d</span><span class="p">,</span> <span class="n">reset_error</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;n_updated&quot;</span><span class="p">:</span> <span class="n">tasks_updated</span><span class="p">}</span>
+        <span class="k">elif</span> <span class="n">body</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">operation</span> <span class="o">==</span> <span class="s2">&quot;regenerate&quot;</span><span class="p">:</span>
+            <span class="n">tasks_updated</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">result_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">get_procedures</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">body</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">base_result</span><span class="p">)[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
+
+            <span class="n">new_tag</span> <span class="o">=</span> <span class="n">body</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">new_tag</span>
+            <span class="k">if</span> <span class="n">body</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">new_priority</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">new_priority</span> <span class="o">=</span> <span class="n">PriorityEnum</span><span class="o">.</span><span class="n">NORMAL</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">new_priority</span> <span class="o">=</span> <span class="n">PriorityEnum</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">body</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">new_priority</span><span class="p">))</span>
+
+            <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">result_data</span><span class="p">:</span>
+                <span class="n">model</span> <span class="o">=</span> <span class="n">build_procedure</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+
+                <span class="c1"># Only regenerate the task if the base record is not complete</span>
+                <span class="c1"># This will not do anything if the task already exists</span>
+                <span class="k">if</span> <span class="n">model</span><span class="o">.</span><span class="n">status</span> <span class="o">!=</span> <span class="n">RecordStatusEnum</span><span class="o">.</span><span class="n">complete</span><span class="p">:</span>
+                    <span class="n">procedure_parser</span> <span class="o">=</span> <span class="n">get_procedure_parser</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">procedure</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="p">)</span>
+
+                    <span class="n">task_info</span> <span class="o">=</span> <span class="n">procedure_parser</span><span class="o">.</span><span class="n">create_tasks</span><span class="p">([</span><span class="n">model</span><span class="p">],</span> <span class="n">tag</span><span class="o">=</span><span class="n">new_tag</span><span class="p">,</span> <span class="n">priority</span><span class="o">=</span><span class="n">new_priority</span><span class="p">)</span>
+                    <span class="n">n_inserted</span> <span class="o">=</span> <span class="n">task_info</span><span class="p">[</span><span class="s2">&quot;meta&quot;</span><span class="p">][</span><span class="s2">&quot;n_inserted&quot;</span><span class="p">]</span>
+                    <span class="n">tasks_updated</span> <span class="o">+=</span> <span class="n">n_inserted</span>
+
+                    <span class="c1"># If we inserted a new task, then also reset base result statuses</span>
+                    <span class="c1"># (ie, if it was running, then it obviously isn&#39;t since we made a new task)</span>
+                    <span class="k">if</span> <span class="n">n_inserted</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">reset_base_result_status</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">body</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">base_result</span><span class="p">)</span>
+
+                <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;n_updated&quot;</span><span class="p">:</span> <span class="n">tasks_updated</span><span class="p">}</span>
+        <span class="k">elif</span> <span class="n">body</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">operation</span> <span class="o">==</span> <span class="s2">&quot;modify&quot;</span><span class="p">:</span>
+            <span class="n">tasks_updated</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">queue_modify_tasks</span><span class="p">(</span>
+                <span class="nb">id</span><span class="o">=</span><span class="n">body</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">base_result</span><span class="o">=</span><span class="n">body</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">base_result</span><span class="p">,</span>
+                <span class="n">new_tag</span><span class="o">=</span><span class="n">body</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">new_tag</span><span class="p">,</span>
+                <span class="n">new_priority</span><span class="o">=</span><span class="n">body</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">new_priority</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;n_updated&quot;</span><span class="p">:</span> <span class="n">tasks_updated</span><span class="p">}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">tornado</span><span class="o">.</span><span class="n">web</span><span class="o">.</span><span class="n">HTTPError</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Operation &#39;</span><span class="si">{</span><span class="n">operation</span><span class="si">}</span><span class="s2">&#39; is not valid.&quot;</span><span class="p">)</span>
+
+        <span class="n">response</span> <span class="o">=</span> <span class="n">response_model</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">meta</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;errors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;error_description&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;PUT: TaskQueue - Operation: </span><span class="si">{</span><span class="n">body</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">operation</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">tasks_updated</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="ServiceQueueHandler"><a class="viewcode-back" href="../../../api/qcfractal.queue.ServiceQueueHandler.html#qcfractal.queue.ServiceQueueHandler">[docs]</a><span class="k">class</span> <span class="nc">ServiceQueueHandler</span><span class="p">(</span><span class="n">APIHandler</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Handles service management (querying/add/modifying)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_required_auth</span> <span class="o">=</span> <span class="s2">&quot;compute&quot;</span>
+
+<div class="viewcode-block" id="ServiceQueueHandler.post"><a class="viewcode-back" href="../../../api/qcfractal.queue.ServiceQueueHandler.html#qcfractal.queue.ServiceQueueHandler.post">[docs]</a>    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Posts new services to the service queue.&quot;&quot;&quot;</span>
+
+        <span class="n">body_model</span><span class="p">,</span> <span class="n">response_model</span> <span class="o">=</span> <span class="n">rest_model</span><span class="p">(</span><span class="s2">&quot;service_queue&quot;</span><span class="p">,</span> <span class="s2">&quot;post&quot;</span><span class="p">)</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parse_bodymodel</span><span class="p">(</span><span class="n">body_model</span><span class="p">)</span>
+
+        <span class="n">new_services</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">service_input</span> <span class="ow">in</span> <span class="n">body</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="c1"># Get molecules with ids</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">service_input</span><span class="o">.</span><span class="n">initial_molecule</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="n">molecules</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">get_add_molecules_mixed</span><span class="p">(</span><span class="n">service_input</span><span class="o">.</span><span class="n">initial_molecule</span><span class="p">)[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">service_input</span><span class="o">.</span><span class="n">initial_molecule</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;We should catch this error.&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">molecules</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">get_add_molecules_mixed</span><span class="p">([</span><span class="n">service_input</span><span class="o">.</span><span class="n">initial_molecule</span><span class="p">])[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+            <span class="c1"># Update the input and build a service object</span>
+            <span class="n">service_input</span> <span class="o">=</span> <span class="n">service_input</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">update</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;initial_molecule&quot;</span><span class="p">:</span> <span class="n">molecules</span><span class="p">})</span>
+            <span class="n">new_services</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">initialize_service</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="p">,</span> <span class="n">service_input</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="n">body</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">tag</span><span class="p">,</span> <span class="n">priority</span><span class="o">=</span><span class="n">body</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">priority</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">add_services</span><span class="p">(</span><span class="n">new_services</span><span class="p">)</span>
+        <span class="n">ret</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ids&quot;</span><span class="p">:</span> <span class="n">ret</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">],</span> <span class="s2">&quot;existing&quot;</span><span class="p">:</span> <span class="n">ret</span><span class="p">[</span><span class="s2">&quot;meta&quot;</span><span class="p">][</span><span class="s2">&quot;duplicates&quot;</span><span class="p">]}</span>
+        <span class="n">ret</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;submitted&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">ret</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;ids&quot;</span><span class="p">])</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">ret</span><span class="p">[</span><span class="s2">&quot;meta&quot;</span><span class="p">][</span><span class="s2">&quot;duplicates&quot;</span><span class="p">]))</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">response_model</span><span class="p">(</span><span class="o">**</span><span class="n">ret</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;POST: ServiceQueue -  Added </span><span class="si">{}</span><span class="s2"> services.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">n_inserted</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ServiceQueueHandler.get"><a class="viewcode-back" href="../../../api/qcfractal.queue.ServiceQueueHandler.html#qcfractal.queue.ServiceQueueHandler.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Gets information about services from the service queue.&quot;&quot;&quot;</span>
+
+        <span class="n">body_model</span><span class="p">,</span> <span class="n">response_model</span> <span class="o">=</span> <span class="n">rest_model</span><span class="p">(</span><span class="s2">&quot;service_queue&quot;</span><span class="p">,</span> <span class="s2">&quot;get&quot;</span><span class="p">)</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parse_bodymodel</span><span class="p">(</span><span class="n">body_model</span><span class="p">)</span>
+
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">get_services</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="o">**</span><span class="n">body</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">dict</span><span class="p">(),</span> <span class="o">**</span><span class="n">body</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">dict</span><span class="p">()})</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">response_model</span><span class="p">(</span><span class="o">**</span><span class="n">ret</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;GET: ServiceQueue - </span><span class="si">{}</span><span class="s2"> pulls.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="p">)))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ServiceQueueHandler.put"><a class="viewcode-back" href="../../../api/qcfractal.queue.ServiceQueueHandler.html#qcfractal.queue.ServiceQueueHandler.put">[docs]</a>    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Modifies services in the service queue&quot;&quot;&quot;</span>
+
+        <span class="n">body_model</span><span class="p">,</span> <span class="n">response_model</span> <span class="o">=</span> <span class="n">rest_model</span><span class="p">(</span><span class="s2">&quot;service_queue&quot;</span><span class="p">,</span> <span class="s2">&quot;put&quot;</span><span class="p">)</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parse_bodymodel</span><span class="p">(</span><span class="n">body_model</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">body</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">body</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">procedure_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">tornado</span><span class="o">.</span><span class="n">web</span><span class="o">.</span><span class="n">HTTPError</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="s2">&quot;Id or ProcedureId must be specified.&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">body</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">operation</span> <span class="o">==</span> <span class="s2">&quot;restart&quot;</span><span class="p">:</span>
+            <span class="n">updates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">update_service_status</span><span class="p">(</span><span class="s2">&quot;running&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">body</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">dict</span><span class="p">())</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;n_updated&quot;</span><span class="p">:</span> <span class="n">updates</span><span class="p">}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">tornado</span><span class="o">.</span><span class="n">web</span><span class="o">.</span><span class="n">HTTPError</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Operation &#39;</span><span class="si">{</span><span class="n">operation</span><span class="si">}</span><span class="s2">&#39; is not valid.&quot;</span><span class="p">)</span>
+
+        <span class="n">response</span> <span class="o">=</span> <span class="n">response_model</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">meta</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;errors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;error_description&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;PUT: TaskQueue - Operation: </span><span class="si">{</span><span class="n">body</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">operation</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">updates</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="QueueManagerHandler"><a class="viewcode-back" href="../../../api/qcfractal.queue.QueueManagerHandler.html#qcfractal.queue.QueueManagerHandler">[docs]</a><span class="k">class</span> <span class="nc">QueueManagerHandler</span><span class="p">(</span><span class="n">APIHandler</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Manages the task queue.</span>
+
+<span class="sd">    Used by compute managers for getting tasks, posting completed tasks, etc.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_required_auth</span> <span class="o">=</span> <span class="s2">&quot;queue&quot;</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_get_name_from_metadata</span><span class="p">(</span><span class="n">meta</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Form the canonical name string.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">cluster</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">meta</span><span class="o">.</span><span class="n">hostname</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">meta</span><span class="o">.</span><span class="n">uuid</span>
+        <span class="k">return</span> <span class="n">ret</span>
+
+<div class="viewcode-block" id="QueueManagerHandler.insert_complete_tasks"><a class="viewcode-back" href="../../../api/qcfractal.queue.QueueManagerHandler.html#qcfractal.queue.QueueManagerHandler.insert_complete_tasks">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">insert_complete_tasks</span><span class="p">(</span><span class="n">storage_socket</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">logger</span><span class="p">):</span>
+
+        <span class="n">results</span> <span class="o">=</span> <span class="n">body</span><span class="o">.</span><span class="n">data</span>
+        <span class="n">meta</span> <span class="o">=</span> <span class="n">body</span><span class="o">.</span><span class="n">meta</span>
+        <span class="n">task_ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+        <span class="n">manager_name</span> <span class="o">=</span> <span class="n">QueueManagerHandler</span><span class="o">.</span><span class="n">_get_name_from_metadata</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;QueueManager: Received completed tasks from </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">manager_name</span><span class="p">))</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;              Task ids: &quot;</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">task_ids</span><span class="p">))</span>
+
+        <span class="c1"># Pivot data so that we group all results in categories</span>
+        <span class="n">new_results</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+
+        <span class="n">queue</span> <span class="o">=</span> <span class="n">storage_socket</span><span class="o">.</span><span class="n">get_queue</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">task_ids</span><span class="p">)[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
+        <span class="n">queue</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="o">.</span><span class="n">id</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">queue</span><span class="p">}</span>
+
+        <span class="n">error_data</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="n">task_success</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">task_failures</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">task_totals</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+
+        <span class="k">for</span> <span class="n">task_id</span><span class="p">,</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="c1">#################################################################</span>
+                <span class="c1"># Perform some checks for consistency</span>
+                <span class="c1">#################################################################</span>
+                <span class="n">existing_task_data</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">task_id</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+                <span class="c1"># For the first three checks, don&#39;t add an error to error_data</span>
+                <span class="c1"># We don&#39;t want to modify the queue in these cases</span>
+
+                <span class="c1"># Does the task exist?</span>
+                <span class="k">if</span> <span class="n">existing_task_data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Task id </span><span class="si">{</span><span class="n">task_id</span><span class="si">}</span><span class="s2"> does not exist in the task queue.&quot;</span><span class="p">)</span>
+                    <span class="n">task_failures</span> <span class="o">+=</span> <span class="mi">1</span>
+
+                <span class="c1"># Is the task in the running state</span>
+                <span class="k">elif</span> <span class="n">existing_task_data</span><span class="o">.</span><span class="n">status</span> <span class="o">!=</span> <span class="n">TaskStatusEnum</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Task id </span><span class="si">{</span><span class="n">task_id</span><span class="si">}</span><span class="s2"> is not in the running state.&quot;</span><span class="p">)</span>
+                    <span class="n">task_failures</span> <span class="o">+=</span> <span class="mi">1</span>
+
+                <span class="c1"># Was the manager that sent the data the one that was assigned?</span>
+                <span class="k">elif</span> <span class="n">existing_task_data</span><span class="o">.</span><span class="n">manager</span> <span class="o">!=</span> <span class="n">manager_name</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Task id </span><span class="si">{</span><span class="n">task_id</span><span class="si">}</span><span class="s2"> belongs to </span><span class="si">{</span><span class="n">existing_task_data</span><span class="o">.</span><span class="n">manager</span><span class="si">}</span><span class="s2">, not this manager&quot;</span><span class="p">)</span>
+                    <span class="n">task_failures</span> <span class="o">+=</span> <span class="mi">1</span>
+
+                <span class="c1"># Failed task</span>
+                <span class="k">elif</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;success&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="s2">&quot;error&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+                        <span class="n">error</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;error_type&quot;</span><span class="p">:</span> <span class="s2">&quot;not_supplied&quot;</span><span class="p">,</span> <span class="s2">&quot;error_message&quot;</span><span class="p">:</span> <span class="s2">&quot;No error message found on task.&quot;</span><span class="p">}</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">error</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;error&quot;</span><span class="p">]</span>
+
+                    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+                        <span class="s2">&quot;Task id </span><span class="si">{key}</span><span class="s2"> did not complete successfully:</span><span class="se">\n</span><span class="s2">&quot;</span>
+                        <span class="s2">&quot;error_type: </span><span class="si">{error_type}</span><span class="se">\n</span><span class="s2">error_message: </span><span class="si">{error_message}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">task_id</span><span class="p">),</span> <span class="o">**</span><span class="n">error</span><span class="p">)</span>
+                    <span class="p">)</span>
+
+                    <span class="n">error_data</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">task_id</span><span class="p">,</span> <span class="n">error</span><span class="p">))</span>
+                    <span class="n">task_failures</span> <span class="o">+=</span> <span class="mi">1</span>
+
+                <span class="c1"># Success!</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">parser</span> <span class="o">=</span> <span class="n">queue</span><span class="p">[</span><span class="n">task_id</span><span class="p">]</span><span class="o">.</span><span class="n">parser</span>
+                    <span class="n">new_results</span><span class="p">[</span><span class="n">parser</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                        <span class="p">{</span><span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="n">result</span><span class="p">,</span> <span class="s2">&quot;task_id&quot;</span><span class="p">:</span> <span class="n">task_id</span><span class="p">,</span> <span class="s2">&quot;base_result&quot;</span><span class="p">:</span> <span class="n">queue</span><span class="p">[</span><span class="n">task_id</span><span class="p">]</span><span class="o">.</span><span class="n">base_result</span><span class="p">}</span>
+                    <span class="p">)</span>
+                    <span class="n">task_success</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Internal FractalServer Error:</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">()</span>
+                <span class="n">error</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;error_type&quot;</span><span class="p">:</span> <span class="s2">&quot;internal_fractal_error&quot;</span><span class="p">,</span> <span class="s2">&quot;error_message&quot;</span><span class="p">:</span> <span class="n">msg</span><span class="p">}</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;update: ERROR</span><span class="se">\n</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">msg</span><span class="p">))</span>
+                <span class="n">error_data</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">task_id</span><span class="p">,</span> <span class="n">error</span><span class="p">))</span>
+                <span class="n">task_failures</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="n">task_totals</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s2">&quot;QueueManager: Found </span><span class="si">{}</span><span class="s2"> complete tasks (</span><span class="si">{}</span><span class="s2"> successful, </span><span class="si">{}</span><span class="s2"> failed).&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">task_totals</span><span class="p">,</span> <span class="n">task_success</span><span class="p">,</span> <span class="n">task_failures</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Run output parsers and handle completed tasks</span>
+        <span class="n">completed</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">new_results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">procedure_parser</span> <span class="o">=</span> <span class="n">get_procedure_parser</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">storage_socket</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span>
+            <span class="n">com</span> <span class="o">=</span> <span class="n">procedure_parser</span><span class="o">.</span><span class="n">handle_completed_output</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+            <span class="n">completed</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">com</span><span class="p">)</span>
+
+        <span class="n">storage_socket</span><span class="o">.</span><span class="n">queue_mark_error</span><span class="p">(</span><span class="n">error_data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">completed</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">error_data</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="QueueManagerHandler.get"><a class="viewcode-back" href="../../../api/qcfractal.queue.QueueManagerHandler.html#qcfractal.queue.QueueManagerHandler.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Pulls new tasks from the task queue&quot;&quot;&quot;</span>
+
+        <span class="n">body_model</span><span class="p">,</span> <span class="n">response_model</span> <span class="o">=</span> <span class="n">rest_model</span><span class="p">(</span><span class="s2">&quot;queue_manager&quot;</span><span class="p">,</span> <span class="s2">&quot;get&quot;</span><span class="p">)</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parse_bodymodel</span><span class="p">(</span><span class="n">body_model</span><span class="p">)</span>
+
+        <span class="c1"># Figure out metadata and kwargs</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_name_from_metadata</span><span class="p">(</span><span class="n">body</span><span class="o">.</span><span class="n">meta</span><span class="p">)</span>
+
+        <span class="c1"># Grab new tasks and write out</span>
+        <span class="n">new_tasks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">queue_get_next</span><span class="p">(</span>
+            <span class="n">name</span><span class="p">,</span> <span class="n">body</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">programs</span><span class="p">,</span> <span class="n">body</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">procedures</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="n">body</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">limit</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="n">body</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">tag</span>
+        <span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">response_model</span><span class="p">(</span>
+            <span class="o">**</span><span class="p">{</span>
+                <span class="s2">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;n_found&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_tasks</span><span class="p">),</span>
+                    <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                    <span class="s2">&quot;errors&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                    <span class="s2">&quot;error_description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;missing&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">new_tasks</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;QueueManager: Served </span><span class="si">{}</span><span class="s2"> tasks.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">n_found</span><span class="p">))</span>
+
+        <span class="c1"># Update manager logs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">manager_update</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">submitted</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">new_tasks</span><span class="p">),</span> <span class="o">**</span><span class="n">body</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">dict</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="QueueManagerHandler.post"><a class="viewcode-back" href="../../../api/qcfractal.queue.QueueManagerHandler.html#qcfractal.queue.QueueManagerHandler.post">[docs]</a>    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Posts complete tasks to the task queue&quot;&quot;&quot;</span>
+
+        <span class="n">body_model</span><span class="p">,</span> <span class="n">response_model</span> <span class="o">=</span> <span class="n">rest_model</span><span class="p">(</span><span class="s2">&quot;queue_manager&quot;</span><span class="p">,</span> <span class="s2">&quot;post&quot;</span><span class="p">)</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parse_bodymodel</span><span class="p">(</span><span class="n">body_model</span><span class="p">)</span>
+
+        <span class="n">success</span><span class="p">,</span> <span class="n">error</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">insert_complete_tasks</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="p">)</span>
+
+        <span class="n">completed</span> <span class="o">=</span> <span class="n">success</span> <span class="o">+</span> <span class="n">error</span>
+
+        <span class="n">response</span> <span class="o">=</span> <span class="n">response_model</span><span class="p">(</span>
+            <span class="o">**</span><span class="p">{</span>
+                <span class="s2">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;n_inserted&quot;</span><span class="p">:</span> <span class="n">completed</span><span class="p">,</span>
+                    <span class="s2">&quot;duplicates&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                    <span class="s2">&quot;validation_errors&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                    <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                    <span class="s2">&quot;errors&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                    <span class="s2">&quot;error_description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;QueueManager: Inserted </span><span class="si">{}</span><span class="s2"> complete tasks.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">body</span><span class="o">.</span><span class="n">data</span><span class="p">)))</span>
+
+        <span class="c1"># Update manager logs</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_name_from_metadata</span><span class="p">(</span><span class="n">body</span><span class="o">.</span><span class="n">meta</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">manager_update</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">completed</span><span class="o">=</span><span class="n">completed</span><span class="p">,</span> <span class="n">failures</span><span class="o">=</span><span class="n">error</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="QueueManagerHandler.put"><a class="viewcode-back" href="../../../api/qcfractal.queue.QueueManagerHandler.html#qcfractal.queue.QueueManagerHandler.put">[docs]</a>    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Various manager manipulation operations</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">ret</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="n">body_model</span><span class="p">,</span> <span class="n">response_model</span> <span class="o">=</span> <span class="n">rest_model</span><span class="p">(</span><span class="s2">&quot;queue_manager&quot;</span><span class="p">,</span> <span class="s2">&quot;put&quot;</span><span class="p">)</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parse_bodymodel</span><span class="p">(</span><span class="n">body_model</span><span class="p">)</span>
+
+        <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_name_from_metadata</span><span class="p">(</span><span class="n">body</span><span class="o">.</span><span class="n">meta</span><span class="p">)</span>
+        <span class="n">op</span> <span class="o">=</span> <span class="n">body</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">operation</span>
+        <span class="k">if</span> <span class="n">op</span> <span class="o">==</span> <span class="s2">&quot;startup&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">manager_update</span><span class="p">(</span>
+                <span class="n">name</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="s2">&quot;ACTIVE&quot;</span><span class="p">,</span> <span class="n">configuration</span><span class="o">=</span><span class="n">body</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">configuration</span><span class="p">,</span> <span class="o">**</span><span class="n">body</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">dict</span><span class="p">(),</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;QueueManager: New active manager </span><span class="si">{}</span><span class="s2"> detected.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+
+        <span class="k">elif</span> <span class="n">op</span> <span class="o">==</span> <span class="s2">&quot;shutdown&quot;</span><span class="p">:</span>
+            <span class="n">nshutdown</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">queue_reset_status</span><span class="p">(</span><span class="n">manager</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">reset_running</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">manager_update</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">returned</span><span class="o">=</span><span class="n">nshutdown</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="s2">&quot;INACTIVE&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">body</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">dict</span><span class="p">(),</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s2">&quot;QueueManager: Shutdown of manager </span><span class="si">{}</span><span class="s2"> detected, recycling </span><span class="si">{}</span><span class="s2"> incomplete tasks.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">nshutdown</span><span class="p">)</span>
+            <span class="p">)</span>
+
+            <span class="n">ret</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nshutdown&quot;</span><span class="p">:</span> <span class="n">nshutdown</span><span class="p">}</span>
+
+        <span class="k">elif</span> <span class="n">op</span> <span class="o">==</span> <span class="s2">&quot;heartbeat&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">manager_update</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="s2">&quot;ACTIVE&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">body</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">dict</span><span class="p">(),</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;QueueManager: Heartbeat of manager </span><span class="si">{}</span><span class="s2"> detected.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Operation &#39;</span><span class="si">{}</span><span class="s2">&#39; not understood.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">op</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">tornado</span><span class="o">.</span><span class="n">web</span><span class="o">.</span><span class="n">HTTPError</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="n">response</span> <span class="o">=</span> <span class="n">response_model</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s2">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{},</span> <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">ret</span><span class="p">})</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div></div>
+
+        <span class="c1"># Update manager logs</span>
+        <span class="c1"># TODO: ????</span>
+
+
+<div class="viewcode-block" id="ComputeManagerHandler"><a class="viewcode-back" href="../../../api/qcfractal.queue.ComputeManagerHandler.html#qcfractal.queue.ComputeManagerHandler">[docs]</a><span class="k">class</span> <span class="nc">ComputeManagerHandler</span><span class="p">(</span><span class="n">APIHandler</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Handles management/status querying of managers</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_required_auth</span> <span class="o">=</span> <span class="s2">&quot;admin&quot;</span>
+
+<div class="viewcode-block" id="ComputeManagerHandler.get"><a class="viewcode-back" href="../../../api/qcfractal.queue.ComputeManagerHandler.html#qcfractal.queue.ComputeManagerHandler.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Gets manager information from the task queue&quot;&quot;&quot;</span>
+
+        <span class="n">body_model</span><span class="p">,</span> <span class="n">response_model</span> <span class="o">=</span> <span class="n">rest_model</span><span class="p">(</span><span class="s2">&quot;manager&quot;</span><span class="p">,</span> <span class="s2">&quot;get&quot;</span><span class="p">)</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parse_bodymodel</span><span class="p">(</span><span class="n">body_model</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;GET: ComputeManagerHandler&quot;</span><span class="p">)</span>
+        <span class="n">managers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">get_managers</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="o">**</span><span class="n">body</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">dict</span><span class="p">(),</span> <span class="o">**</span><span class="n">body</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">dict</span><span class="p">()})</span>
+
+        <span class="c1"># remove passwords?</span>
+        <span class="c1"># TODO: Are passwords stored anywhere else? Other kinds of passwords?</span>
+        <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">managers</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="s2">&quot;configuration&quot;</span> <span class="ow">in</span> <span class="n">m</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="s2">&quot;configuration&quot;</span><span class="p">],</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">and</span> <span class="s2">&quot;server&quot;</span> <span class="ow">in</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;configuration&quot;</span><span class="p">]:</span>
+                <span class="n">m</span><span class="p">[</span><span class="s2">&quot;configuration&quot;</span><span class="p">][</span><span class="s2">&quot;server&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="n">response</span> <span class="o">=</span> <span class="n">response_model</span><span class="p">(</span><span class="o">**</span><span class="n">managers</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2021, The Molecular Sciences Software Institute.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

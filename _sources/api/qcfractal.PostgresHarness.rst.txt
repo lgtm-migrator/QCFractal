@@ -1,0 +1,51 @@
+PostgresHarness
+===============
+
+.. currentmodule:: qcfractal
+
+.. autoclass:: PostgresHarness
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~PostgresHarness.alembic_commands
+      ~PostgresHarness.backup_database
+      ~PostgresHarness.command
+      ~PostgresHarness.connect
+      ~PostgresHarness.create_database
+      ~PostgresHarness.create_tables
+      ~PostgresHarness.database_size
+      ~PostgresHarness.database_uri
+      ~PostgresHarness.init_database
+      ~PostgresHarness.initialize_postgres
+      ~PostgresHarness.is_alive
+      ~PostgresHarness.logger
+      ~PostgresHarness.pg_ctl
+      ~PostgresHarness.restore_database
+      ~PostgresHarness.shutdown
+      ~PostgresHarness.start
+      ~PostgresHarness.update_db_version
+      ~PostgresHarness.upgrade
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: alembic_commands
+   .. automethod:: backup_database
+   .. automethod:: command
+   .. automethod:: connect
+   .. automethod:: create_database
+   .. automethod:: create_tables
+   .. automethod:: database_size
+   .. automethod:: database_uri
+   .. automethod:: init_database
+   .. automethod:: initialize_postgres
+   .. automethod:: is_alive
+   .. automethod:: logger
+   .. automethod:: pg_ctl
+   .. automethod:: restore_database
+   .. automethod:: shutdown
+   .. automethod:: start
+   .. automethod:: update_db_version
+   .. automethod:: upgrade

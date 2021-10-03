@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fractal Queue Managers &mdash; QCFractal 0+untagged.1.ge9cee03 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Queue Manager API" href="managers_config_api.html" />
+    <link rel="prev" title="Fractal Call Flowcharts" href="flow.html" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> QCFractal
+          </a>
+              <div class="version">
+                0+untagged.1.ge9cee03
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install QCFractal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_quickstart.html">Setup Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_server.html">Server Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_compute.html">Manager Setup</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Records Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="procedures.html">Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flow.html">Fractal Call Flowcharts</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manager Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Fractal Queue Managers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#queue-manager-quick-starts">Queue Manager Quick Starts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#laptop-desktop-quick-boot">Laptop/Desktop Quick Boot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slurm-cluster-dask-adapter">SLURM Cluster, Dask Adapter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#queue-manager-cli">Queue Manager CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#terminology">Terminology</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="managers_config_api.html">Queue Manager API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_hpc.html">Configuration for High-Performance Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_samples.html">Queue Manager Example YAML Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_faq.html">Queue Manager Frequent Questions and Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_detailed.html">Detailed Manager Information</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server CLI and Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="server_init.html">Fractal Server Init</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_config.html">Fractal Server Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_start.html">Fractal Server Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_user.html">Fractal Server User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_upgrade.html">Fractal Server Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_view.html">Server-side Dataset Views</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="qcarchive_overview.html">QCArchive Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">QCFractal API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database_design.html">Database Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_guidelines.html">Development Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">QCFractal</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Fractal Queue Managers</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/managers.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="fractal-queue-managers">
+<h1>Fractal Queue Managers<a class="headerlink" href="#fractal-queue-managers" title="Permalink to this headline"></a></h1>
+<p>Queue Managers are the processes which interface with the Fractal <a class="reference internal" href="#term-Server"><span class="xref std std-term">Server</span></a> and
+clusters, supercomputers, and cloud resources to execute the tasks in the
+Fractal <a class="reference internal" href="#term-Server"><span class="xref std std-term">Server</span></a>. These managers pull compute <a class="reference internal" href="#term-Task"><span class="xref std std-term">tasks</span></a> from the
+<a class="reference internal" href="#term-Server"><span class="xref std std-term">Server</span></a>, and then pass them to various distributed back ends for computation
+for a variety of different needs. The architecture of the Fractal <a class="reference internal" href="#term-Server"><span class="xref std std-term">Server</span></a>
+allows many managers to be created in multiple physical locations. Currently,
+Fractal supports the following:</p>
+<ul class="simple">
+<li><p><cite>Pool</cite> - A python <cite>ProcessPoolExecutor</cite> for computing tasks on a single machine (or node).</p></li>
+<li><p><a class="reference external" href="http://dask.pydata.org/en/latest/docs.html">Dask</a> - A graph-based workflow engine for laptops and small clusters.</p></li>
+<li><p><a class="reference external" href="http://parsl-project.org">Parsl</a> - High-performance workflows.</p></li>
+<li><p><a class="reference external" href="https://materialsproject.github.io/fireworks/">Fireworks</a> - An asynchronous Mongo-based distributed queuing system.</p></li>
+</ul>
+<p>These backends allow Fractal to be incredibly elastic in utilizing
+computational resources, scaling from a single laptop to thousands of nodes on
+physically separate hardware. Our end goal is to be able to setup a manager at
+a physical site and allow it to scale up and down as its task queue requires
+and execute compute over long periods of time (months) without intervention.</p>
+<p>The basic setup of the Queue <a class="reference internal" href="#term-Manager"><span class="xref std std-term">Managers</span></a> and how they interact with the <a class="reference internal" href="#term-Server"><span class="xref std std-term">Server</span></a> is as follows:</p>
+<a class="reference internal image-reference" href="_images/QCQuManagerBasic.png"><img alt="Multiple Managers communicating with one server" class="align-right" src="_images/QCQuManagerBasic.png" style="width: 400px;" /></a>
+<p>In this, multiple <a class="reference internal" href="#term-Manager"><span class="xref std std-term">managers</span></a> talk to a central <a class="reference internal" href="#term-Server"><span class="xref std std-term">Fractal Server</span></a> and deploy
+<a class="reference internal" href="#term-Task"><span class="xref std std-term">tasks</span></a> to different compute resources based on availability, physical location, and <a class="reference internal" href="#term-Tag"><span class="xref std std-term">tags</span></a>.</p>
+<p>The main goals of the Queue <a class="reference internal" href="#term-Manager"><span class="xref std std-term">Manager</span></a> is to reduce the user’s level of expertise needed to start compute with
+Fractal and, more importantly, to need as little manual intervention as possible to have persistent compute. Ideally,
+you start the <a class="reference internal" href="#term-Manager"><span class="xref std std-term">Manager</span></a> in a background process, leave it be while it checks in with the
+<a class="reference internal" href="#term-Server"><span class="xref std std-term">Fractal Server</span></a> from time to time
+to get <a class="reference internal" href="#term-Task"><span class="xref std std-term">tasks</span></a>, and pushes/pulls <a class="reference internal" href="#term-Task"><span class="xref std std-term">tasks</span></a> from the distributed <a class="reference internal" href="#term-Adapter"><span class="xref std std-term">Adapter</span></a> as need be.</p>
+<p>The communication between each of the layers involved, and the mechanism by which they communicate is summarized in
+this image:</p>
+<a class="reference internal image-reference" href="_images/QCQuManagerNetwork.png"><img alt="Line of communication between server to compute" class="align-center" src="_images/QCQuManagerNetwork.png" style="width: 800px;" /></a>
+<p>The different levels of communication are all established automatically once the user configures the manager, and
+this image shows how information flow from point-to-point.</p>
+<p>The manager itself is a fairly lightweight process and consumes very little CPU power on its own. You should talk with
+your sysadmin before running this on a head node, but the Queue <a class="reference internal" href="#term-Manager"><span class="xref std std-term">Manager</span></a> itself will consume
+less than 1% CPU we have found and virtually no RAM.</p>
+<p>If you are interested in the more detailed workings of the <a class="reference internal" href="#term-Manager"><span class="xref std std-term">Manager</span></a>, please see the <a class="reference internal" href="managers_detailed.html"><span class="doc">Detailed Manager Information</span></a>
+page. However, the information on that page is not required to set up and run a <a class="reference internal" href="#term-Manager"><span class="xref std std-term">Manager</span></a>.</p>
+<section id="queue-manager-quick-starts">
+<h2>Queue Manager Quick Starts<a class="headerlink" href="#queue-manager-quick-starts" title="Permalink to this headline"></a></h2>
+<p>For those who just want to get up and going, consider the following examples.</p>
+<section id="laptop-desktop-quick-boot">
+<h3>Laptop/Desktop Quick Boot<a class="headerlink" href="#laptop-desktop-quick-boot" title="Permalink to this headline"></a></h3>
+<p>To get a Manager set up with defaults, running on local hardware, consuming local CPU and RAM, targeting a
+Fractal Server running locally, run the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qcfractal-manager
+</pre></div>
+</div>
+</section>
+<section id="slurm-cluster-dask-adapter">
+<span id="manager-starter-example"></span><h3>SLURM Cluster, Dask Adapter<a class="headerlink" href="#slurm-cluster-dask-adapter" title="Permalink to this headline"></a></h3>
+<p>To start a manager with a dask <a class="reference internal" href="#term-Adapter"><span class="xref std std-term">Adapter</span></a>, on a SLURM cluster, consuming 1 CPU and 8 GB of ram, targeting a Fractal
+Server running on that cluster, and using the SLURM partition <code class="docutils literal notranslate"><span class="pre">default</span></code>, save the following YAML config file:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">common</span><span class="p">:</span>
+ <span class="nt">adapter</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">dask</span>
+ <span class="nt">tasks_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+ <span class="nt">cores_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+ <span class="nt">memory_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8</span>
+
+<span class="nt">cluster</span><span class="p">:</span>
+ <span class="nt">scheduler</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">slurm</span>
+
+<span class="nt">dask</span><span class="p">:</span>
+ <span class="nt">queue</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">default</span>
+</pre></div>
+</div>
+<p>and then run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qcfractal-manager --config-file<span class="o">=</span><span class="s2">&quot;path/to/config.yaml&quot;</span>
+</pre></div>
+</div>
+<p>replacing the <code class="docutils literal notranslate"><span class="pre">config-file</span></code> arg with the path to the file you saved. You will need <code class="docutils literal notranslate"><span class="pre">dask</span></code> and <code class="docutils literal notranslate"><span class="pre">dask-jobqueue</span></code>
+(<a class="reference external" href="http://distributed.dask.org/en/latest/">Dask Distributed Docs</a>, <a class="reference external" href="https://jobqueue.dask.org/en/latest/">Dask Jobqueue Docs</a>), to run this example, which are not packages required by Fractal unless you are running compute
+managers; if you use a different <a class="reference internal" href="#term-Adapter"><span class="xref std std-term">Adapter</span></a>, you would need a separate set of packages.</p>
+</section>
+</section>
+<section id="queue-manager-cli">
+<h2>Queue Manager CLI<a class="headerlink" href="#queue-manager-cli" title="Permalink to this headline"></a></h2>
+<p>The CLI for the Fractal Queue Manager acts as an <strong>option-specific</strong> overwrite of the YAML file for various
+options and therefore its flags can be set in tandem with the YAML. However, it does not have as extensive control as
+the YAML file and so complex Managers (like those running Dask and Parsl) need to be setup in YAML.</p>
+<p>In case this ever falls out of date, you can always run <code class="docutils literal notranslate"><span class="pre">qcfractal-manager</span> <span class="pre">--help</span></code> to get the most up-to-date
+help block.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ qcfractal-manager --help
+
+usage: qcfractal-manager [-h] [--config-file CONFIG_FILE] [--adapter ADAPTER]
+                         [--tasks_per_worker TASKS_PER_WORKER]
+                         [--cores-per-worker CORES_PER_WORKER]
+                         [--memory-per-worker MEMORY_PER_WORKER]
+                         [--scratch-directory SCRATCH_DIRECTORY] [-v]
+                         [--fractal-uri FRACTAL_URI] [-u USERNAME]
+                         [-p PASSWORD] [--verify VERIFY]
+                         [--manager-name MANAGER_NAME] [--queue-tag QUEUE_TAG]
+                         [--log-file-prefix LOG_FILE_PREFIX]
+                         [--update-frequency UPDATE_FREQUENCY]
+                         [--max-queued-tasks MAX_QUEUED_TASKS] [--test]
+                         [--ntests NTESTS] [--schema]
+
+A CLI for a QCFractal QueueManager with a ProcessPoolExecutor, Dask, or Parsl
+backend. The Dask and Parsl backends *requires* a config file due to the
+complexity of its setup. If a config file is specified, the remaining options
+serve as CLI overwrites of the config.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --config-file CONFIG_FILE
+
+Common Adapter Settings:
+  --adapter ADAPTER     The backend adapter to use, currently only {&#39;dask&#39;,
+                        &#39;parsl&#39;, &#39;pool&#39;} are valid.
+  --tasks_per_worker TASKS_PER_WORKER
+                        The number of simultaneous tasks for the executor to
+                        run, resources will be divided evenly.
+  --cores-per-worker CORES_PER_WORKER
+                        The number of process for each executor&#39;s Workers
+  --memory-per-worker MEMORY_PER_WORKER
+                        The total amount of memory on the system in GB
+  --scratch-directory SCRATCH_DIRECTORY
+                        Scratch directory location
+  -v, --verbose         Increase verbosity of the logger.
+
+FractalServer connection settings:
+  --fractal-uri FRACTAL_URI
+                        FractalServer location to pull from
+  -u USERNAME, --username USERNAME
+                        FractalServer username
+  -p PASSWORD, --password PASSWORD
+                        FractalServer password
+  --verify VERIFY       Do verify the SSL certificate, leave off (unset) for
+                        servers with custom SSL certificates.
+
+QueueManager settings:
+  --manager-name MANAGER_NAME
+                        The name of the manager to start
+  --queue-tag QUEUE_TAG
+                        The queue tag to pull from
+  --log-file-prefix LOG_FILE_PREFIX
+                        The path prefix of the logfile to write to.
+  --update-frequency UPDATE_FREQUENCY
+                        The frequency in seconds to check for complete tasks.
+  --max-queued-tasks MAX_QUEUED_TASKS
+                        Maximum number of tasks to hold at any given time.
+                        Generally should not be set.
+
+Optional Settings:
+  --test                Boot and run a short test suite to validate setup
+  --ntests NTESTS       How many tests per found program to run, does nothing
+                        without --test set
+  --schema              Display the current Schema (Pydantic) for the YAML
+                        config file and exit. This will always show the most
+                        up-to-date schema. It will be presented in a JSON-like
+                        format.
+</pre></div>
+</div>
+</section>
+<section id="terminology">
+<span id="manager-glossary"></span><h2>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline"></a></h2>
+<p>There are a number of terms which can overlap due to the layers of abstraction and the type of software and hardware
+the Queue Manager interacts with. To help with that, the pages in this section will use the terminology defined below.
+Several pieces of software we interface with may have their own terms or the same term with different meaning, but
+because one goal of the Manager is to abstract those concepts away as best it can, we choose the following set. If
+you find something inappropriately labeled, unclear, or overloaded in any way, please raise an issue
+<a class="reference external" href="https://github.com/MolSSI/QCFractal/issues/new/choose">on GitHub</a> and help us make it better!</p>
+<p>An important note: Not all the concepts/mechanics of the <a class="reference internal" href="#term-Manager"><span class="xref std std-term">Manager</span></a> and <a class="reference internal" href="#term-Adapter"><span class="xref std std-term">Adapter</span></a> are covered in the
+glossary by design!
+There are several abstraction layers and mechanics which the user should never have to interact with or even be aware
+of. However, if you feel something is missing, let us know!</p>
+<dl class="glossary simple">
+<dt id="term-Adapter">Adapter<a class="headerlink" href="#term-Adapter" title="Permalink to this term"></a></dt><dd><p>The specific piece of software which accepts <a class="reference internal" href="#term-Task"><span class="xref std std-term">tasks</span></a> from the <a class="reference internal" href="#term-Manager"><span class="xref std std-term">Manager</span></a> and sends them to the
+physical hardware. It is also the software which typically interacts with a cluster’s <a class="reference internal" href="#term-Scheduler"><span class="xref std std-term">Scheduler</span></a> to
+allocate said hardware and start <a class="reference internal" href="#term-Job"><span class="xref std std-term">Job</span></a>.</p>
+</dd>
+<dt id="term-Distributed-Compute-Engine">Distributed Compute Engine<a class="headerlink" href="#term-Distributed-Compute-Engine" title="Permalink to this term"></a></dt><dd><p>A more precise, although longer-winded, term for the <a class="reference internal" href="#term-Adapter"><span class="xref std std-term">Adapter</span></a>.</p>
+</dd>
+<dt id="term-Job">Job<a class="headerlink" href="#term-Job" title="Permalink to this term"></a></dt><dd><p>The specific allocation of resources (CPU, Memory, wall clock, etc) provided by the <a class="reference internal" href="#term-Scheduler"><span class="xref std std-term">Scheduler</span></a> to the
+<a class="reference internal" href="#term-Adapter"><span class="xref std std-term">Adapter</span></a>. This is identical to if you requested batch-like job on a cluster (e.g. though <code class="docutils literal notranslate"><span class="pre">qsub</span></code> or
+<code class="docutils literal notranslate"><span class="pre">sbatch</span></code>), however, it is more apt to think of the resources allocated in this way as “resources to be
+distributed to the <a class="reference internal" href="#term-Task"><span class="xref std std-term">Task</span></a> by the <a class="reference internal" href="#term-Adapter"><span class="xref std std-term">Adapter</span></a>”. Although a user running a <a class="reference internal" href="#term-Manager"><span class="xref std std-term">Manager</span></a> will likely
+not directly interact with these, its important to track as these are what your <a class="reference internal" href="#term-Scheduler"><span class="xref std std-term">Scheduler</span></a> is actually
+running and your allocations will be charged by. At least (and usually only) one <a class="reference internal" href="#term-Worker"><span class="xref std std-term">Worker</span></a> will be
+deployed to a <a class="reference internal" href="#term-Job"><span class="xref std std-term">Job</span></a> from the <a class="reference internal" href="#term-Adapter"><span class="xref std std-term">Adapter</span></a> to handle incoming <a class="reference internal" href="#term-Task"><span class="xref std std-term">Task</span></a>s. Once the <a class="reference internal" href="#term-Worker"><span class="xref std std-term">Worker</span></a>
+lands, it will report back to the <a class="reference internal" href="#term-Adapter"><span class="xref std std-term">Adapter</span></a> and all communications happen between those two objects; the
+Job simply runs until either the <a class="reference internal" href="#term-Adapter"><span class="xref std std-term">Adapter</span></a> stops it, or the <a class="reference internal" href="#term-Scheduler"><span class="xref std std-term">Scheduler</span></a> ends it.</p>
+</dd>
+<dt id="term-Manager">Manager<a class="headerlink" href="#term-Manager" title="Permalink to this term"></a></dt><dd><p>The <a class="reference internal" href="#"><span class="doc">Fractal Queue Manager</span></a>. The term “Manager” presented by itself refers to this object.</p>
+</dd>
+<dt id="term-Scheduler">Scheduler<a class="headerlink" href="#term-Scheduler" title="Permalink to this term"></a></dt><dd><p>The software running on a cluster which users request hardware from to run computational <a class="reference internal" href="#term-Task"><span class="xref std std-term">tasks</span></a>,
+e.g. PBS, SLURM,
+LSF, SGE, etc. This, by itself, does not have any concept of the <a class="reference internal" href="#term-Manager"><span class="xref std std-term">Manager</span></a> or even the <a class="reference internal" href="#term-Adapter"><span class="xref std std-term">Adapter</span></a>
+as both interface with <em>it</em>, not the other way around. Individual users’ clusters may, and almost always,
+have a different configuration, even amongst the same governing software. Therefore, no two Schedulers
+should be treated the same. In many cases, the <a class="reference internal" href="#term-Adapter"><span class="xref std std-term">Adapter</span></a> submits a <a class="reference internal" href="#term-Job"><span class="xref std std-term">Job</span></a> to the Scheduler with
+instructions of how the <a class="reference internal" href="#term-Job"><span class="xref std std-term">Job</span></a> should start a <a class="reference internal" href="#term-Worker"><span class="xref std std-term">Worker</span></a> once it is allocated and booted.</p>
+</dd>
+<dt id="term-Server">Server<a class="headerlink" href="#term-Server" title="Permalink to this term"></a></dt><dd><p>The Fractal Server that the <a class="reference internal" href="#term-Manager"><span class="xref std std-term">Manager</span></a> connects to. This is the source of the
+<a class="reference internal" href="#term-Task"><span class="xref std std-term">Task</span></a>s which are pulled from and pushed to. Only the <a class="reference internal" href="#term-Manager"><span class="xref std std-term">Manager</span></a> has any notion
+of the Server of all the other software involved with the <a class="reference internal" href="#term-Manager"><span class="xref std std-term">Manager</span></a> does not.</p>
+</dd>
+<dt id="term-Tag">Tag<a class="headerlink" href="#term-Tag" title="Permalink to this term"></a></dt><dd><p>Arbitrary categorization labels that different <a class="reference internal" href="#term-Task"><span class="xref std std-term">tasks</span></a> can be assigned when submitted to the
+<a class="reference internal" href="#term-Server"><span class="xref std std-term">Server</span></a>. <a class="reference internal" href="#term-Manager"><span class="xref std std-term">Managers</span></a> can pull these tags if configured, and will <em>exclusively</em> pull their
+defined tag if so. Similarly, <a class="reference internal" href="#term-Task"><span class="xref std std-term">tasks</span></a> set with a given tag can <em>only</em> be pulled if
+their <a class="reference internal" href="#term-Manager"><span class="xref std std-term">Manager</span></a> is configured to do so.</p>
+</dd>
+<dt id="term-Task">Task<a class="headerlink" href="#term-Task" title="Permalink to this term"></a></dt><dd><p>A single unit of compute as defined by the Fractal <a class="reference internal" href="#term-Server"><span class="xref std std-term">Server</span></a> (i.e. the item which comes from the Task
+Queue). These tasks are preserved as they pass to the distributed compute engine and are what are presented to
+each distributed compute engine’s <a class="reference internal" href="#term-Worker"><span class="xref std std-term">Worker</span></a>s to compute</p>
+</dd>
+<dt id="term-Worker">Worker<a class="headerlink" href="#term-Worker" title="Permalink to this term"></a></dt><dd><p>The process executed from the <a class="reference internal" href="#term-Adapter"><span class="xref std std-term">Adapter</span></a> on the allocated hardware inside a <a class="reference internal" href="#term-Job"><span class="xref std std-term">Job</span></a>. This process
+receives the <a class="reference internal" href="#term-Task"><span class="xref std std-term">tasks</span></a> tracked by the <a class="reference internal" href="#term-Adapter"><span class="xref std std-term">Adapter</span></a> and is responsible for their execution. The
+Worker itself is responsible for consuming the resources of the <a class="reference internal" href="#term-Job"><span class="xref std std-term">Job</span></a> and distributing them to handle
+concurrent <a class="reference internal" href="#term-Task"><span class="xref std std-term">tasks</span></a>. In most cases, there will be 1 Worker per <a class="reference internal" href="#term-Job"><span class="xref std std-term">Job</span></a>, but there are some
+uncommon instances where this isn’t true. You can safely assume the 1 Worker/<a class="reference internal" href="#term-Job"><span class="xref std std-term">Job</span></a> case for Fractal
+usage. Resources allocated for the Worker will be distributed by the <a class="reference internal" href="#term-Adapter"><span class="xref std std-term">Adapter</span></a>s configuration,
+but is usually uniform.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="flow.html" class="btn btn-neutral float-left" title="Fractal Call Flowcharts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="managers_config_api.html" class="btn btn-neutral float-right" title="Queue Manager API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2021, The Molecular Sciences Software Institute.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

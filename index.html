@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QCFractal &mdash; QCFractal 0+untagged.1.ge9cee03 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Install QCFractal" href="install.html" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="#" class="icon icon-home"> QCFractal
+          </a>
+              <div class="version">
+                0+untagged.1.ge9cee03
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install QCFractal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_quickstart.html">Setup Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_server.html">Server Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_compute.html">Manager Setup</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Records Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="procedures.html">Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flow.html">Fractal Call Flowcharts</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manager Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="managers.html">Fractal Queue Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_config_api.html">Queue Manager API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_hpc.html">Configuration for High-Performance Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_samples.html">Queue Manager Example YAML Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_faq.html">Queue Manager Frequent Questions and Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_detailed.html">Detailed Manager Information</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server CLI and Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="server_init.html">Fractal Server Init</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_config.html">Fractal Server Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_start.html">Fractal Server Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_user.html">Fractal Server User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_upgrade.html">Fractal Server Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_view.html">Server-side Dataset Views</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="qcarchive_overview.html">QCArchive Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">QCFractal API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database_design.html">Database Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_guidelines.html">Development Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">QCFractal</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+      <li>QCFractal</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="qcfractal">
+<h1>QCFractal<a class="headerlink" href="#qcfractal" title="Permalink to this headline"></a></h1>
+<p><em>A platform to compute, store, organize, and share large-scale quantum chemistry data.</em></p>
+<p>QCFractal emphasizes the following virtues:</p>
+<ul class="simple">
+<li><p><strong>Organize:</strong> Large sets of computations are organized into Collections for easy reference and manipulation.</p></li>
+<li><p><strong>Reproducibility:</strong> All steps of commonly used pipelines are elucidated in the input without additional human intervention.</p></li>
+<li><p><strong>History:</strong> Organize all computations ever executed in a research group in an easily indexable manner, never lose data again!</p></li>
+<li><p><strong>Accessibility:</strong> Easily share quantum chemistry data with colleagues or the community through accessibility settings.</p></li>
+<li><p><strong>Elasticity:</strong> Scale from a single laptop to a dozen simultaneous supercomputers.</p></li>
+<li><p><strong>Transferability:</strong> Run many different quantum chemistry, semiempirical, or force field programs with a single unified interface.</p></li>
+</ul>
+<section id="qcfratal-within-the-qcarchive-stack">
+<h2>QCFratal within the QCArchive stack<a class="headerlink" href="#qcfratal-within-the-qcarchive-stack" title="Permalink to this headline"></a></h2>
+<p>Within the QCArchive stack, QCFractal is responsible for:</p>
+<ul class="simple">
+<li><p>Accepting requests for calculations, submitted from a client such as <a class="reference external" href="http://docs.qcarchive.molssi.org/projects/qcportal/en/latest/">QCPortal</a>.</p></li>
+<li><p>Running these calculations on disparate compute resources through Quantum Chemistry programs and procedures supported by <a class="reference external" href="http://docs.qcarchive.molssi.org/projects/qcengine/en/latest/">QCEngine</a>.</p></li>
+<li><p>Storing and organizing the results of these calculations in a database.</p></li>
+<li><p>Providing access to stored results to clients such as <a class="reference external" href="http://docs.qcarchive.molssi.org/projects/qcportal/en/latest/">QCPortal</a>.</p></li>
+</ul>
+<p>The diagram below illustrates a representative data flow:</p>
+<a class="reference internal image-reference" href="_images/QCEcosystem.png"><img alt="QCArchive ecosystem" class="align-center" src="_images/QCEcosystem.png" style="width: 800px;" /></a>
+</section>
+<section id="pipelines">
+<h2>Pipelines<a class="headerlink" href="#pipelines" title="Permalink to this headline"></a></h2>
+<p>QCFractal supports several high-throughput pipelines:</p>
+<ul class="simple">
+<li><p>Ensembles of single point quantum chemistry computations.</p></li>
+<li><p>Procedures such as geometry optimization, finite different gradients and Hessians, and complete basis set extrapolations.</p></li>
+<li><p>Complex scenarios such as the <a class="reference external" href="http://openforcefield.org">OpenFF</a> torsion scan workflow.</p></li>
+<li><p>User-defined procedures.</p></li>
+</ul>
+</section>
+<section id="data-sharing">
+<h2>Data Sharing<a class="headerlink" href="#data-sharing" title="Permalink to this headline"></a></h2>
+<p>QCFractal allows for the creation of a single data repository for a group with
+varying permission levels to allow control of who can access your data or
+submit new tasks to your compute network. Hook into the central MolSSI
+repository or create your own!</p>
+</section>
+<section id="scales-from-laptops-to-supercomputers">
+<h2>Scales from laptops to supercomputers<a class="headerlink" href="#scales-from-laptops-to-supercomputers" title="Permalink to this headline"></a></h2>
+<p>QCFractal is build to be elastic, scaling from a single researcher on a laptop
+to large multi-PI groups on dozens of different supercomputers. QCFractal
+provides a central location to marshal and distribute data or computation.
+QCFractal can switch between a variety of computational queue backends such
+as:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://parsl-project.org">Parsl</a> - High-performance workflows with backend support for common schedulers, supercomputers, and cloud compute.</p></li>
+<li><p><a class="reference external" href="http://dask.pydata.org/en/latest/docs.html">Dask</a> - A graph-based workflow engine for laptops and small clusters.</p></li>
+<li><p><a class="reference external" href="https://materialsproject.github.io/fireworks/">Fireworks</a> - A asynchronous Mongo-based distributed queuing system.</p></li>
+</ul>
+<p>Additional backends such as BOINC, RADICAL Pilot, Kubernetes, and Balsam are under active
+consideration. <span class="xref std std-ref">Contact us</span> if you are interested in one of these use-cases.</p>
+</section>
+<hr class="docutils" />
+<section id="index">
+<h2>Index<a class="headerlink" href="#index" title="Permalink to this headline"></a></h2>
+<p><strong>Getting Started</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="install.html"><span class="doc">Install QCFractal</span></a></p></li>
+<li><p><a class="reference internal" href="quickstart.html"><span class="doc">Example</span></a></p></li>
+<li><p><a class="reference internal" href="setup_quickstart.html"><span class="doc">Setup Overview</span></a></p></li>
+<li><p><a class="reference internal" href="setup_server.html"><span class="doc">Server Setup</span></a></p></li>
+<li><p><a class="reference internal" href="setup_compute.html"><span class="doc">Manager Setup</span></a></p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+<p><strong>Records Documentation</strong></p>
+<p>The records created from adding additional compute.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="results.html"><span class="doc">Results</span></a></p></li>
+<li><p><a class="reference internal" href="procedures.html"><span class="doc">Procedures</span></a></p></li>
+<li><p><a class="reference internal" href="services.html"><span class="doc">Services</span></a></p></li>
+<li><p><a class="reference internal" href="flow.html"><span class="doc">Fractal Call Flowcharts</span></a></p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+<p><strong>Manager Documentation</strong></p>
+<p>Setting up and running Fractal’s Queue Managers on your system.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="managers.html"><span class="doc">Fractal Queue Managers</span></a></p></li>
+<li><p><a class="reference internal" href="managers_config_api.html"><span class="doc">Queue Manager API</span></a></p></li>
+<li><p><a class="reference internal" href="managers_hpc.html"><span class="doc">Configuration for High-Performance Computing</span></a></p></li>
+<li><p><a class="reference internal" href="managers_samples.html"><span class="doc">Queue Manager Example YAML Files</span></a></p></li>
+<li><p><a class="reference internal" href="managers_faq.html"><span class="doc">Queue Manager Frequent Questions and Issues</span></a></p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+<p><strong>Server Documentation</strong></p>
+<p>Configuring and running the Server from the CLI and Config Files</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="server_init.html"><span class="doc">Fractal Server Init</span></a></p></li>
+<li><p><a class="reference internal" href="server_config.html"><span class="doc">Fractal Server Config</span></a></p></li>
+<li><p><a class="reference internal" href="server_start.html"><span class="doc">Fractal Server Start</span></a></p></li>
+<li><p><a class="reference internal" href="server_user.html"><span class="doc">Fractal Server User</span></a></p></li>
+<li><p><a class="reference internal" href="server_upgrade.html"><span class="doc">Fractal Server Upgrade</span></a></p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+<p><strong>Developer Documentation</strong></p>
+<p>Contains in-depth developer documentation.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="qcarchive_overview.html"><span class="doc">QCArchive Design</span></a></p></li>
+<li><p><a class="reference internal" href="glossary.html"><span class="doc">Glossary</span></a></p></li>
+<li><p><a class="reference internal" href="changelog.html"><span class="doc">Changelog</span></a></p></li>
+<li><p><a class="reference internal" href="glossary.html"><span class="doc">Glossary</span></a></p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="install.html" class="btn btn-neutral float-right" title="Install QCFractal" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2021, The Molecular Sciences Software Institute.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

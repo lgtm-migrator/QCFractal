@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Queue Manager Example YAML Files &mdash; QCFractal 0+untagged.1.ge9cee03 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Queue Manager Frequent Questions and Issues" href="managers_faq.html" />
+    <link rel="prev" title="Configuration for High-Performance Computing" href="managers_hpc.html" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> QCFractal
+          </a>
+              <div class="version">
+                0+untagged.1.ge9cee03
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install QCFractal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_quickstart.html">Setup Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_server.html">Server Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_compute.html">Manager Setup</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Records Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="procedures.html">Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flow.html">Fractal Call Flowcharts</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manager Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="managers.html">Fractal Queue Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_config_api.html">Queue Manager API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_hpc.html">Configuration for High-Performance Computing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Queue Manager Example YAML Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#slurm-cluster-dask-adapter-with-additional-options">SLURM Cluster, Dask Adapter with additional options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#multiple-tasks-1-cluster-job">Multiple Tasks, 1 Cluster Job</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testing-the-manager-setup">Testing the Manager Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-commands-before-work">Running commands before work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-scheduler-flags">Additional Scheduler Flags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#single-job-with-multiple-nodes-and-single-node-tasks-with-parsl-adapter">Single Job with Multiple Nodes and Single-Node Tasks with Parsl Adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#single-job-with-multiple-node-parallel-tasks-with-parsl-adapter">Single Job with Multiple, Node-Parallel Tasks with Parsl Adapter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="managers_faq.html">Queue Manager Frequent Questions and Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_detailed.html">Detailed Manager Information</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server CLI and Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="server_init.html">Fractal Server Init</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_config.html">Fractal Server Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_start.html">Fractal Server Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_user.html">Fractal Server User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_upgrade.html">Fractal Server Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_view.html">Server-side Dataset Views</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="qcarchive_overview.html">QCArchive Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">QCFractal API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database_design.html">Database Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_guidelines.html">Development Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">QCFractal</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Queue Manager Example YAML Files</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/managers_samples.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="queue-manager-example-yaml-files">
+<h1>Queue Manager Example YAML Files<a class="headerlink" href="#queue-manager-example-yaml-files" title="Permalink to this headline"></a></h1>
+<p>The primary way to set up a <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Manager</span></a> is to setup a YAML config file.
+This page provides helpful config files which mostly can be just copied
+and used in place (filling in things like <a class="reference internal" href="managers_config_api.html#managers-server"><span class="std std-ref">**username** and **password**</span></a>
+as needed.)</p>
+<p>The full documentation of every option and how it can be used can be found in
+<a class="reference internal" href="managers_config_api.html"><span class="doc">the Queue Manager’s API</span></a>.</p>
+<p>For these examples, the <code class="docutils literal notranslate"><span class="pre">username</span></code> will always be “Foo” and the <code class="docutils literal notranslate"><span class="pre">password</span></code> will always be “b4R”
+(which are just placeholders and not valid). The <code class="docutils literal notranslate"><span class="pre">manager_name</span></code> variable can be any string and these examples provide
+some descriptive samples. The more distinct the name, the better it is to see its status on the <a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Server</span></a>.</p>
+<section id="slurm-cluster-dask-adapter-with-additional-options">
+<h2>SLURM Cluster, Dask Adapter with additional options<a class="headerlink" href="#slurm-cluster-dask-adapter-with-additional-options" title="Permalink to this headline"></a></h2>
+<p>This example is similar to the <a class="reference internal" href="managers.html#manager-starter-example"><span class="std std-ref">example on the start page for Managers</span></a>, but with some
+additional options such as connecting back to a central Fractal instance and setting more cluster-specific options.
+Again, this starts a manager with a dask <a class="reference internal" href="managers.html#term-Adapter"><span class="xref std std-term">Adapter</span></a>, on a SLURM cluster, consuming 1 CPU and 8 GB of ram, targeting
+a Fractal Server running on that cluster, and using the SLURM partition <code class="docutils literal notranslate"><span class="pre">default</span></code>, save the following YAML config
+file:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">common</span><span class="p">:</span>
+ <span class="nt">adapter</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">dask</span>
+ <span class="nt">tasks_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+ <span class="nt">cores_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+ <span class="nt">memory_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8</span>
+
+<span class="nt">server</span><span class="p">:</span>
+ <span class="nt">fractal_uri</span><span class="p">:</span> <span class="s">&quot;localhost:7777&quot;</span>
+ <span class="nt">username</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Foo</span>
+ <span class="nt">password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">b4R</span>
+
+<span class="nt">manager</span><span class="p">:</span>
+ <span class="nt">manager_name</span><span class="p">:</span> <span class="s">&quot;SlurmCluster_OneDaskTask&quot;</span>
+
+<span class="nt">cluster</span><span class="p">:</span>
+ <span class="nt">scheduler</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">slurm</span>
+ <span class="nt">walltime</span><span class="p">:</span> <span class="s">&quot;72:00:00&quot;</span>
+
+<span class="nt">dask</span><span class="p">:</span>
+ <span class="nt">queue</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">default</span>
+</pre></div>
+</div>
+</section>
+<section id="multiple-tasks-1-cluster-job">
+<h2>Multiple Tasks, 1 Cluster Job<a class="headerlink" href="#multiple-tasks-1-cluster-job" title="Permalink to this headline"></a></h2>
+<p>This example starts a max of 1 cluster <a class="reference internal" href="managers.html#term-Job"><span class="xref std std-term">Job</span></a>, but multiple <a class="reference internal" href="managers.html#term-Task"><span class="xref std std-term">tasks</span></a>. The hardware will be
+consumed uniformly by the <a class="reference internal" href="managers.html#term-Worker"><span class="xref std std-term">Worker</span></a>. With 8 cores, 20 GB of memory, and 4 tasks; the <a class="reference internal" href="managers.html#term-Worker"><span class="xref std std-term">Worker</span></a> will provide
+2 cores and 5 GB of memory to compute each <a class="reference internal" href="managers.html#term-Task"><span class="xref std std-term">Task</span></a>. We set <code class="docutils literal notranslate"><span class="pre">common.max_workers</span></code> to 1 to limit the number
+of <a class="reference internal" href="managers.html#term-Worker"><span class="xref std std-term">Workers</span></a> and <a class="reference internal" href="managers.html#term-Job"><span class="xref std std-term">Jobs</span></a> which can be started. Since this is SLURM, the <code class="docutils literal notranslate"><span class="pre">squeue</span></code> information
+will show this user has run 1 <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> jobs which requested 4 cores and 20 GB of memory.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">common</span><span class="p">:</span>
+ <span class="nt">adapter</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">dask</span>
+ <span class="nt">tasks_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
+ <span class="nt">cores_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8</span>
+ <span class="nt">memory_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">20</span>
+ <span class="nt">max_workers</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+
+<span class="nt">server</span><span class="p">:</span>
+ <span class="nt">fractal_uri</span><span class="p">:</span> <span class="s">&quot;localhost:7777&quot;</span>
+ <span class="nt">username</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Foo</span>
+ <span class="nt">password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">b4R</span>
+
+<span class="nt">manager</span><span class="p">:</span>
+ <span class="nt">manager_name</span><span class="p">:</span> <span class="s">&quot;SlurmCluster_MultiDask&quot;</span>
+
+<span class="nt">cluster</span><span class="p">:</span>
+ <span class="nt">scheduler</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">slurm</span>
+ <span class="nt">walltime</span><span class="p">:</span> <span class="s">&quot;72:00:00&quot;</span>
+
+<span class="nt">dask</span><span class="p">:</span>
+ <span class="nt">queue</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">default</span>
+</pre></div>
+</div>
+</section>
+<section id="testing-the-manager-setup">
+<h2>Testing the Manager Setup<a class="headerlink" href="#testing-the-manager-setup" title="Permalink to this headline"></a></h2>
+<p>This will test the <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Manager</span></a> to make sure it’s setup correctly, and does not need to
+connect to the <a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Server</span></a>, and therefore does not need a <code class="docutils literal notranslate"><span class="pre">server</span></code> block. It will still however submit
+<a class="reference internal" href="managers.html#term-Job"><span class="xref std std-term">jobs</span></a>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">common</span><span class="p">:</span>
+ <span class="nt">adapter</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">dask</span>
+ <span class="nt">tasks_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+ <span class="nt">cores_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
+ <span class="nt">memory_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
+
+<span class="nt">manager</span><span class="p">:</span>
+ <span class="nt">manager_name</span><span class="p">:</span> <span class="s">&quot;TestBox_NeverSeen_OnServer&quot;</span>
+ <span class="nt">test</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+ <span class="nt">ntests</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+
+<span class="nt">cluster</span><span class="p">:</span>
+ <span class="nt">scheduler</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">slurm</span>
+ <span class="nt">walltime</span><span class="p">:</span> <span class="s">&quot;01:00:00&quot;</span>
+
+<span class="nt">dask</span><span class="p">:</span>
+ <span class="nt">queue</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">default</span>
+</pre></div>
+</div>
+</section>
+<section id="running-commands-before-work">
+<h2>Running commands before work<a class="headerlink" href="#running-commands-before-work" title="Permalink to this headline"></a></h2>
+<p>Suppose there are some commands you want to run <em>before</em> starting the <a class="reference internal" href="managers.html#term-Worker"><span class="xref std std-term">Worker</span></a>, such as starting a Conda
+environment, or setting some environment variables. This lets you specify that. For this, we will run on a
+Sun Grid Engine (SGE) cluster, start a conda environment, and load a module.</p>
+<p>An important note about this one, we have now set <code class="docutils literal notranslate"><span class="pre">max_workers</span></code> to something larger than 1.
+Each <a class="reference internal" href="managers.html#term-Job"><span class="xref std std-term">Job</span></a> will still request 16 cores and 256 GB of memory to be evenly distributed between the
+4 <a class="reference internal" href="managers.html#term-Task"><span class="xref std std-term">tasks</span></a>, however, the <a class="reference internal" href="managers.html#term-Adapter"><span class="xref std std-term">Adapter</span></a> will <strong>attempt to start 5 independent</strong> <a class="reference internal" href="managers.html#term-Job"><span class="xref std std-term">jobs</span></a>, for a
+total of 80 cores, 1.280 TB of memory, distributed over 5 <a class="reference internal" href="managers.html#term-Worker"><span class="xref std std-term">Workers</span></a> collectively running 20 concurrent
+<a class="reference internal" href="managers.html#term-Task"><span class="xref std std-term">tasks</span></a>. If the <a class="reference internal" href="managers.html#term-Scheduler"><span class="xref std std-term">Scheduler</span></a> does not
+allow all of those <a class="reference internal" href="managers.html#term-Job"><span class="xref std std-term">jobs</span></a> to start, whether due to lack of resources or user limits, the
+<a class="reference internal" href="managers.html#term-Adapter"><span class="xref std std-term">Adapter</span></a> can still start fewer <a class="reference internal" href="managers.html#term-Job"><span class="xref std std-term">jobs</span></a>, each with 16 cores and 256 GB of memory, but <a class="reference internal" href="managers.html#term-Task"><span class="xref std std-term">Task</span></a>
+concurrency will change by blocks of 4 since the <a class="reference internal" href="managers.html#term-Worker"><span class="xref std std-term">Worker</span></a> in each <a class="reference internal" href="managers.html#term-Job"><span class="xref std std-term">Job</span></a> is configured to handle 4
+<a class="reference internal" href="managers.html#term-Task"><span class="xref std std-term">tasks</span></a> each.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">common</span><span class="p">:</span>
+ <span class="nt">adapter</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">dask</span>
+ <span class="nt">tasks_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
+ <span class="nt">cores_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">16</span>
+ <span class="nt">memory_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">256</span>
+ <span class="nt">max_workers</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+
+<span class="nt">server</span><span class="p">:</span>
+ <span class="nt">fractal_uri</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">localhost:7777</span>
+ <span class="nt">username</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Foo</span>
+ <span class="nt">password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">b4R</span>
+
+<span class="nt">manager</span><span class="p">:</span>
+ <span class="nt">manager_name</span><span class="p">:</span> <span class="s">&quot;GridEngine_OpenMPI_DaskWorker&quot;</span>
+ <span class="nt">test</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+
+<span class="nt">cluster</span><span class="p">:</span>
+ <span class="nt">scheduler</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sge</span>
+ <span class="nt">task_startup_commands</span><span class="p">:</span>
+     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">module load mpi/gcc/openmpi-1.6.4</span>
+     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">conda activate qcfmanager</span>
+ <span class="nt">walltime</span><span class="p">:</span> <span class="s">&quot;71:00:00&quot;</span>
+
+<span class="nt">dask</span><span class="p">:</span>
+ <span class="nt">queue</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">free64</span>
+</pre></div>
+</div>
+</section>
+<section id="additional-scheduler-flags">
+<h2>Additional Scheduler Flags<a class="headerlink" href="#additional-scheduler-flags" title="Permalink to this headline"></a></h2>
+<p>A <a class="reference internal" href="managers.html#term-Scheduler"><span class="xref std std-term">Scheduler</span></a> may ask you to set additional flags (or you might want to) when submitting a <a class="reference internal" href="managers.html#term-Job"><span class="xref std std-term">Job</span></a>.
+Maybe it’s a Sys. Admin enforced rule, maybe you want to pull from a specific account, or set something not
+interpreted for you in the <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Manager</span></a> or <a class="reference internal" href="managers.html#term-Adapter"><span class="xref std std-term">Adapter</span></a> (do tell us though if this is the case). This
+example sets additional flags on a PBS cluster such that the final <a class="reference internal" href="managers.html#term-Job"><span class="xref std std-term">Job</span></a> launch file will have
+<code class="docutils literal notranslate"><span class="pre">#PBS</span> <span class="pre">{my</span> <span class="pre">headers}</span></code>.</p>
+<p>This example also uses Parsl and sets a scratch directory.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">common</span><span class="p">:</span>
+ <span class="nt">adapter</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">parsl</span>
+ <span class="nt">tasks_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+ <span class="nt">cores_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">6</span>
+ <span class="nt">memory_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">64</span>
+ <span class="nt">max_workers</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+ <span class="nt">scratch_directory</span><span class="p">:</span> <span class="s">&quot;$TMPDIR&quot;</span>
+
+<span class="nt">server</span><span class="p">:</span>
+ <span class="nt">fractal_uri</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">localhost:7777</span>
+ <span class="nt">username</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Foo</span>
+ <span class="nt">password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">b4R</span>
+ <span class="nt">verify</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+
+<span class="nt">manager</span><span class="p">:</span>
+ <span class="nt">manager_name</span><span class="p">:</span> <span class="s">&quot;PBS_Parsl_MyPIGroupAccount_Manger&quot;</span>
+
+<span class="nt">cluster</span><span class="p">:</span>
+ <span class="nt">node_exclusivity</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+ <span class="nt">scheduler</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pbs</span>
+ <span class="nt">scheduler_options</span><span class="p">:</span>
+     <span class="p p-Indicator">-</span> <span class="s">&quot;-A</span><span class="nv"> </span><span class="s">MyPIsGroupAccount&quot;</span>
+ <span class="nt">task_startup_commands</span><span class="p">:</span>
+     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">conda activate qca</span>
+     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cd $WORK</span>
+ <span class="nt">walltime</span><span class="p">:</span> <span class="s">&quot;06:00:00&quot;</span>
+
+<span class="nt">parsl</span><span class="p">:</span>
+ <span class="nt">provider</span><span class="p">:</span>
+  <span class="nt">partition</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">normal_q</span>
+  <span class="nt">cmd_timeout</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">30</span>
+</pre></div>
+</div>
+</section>
+<section id="single-job-with-multiple-nodes-and-single-node-tasks-with-parsl-adapter">
+<h2>Single Job with Multiple Nodes and Single-Node Tasks with Parsl Adapter<a class="headerlink" href="#single-job-with-multiple-nodes-and-single-node-tasks-with-parsl-adapter" title="Permalink to this headline"></a></h2>
+<p>Leadership platforms prefer or require more than one node per Job request.
+The following configuration will request a Job with 256 nodes and place one Worker on each node.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">common</span><span class="p">:</span>
+    <span class="nt">adapter</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">parsl</span>
+    <span class="nt">tasks_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+    <span class="nt">cores_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">64</span>  <span class="c1"># Number of cores per compute node</span>
+    <span class="nt">max_workers</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">256</span>  <span class="c1"># Maximum number of workers deployed to compute nodes</span>
+    <span class="nt">nodes_per_job</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">256</span>
+
+<span class="nt">cluster</span><span class="p">:</span>
+    <span class="nt">node_exclusivity</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+    <span class="nt">task_startup_commands</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">module load miniconda-3/latest</span>  <span class="c1"># You will need to load the Python environment on startup</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">source activate qcfractal</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">export KMP_AFFINITY=disable</span>  <span class="c1"># KNL-related issue. Needed for multithreaded apps</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">export PATH=~/software/psi4/bin:$PATH</span>  <span class="c1"># Points to psi4 compiled for compute nodes</span>
+    <span class="nt">scheduler</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cobalt</span>  <span class="c1"># Varies depending on supercomputing center</span>
+
+<span class="nt">parsl</span><span class="p">:</span>
+    <span class="nt">provider</span><span class="p">:</span>
+        <span class="nt">queue</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">default</span>
+        <span class="nt">launcher</span><span class="p">:</span>  <span class="c1"># Defines the MPI launching function</span>
+            <span class="nt">launcher_class</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AprunLauncher</span>
+            <span class="nt">overrides</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-d 64</span>  <span class="c1"># Option for XC40 machines, allows workers to access 64 threads</span>
+        <span class="nt">init_blocks</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+        <span class="nt">min_blocks</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+        <span class="nt">account</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CSC249ADCD08</span>
+        <span class="nt">cmd_timeout</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">60</span>
+        <span class="nt">walltime</span><span class="p">:</span> <span class="s">&quot;3:00:00&quot;</span>
+</pre></div>
+</div>
+<p>Consult the <a class="reference external" href="https://parsl.readthedocs.io/en/stable/userguide/configuring.html">Parsl configuration docs</a>
+for information on how to configure the Launcher and Provider classes for your cluster.</p>
+</section>
+<section id="single-job-with-multiple-node-parallel-tasks-with-parsl-adapter">
+<h2>Single Job with Multiple, Node-Parallel Tasks with Parsl Adapter<a class="headerlink" href="#single-job-with-multiple-node-parallel-tasks-with-parsl-adapter" title="Permalink to this headline"></a></h2>
+<p>Running MPI-parallel tasks requires a similar configuration to the multiple nodes per job
+for the manager and also some extra work in defining the qcengine environment.
+The key difference that sets apart managers for node-parallel applications is that
+that <code class="docutils literal notranslate"><span class="pre">nodes_per_job</span></code> is set to more than one and
+Parsl uses <code class="docutils literal notranslate"><span class="pre">SimpleLauncher</span></code> to deploy a Parsl executor onto
+the batch/login node once a job is allocated.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">common</span><span class="p">:</span>
+    <span class="nt">adapter</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">parsl</span>
+    <span class="nt">tasks_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+    <span class="nt">cores_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">16</span>  <span class="c1"># Number of cores used on each compute node</span>
+    <span class="nt">max_workers</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">128</span>
+    <span class="nt">memory_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">180</span>  <span class="c1"># Summary for the amount per compute node</span>
+    <span class="nt">nodes_per_job</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">128</span>
+    <span class="nt">nodes_per_task</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>  <span class="c1"># Number of nodes to use for each task</span>
+    <span class="nt">cores_per_rank</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>  <span class="c1"># Number of cores to each of each MPI rank</span>
+
+<span class="nt">cluster</span><span class="p">:</span>
+    <span class="nt">node_exclusivity</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+    <span class="nt">task_startup_commands</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">module load miniconda-3/latest</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">source activate qcfractal</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">export PATH=&quot;/soft/applications/nwchem/6.8/bin/:$PATH&quot;</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">which nwchem</span>
+    <span class="nt">scheduler</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cobalt</span>
+
+<span class="nt">parsl</span><span class="p">:</span>
+    <span class="nt">provider</span><span class="p">:</span>
+        <span class="nt">queue</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">default</span>
+        <span class="nt">launcher</span><span class="p">:</span>
+            <span class="nt">launcher_class</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SimpleLauncher</span>
+        <span class="nt">init_blocks</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+        <span class="nt">min_blocks</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+        <span class="nt">account</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CSC249ADCD08</span>
+        <span class="nt">cmd_timeout</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">60</span>
+        <span class="nt">walltime</span><span class="p">:</span> <span class="s">&quot;0:30:00&quot;</span>
+</pre></div>
+</div>
+<p>The configuration that describes how to launch the tasks must be written at a <code class="docutils literal notranslate"><span class="pre">qcengine.yaml</span></code>
+file. See <a class="reference external" href="https://qcengine.readthedocs.io/en/stable/environment.html">QCEngine docs</a>
+for possible locations to place the <code class="docutils literal notranslate"><span class="pre">qcengine.yaml</span></code> file and full descriptions of the
+configuration option.
+One key option for the <code class="docutils literal notranslate"><span class="pre">qcengine.yaml</span></code> file is the description of how to launch MPI
+tasks, <code class="docutils literal notranslate"><span class="pre">mpiexec_command</span></code>. For example, many systems use <code class="docutils literal notranslate"><span class="pre">mpirun</span></code>
+(e.g., <a class="reference external" href="https://www.open-mpi.org/doc/v4.0/man1/mpirun.1.php">OpenMPI</a>).
+An example configuration a Cray supercomputer is:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">all</span><span class="p">:</span>
+  <span class="nt">hostname_pattern</span><span class="p">:</span> <span class="s">&quot;*&quot;</span>
+  <span class="nt">scratch_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./scratch</span>  <span class="c1"># Must be on the global filesystem</span>
+  <span class="nt">is_batch_node</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>  <span class="c1"># Indicates that `aprun` must be used for all QC code invocations</span>
+  <span class="nt">mpiexec_command</span><span class="p">:</span> <span class="s">&quot;aprun</span><span class="nv"> </span><span class="s">-n</span><span class="nv"> </span><span class="s">{total_ranks}</span><span class="nv"> </span><span class="s">-N</span><span class="nv"> </span><span class="s">{ranks_per_node}</span><span class="nv"> </span><span class="s">-C</span><span class="nv"> </span><span class="s">-cc</span><span class="nv"> </span><span class="s">depth</span><span class="nv"> </span><span class="s">--env</span><span class="nv"> </span><span class="s">CRAY_OMP_CHECK_AFFINITY=TRUE</span><span class="nv"> </span><span class="s">--env</span><span class="nv"> </span><span class="s">OMP_NUM_THREADS={cores_per_rank}</span><span class="nv"> </span><span class="s">--env</span><span class="nv"> </span><span class="s">MKL_NUM_THREADS={cores_per_rank}</span>
+  <span class="s">-d</span><span class="nv"> </span><span class="s">{cores_per_rank}</span><span class="nv"> </span><span class="s">-j</span><span class="nv"> </span><span class="s">1&quot;</span>
+  <span class="nt">jobs_per_node</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+  <span class="nt">ncores</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">64</span>
+</pre></div>
+</div>
+<p>Note that there are several variables in the <code class="docutils literal notranslate"><span class="pre">mpiexec_command</span></code> that describe how to insert parallel configurations into the
+command: <code class="docutils literal notranslate"><span class="pre">total_ranks</span></code>, <code class="docutils literal notranslate"><span class="pre">ranks_per_node</span></code>, and <code class="docutils literal notranslate"><span class="pre">cores_per_rank</span></code>.
+Each of these values are computed based on the number of cores per node, the number of nodes per application
+and the number of cores per MPI rank, which are all defined in the Manager settings file.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="managers_hpc.html" class="btn btn-neutral float-left" title="Configuration for High-Performance Computing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="managers_faq.html" class="btn btn-neutral float-right" title="Queue Manager Frequent Questions and Issues" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2021, The Molecular Sciences Software Institute.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

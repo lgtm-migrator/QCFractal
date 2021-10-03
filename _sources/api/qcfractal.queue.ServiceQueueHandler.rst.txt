@@ -1,0 +1,21 @@
+ServiceQueueHandler
+===================
+
+.. currentmodule:: qcfractal.queue
+
+.. autoclass:: ServiceQueueHandler
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~ServiceQueueHandler.get
+      ~ServiceQueueHandler.post
+      ~ServiceQueueHandler.put
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: get
+   .. automethod:: post
+   .. automethod:: put

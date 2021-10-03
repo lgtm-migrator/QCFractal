@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setup Overview &mdash; QCFractal 0+untagged.1.ge9cee03 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Server Setup" href="setup_server.html" />
+    <link rel="prev" title="Example" href="quickstart.html" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> QCFractal
+          </a>
+              <div class="version">
+                0+untagged.1.ge9cee03
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install QCFractal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Example</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Setup Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#common-use-cases">Common Use Cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#quickstart-setups">Quickstart Setups</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#single-workstation">Single Workstation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#private-cluster">Private Cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shared-clusters-supercomputers-and-multiple-clusters">Shared Clusters, Supercomputers, and Multiple Clusters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloud-compute">Cloud Compute</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#other-use-cases">Other Use Cases</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="setup_server.html">Server Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_compute.html">Manager Setup</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Records Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="procedures.html">Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flow.html">Fractal Call Flowcharts</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manager Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="managers.html">Fractal Queue Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_config_api.html">Queue Manager API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_hpc.html">Configuration for High-Performance Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_samples.html">Queue Manager Example YAML Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_faq.html">Queue Manager Frequent Questions and Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_detailed.html">Detailed Manager Information</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server CLI and Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="server_init.html">Fractal Server Init</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_config.html">Fractal Server Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_start.html">Fractal Server Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_user.html">Fractal Server User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_upgrade.html">Fractal Server Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_view.html">Server-side Dataset Views</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="qcarchive_overview.html">QCArchive Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">QCFractal API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database_design.html">Database Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_guidelines.html">Development Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">QCFractal</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Setup Overview</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/setup_quickstart.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="setup-overview">
+<h1>Setup Overview<a class="headerlink" href="#setup-overview" title="Permalink to this headline"></a></h1>
+<p>QCFractal comprises two components:</p>
+<ol class="arabic simple">
+<li><p>The <a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Server</span></a> (<code class="docutils literal notranslate"><span class="pre">qcfractal-server</span></code>), which accepts compute and data queries and maintains a database of <a class="reference internal" href="managers.html#term-Task"><span class="xref std std-term">tasks</span></a> and results. The <a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Server</span></a> should be run continuously on a persistent machine.</p></li>
+<li><p>One or more <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Managers</span></a> (<code class="docutils literal notranslate"><span class="pre">qcfractal-manager</span></code>). The <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Managers</span></a> pull work from the <a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Server</span></a>, use attached compute resources to complete the work, and report results back to the server. <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Managers</span></a> may be turned off and on at any time. <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Managers</span></a> connect to compute resources through <a class="reference internal" href="managers.html#term-Adapter"><span class="xref std std-term">Adapters</span></a>.</p></li>
+</ol>
+<p>In the <a class="reference internal" href="quickstart.html"><span class="doc">Quickstart Tutorial</span></a>, the above components were combined within a python environment using <code class="docutils literal notranslate"><span class="pre">FractalSnowflake</span></code>.
+In general, the <a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Server</span></a> and <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Manager(s)</span></a> are run separately in different processes, often on different machines.
+For detailed information about the relationship between <a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Server</span></a> and <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Manager</span></a>, see <a class="reference internal" href="managers.html"><span class="doc">Fractal Queue Managers</span></a>.</p>
+<section id="common-use-cases">
+<h2>Common Use Cases<a class="headerlink" href="#common-use-cases" title="Permalink to this headline"></a></h2>
+<p>The table below lists some common use cases for QCFractal:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Use case</p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">qcfractal-server</span></code> location</p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">qcfractal-manager</span></code> location</p></th>
+<th class="head"><p>Recommended manager</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="quickstart.html"><span class="doc">Demonstration/Exploration</span></a></p></td>
+<td><p>Snowflake</p></td>
+<td><p>Snowflake</p></td>
+<td><p>Snowflake</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quickstart-single-workstation"><span class="std std-ref">Single Workstation</span></a></p></td>
+<td><p>Local</p></td>
+<td><p>Local</p></td>
+<td><p>Pool</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#quickstart-private-cluster"><span class="std std-ref">Private Cluster</span></a></p></td>
+<td><p>Head node</p></td>
+<td><p>Head node</p></td>
+<td><p>Parsl</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quickstart-shared-cluster"><span class="std std-ref">Shared Cluster/Supercomputer</span></a></p></td>
+<td><p>Personal server, head node (if permitted)</p></td>
+<td><p>Head node</p></td>
+<td><p>Parsl</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#quickstart-shared-cluster"><span class="std std-ref">Multiple Clusters</span></a></p></td>
+<td><p>Personal server</p></td>
+<td><p>Head node of each cluster</p></td>
+<td><p>Parsl</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quickstart-k8s"><span class="std std-ref">Cloud Compute</span></a></p></td>
+<td><p>Personal server or cloud instance</p></td>
+<td><p>Docker container</p></td>
+<td><p>Pool</p></td>
+</tr>
+</tbody>
+</table>
+<p>QCFractal is highly adaptable and is not limited to the above use cases.
+For example, it possible to mix local, cluster, supercomputer, and cloud <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Managers</span></a> simultaneously.
+In addition, a cloud instance may provide a good option for running <code class="docutils literal notranslate"><span class="pre">qcfractal-server</span></code> when a persistent web-exposed server is not otherwise available.</p>
+</section>
+<section id="quickstart-setups">
+<h2>Quickstart Setups<a class="headerlink" href="#quickstart-setups" title="Permalink to this headline"></a></h2>
+<p>This section presents quickstart setup guides for the above common use cases.
+The guides assume that QCFractal has been installed (see <a class="reference internal" href="install.html"><span class="doc">Install QCFractal</span></a>).
+General guides are also available:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="setup_server.html"><span class="doc">Server Setup</span></a></p></li>
+<li><p><a class="reference internal" href="setup_compute.html"><span class="doc">Manager Setup</span></a></p></li>
+</ul>
+<section id="single-workstation">
+<span id="quickstart-single-workstation"></span><h3>Single Workstation<a class="headerlink" href="#single-workstation" title="Permalink to this headline"></a></h3>
+<p>This quickstart guide addresses QCFractal setup on a single computer which will be used for the <a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Server</span></a>, <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Manager</span></a>, user client, and compute.
+On the workstation, initialize the <a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Server</span></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qcfractal</span><span class="o">-</span><span class="n">server</span> <span class="n">init</span>
+</pre></div>
+</div>
+<p>Next, start the <a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Server</span></a> and ProcessPoolExecutor <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Manager</span></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nohup</span> <span class="n">qcfractal</span><span class="o">-</span><span class="n">server</span> <span class="n">start</span> <span class="o">--</span><span class="n">local</span><span class="o">-</span><span class="n">manager</span> <span class="mi">1</span> <span class="o">&amp;</span>
+</pre></div>
+</div>
+<p>The second command starts <code class="docutils literal notranslate"><span class="pre">qcfractal-server</span></code> in the background.
+It also starts one <a class="reference internal" href="managers.html#term-Worker"><span class="xref std std-term">Worker</span></a> which will pull <a class="reference internal" href="managers.html#term-Task"><span class="xref std std-term">tasks</span></a> from the <a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Server</span></a> and run them.</p>
+<p>Test if everything is setup by running a Hartree-Fock calculation on a single hydrogen molecule,
+as in the <a class="reference internal" href="quickstart.html"><span class="doc">Example</span></a> (note this requires <code class="docutils literal notranslate"><span class="pre">psi4</span></code>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">qcfractal.interface</span> <span class="k">as</span> <span class="nn">ptl</span>
+
+<span class="c1"># Note that server TLS verification is turned off (verify=False) since all components are run locally.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">client</span> <span class="o">=</span> <span class="n">ptl</span><span class="o">.</span><span class="n">FractalClient</span><span class="p">(</span><span class="n">address</span><span class="o">=</span><span class="s2">&quot;localhost:7777&quot;</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mol</span> <span class="o">=</span> <span class="n">ptl</span><span class="o">.</span><span class="n">Molecule</span><span class="p">(</span><span class="n">symbols</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;H&quot;</span><span class="p">,</span> <span class="s2">&quot;H&quot;</span><span class="p">],</span> <span class="n">geometry</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mol_id</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">add_molecules</span><span class="p">([</span><span class="n">mol</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">r</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">add_compute</span><span class="p">(</span><span class="s2">&quot;psi4&quot;</span><span class="p">,</span> <span class="s2">&quot;HF&quot;</span><span class="p">,</span> <span class="s2">&quot;STO-3G&quot;</span><span class="p">,</span> <span class="s2">&quot;energy&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">[</span><span class="n">mol_id</span><span class="p">])</span>
+
+<span class="c1"># Wait a minute for the job to complete</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">proc</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">query_procedures</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">r</span><span class="o">.</span><span class="n">ids</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">proc</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ResultRecord</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;0&#39;</span> <span class="n">status</span><span class="o">=</span><span class="s1">&#39;COMPLETE&#39;</span><span class="p">)</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">proc</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">scf_total_energy</span><span class="p">)</span>
+<span class="o">-</span><span class="mf">0.6865598095254312</span>
+</pre></div>
+</div>
+</section>
+<section id="private-cluster">
+<span id="quickstart-private-cluster"></span><h3>Private Cluster<a class="headerlink" href="#private-cluster" title="Permalink to this headline"></a></h3>
+<p>This quickstart guide addresses QCFractal setup on a private cluster comprising a head node and compute nodes, with a <a class="reference internal" href="managers.html#term-Scheduler"><span class="xref std std-term">Scheduler</span></a> such as SLURM, PBS, or Torque.
+This guide requires <a class="reference external" href="https://parsl.readthedocs.io/en/stable/quickstart.html">Parsl</a> which may be installed with <code class="docutils literal notranslate"><span class="pre">pip</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code>.</p>
+<p>Begin by initializing the <a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Server</span></a> on the cluster head node:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qcfractal</span><span class="o">-</span><span class="n">server</span> <span class="n">init</span>
+</pre></div>
+</div>
+<p>Next, start the <a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Server</span></a> in the background:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nohup</span> <span class="n">qcfractal</span><span class="o">-</span><span class="n">server</span> <span class="n">start</span> <span class="o">&amp;</span>
+</pre></div>
+</div>
+<p>The <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Manager</span></a> must be configured before use. Create a configuration file (e.g. in <code class="docutils literal notranslate"><span class="pre">~/.qca/qcfractal/my_manager.yaml</span></code>) based on the following template:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">common</span><span class="p">:</span>
+ <span class="nt">adapter</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">parsl</span>
+ <span class="nt">tasks_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+ <span class="nt">cores_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">6</span>
+ <span class="nt">memory_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">64</span>
+ <span class="nt">max_workers</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+ <span class="nt">scratch_directory</span><span class="p">:</span> <span class="s">&quot;$TMPDIR&quot;</span>
+
+<span class="nt">cluster</span><span class="p">:</span>
+ <span class="nt">node_exclusivity</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+ <span class="nt">scheduler</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">slurm</span>
+
+<span class="nt">parsl</span><span class="p">:</span>
+ <span class="nt">provider</span><span class="p">:</span>
+  <span class="nt">partition</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CLUSTER</span>
+  <span class="nt">cmd_timeout</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">30</span>
+</pre></div>
+</div>
+<p>You may need to modify these values to match the particulars of your cluster. In particular:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">scheduler</span></code> and <code class="docutils literal notranslate"><span class="pre">partition</span></code> options should be set to match the details of your <a class="reference internal" href="managers.html#term-Scheduler"><span class="xref std std-term">Scheduler</span></a> (e.g. SLURM, PBS, Torque).</p></li>
+<li><p>Options related to <a class="reference internal" href="managers.html#term-Worker"><span class="xref std std-term">Workers</span></a> should be set appropriately for the compute node on your cluster.
+Note that Parsl requires that full nodes be allocated to each <a class="reference internal" href="managers.html#term-Worker"><span class="xref std std-term">Worker</span></a> (i.e. <code class="docutils literal notranslate"><span class="pre">node_exclusivity:</span> <span class="pre">True</span></code>).</p></li>
+</ul>
+<p>For more information on <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Manager</span></a> configuration, see <a class="reference internal" href="managers.html"><span class="doc">Fractal Queue Managers</span></a> and <a class="reference internal" href="managers_samples.html"><span class="doc">Queue Manager Example YAML Files</span></a>.</p>
+<p>Finally, start the <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Manager</span></a> in the background on the cluster head node:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nohup</span> <span class="n">qcfractal</span><span class="o">-</span><span class="n">manager</span> <span class="o">--</span><span class="n">config</span><span class="o">-</span><span class="n">file</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">config</span> <span class="n">YAML</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">verify</span><span class="o">=</span><span class="kc">False</span> <span class="o">&amp;</span>
+</pre></div>
+</div>
+<p>Note that TLS certificate verification is disabled (<code class="docutils literal notranslate"><span class="pre">--verify=False</span></code>) because the <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Manager</span></a> and <a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Server</span></a> are both run on the head node.</p>
+<p>Test if everything is setup by running a Hartree-Fock calculation on a single hydrogen molecule,
+as in the <a class="reference internal" href="quickstart.html"><span class="doc">Example</span></a> (note this requires <code class="docutils literal notranslate"><span class="pre">psi4</span></code>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">qcfractal.interface</span> <span class="k">as</span> <span class="nn">ptl</span>
+
+<span class="c1"># Note that server TLS verification is turned off (verify=False) since all components are run locally.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">client</span> <span class="o">=</span> <span class="n">ptl</span><span class="o">.</span><span class="n">FractalClient</span><span class="p">(</span><span class="n">address</span><span class="o">=</span><span class="s2">&quot;localhost:7777&quot;</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mol</span> <span class="o">=</span> <span class="n">ptl</span><span class="o">.</span><span class="n">Molecule</span><span class="p">(</span><span class="n">symbols</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;H&quot;</span><span class="p">,</span> <span class="s2">&quot;H&quot;</span><span class="p">],</span> <span class="n">geometry</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mol_id</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">add_molecules</span><span class="p">([</span><span class="n">mol</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">r</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">add_compute</span><span class="p">(</span><span class="s2">&quot;psi4&quot;</span><span class="p">,</span> <span class="s2">&quot;HF&quot;</span><span class="p">,</span> <span class="s2">&quot;STO-3G&quot;</span><span class="p">,</span> <span class="s2">&quot;energy&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">[</span><span class="n">mol_id</span><span class="p">])</span>
+
+<span class="c1"># Wait a minute for the job to complete</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">proc</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">query_procedures</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">r</span><span class="o">.</span><span class="n">ids</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">proc</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ResultRecord</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;0&#39;</span> <span class="n">status</span><span class="o">=</span><span class="s1">&#39;COMPLETE&#39;</span><span class="p">)</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">proc</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">scf_total_energy</span><span class="p">)</span>
+<span class="o">-</span><span class="mf">0.6865598095254312</span>
+</pre></div>
+</div>
+</section>
+<section id="shared-clusters-supercomputers-and-multiple-clusters">
+<span id="quickstart-shared-cluster"></span><h3>Shared Clusters, Supercomputers, and Multiple Clusters<a class="headerlink" href="#shared-clusters-supercomputers-and-multiple-clusters" title="Permalink to this headline"></a></h3>
+<p>This quickstart guide addresses QCFractal setup on one or more shared cluster(s).
+The <a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Server</span></a> should be set up on a persistent server for which you have permission to expose ports.
+For example, this may be a dedicated webserver, the head node of a private cluster, or a cloud instance.
+The <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Manager</span></a> should be set up on each shared cluster.
+In most cases, the <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Manager</span></a> may be run on the head node;
+contact your system administrator if you are unsure.
+This guide requires <a class="reference external" href="https://parsl.readthedocs.io/en/stable/quickstart.html">Parsl</a> to be installed for the <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Manager</span></a>. It may be installed with <code class="docutils literal notranslate"><span class="pre">pip</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code>.</p>
+<p>Begin by initializing the <a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Server</span></a> on your persistent server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qcfractal</span><span class="o">-</span><span class="n">server</span> <span class="n">init</span>
+</pre></div>
+</div>
+<p>The QCFractal server receives connections from <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Managers</span></a> and clients on TCP port 7777.
+You may optionally specify the <code class="docutils literal notranslate"><span class="pre">--port</span></code> option to choose a custom port.
+You may need to configure your firewall to allow access to this port.</p>
+<p>Because the <a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Server</span></a> will be exposed to the internet,
+security should be enabled to control access.
+Enable security by changing the YAML file (default: <code class="docutils literal notranslate"><span class="pre">~/.qca/qcfractal/qcfractal_config.yaml</span></code>)
+<code class="docutils literal notranslate"><span class="pre">fractal.security</span></code> option to <code class="docutils literal notranslate"><span class="pre">local</span></code>:</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gd">- security: null</span>
+<span class="gi">+ security: local</span>
+</pre></div>
+</div>
+<p>Start the <a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Server</span></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nohup</span> <span class="n">qcfractal</span><span class="o">-</span><span class="n">server</span> <span class="n">start</span> <span class="o">&amp;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may optionally provide a TLS certificate to enable host verification for the <a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Server</span></a>
+using the <code class="docutils literal notranslate"><span class="pre">--tls-cert</span></code> and <code class="docutils literal notranslate"><span class="pre">--tls-key</span></code> options.
+If a TLS certificate is not provided, communications with the server will still be encrypted,
+but host verification will be unavailable
+(and <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Managers</span></a> and clients will need to specify <code class="docutils literal notranslate"><span class="pre">verify=False</span></code>).</p>
+</div>
+<p>Next, add users for admin, the <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Manager</span></a>, and a user
+(you may choose whatever usernames you like):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qcfractal</span><span class="o">-</span><span class="n">server</span> <span class="n">user</span> <span class="n">add</span> <span class="n">admin</span> <span class="o">--</span><span class="n">permissions</span> <span class="n">admin</span>
+<span class="n">qcfractal</span><span class="o">-</span><span class="n">server</span> <span class="n">user</span> <span class="n">add</span> <span class="n">manager</span> <span class="o">--</span><span class="n">permissions</span> <span class="n">queue</span>
+<span class="n">qcfractal</span><span class="o">-</span><span class="n">server</span> <span class="n">user</span> <span class="n">add</span> <span class="n">user</span> <span class="o">--</span><span class="n">permissions</span> <span class="n">read</span> <span class="n">write</span> <span class="n">compute</span>
+</pre></div>
+</div>
+<p>Passwords will be automatically generated and printed. You may instead specify a password with the <code class="docutils literal notranslate"><span class="pre">--password</span></code> option.
+See <a class="reference internal" href="server_user.html"><span class="doc">Fractal Server User</span></a> for more information.</p>
+<p><a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Managers</span></a> should be set up on each shared cluster.
+In most cases, the <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Manager</span></a> may be run on the head node;
+contact your system administrator if you are unsure.</p>
+<p>The <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Manager</span></a> must be configured before use.
+Create a configuration file (e.g. in <code class="docutils literal notranslate"><span class="pre">~/.qca/qcfractal/my_manager.yaml</span></code>) based on the following template:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">common</span><span class="p">:</span>
+ <span class="nt">adapter</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">parsl</span>
+ <span class="nt">tasks_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+ <span class="nt">cores_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">6</span>
+ <span class="nt">memory_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">64</span>
+ <span class="nt">max_workers</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+ <span class="nt">scratch_directory</span><span class="p">:</span> <span class="s">&quot;$TMPDIR&quot;</span>
+
+<span class="nt">cluster</span><span class="p">:</span>
+ <span class="nt">node_exclusivity</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+ <span class="nt">scheduler</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">slurm</span>
+
+<span class="nt">parsl</span><span class="p">:</span>
+ <span class="nt">provider</span><span class="p">:</span>
+  <span class="nt">partition</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CLUSTER</span>
+  <span class="nt">cmd_timeout</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">30</span>
+</pre></div>
+</div>
+<p>You may need to modify these values to match the particulars of each cluster. In particular:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">scheduler</span></code> and <code class="docutils literal notranslate"><span class="pre">partition</span></code> options should be set to match the details of your <a class="reference internal" href="managers.html#term-Scheduler"><span class="xref std std-term">Scheduler</span></a> (e.g. SLURM, PBS, Torque).</p></li>
+<li><p>Options related to <a class="reference internal" href="managers.html#term-Worker"><span class="xref std std-term">Workers</span></a> should be set appropriately for the compute node on your cluster.
+Note that Parsl requires that full nodes be allocated to each <a class="reference internal" href="managers.html#term-Worker"><span class="xref std std-term">Worker</span></a> (i.e. <code class="docutils literal notranslate"><span class="pre">node_exclusivity:</span> <span class="pre">True</span></code>).</p></li>
+</ul>
+<p>For more information on <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Manager</span></a> configuration, see <a class="reference internal" href="managers.html"><span class="doc">Fractal Queue Managers</span></a> and <a class="reference internal" href="managers_samples.html"><span class="doc">Queue Manager Example YAML Files</span></a>.</p>
+<p>Finally, start the <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Manager</span></a> in the background on each cluster head node:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nohup</span> <span class="n">qcfractal</span><span class="o">-</span><span class="n">manager</span> <span class="o">--</span><span class="n">config</span><span class="o">-</span><span class="n">file</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">config</span> <span class="n">YAML</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">fractal</span><span class="o">-</span><span class="n">uri</span> <span class="o">&lt;</span><span class="n">URL</span><span class="p">:</span><span class="n">port</span> <span class="n">of</span> <span class="n">Server</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">username</span> <span class="n">manager</span> <span class="o">-</span><span class="n">password</span> <span class="o">&lt;</span><span class="n">password</span><span class="o">&gt;</span> <span class="o">&amp;</span>
+</pre></div>
+</div>
+<p>If you did not specify a TLS certificate in the <code class="docutils literal notranslate"><span class="pre">qcfractal-server</span> <span class="pre">start</span></code> step, you will additionally need to specify <code class="docutils literal notranslate"><span class="pre">--verify</span> <span class="pre">False</span></code> in the above command.</p>
+<p>Test if everything is setup by running a Hartree-Fock calculation on a single hydrogen molecule,
+as in the <a class="reference internal" href="quickstart.html"><span class="doc">Example</span></a>
+(note this requires <code class="docutils literal notranslate"><span class="pre">psi4</span></code> to be installed on at least one compute resource).
+This test may be run from any machine.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">qcfractal.interface</span> <span class="k">as</span> <span class="nn">ptl</span>
+
+<span class="c1"># Note that server TLS verification may need to be turned off if (verify=False).</span>
+<span class="c1"># Note that the Server URL and the password for user will need to be filled in.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">client</span> <span class="o">=</span> <span class="n">ptl</span><span class="o">.</span><span class="n">FractalClient</span><span class="p">(</span><span class="n">address</span><span class="o">=</span><span class="s2">&quot;URL:Port&quot;</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">&quot;***&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mol</span> <span class="o">=</span> <span class="n">ptl</span><span class="o">.</span><span class="n">Molecule</span><span class="p">(</span><span class="n">symbols</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;H&quot;</span><span class="p">,</span> <span class="s2">&quot;H&quot;</span><span class="p">],</span> <span class="n">geometry</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mol_id</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">add_molecules</span><span class="p">([</span><span class="n">mol</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">r</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">add_compute</span><span class="p">(</span><span class="s2">&quot;psi4&quot;</span><span class="p">,</span> <span class="s2">&quot;HF&quot;</span><span class="p">,</span> <span class="s2">&quot;STO-3G&quot;</span><span class="p">,</span> <span class="s2">&quot;energy&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">[</span><span class="n">mol_id</span><span class="p">])</span>
+
+<span class="c1"># Wait a minute for the job to complete</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">proc</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">query_procedures</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">r</span><span class="o">.</span><span class="n">ids</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">proc</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ResultRecord</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;0&#39;</span> <span class="n">status</span><span class="o">=</span><span class="s1">&#39;COMPLETE&#39;</span><span class="p">)</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">proc</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">scf_total_energy</span><span class="p">)</span>
+<span class="o">-</span><span class="mf">0.6865598095254312</span>
+</pre></div>
+</div>
+</section>
+<section id="cloud-compute">
+<span id="quickstart-k8s"></span><h3>Cloud Compute<a class="headerlink" href="#cloud-compute" title="Permalink to this headline"></a></h3>
+<p>This quickstart guide addresses QCFractal setup using cloud resources for computation.
+The <a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Server</span></a> should be set up on a persistent server for which you have permission to expose ports.
+For example, this may be a dedicated webserver, the head node of a private cluster, or a cloud instance.
+The <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Manager</span></a> will be set up on a <a class="reference external" href="https://kubernetes.io/">Kubernetes</a> cluster as a
+<a class="reference external" href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">Deployment</a>.</p>
+<p>Begin by initializing the <a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Server</span></a> on your persistent server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qcfractal</span><span class="o">-</span><span class="n">server</span> <span class="n">init</span>
+</pre></div>
+</div>
+<p>The QCFractal server receives connections from <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Managers</span></a> and clients on TCP port 7777.
+You may optionally specify the <code class="docutils literal notranslate"><span class="pre">--port</span></code> option to choose a custom port.
+You may need to configure your firewall to allow access to this port.</p>
+<p>Because the <a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Server</span></a> will be exposed to the internet,
+security should be enabled to control access.
+Enable security by changing the YAML file (default: <code class="docutils literal notranslate"><span class="pre">~/.qca/qcfractal/qcfractal_config.yaml</span></code>)
+<code class="docutils literal notranslate"><span class="pre">fractal.security</span></code> option to <code class="docutils literal notranslate"><span class="pre">local</span></code>:</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gd">- security: null</span>
+<span class="gi">+ security: local</span>
+</pre></div>
+</div>
+<p>Start the <a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Server</span></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nohup</span> <span class="n">qcfractal</span><span class="o">-</span><span class="n">server</span> <span class="n">start</span> <span class="o">&amp;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may optionally provide a TLS certificate to enable host verification for the <a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Server</span></a>
+using the <code class="docutils literal notranslate"><span class="pre">--tls-cert</span></code> and <code class="docutils literal notranslate"><span class="pre">--tls-key</span></code> options.
+If a TLS certificate is not provided, communications with the server will still be encrypted,
+but host verification will be unavailable
+(and <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Managers</span></a> and clients will need to specify <code class="docutils literal notranslate"><span class="pre">verify=False</span></code>).</p>
+</div>
+<p>Next, add users for admin, the <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Manager</span></a>, and a user
+(you may choose whatever usernames you like):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qcfractal</span><span class="o">-</span><span class="n">server</span> <span class="n">user</span> <span class="n">add</span> <span class="n">admin</span> <span class="o">--</span><span class="n">permissions</span> <span class="n">admin</span>
+<span class="n">qcfractal</span><span class="o">-</span><span class="n">server</span> <span class="n">user</span> <span class="n">add</span> <span class="n">manager</span> <span class="o">--</span><span class="n">permissions</span> <span class="n">queue</span>
+<span class="n">qcfractal</span><span class="o">-</span><span class="n">server</span> <span class="n">user</span> <span class="n">add</span> <span class="n">user</span> <span class="o">--</span><span class="n">permissions</span> <span class="n">read</span> <span class="n">write</span> <span class="n">compute</span>
+</pre></div>
+</div>
+<p>Passwords will be automatically generated and printed. You may instead specify a password with the <code class="docutils literal notranslate"><span class="pre">--password</span></code> option.
+See <a class="reference internal" href="server_user.html"><span class="doc">Fractal Server User</span></a> for more information.</p>
+<p>The <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Manager</span></a> will be set up on a <a class="reference external" href="https://kubernetes.io/">Kubernetes</a> cluster as a
+<a class="reference external" href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">Deployment</a>, running
+Docker images which each contain QCEngine, QCFractal, and relevant programs. In this guide,
+we use the <a class="reference external" href="https://cloud.docker.com/u/molssi/repository/docker/molssi/qcarchive_worker_openff">molssi/qcarchive_worker_openff</a>
+Docker image. For execution, this image includes:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.psicode.org">Psi4</a>, <a class="reference external" href="https://github.com/loriab/dftd3">dftd3</a>, and <a class="reference external" href="https://github.com/Chandemonium/MP2D">MP2D</a></p></li>
+<li><p><a class="reference external" href="https://www.rdkit.org">RDKit</a></p></li>
+<li><p><a class="reference external" href="https://github.com/leeping/geomeTRIC">geomeTRIC</a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may wish to set up a custom Docker image for your specific use case. The Dockerfile corresponding to the
+<a class="reference external" href="https://cloud.docker.com/u/molssi/repository/docker/molssi/qcarchive_worker_openff">molssi/qcarchive_worker_openff</a>
+image is included below as an example.</p>
+<div class="highlight-Docker notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span> <span class="s">continuumio/miniconda3</span>
+<span class="k">RUN</span> conda install -c psi4/label/dev -c conda-forge psi4 dftd3 mp2d qcengine qcfractal rdkit geometric
+<span class="k">RUN</span> groupadd -g <span class="m">999</span> qcfractal <span class="o">&amp;&amp;</span> <span class="se">\</span>
+    useradd -m -r -u <span class="m">999</span> -g qcfractal qcfractal
+<span class="k">USER</span><span class="s"> qcfractal</span>
+<span class="k">ENV</span> PATH /opt/local/conda/envs/base/bin/:<span class="nv">$PATH</span>
+<span class="k">ENTRYPOINT</span> qcfractal-manager --config-file /etc/qcfractal-manager/manager.yaml
+</pre></div>
+</div>
+</div>
+<p>Create a manager configuration file (e.g. <code class="docutils literal notranslate"><span class="pre">manager.yaml</span></code>) following the template below.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">common</span><span class="p">:</span>
+ <span class="nt">adapter</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pool</span>
+ <span class="nt">tasks_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+ <span class="nt">cores_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>  <span class="c1"># CHANGEME number of cores/worker</span>
+ <span class="nt">memory_per_worker</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">16</span>  <span class="c1"># CHANGEME memory/worker in Gb</span>
+ <span class="nt">max_workers</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+ <span class="nt">scratch_directory</span><span class="p">:</span> <span class="s">&quot;$TMPDIR&quot;</span>
+
+<span class="nt">server</span><span class="p">:</span>
+ <span class="nt">fractal_uri</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">api.qcarchive.molssi.org:443</span>  <span class="c1"># CHANGEME URI of your server goes here</span>
+ <span class="nt">username</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">manager</span>
+ <span class="nt">password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">foo</span>  <span class="c1"># CHANGEME manager password goes here</span>
+ <span class="nt">verify</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>  <span class="c1"># False if TLS was skipped earlier</span>
+
+<span class="nt">manager</span><span class="p">:</span>
+ <span class="nt">manager_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MyManager</span>  <span class="c1"># CHANGEME name your manager</span>
+ <span class="nt">queue_tag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">null</span>
+ <span class="nt">log_file_prefix</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">null</span>
+ <span class="nt">update_frequency</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">30</span>
+ <span class="nt">test</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</pre></div>
+</div>
+<p>Add the manager configuration as a secret in Kubernetes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">create</span> <span class="n">secret</span> <span class="n">generic</span> <span class="n">manager</span><span class="o">-</span><span class="n">config</span><span class="o">-</span><span class="n">yaml</span> <span class="o">--</span><span class="n">from</span><span class="o">-</span><span class="n">file</span><span class="o">=</span><span class="n">manager</span><span class="o">.</span><span class="n">yaml</span>
+</pre></div>
+</div>
+<p>This allows us to pass the manager configuration into the Docker container securely.</p>
+<p>Next, create a Kubernetes deployment configuration file (e.g. <code class="docutils literal notranslate"><span class="pre">deployment.yaml</span></code>) following the template below.
+The <code class="docutils literal notranslate"><span class="pre">cpu</span></code> and <code class="docutils literal notranslate"><span class="pre">memory</span></code> fields of the deployment configuration should match the <code class="docutils literal notranslate"><span class="pre">cores_per_worker</span></code>
+and <code class="docutils literal notranslate"><span class="pre">memory_per_worker</span></code> fields of the manager configuration.
+In this setup, <code class="docutils literal notranslate"><span class="pre">replicas</span></code> determines the number of workers; the <code class="docutils literal notranslate"><span class="pre">max_workers</span></code> and <code class="docutils literal notranslate"><span class="pre">tasks_per_worker</span></code> fields
+in the manager configuration should be set to 1.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">qcfractal-manager</span>
+  <span class="nt">labels</span><span class="p">:</span>
+    <span class="nt">k8s-app</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">qcfractal-manager</span>
+<span class="nt">spec</span><span class="p">:</span>
+  <span class="nt">replicas</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>  <span class="c1"># CHANGEME: number of images here</span>
+  <span class="nt">selector</span><span class="p">:</span>
+    <span class="nt">matchLabels</span><span class="p">:</span>
+      <span class="nt">k8s-app</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">qcfractal-manager</span>
+  <span class="nt">template</span><span class="p">:</span>
+    <span class="nt">metadata</span><span class="p">:</span>
+      <span class="nt">labels</span><span class="p">:</span>
+        <span class="nt">k8s-app</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">qcfractal-manager</span>
+    <span class="nt">spec</span><span class="p">:</span>
+      <span class="nt">containers</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">molssi/qcarchive_worker_openff</span>  <span class="c1"># you may wish to specify your own Docker image here</span>
+        <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">qcfractal-manager-pod</span>
+        <span class="nt">resources</span><span class="p">:</span>
+          <span class="nt">limits</span><span class="p">:</span>
+            <span class="nt">cpu</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>  <span class="c1"># CHANGEME number of cores/worker</span>
+            <span class="nt">memory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">16Gi</span>  <span class="c1"># CHANGEME memory/worker</span>
+        <span class="nt">volumeMounts</span><span class="p">:</span>
+          <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">manager-config-secret</span>
+            <span class="nt">mountPath</span><span class="p">:</span> <span class="s">&quot;/etc/qcfractal-manager&quot;</span>
+            <span class="nt">readOnly</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+      <span class="nt">volumes</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">manager-config-secret</span>
+          <span class="nt">secret</span><span class="p">:</span>
+            <span class="nt">secretName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">manager-config-yaml</span>
+</pre></div>
+</div>
+<p>Start the deployment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">apply</span> <span class="o">-</span><span class="n">f</span> <span class="n">deployment</span><span class="o">.</span><span class="n">yaml</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can view the status of your deployment with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">get</span> <span class="n">deployments</span>
+</pre></div>
+</div>
+<p>You can view the status of individual “Pods” (Docker containers) with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">get</span> <span class="n">pods</span> <span class="o">--</span><span class="n">show</span><span class="o">-</span><span class="n">labels</span>
+</pre></div>
+</div>
+<p>To get the output of invidual Managers:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">logs</span> <span class="o">&lt;</span><span class="n">pod</span> <span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>To get Kubernetes metadata and status information about a Pod:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">describe</span> <span class="n">pod</span> <span class="o">&lt;</span><span class="n">pod</span> <span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">Kubernetes Deployment documentation</a>
+for more information.</p>
+</div>
+<p>Test if everything is setup by running a Hartree-Fock calculation on a single hydrogen molecule,
+as in the <a class="reference internal" href="quickstart.html"><span class="doc">Example</span></a>
+(note this requires <code class="docutils literal notranslate"><span class="pre">psi4</span></code> to be installed on at least one compute resource).
+This test may be run from any machine.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">qcfractal.interface</span> <span class="k">as</span> <span class="nn">ptl</span>
+
+<span class="c1"># Note that server TLS verification may need to be turned off if (verify=False).</span>
+<span class="c1"># Note that the Server URL and the password for user will need to be filled in.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">client</span> <span class="o">=</span> <span class="n">ptl</span><span class="o">.</span><span class="n">FractalClient</span><span class="p">(</span><span class="n">address</span><span class="o">=</span><span class="s2">&quot;URL:Port&quot;</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">&quot;***&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mol</span> <span class="o">=</span> <span class="n">ptl</span><span class="o">.</span><span class="n">Molecule</span><span class="p">(</span><span class="n">symbols</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;H&quot;</span><span class="p">,</span> <span class="s2">&quot;H&quot;</span><span class="p">],</span> <span class="n">geometry</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mol_id</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">add_molecules</span><span class="p">([</span><span class="n">mol</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">r</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">add_compute</span><span class="p">(</span><span class="s2">&quot;psi4&quot;</span><span class="p">,</span> <span class="s2">&quot;HF&quot;</span><span class="p">,</span> <span class="s2">&quot;STO-3G&quot;</span><span class="p">,</span> <span class="s2">&quot;energy&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">[</span><span class="n">mol_id</span><span class="p">])</span>
+
+<span class="c1"># Wait a minute for the job to complete</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">proc</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">query_procedures</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">r</span><span class="o">.</span><span class="n">ids</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">proc</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ResultRecord</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;0&#39;</span> <span class="n">status</span><span class="o">=</span><span class="s1">&#39;COMPLETE&#39;</span><span class="p">)</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">proc</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">scf_total_energy</span><span class="p">)</span>
+<span class="o">-</span><span class="mf">0.6865598095254312</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="other-use-cases">
+<h2>Other Use Cases<a class="headerlink" href="#other-use-cases" title="Permalink to this headline"></a></h2>
+<p>QCFractal is highly configurable and supports many use cases beyond those described here.
+For more information, see the <a class="reference internal" href="server_init.html"><span class="doc">Server</span></a> and <a class="reference internal" href="managers.html"><span class="doc">Manager</span></a> documentation sections.
+You may also <span class="xref std std-ref">contact us</span>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="Example" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="setup_server.html" class="btn btn-neutral float-right" title="Server Setup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2021, The Molecular Sciences Software Institute.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

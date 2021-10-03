@@ -1,0 +1,19 @@
+TemporaryPostgres
+=================
+
+.. currentmodule:: qcfractal
+
+.. autoclass:: TemporaryPostgres
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~TemporaryPostgres.database_uri
+      ~TemporaryPostgres.stop
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: database_uri
+   .. automethod:: stop

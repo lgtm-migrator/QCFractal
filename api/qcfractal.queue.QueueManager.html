@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QueueManager &mdash; QCFractal 0+untagged.1.ge9cee03 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="QueueManagerHandler" href="qcfractal.queue.QueueManagerHandler.html" />
+    <link rel="prev" title="ComputeManagerHandler" href="qcfractal.queue.ComputeManagerHandler.html" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> QCFractal
+          </a>
+              <div class="version">
+                0+untagged.1.ge9cee03
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Install QCFractal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup_quickstart.html">Setup Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup_server.html">Server Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup_compute.html">Manager Setup</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Records Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../procedures.html">Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flow.html">Fractal Call Flowcharts</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manager Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../managers.html">Fractal Queue Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../managers_config_api.html">Queue Manager API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../managers_hpc.html">Configuration for High-Performance Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../managers_samples.html">Queue Manager Example YAML Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../managers_faq.html">Queue Manager Frequent Questions and Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../managers_detailed.html">Detailed Manager Information</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server CLI and Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server_init.html">Fractal Server Init</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_config.html">Fractal Server Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_start.html">Fractal Server Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_user.html">Fractal Server User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_upgrade.html">Fractal Server Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_view.html">Server-side Dataset Views</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../qcarchive_overview.html">QCArchive Design</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">QCFractal API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-qcfractal">qcfractal Package</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../api.html#module-qcfractal.queue">qcfractal.queue Package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../api.html#id1">Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../api.html#id2">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="qcfractal.queue.ComputeManagerHandler.html">ComputeManagerHandler</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">QueueManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="qcfractal.queue.QueueManagerHandler.html">QueueManagerHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="qcfractal.queue.ServiceQueueHandler.html">ServiceQueueHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="qcfractal.queue.TaskQueueHandler.html">TaskQueueHandler</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#id3">Class Inheritance Diagram</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-qcfractal.services">qcfractal.services Package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../database_design.html">Database Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_guidelines.html">Development Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">QCFractal</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../api.html">QCFractal API</a> &raquo;</li>
+      <li>QueueManager</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/qcfractal.queue.QueueManager.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="queuemanager">
+<h1>QueueManager<a class="headerlink" href="#queuemanager" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="qcfractal.queue.QueueManager">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qcfractal.queue.</span></span><span class="sig-name descname"><span class="pre">QueueManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">FractalClient</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queue_client</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">BaseAdapter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">logging.Logger</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_tasks</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queue_tag</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">manager_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'unlabeled'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_frequency</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_error_retries</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stale_update_limit</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cores_per_task</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory_per_task</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes_per_task</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cores_per_rank</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scratch_directory</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">retries</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">configuration</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qcfractal/queue/managers.html#QueueManager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.queue.QueueManager" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This object maintains a computational queue and watches for finished tasks for different
+queue backends. Finished tasks are added to the database and removed from the queue.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client</strong> (<em>FractalClient</em>) – A FractalClient connected to a server.</p></li>
+<li><p><strong>queue_adapter</strong> (<em>QueueAdapter</em>) – The DBAdapter class for queue abstraction</p></li>
+<li><p><strong>errors</strong> (<em>dict</em>) – A dictionary of current errors</p></li>
+<li><p><strong>logger</strong> (<em>logging.logger. Optional</em><em>, </em><em>Default: None</em>) – A logger for the QueueManager</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Methods Summary</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#qcfractal.queue.QueueManager.add_exit_callback" title="qcfractal.queue.QueueManager.add_exit_callback"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_exit_callback</span></code></a>(callback, *args, **kwargs)</p></td>
+<td><p>Adds additional callbacks to perform when closing down the server.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#qcfractal.queue.QueueManager.assert_connected" title="qcfractal.queue.QueueManager.assert_connected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assert_connected</span></code></a>()</p></td>
+<td><p>Raises an error for functions that require a server connection.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#qcfractal.queue.QueueManager.await_results" title="qcfractal.queue.QueueManager.await_results"><code class="xref py py-obj docutils literal notranslate"><span class="pre">await_results</span></code></a>()</p></td>
+<td><p>A synchronous method for testing or small launches that awaits task completion.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#qcfractal.queue.QueueManager.close_adapter" title="qcfractal.queue.QueueManager.close_adapter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close_adapter</span></code></a>()</p></td>
+<td><p>Closes down the underlying adapter.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#qcfractal.queue.QueueManager.connected" title="qcfractal.queue.QueueManager.connected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connected</span></code></a>()</p></td>
+<td><p>Checks the connection to the server.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#qcfractal.queue.QueueManager.heartbeat" title="qcfractal.queue.QueueManager.heartbeat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">heartbeat</span></code></a>()</p></td>
+<td><p>Provides a heartbeat to the connected Server.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#qcfractal.queue.QueueManager.list_current_tasks" title="qcfractal.queue.QueueManager.list_current_tasks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_current_tasks</span></code></a>()</p></td>
+<td><p>Provides a list of tasks currently in the queue along with the associated keys.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#qcfractal.queue.QueueManager.name" title="qcfractal.queue.QueueManager.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></a>()</p></td>
+<td><p>Returns the Managers full name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#qcfractal.queue.QueueManager.shutdown" title="qcfractal.queue.QueueManager.shutdown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shutdown</span></code></a>()</p></td>
+<td><p>Shutdown the manager and returns tasks to queue.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#qcfractal.queue.QueueManager.start" title="qcfractal.queue.QueueManager.start"><code class="xref py py-obj docutils literal notranslate"><span class="pre">start</span></code></a>()</p></td>
+<td><p>Starts up all IOLoops and processes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#qcfractal.queue.QueueManager.stop" title="qcfractal.queue.QueueManager.stop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stop</span></code></a>([signame, signum, stack])</p></td>
+<td><p>Shuts down all IOLoops and periodic updates.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#qcfractal.queue.QueueManager.test" title="qcfractal.queue.QueueManager.test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test</span></code></a>([n])</p></td>
+<td><p>Tests all known programs with simple inputs to check if the Adapter is correctly instantiated.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#qcfractal.queue.QueueManager.update" title="qcfractal.queue.QueueManager.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a>([new_tasks, allow_shutdown])</p></td>
+<td><p>Examines the queue for completed tasks and adds successful completions to the database while unsuccessful are logged for future inspection.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods Documentation</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.queue.QueueManager.add_exit_callback">
+<span class="sig-name descname"><span class="pre">add_exit_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/qcfractal/queue/managers.html#QueueManager.add_exit_callback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.queue.QueueManager.add_exit_callback" title="Permalink to this definition"></a></dt>
+<dd><p>Adds additional callbacks to perform when closing down the server.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback</strong> (<em>callable</em>) – The function to call at exit</p></li>
+<li><p><strong>*args</strong> – Arguments to call with the function.</p></li>
+<li><p><strong>**kwargs</strong> – Kwargs to call with the function.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.queue.QueueManager.assert_connected">
+<span class="sig-name descname"><span class="pre">assert_connected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/qcfractal/queue/managers.html#QueueManager.assert_connected"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.queue.QueueManager.assert_connected" title="Permalink to this definition"></a></dt>
+<dd><p>Raises an error for functions that require a server connection.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.queue.QueueManager.await_results">
+<span class="sig-name descname"><span class="pre">await_results</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../_modules/qcfractal/queue/managers.html#QueueManager.await_results"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.queue.QueueManager.await_results" title="Permalink to this definition"></a></dt>
+<dd><p>A synchronous method for testing or small launches
+that awaits task completion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Return True if the operation completed successfully</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.queue.QueueManager.close_adapter">
+<span class="sig-name descname"><span class="pre">close_adapter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../_modules/qcfractal/queue/managers.html#QueueManager.close_adapter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.queue.QueueManager.close_adapter" title="Permalink to this definition"></a></dt>
+<dd><p>Closes down the underlying adapter.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.queue.QueueManager.connected">
+<span class="sig-name descname"><span class="pre">connected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../_modules/qcfractal/queue/managers.html#QueueManager.connected"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.queue.QueueManager.connected" title="Permalink to this definition"></a></dt>
+<dd><p>Checks the connection to the server.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.queue.QueueManager.heartbeat">
+<span class="sig-name descname"><span class="pre">heartbeat</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/qcfractal/queue/managers.html#QueueManager.heartbeat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.queue.QueueManager.heartbeat" title="Permalink to this definition"></a></dt>
+<dd><p>Provides a heartbeat to the connected Server.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.queue.QueueManager.list_current_tasks">
+<span class="sig-name descname"><span class="pre">list_current_tasks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/qcfractal/queue/managers.html#QueueManager.list_current_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.queue.QueueManager.list_current_tasks" title="Permalink to this definition"></a></dt>
+<dd><p>Provides a list of tasks currently in the queue along
+with the associated keys.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>ret</strong> – All tasks currently still in the database</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list of tuples</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.queue.QueueManager.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="../_modules/qcfractal/queue/managers.html#QueueManager.name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.queue.QueueManager.name" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the Managers full name.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.queue.QueueManager.shutdown">
+<span class="sig-name descname"><span class="pre">shutdown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/qcfractal/queue/managers.html#QueueManager.shutdown"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.queue.QueueManager.shutdown" title="Permalink to this definition"></a></dt>
+<dd><p>Shutdown the manager and returns tasks to queue.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.queue.QueueManager.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/qcfractal/queue/managers.html#QueueManager.start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.queue.QueueManager.start" title="Permalink to this definition"></a></dt>
+<dd><p>Starts up all IOLoops and processes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.queue.QueueManager.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signame</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Not</span> <span class="pre">provided'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stack</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/qcfractal/queue/managers.html#QueueManager.stop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.queue.QueueManager.stop" title="Permalink to this definition"></a></dt>
+<dd><p>Shuts down all IOLoops and periodic updates.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.queue.QueueManager.test">
+<span class="sig-name descname"><span class="pre">test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../_modules/qcfractal/queue/managers.html#QueueManager.test"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.queue.QueueManager.test" title="Permalink to this definition"></a></dt>
+<dd><p>Tests all known programs with simple inputs to check if the Adapter is correctly instantiated.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.queue.QueueManager.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_tasks</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_shutdown</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../_modules/qcfractal/queue/managers.html#QueueManager.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.queue.QueueManager.update" title="Permalink to this definition"></a></dt>
+<dd><p>Examines the queue for completed tasks and adds successful completions to the database
+while unsuccessful are logged for future inspection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>new_tasks</strong> (<em>bool, optional, Default: True</em>) – Try to get new tasks from the server</p></li>
+<li><p><strong>allow_shutdown</strong> (<em>bool, optional, Default: True</em>) – Allow function to attempt graceful shutdowns in the case of stale job or fatal error limits.
+Does not prevent errors from being raise, but mostly used to prevent infinite loops when update is
+called from <cite>shutdown</cite> itself</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="qcfractal.queue.ComputeManagerHandler.html" class="btn btn-neutral float-left" title="ComputeManagerHandler" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="qcfractal.queue.QueueManagerHandler.html" class="btn btn-neutral float-right" title="QueueManagerHandler" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2021, The Molecular Sciences Software Institute.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

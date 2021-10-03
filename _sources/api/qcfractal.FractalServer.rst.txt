@@ -1,0 +1,43 @@
+FractalServer
+=============
+
+.. currentmodule:: qcfractal
+
+.. autoclass:: FractalServer
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~FractalServer.add_exit_callback
+      ~FractalServer.await_results
+      ~FractalServer.await_services
+      ~FractalServer.check_manager_heartbeats
+      ~FractalServer.client
+      ~FractalServer.get_address
+      ~FractalServer.list_current_tasks
+      ~FractalServer.list_managers
+      ~FractalServer.start
+      ~FractalServer.stop
+      ~FractalServer.update_public_information
+      ~FractalServer.update_server_log
+      ~FractalServer.update_services
+      ~FractalServer.update_tasks
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: add_exit_callback
+   .. automethod:: await_results
+   .. automethod:: await_services
+   .. automethod:: check_manager_heartbeats
+   .. automethod:: client
+   .. automethod:: get_address
+   .. automethod:: list_current_tasks
+   .. automethod:: list_managers
+   .. automethod:: start
+   .. automethod:: stop
+   .. automethod:: update_public_information
+   .. automethod:: update_server_log
+   .. automethod:: update_services
+   .. automethod:: update_tasks

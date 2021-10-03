@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fractal Server User &mdash; QCFractal 0+untagged.1.ge9cee03 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Fractal Server Upgrade" href="server_upgrade.html" />
+    <link rel="prev" title="Fractal Server Start" href="server_start.html" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> QCFractal
+          </a>
+              <div class="version">
+                0+untagged.1.ge9cee03
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install QCFractal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_quickstart.html">Setup Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_server.html">Server Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_compute.html">Manager Setup</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Records Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="procedures.html">Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flow.html">Fractal Call Flowcharts</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manager Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="managers.html">Fractal Queue Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_config_api.html">Queue Manager API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_hpc.html">Configuration for High-Performance Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_samples.html">Queue Manager Example YAML Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_faq.html">Queue Manager Frequent Questions and Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_detailed.html">Detailed Manager Information</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server CLI and Configuration</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="server_init.html">Fractal Server Init</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_config.html">Fractal Server Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_start.html">Fractal Server Start</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Fractal Server User</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#command-invocation">Command Invocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#top-level-options">Top-level Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#subcommand-summary">Subcommand Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-subcommand">Add Subcommand</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Command Invocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#command-description">Command Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arguments">Arguments</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#show-subcommand">Show Subcommand</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Command Invocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Command Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Arguments</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modify-subcommand">Modify Subcommand</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Command Invocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Command Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Arguments</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#remove-subcommand">Remove Subcommand</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Command Invocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Command Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Arguments</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#user-permissions">User Permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="server_upgrade.html">Fractal Server Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_view.html">Server-side Dataset Views</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="qcarchive_overview.html">QCArchive Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">QCFractal API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database_design.html">Database Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_guidelines.html">Development Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">QCFractal</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Fractal Server User</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/server_user.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="fractal-server-user">
+<h1>Fractal Server User<a class="headerlink" href="#fractal-server-user" title="Permalink to this headline"></a></h1>
+<p>The sub-command for the <code class="docutils literal notranslate"><span class="pre">qcfractal-server</span></code> CLI which manages user permissions and passwords.</p>
+<section id="command-invocation">
+<h2>Command Invocation<a class="headerlink" href="#command-invocation" title="Permalink to this headline"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qcfractal-server user <span class="o">[</span>&lt;options&gt;<span class="o">]</span>
+</pre></div>
+</div>
+</section>
+<section id="top-level-options">
+<h2>Top-level Options<a class="headerlink" href="#top-level-options" title="Permalink to this headline"></a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">--base-folder</span> <span class="pre">[&lt;folder&gt;]</span></code></dt><dd><p>The QCFractal base directory to attach to. Default: <code class="docutils literal notranslate"><span class="pre">~/.qca/qcfractal</span></code>.</p>
+</dd>
+</dl>
+</section>
+<section id="subcommand-summary">
+<h2>Subcommand Summary<a class="headerlink" href="#subcommand-summary" title="Permalink to this headline"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">qcfractal-server</span> <span class="pre">user</span></code> CLI allows for manipulation of users through four subcommands:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">add</span></code>: Add a new user.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">show</span></code>: Display a user’s permissions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">modify</span></code>: Change a user’s permissions or password.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">remove</span></code>: Delete a user.</p></li>
+</ul>
+</section>
+<section id="add-subcommand">
+<span id="server-user-add"></span><h2>Add Subcommand<a class="headerlink" href="#add-subcommand" title="Permalink to this headline"></a></h2>
+<section id="id1">
+<h3>Command Invocation<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qcfractal-server user add <span class="o">[</span>&lt;options&gt;<span class="o">]</span> &lt;username&gt;
+</pre></div>
+</div>
+</section>
+<section id="command-description">
+<h3>Command Description<a class="headerlink" href="#command-description" title="Permalink to this headline"></a></h3>
+<p>This command adds a new user, setting the user’s password and permissions. The user must not already exist.</p>
+</section>
+<section id="arguments">
+<h3>Arguments<a class="headerlink" href="#arguments" title="Permalink to this headline"></a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;username&gt;</span></code></dt><dd><p>The username to add.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--password</span> <span class="pre">[&lt;password&gt;]</span></code></dt><dd><p>The password for the user.
+If this option is not provided, a password will be generated and printed.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--permissions</span> <span class="pre">[&lt;permissions&gt;]</span></code></dt><dd><p>Permissions for the user.
+Allowed values: <code class="docutils literal notranslate"><span class="pre">read</span></code>, <code class="docutils literal notranslate"><span class="pre">write</span></code>, <code class="docutils literal notranslate"><span class="pre">queue</span></code>, <code class="docutils literal notranslate"><span class="pre">compute</span></code>, <code class="docutils literal notranslate"><span class="pre">admin</span></code>.
+Multiple values are allowed.
+At least one value must be specified.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="show-subcommand">
+<span id="server-user-show"></span><h2>Show Subcommand<a class="headerlink" href="#show-subcommand" title="Permalink to this headline"></a></h2>
+<section id="id2">
+<h3>Command Invocation<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qcfractal-server user show &lt;username&gt;
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3>Command Description<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h3>
+<p>This command prints the permissions for a given user.</p>
+</section>
+<section id="id4">
+<h3>Arguments<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;username&gt;</span></code></dt><dd><p>The username for which to show permissions.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="modify-subcommand">
+<span id="server-user-modify"></span><h2>Modify Subcommand<a class="headerlink" href="#modify-subcommand" title="Permalink to this headline"></a></h2>
+<section id="id5">
+<h3>Command Invocation<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qcfractal-server user modify <span class="o">[</span>&lt;options&gt;<span class="o">]</span> &lt;username&gt;
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h3>Command Description<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h3>
+<p>This command modifys a user’s permissions or password.</p>
+</section>
+<section id="id7">
+<h3>Arguments<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;username&gt;</span></code></dt><dd><p>The username to modfiy.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--password</span> <span class="pre">[&lt;password&gt;]</span></code></dt><dd><p>Change the user’s password to a given string.
+This options excludes <code class="docutils literal notranslate"><span class="pre">--reset-password</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--reset-password</span></code></dt><dd><p>Change the user’s password to an auto-generated value.
+The new password will be printed.
+This option excludes <code class="docutils literal notranslate"><span class="pre">--password</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--permissions</span> <span class="pre">[&lt;permissions&gt;]</span></code></dt><dd><p>Change the user’s permissions to the given set.
+Allowed values: <code class="docutils literal notranslate"><span class="pre">read</span></code>, <code class="docutils literal notranslate"><span class="pre">write</span></code>, <code class="docutils literal notranslate"><span class="pre">queue</span></code>, <code class="docutils literal notranslate"><span class="pre">compute</span></code>, <code class="docutils literal notranslate"><span class="pre">admin</span></code>.
+Multiple values are allowed.
+See <a class="reference internal" href="#server-user-permissions"><span class="std std-ref">User Permissions</span></a> for more information.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="remove-subcommand">
+<span id="server-user-remove"></span><h2>Remove Subcommand<a class="headerlink" href="#remove-subcommand" title="Permalink to this headline"></a></h2>
+<section id="id8">
+<h3>Command Invocation<a class="headerlink" href="#id8" title="Permalink to this headline"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qcfractal-server user remove &lt;username&gt;
+</pre></div>
+</div>
+</section>
+<section id="id9">
+<h3>Command Description<a class="headerlink" href="#id9" title="Permalink to this headline"></a></h3>
+<p>This command removes a user.</p>
+</section>
+<section id="id10">
+<h3>Arguments<a class="headerlink" href="#id10" title="Permalink to this headline"></a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;username&gt;</span></code></dt><dd><p>The username to remove.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="user-permissions">
+<span id="server-user-permissions"></span><h2>User Permissions<a class="headerlink" href="#user-permissions" title="Permalink to this headline"></a></h2>
+<p>Five permission types are available:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">read</span></code> allows read access to existing records.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">write</span></code> allows write access to existing records and the ability to add new records.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">compute</span></code> allows enqueuing new <a class="reference internal" href="managers.html#term-Task"><span class="xref std std-term">Tasks</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">queue</span></code> allows for consumption of compute <a class="reference internal" href="managers.html#term-Task"><span class="xref std std-term">Tasks</span></a>.
+This permission is intended for use by a <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Manager</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">admin</span></code> allows all permissions.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="server_start.html" class="btn btn-neutral float-left" title="Fractal Server Start" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="server_upgrade.html" class="btn btn-neutral float-right" title="Fractal Server Upgrade" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2021, The Molecular Sciences Software Institute.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

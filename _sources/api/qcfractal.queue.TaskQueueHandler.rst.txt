@@ -1,0 +1,21 @@
+TaskQueueHandler
+================
+
+.. currentmodule:: qcfractal.queue
+
+.. autoclass:: TaskQueueHandler
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~TaskQueueHandler.get
+      ~TaskQueueHandler.post
+      ~TaskQueueHandler.put
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: get
+   .. automethod:: post
+   .. automethod:: put

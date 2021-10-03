@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PostgresHarness &mdash; QCFractal 0+untagged.1.ge9cee03 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="QueueManager" href="qcfractal.QueueManager.html" />
+    <link rel="prev" title="FractalSnowflakeHandler" href="qcfractal.FractalSnowflakeHandler.html" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> QCFractal
+          </a>
+              <div class="version">
+                0+untagged.1.ge9cee03
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Install QCFractal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup_quickstart.html">Setup Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup_server.html">Server Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup_compute.html">Manager Setup</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Records Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../procedures.html">Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flow.html">Fractal Call Flowcharts</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manager Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../managers.html">Fractal Queue Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../managers_config_api.html">Queue Manager API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../managers_hpc.html">Configuration for High-Performance Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../managers_samples.html">Queue Manager Example YAML Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../managers_faq.html">Queue Manager Frequent Questions and Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../managers_detailed.html">Detailed Manager Information</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server CLI and Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server_init.html">Fractal Server Init</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_config.html">Fractal Server Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_start.html">Fractal Server Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_user.html">Fractal Server User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_upgrade.html">Fractal Server Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_view.html">Server-side Dataset Views</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../qcarchive_overview.html">QCArchive Design</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">QCFractal API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../api.html#module-qcfractal">qcfractal Package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../api.html#functions">Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../api.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="qcfractal.FractalServer.html">FractalServer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="qcfractal.FractalSnowflake.html">FractalSnowflake</a></li>
+<li class="toctree-l4"><a class="reference internal" href="qcfractal.FractalSnowflakeHandler.html">FractalSnowflakeHandler</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">PostgresHarness</a></li>
+<li class="toctree-l4"><a class="reference internal" href="qcfractal.QueueManager.html">QueueManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="qcfractal.TemporaryPostgres.html">TemporaryPostgres</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#class-inheritance-diagram">Class Inheritance Diagram</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-qcfractal.queue">qcfractal.queue Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-qcfractal.services">qcfractal.services Package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../database_design.html">Database Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_guidelines.html">Development Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">QCFractal</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../api.html">QCFractal API</a> &raquo;</li>
+      <li>PostgresHarness</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/qcfractal.PostgresHarness.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="postgresharness">
+<h1>PostgresHarness<a class="headerlink" href="#postgresharness" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="qcfractal.PostgresHarness">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qcfractal.</span></span><span class="sig-name descname"><span class="pre">PostgresHarness</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">config:</span> <span class="pre">Union[Dict[str,</span> <span class="pre">Any],</span> <span class="pre">qcfractal.config.FractalConfig],</span> <span class="pre">quiet:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True,</span> <span class="pre">logger:</span> <span class="pre">print</span> <span class="pre">=</span> <span class="pre">&lt;built-in</span> <span class="pre">function</span> <span class="pre">print&gt;</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qcfractal/postgres_harness.html#PostgresHarness"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.PostgresHarness" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p class="rubric">Methods Summary</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#qcfractal.PostgresHarness.alembic_commands" title="qcfractal.PostgresHarness.alembic_commands"><code class="xref py py-obj docutils literal notranslate"><span class="pre">alembic_commands</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#qcfractal.PostgresHarness.backup_database" title="qcfractal.PostgresHarness.backup_database"><code class="xref py py-obj docutils literal notranslate"><span class="pre">backup_database</span></code></a>([filename])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#qcfractal.PostgresHarness.command" title="qcfractal.PostgresHarness.command"><code class="xref py py-obj docutils literal notranslate"><span class="pre">command</span></code></a>(cmd[, check])</p></td>
+<td><p>Runs psql commands and returns their output while connected to the correct postgres instance.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#qcfractal.PostgresHarness.connect" title="qcfractal.PostgresHarness.connect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect</span></code></a>([database])</p></td>
+<td><p>Builds a psycopg2 connection object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#qcfractal.PostgresHarness.create_database" title="qcfractal.PostgresHarness.create_database"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_database</span></code></a>(database_name)</p></td>
+<td><p>Creates a new database for the current postgres instance.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#qcfractal.PostgresHarness.create_tables" title="qcfractal.PostgresHarness.create_tables"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_tables</span></code></a>()</p></td>
+<td><p>Create database tables using SQLAlchemy models</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#qcfractal.PostgresHarness.database_size" title="qcfractal.PostgresHarness.database_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">database_size</span></code></a>()</p></td>
+<td><p>Returns a pretty formatted string of the database size.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#qcfractal.PostgresHarness.database_uri" title="qcfractal.PostgresHarness.database_uri"><code class="xref py py-obj docutils literal notranslate"><span class="pre">database_uri</span></code></a>()</p></td>
+<td><p>Provides the full PostgreSQL URI string.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#qcfractal.PostgresHarness.init_database" title="qcfractal.PostgresHarness.init_database"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_database</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#qcfractal.PostgresHarness.initialize_postgres" title="qcfractal.PostgresHarness.initialize_postgres"><code class="xref py py-obj docutils literal notranslate"><span class="pre">initialize_postgres</span></code></a>()</p></td>
+<td><p>Initializes and starts the current postgres instance.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#qcfractal.PostgresHarness.is_alive" title="qcfractal.PostgresHarness.is_alive"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_alive</span></code></a>([database])</p></td>
+<td><p>Checks if the postgres is alive, and optionally if the database is present.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#qcfractal.PostgresHarness.logger" title="qcfractal.PostgresHarness.logger"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logger</span></code></a>(msg)</p></td>
+<td><p>Prints a logging message depending on quiet settings.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#qcfractal.PostgresHarness.pg_ctl" title="qcfractal.PostgresHarness.pg_ctl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pg_ctl</span></code></a>(cmds)</p></td>
+<td><p>Runs pg_ctl commands and returns their output while connected to the correct postgres instance.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#qcfractal.PostgresHarness.restore_database" title="qcfractal.PostgresHarness.restore_database"><code class="xref py py-obj docutils literal notranslate"><span class="pre">restore_database</span></code></a>(filename)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#qcfractal.PostgresHarness.shutdown" title="qcfractal.PostgresHarness.shutdown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shutdown</span></code></a>()</p></td>
+<td><p>Shutsdown the current postgres instance.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#qcfractal.PostgresHarness.start" title="qcfractal.PostgresHarness.start"><code class="xref py py-obj docutils literal notranslate"><span class="pre">start</span></code></a>()</p></td>
+<td><p>Starts a PostgreSQL server based off the current configuration parameters.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#qcfractal.PostgresHarness.update_db_version" title="qcfractal.PostgresHarness.update_db_version"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_db_version</span></code></a>()</p></td>
+<td><p>Update current version of QCFractal in the DB</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#qcfractal.PostgresHarness.upgrade" title="qcfractal.PostgresHarness.upgrade"><code class="xref py py-obj docutils literal notranslate"><span class="pre">upgrade</span></code></a>()</p></td>
+<td><p>Upgrade the database schema using the latest alembic revision.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods Documentation</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.PostgresHarness.alembic_commands">
+<span class="sig-name descname"><span class="pre">alembic_commands</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/qcfractal/postgres_harness.html#PostgresHarness.alembic_commands"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.PostgresHarness.alembic_commands" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.PostgresHarness.backup_database">
+<span class="sig-name descname"><span class="pre">backup_database</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/qcfractal/postgres_harness.html#PostgresHarness.backup_database"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.PostgresHarness.backup_database" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.PostgresHarness.command">
+<span class="sig-name descname"><span class="pre">command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="../_modules/qcfractal/postgres_harness.html#PostgresHarness.command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.PostgresHarness.command" title="Permalink to this definition"></a></dt>
+<dd><p>Runs psql commands and returns their output while connected to the correct postgres instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cmd</strong> (<em>str</em>) – A psql command string.
+Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.PostgresHarness.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">database</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Connection</span></span></span><a class="reference internal" href="../_modules/qcfractal/postgres_harness.html#PostgresHarness.connect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.PostgresHarness.connect" title="Permalink to this definition"></a></dt>
+<dd><p>Builds a psycopg2 connection object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>database</strong> (<em>Optional[str], optional</em>) – The database to connect to, otherwise defaults to None</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A live Connection object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Connection</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.PostgresHarness.create_database">
+<span class="sig-name descname"><span class="pre">create_database</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">database_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../_modules/qcfractal/postgres_harness.html#PostgresHarness.create_database"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.PostgresHarness.create_database" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a new database for the current postgres instance. If the database is existing, no
+changes to the database are made.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>database_name</strong> (<em>str</em>) – The name of the database to create.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>If the operation was successful or not.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.PostgresHarness.create_tables">
+<span class="sig-name descname"><span class="pre">create_tables</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qcfractal/postgres_harness.html#PostgresHarness.create_tables"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.PostgresHarness.create_tables" title="Permalink to this definition"></a></dt>
+<dd><p>Create database tables using SQLAlchemy models</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.PostgresHarness.database_size">
+<span class="sig-name descname"><span class="pre">database_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="../_modules/qcfractal/postgres_harness.html#PostgresHarness.database_size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.PostgresHarness.database_size" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a pretty formatted string of the database size.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.PostgresHarness.database_uri">
+<span class="sig-name descname"><span class="pre">database_uri</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="../_modules/qcfractal/postgres_harness.html#PostgresHarness.database_uri"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.PostgresHarness.database_uri" title="Permalink to this definition"></a></dt>
+<dd><p>Provides the full PostgreSQL URI string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The database URI</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.PostgresHarness.init_database">
+<span class="sig-name descname"><span class="pre">init_database</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/qcfractal/postgres_harness.html#PostgresHarness.init_database"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.PostgresHarness.init_database" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.PostgresHarness.initialize_postgres">
+<span class="sig-name descname"><span class="pre">initialize_postgres</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/qcfractal/postgres_harness.html#PostgresHarness.initialize_postgres"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.PostgresHarness.initialize_postgres" title="Permalink to this definition"></a></dt>
+<dd><p>Initializes and starts the current postgres instance.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.PostgresHarness.is_alive">
+<span class="sig-name descname"><span class="pre">is_alive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">database</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../_modules/qcfractal/postgres_harness.html#PostgresHarness.is_alive"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.PostgresHarness.is_alive" title="Permalink to this definition"></a></dt>
+<dd><p>Checks if the postgres is alive, and optionally if the database is present.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>database</strong> (<em>Optional[str], optional</em>) – The datbase to connect to</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>If True, the postgres database is alive.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.PostgresHarness.logger">
+<span class="sig-name descname"><span class="pre">logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/qcfractal/postgres_harness.html#PostgresHarness.logger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.PostgresHarness.logger" title="Permalink to this definition"></a></dt>
+<dd><p>Prints a logging message depending on quiet settings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>msg</strong> (<em>str</em>) – The message to show.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.PostgresHarness.pg_ctl">
+<span class="sig-name descname"><span class="pre">pg_ctl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmds</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="../_modules/qcfractal/postgres_harness.html#PostgresHarness.pg_ctl"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.PostgresHarness.pg_ctl" title="Permalink to this definition"></a></dt>
+<dd><p>Runs pg_ctl commands and returns their output while connected to the correct postgres instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cmds</strong> (<em>List[str]</em>) – A list of PostgreSQL pg_ctl commands to run.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.PostgresHarness.restore_database">
+<span class="sig-name descname"><span class="pre">restore_database</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/qcfractal/postgres_harness.html#PostgresHarness.restore_database"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.PostgresHarness.restore_database" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.PostgresHarness.shutdown">
+<span class="sig-name descname"><span class="pre">shutdown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="../_modules/qcfractal/postgres_harness.html#PostgresHarness.shutdown"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.PostgresHarness.shutdown" title="Permalink to this definition"></a></dt>
+<dd><p>Shutsdown the current postgres instance.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.PostgresHarness.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="../_modules/qcfractal/postgres_harness.html#PostgresHarness.start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.PostgresHarness.start" title="Permalink to this definition"></a></dt>
+<dd><p>Starts a PostgreSQL server based off the current configuration parameters. The server must be initialized
+and the configured port open.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.PostgresHarness.update_db_version">
+<span class="sig-name descname"><span class="pre">update_db_version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qcfractal/postgres_harness.html#PostgresHarness.update_db_version"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.PostgresHarness.update_db_version" title="Permalink to this definition"></a></dt>
+<dd><p>Update current version of QCFractal in the DB</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcfractal.PostgresHarness.upgrade">
+<span class="sig-name descname"><span class="pre">upgrade</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qcfractal/postgres_harness.html#PostgresHarness.upgrade"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.PostgresHarness.upgrade" title="Permalink to this definition"></a></dt>
+<dd><p>Upgrade the database schema using the latest alembic revision.
+The database data won’t be deleted.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="qcfractal.FractalSnowflakeHandler.html" class="btn btn-neutral float-left" title="FractalSnowflakeHandler" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="qcfractal.QueueManager.html" class="btn btn-neutral float-right" title="QueueManager" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2021, The Molecular Sciences Software Institute.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

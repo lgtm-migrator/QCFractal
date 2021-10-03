@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Results &mdash; QCFractal 0+untagged.1.ge9cee03 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Procedures" href="procedures.html" />
+    <link rel="prev" title="Manager Setup" href="setup_compute.html" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> QCFractal
+          </a>
+              <div class="version">
+                0+untagged.1.ge9cee03
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install QCFractal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_quickstart.html">Setup Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_server.html">Server Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_compute.html">Manager Setup</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Records Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Results</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#indices">Indices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#schema">Schema</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="procedures.html">Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flow.html">Fractal Call Flowcharts</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manager Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="managers.html">Fractal Queue Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_config_api.html">Queue Manager API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_hpc.html">Configuration for High-Performance Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_samples.html">Queue Manager Example YAML Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_faq.html">Queue Manager Frequent Questions and Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_detailed.html">Detailed Manager Information</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server CLI and Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="server_init.html">Fractal Server Init</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_config.html">Fractal Server Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_start.html">Fractal Server Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_user.html">Fractal Server User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_upgrade.html">Fractal Server Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_view.html">Server-side Dataset Views</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="qcarchive_overview.html">QCArchive Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">QCFractal API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database_design.html">Database Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_guidelines.html">Development Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">QCFractal</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Results</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/results.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="results">
+<h1>Results<a class="headerlink" href="#results" title="Permalink to this headline"></a></h1>
+<p>A result is a single quantum chemistry method evaluation, which might be an energy, an analytic gradient or Hessian, or a property evaluation.
+Collections of evaluations such
+as finite-difference gradients, complete basis set extrapolation, or geometry
+optimizations belong under the “Procedures” heading.</p>
+<section id="indices">
+<h2>Indices<a class="headerlink" href="#indices" title="Permalink to this headline"></a></h2>
+<p>A result can be found based off a unique tuple of <code class="docutils literal notranslate"><span class="pre">(driver,</span> <span class="pre">program,</span> <span class="pre">molecule_id,</span> <span class="pre">keywords_set,</span> <span class="pre">method,</span> <span class="pre">basis)</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">driver</span></code> - The type of calculation being evaluated (i.e. <code class="docutils literal notranslate"><span class="pre">energy</span></code>, <code class="docutils literal notranslate"><span class="pre">gradient</span></code>, <code class="docutils literal notranslate"><span class="pre">hessian</span></code>, <code class="docutils literal notranslate"><span class="pre">properties</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">program</span></code> - A lowercase string representation of the quantum chemistry program used (<code class="docutils literal notranslate"><span class="pre">gamess</span></code>, <code class="docutils literal notranslate"><span class="pre">nwchem</span></code>, <code class="docutils literal notranslate"><span class="pre">psi4</span></code>, etc.)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">molecule_id</span></code> - The <a class="reference internal" href="glossary.html#term-ObjectId"><span class="xref std std-term">ObjectId</span></a> of the molecule used in the computation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">keywords_set</span></code> - The key to the options set stored in the database (e.g. <code class="docutils literal notranslate"><span class="pre">default</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">{&quot;e_convergence&quot;:</span> <span class="pre">1.e-7,</span> <span class="pre">&quot;scf_type&quot;:</span> <span class="pre">&quot;df&quot;,</span> <span class="pre">...}</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">method</span></code> - A lowercase string representation of the method used in the computation (e.g. <code class="docutils literal notranslate"><span class="pre">b3lyp</span></code>, <code class="docutils literal notranslate"><span class="pre">mp2</span></code>, <code class="docutils literal notranslate"><span class="pre">ccsd(t)</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">basis</span></code> - A lowercase string representation of the basis used in the computation (e.g. <code class="docutils literal notranslate"><span class="pre">6-31g</span></code>, <code class="docutils literal notranslate"><span class="pre">cc-pvdz</span></code>, <code class="docutils literal notranslate"><span class="pre">def2-svp</span></code>)</p></li>
+</ul>
+</section>
+<section id="schema">
+<h2>Schema<a class="headerlink" href="#schema" title="Permalink to this headline"></a></h2>
+<p>All results are stored using the <a class="reference external" href="https://molssi-qc-schema.readthedocs.io/en/latest/index.html">QCSchema</a> so that the storage is quantum chemistry program agnostic. An example of the QCSchema input is shown below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;schema_name&quot;</span><span class="p">:</span> <span class="s2">&quot;qc_json_input&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;schema_version&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">&quot;molecule&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;geometry&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="mf">0.0</span><span class="p">,</span>  <span class="mf">0.0</span><span class="p">,</span>    <span class="o">-</span><span class="mf">0.1294</span><span class="p">,</span>
+      <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.4941</span><span class="p">,</span>  <span class="mf">1.0274</span><span class="p">,</span>
+      <span class="mf">0.0</span><span class="p">,</span>  <span class="mf">1.4941</span><span class="p">,</span>  <span class="mf">1.0274</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;symbols&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;H&quot;</span><span class="p">,</span> <span class="s2">&quot;H&quot;</span><span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;driver&quot;</span><span class="p">:</span> <span class="s2">&quot;energy&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;MP2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;basis&quot;</span><span class="p">:</span> <span class="s2">&quot;cc-pVDZ&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;keywords&quot;</span><span class="p">:</span> <span class="p">{},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This input would correspond to the following output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;schema_name&quot;</span><span class="p">:</span> <span class="s2">&quot;qc_json_output&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;schema_version&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">&quot;molecule&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;geometry&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="mf">0.0</span><span class="p">,</span>  <span class="mf">0.0</span><span class="p">,</span>    <span class="o">-</span><span class="mf">0.1294</span><span class="p">,</span>
+      <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.4941</span><span class="p">,</span>  <span class="mf">1.0274</span><span class="p">,</span>
+      <span class="mf">0.0</span><span class="p">,</span>  <span class="mf">1.4941</span><span class="p">,</span>  <span class="mf">1.0274</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;symbols&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;H&quot;</span><span class="p">,</span> <span class="s2">&quot;H&quot;</span><span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;driver&quot;</span><span class="p">:</span> <span class="s2">&quot;energy&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;MP2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;basis&quot;</span><span class="p">:</span> <span class="s2">&quot;cc-pVDZ&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;keywords&quot;</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="s2">&quot;provenance&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;creator&quot;</span><span class="p">:</span> <span class="s2">&quot;QM Program&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;routine&quot;</span><span class="p">:</span> <span class="s2">&quot;module.json.run_json&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;return_result&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">76.22836742810021</span><span class="p">,</span>
+  <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;calcinfo_nbasis&quot;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+    <span class="s2">&quot;calcinfo_nmo&quot;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+    <span class="s2">&quot;calcinfo_nalpha&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s2">&quot;calcinfo_nbeta&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s2">&quot;calcinfo_natom&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s2">&quot;return_energy&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">76.22836742810021</span><span class="p">,</span>
+    <span class="s2">&quot;scf_one_electron_energy&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">122.44534536383037</span><span class="p">,</span>
+    <span class="s2">&quot;scf_two_electron_energy&quot;</span><span class="p">:</span> <span class="mf">37.62246494040059</span><span class="p">,</span>
+    <span class="s2">&quot;nuclear_repulsion_energy&quot;</span><span class="p">:</span> <span class="mf">8.80146205625184</span><span class="p">,</span>
+    <span class="s2">&quot;scf_dipole_moment&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0954</span><span class="p">],</span>
+    <span class="s2">&quot;scf_iterations&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s2">&quot;scf_total_energy&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">76.02141836717794</span><span class="p">,</span>
+    <span class="s2">&quot;mp2_same_spin_correlation_energy&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.051980792916251864</span><span class="p">,</span>
+    <span class="s2">&quot;mp2_opposite_spin_correlation_energy&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.15496826800602342</span><span class="p">,</span>
+    <span class="s2">&quot;mp2_singles_energy&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="s2">&quot;mp2_doubles_energy&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.20694906092226972</span><span class="p">,</span>
+    <span class="s2">&quot;mp2_total_correlation_energy&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.20694906092226972</span><span class="p">,</span>
+    <span class="s2">&quot;mp2_total_energy&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">76.22836742810021</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="setup_compute.html" class="btn btn-neutral float-left" title="Manager Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="procedures.html" class="btn btn-neutral float-right" title="Procedures" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2021, The Molecular Sciences Software Institute.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

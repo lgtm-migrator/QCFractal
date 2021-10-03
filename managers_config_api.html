@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Queue Manager API &mdash; QCFractal 0+untagged.1.ge9cee03 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Configuration for High-Performance Computing" href="managers_hpc.html" />
+    <link rel="prev" title="Fractal Queue Managers" href="managers.html" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> QCFractal
+          </a>
+              <div class="version">
+                0+untagged.1.ge9cee03
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install QCFractal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_quickstart.html">Setup Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_server.html">Server Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_compute.html">Manager Setup</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Records Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="procedures.html">Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flow.html">Fractal Call Flowcharts</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manager Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="managers.html">Fractal Queue Managers</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Queue Manager API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#common">common</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#server">server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#manager">manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cluster">cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dask">dask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parsl">parsl</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#executor">executor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#provider">provider</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="managers_hpc.html">Configuration for High-Performance Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_samples.html">Queue Manager Example YAML Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_faq.html">Queue Manager Frequent Questions and Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_detailed.html">Detailed Manager Information</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server CLI and Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="server_init.html">Fractal Server Init</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_config.html">Fractal Server Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_start.html">Fractal Server Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_user.html">Fractal Server User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_upgrade.html">Fractal Server Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_view.html">Server-side Dataset Views</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="qcarchive_overview.html">QCArchive Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">QCFractal API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database_design.html">Database Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_guidelines.html">Development Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">QCFractal</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Queue Manager API</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/managers_config_api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="queue-manager-api">
+<h1>Queue Manager API<a class="headerlink" href="#queue-manager-api" title="Permalink to this headline"></a></h1>
+<p>This page documents <strong>all</strong> valid options for the YAML file inputs to the config manager. This first section outlines
+each of the headers (top level objects) and a description for each one. The final file will look like the following:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">common</span><span class="p">:</span>
+    <span class="nt">option_1</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">value_for1</span>
+    <span class="nt">another_opt</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">42</span>
+<span class="nt">server</span><span class="p">:</span>
+    <span class="nt">option_for_server</span><span class="p">:</span> <span class="s">&quot;some</span><span class="nv"> </span><span class="s">string&quot;</span>
+</pre></div>
+</div>
+<p>This is the complete set of options, auto-generated from the parser itself, so it should be accurate for the given
+release. If you are using a developmental build or want to see the schema yourself, you can run the
+<code class="docutils literal notranslate"><span class="pre">qcfractal-manager</span> <span class="pre">--schema</span></code> command and it will display the whole schema for the YAML input.</p>
+<p>Each section below here is summarized the same way, showing all the options for that YAML header in the form of their
+<a class="reference external" href="https://pydantic-docs.helpmanual.io/">pydantic</a> API which the YAML is fed into in a one-to-one match of options.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="qcfractal.cli.qcfractal_manager.ManagerSettings">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qcfractal.cli.qcfractal_manager.</span></span><span class="sig-name descname"><span class="pre">ManagerSettings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">*</span></em>, <em class="sig-param"><span class="pre">common:</span> <span class="pre">qcfractal.cli.qcfractal_manager.CommonManagerSettings</span> <span class="pre">=</span> <span class="pre">CommonManagerSettings(adapter=&lt;AdapterEnum.pool:</span> <span class="pre">'pool'&gt;</span></em>, <em class="sig-param"><span class="pre">tasks_per_worker=1</span></em>, <em class="sig-param"><span class="pre">cores_per_worker=2</span></em>, <em class="sig-param"><span class="pre">memory_per_worker=5.851</span></em>, <em class="sig-param"><span class="pre">max_workers=1</span></em>, <em class="sig-param"><span class="pre">retries=2</span></em>, <em class="sig-param"><span class="pre">scratch_directory=None</span></em>, <em class="sig-param"><span class="pre">verbose=False</span></em>, <em class="sig-param"><span class="pre">nodes_per_job=1</span></em>, <em class="sig-param"><span class="pre">nodes_per_task=1</span></em>, <em class="sig-param"><span class="pre">cores_per_rank=1)</span></em>, <em class="sig-param"><span class="pre">server:</span> <span class="pre">qcfractal.cli.qcfractal_manager.FractalServerSettings</span> <span class="pre">=</span> <span class="pre">FractalServerSettings(fractal_uri='localhost:7777'</span></em>, <em class="sig-param"><span class="pre">username=None</span></em>, <em class="sig-param"><span class="pre">password=None</span></em>, <em class="sig-param"><span class="pre">verify=None)</span></em>, <em class="sig-param"><span class="pre">manager:</span> <span class="pre">qcfractal.cli.qcfractal_manager.QueueManagerSettings</span> <span class="pre">=</span> <span class="pre">QueueManagerSettings(manager_name='unlabeled'</span></em>, <em class="sig-param"><span class="pre">queue_tag=None</span></em>, <em class="sig-param"><span class="pre">log_file_prefix=None</span></em>, <em class="sig-param"><span class="pre">update_frequency=30.0</span></em>, <em class="sig-param"><span class="pre">test=False</span></em>, <em class="sig-param"><span class="pre">ntests=5</span></em>, <em class="sig-param"><span class="pre">max_queued_tasks=None)</span></em>, <em class="sig-param"><span class="pre">cluster:</span> <span class="pre">qcfractal.cli.qcfractal_manager.ClusterSettings</span> <span class="pre">=</span> <span class="pre">ClusterSettings(node_exclusivity=False</span></em>, <em class="sig-param"><span class="pre">scheduler=None</span></em>, <em class="sig-param"><span class="pre">scheduler_options=[]</span></em>, <em class="sig-param"><span class="pre">task_startup_commands=[]</span></em>, <em class="sig-param"><span class="pre">walltime='06:00:00'</span></em>, <em class="sig-param"><span class="pre">adaptive=&lt;AdaptiveCluster.adaptive:</span> <span class="pre">'adaptive'&gt;)</span></em>, <em class="sig-param"><span class="pre">dask:</span> <span class="pre">qcfractal.cli.qcfractal_manager.DaskQueueSettings</span> <span class="pre">=</span> <span class="pre">DaskQueueSettings(interface=None</span></em>, <em class="sig-param"><span class="pre">extra=None</span></em>, <em class="sig-param"><span class="pre">lsf_units=None)</span></em>, <em class="sig-param"><span class="pre">parsl:</span> <span class="pre">qcfractal.cli.qcfractal_manager.ParslQueueSettings</span> <span class="pre">=</span> <span class="pre">ParslQueueSettings(executor=ParslExecutorSettings(address=None)</span></em>, <em class="sig-param"><span class="pre">provider=ParslProviderSettings(partition=None</span></em>, <em class="sig-param"><span class="pre">launcher=None))</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/qcfractal/cli/qcfractal_manager.html#ManagerSettings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.cli.qcfractal_manager.ManagerSettings" title="Permalink to this definition"></a></dt>
+<dd><p>The config file for setting up a QCFractal Manager, all sub fields of this model are at equal top-level of the
+YAML file. No additional top-level fields are permitted, but sub-fields may have their own additions.</p>
+<p>Not all fields are required and many will depend on the cluster you are running, and the adapter you choose
+to run on.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>common</strong> (<a class="reference internal" href="#qcfractal.cli.qcfractal_manager.CommonManagerSettings" title="qcfractal.cli.qcfractal_manager.CommonManagerSettings"><code class="xref py py-class docutils literal notranslate"><span class="pre">CommonManagerSettings</span></code></a>, Optional)</p></li>
+<li><p><strong>server</strong> (<a class="reference internal" href="#qcfractal.cli.qcfractal_manager.FractalServerSettings" title="qcfractal.cli.qcfractal_manager.FractalServerSettings"><code class="xref py py-class docutils literal notranslate"><span class="pre">FractalServerSettings</span></code></a>, Optional)</p></li>
+<li><p><strong>manager</strong> (<a class="reference internal" href="#qcfractal.cli.qcfractal_manager.QueueManagerSettings" title="qcfractal.cli.qcfractal_manager.QueueManagerSettings"><code class="xref py py-class docutils literal notranslate"><span class="pre">QueueManagerSettings</span></code></a>, Optional)</p></li>
+<li><p><strong>cluster</strong> (<a class="reference internal" href="#qcfractal.cli.qcfractal_manager.ClusterSettings" title="qcfractal.cli.qcfractal_manager.ClusterSettings"><code class="xref py py-class docutils literal notranslate"><span class="pre">ClusterSettings</span></code></a>, Optional)</p></li>
+<li><p><strong>dask</strong> (<a class="reference internal" href="#qcfractal.cli.qcfractal_manager.DaskQueueSettings" title="qcfractal.cli.qcfractal_manager.DaskQueueSettings"><code class="xref py py-class docutils literal notranslate"><span class="pre">DaskQueueSettings</span></code></a>, Optional)</p></li>
+<li><p><strong>parsl</strong> (<a class="reference internal" href="#qcfractal.cli.qcfractal_manager.ParslQueueSettings" title="qcfractal.cli.qcfractal_manager.ParslQueueSettings"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParslQueueSettings</span></code></a>, Optional)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="common">
+<h2>common<a class="headerlink" href="#common" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="qcfractal.cli.qcfractal_manager.CommonManagerSettings">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qcfractal.cli.qcfractal_manager.</span></span><span class="sig-name descname"><span class="pre">CommonManagerSettings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_env_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'&lt;object</span> <span class="pre">object&gt;'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_env_file_encoding</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_secrets_dir</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">adapter</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">qcfractal.cli.qcfractal_manager.AdapterEnum</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">AdapterEnum.pool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tasks_per_worker</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cores_per_worker</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">qcfractal.cli.qcfractal_manager.ConstrainedIntValue</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory_per_worker</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">qcfractal.cli.qcfractal_manager.ConstrainedFloatValue</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">5.851</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">qcfractal.cli.qcfractal_manager.ConstrainedIntValue</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">retries</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">qcfractal.cli.qcfractal_manager.ConstrainedIntValue</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scratch_directory</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes_per_job</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">qcfractal.cli.qcfractal_manager.ConstrainedIntValue</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes_per_task</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">qcfractal.cli.qcfractal_manager.ConstrainedIntValue</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cores_per_rank</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/qcfractal/cli/qcfractal_manager.html#CommonManagerSettings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.cli.qcfractal_manager.CommonManagerSettings" title="Permalink to this definition"></a></dt>
+<dd><p>The Common settings are the settings most users will need to adjust regularly to control the nature of
+task execution and the hardware under which tasks are executed on. This block is often unique to each deployment,
+user, and manager and will be the most commonly updated options, even as config files are copied and reused, and
+even on the same platform/cluster.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul>
+<li><p><strong>adapter</strong> (<em>{dask,pool,parsl}, Default: pool</em>) – Which type of Distributed adapter to run tasks through.</p></li>
+<li><p><strong>tasks_per_worker</strong> (<em>int, Default: 1</em>) – Number of concurrent tasks to run <em>per Worker</em> which is executed. Total number of concurrent tasks is this value times max_workers, assuming the hardware is available. With the pool adapter, and/or if max_workers=1, tasks_per_worker <em>is</em> the number of concurrent tasks.</p></li>
+<li><p><strong>cores_per_worker</strong> (<em>ConstrainedInt, Default: 2</em>) – Number of cores to be consumed by the Worker and distributed over the tasks_per_worker. These
+cores are divided evenly, so it is recommended that quotient of cores_per_worker/tasks_per_worker
+be a whole number else the core distribution is left up to the logic of the adapter. The default
+value is read from the number of detected cores on the system you are executing on.</p>
+<p>In the case of node-parallel tasks, this number means the number of cores per node.</p>
+</li>
+<li><p><strong>memory_per_worker</strong> (<em>ConstrainedFloat, Default: 5.851</em>) – Amount of memory (in GB) to be consumed and distributed over the tasks_per_worker. This memory is divided evenly, but is ultimately at the control of the adapter. Engine will only allow each of its calls to consume memory_per_worker/tasks_per_worker of memory. Total memory consumed by this manager at any one time is this value times max_workers. The default value is read from the amount of memory detected on the system you are executing on.</p></li>
+<li><p><strong>max_workers</strong> (<em>ConstrainedInt, Default: 1</em>) – The maximum number of Workers which are allowed to be run at the same time. The total number of concurrent tasks will maximize at this quantity times tasks_per_worker.The total number of Jobs on a cluster which will be started is equal to this parameter in most cases, and should be assumed 1 Worker per Job. Any exceptions to this will be documented. In node exclusive mode this is equivalent to the maximum number of nodes which you will consume. This must be a positive, non zero integer.</p></li>
+<li><p><strong>retries</strong> (<em>ConstrainedInt, Default: 2</em>) – Number of retries that QCEngine will attempt for RandomErrors detected when running its computations. After this many attempts (or on any other type of error), the error will be raised.</p></li>
+<li><p><strong>scratch_directory</strong> (<em>str, Optional</em>) – Scratch directory for Engine execution jobs.</p></li>
+<li><p><strong>verbose</strong> (<em>bool, Default: False</em>) – Turn on verbose mode or not. In verbose mode, all messages from DEBUG level and up are shown, otherwise, defaults are all used for any logger.</p></li>
+<li><p><strong>nodes_per_job</strong> (<em>ConstrainedInt, Default: 1</em>) – The number of nodes to request per job. Only used by the Parsl adapter at present</p></li>
+<li><p><strong>nodes_per_task</strong> (<em>ConstrainedInt, Default: 1</em>) – The number of nodes to use for each tasks. Only relevant for node-parallel executables.</p></li>
+<li><p><strong>cores_per_rank</strong> (<em>int, Default: 1</em>) – The number of cores per MPI rank for MPI-parallel applications. Only relevant for node-parallel codes and the most relevant to codes that with hybrid MPI+OpenMP parallelism (e.g., NWChem).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="server">
+<span id="managers-server"></span><h2>server<a class="headerlink" href="#server" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="qcfractal.cli.qcfractal_manager.FractalServerSettings">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qcfractal.cli.qcfractal_manager.</span></span><span class="sig-name descname"><span class="pre">FractalServerSettings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_env_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'&lt;object</span> <span class="pre">object&gt;'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_env_file_encoding</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_secrets_dir</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fractal_uri</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'localhost:7777'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/qcfractal/cli/qcfractal_manager.html#FractalServerSettings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.cli.qcfractal_manager.FractalServerSettings" title="Permalink to this definition"></a></dt>
+<dd><p>Settings pertaining to the Fractal Server you wish to pull tasks from and push completed tasks to. Each manager
+supports exactly 1 Fractal Server to be in communication with, and exactly 1 user on that Fractal Server. These
+can be changed, but only once the Manager is shutdown and the settings changed. Multiple Managers however can be
+started in parallel with each other, but must be done as separate calls to the CLI.</p>
+<p>Caution: The password here is written in plain text, so it is up to the owner/writer of the configuration file
+to ensure its security.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fractal_uri</strong> (<em>str, Default: localhost:7777</em>) – Full URI to the Fractal Server you want to connect to</p></li>
+<li><p><strong>username</strong> (<em>str, Optional</em>) – Username to connect to the Fractal Server with. When not provided, a connection is attempted as a guest user, which in most default Servers will be unable to return results.</p></li>
+<li><p><strong>password</strong> (<em>str, Optional</em>) – Password to authenticate to the Fractal Server with (alongside the <cite>username</cite>)</p></li>
+<li><p><strong>verify</strong> (<em>bool, Optional</em>) – Use Server-side generated SSL certification or not.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="manager">
+<h2>manager<a class="headerlink" href="#manager" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="qcfractal.cli.qcfractal_manager.QueueManagerSettings">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qcfractal.cli.qcfractal_manager.</span></span><span class="sig-name descname"><span class="pre">QueueManagerSettings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_env_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'&lt;object</span> <span class="pre">object&gt;'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_env_file_encoding</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_secrets_dir</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">manager_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'unlabeled'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queue_tag</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_file_prefix</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_frequency</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">qcfractal.cli.qcfractal_manager.ConstrainedFloatValue</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ntests</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">qcfractal.cli.qcfractal_manager.ConstrainedIntValue</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_queued_tasks</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">qcfractal.cli.qcfractal_manager.ConstrainedIntValue</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/qcfractal/cli/qcfractal_manager.html#QueueManagerSettings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.cli.qcfractal_manager.QueueManagerSettings" title="Permalink to this definition"></a></dt>
+<dd><p>Fractal Queue Manger settings. These are options which control the setup and execution of the Fractal Manager
+itself.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>manager_name</strong> (<em>str, Default: unlabeled</em>) – Name of this scheduler to present to the Fractal Server. Descriptive names help the server identify the manager resource and assists with debugging.</p></li>
+<li><p><strong>queue_tag</strong> (<em>Union[str, List[str]], Optional</em>) – Only pull tasks from the Fractal Server with this tag. If not set (None/null), then pull untagged tasks, which should be the majority of tasks. This option should only be used when you want to pull very specific tasks which you know have been tagged as such on the server. If the server has no tasks with this tag, no tasks will be pulled (and no error is raised because this is intended behavior). If multiple tags are provided, tasks will be pulled (but not necessarily executed) in order of the tags.</p></li>
+<li><p><strong>log_file_prefix</strong> (<em>str, Optional</em>) – Full path to save a log file to, including the filename. If not provided, information will still be reported to terminal, but not saved. When set, logger information is sent both to this file and the terminal.</p></li>
+<li><p><strong>update_frequency</strong> (<em>ConstrainedFloat, Default: 30</em>) – Time between heartbeats/update checks between this Manager and the Fractal Server. The lower this value, the shorter the intervals. If you have an unreliable network connection, consider increasing this time as repeated, consecutive network failures will cause the Manager to shut itself down to maintain integrity between it and the Fractal Server. Units of seconds</p></li>
+<li><p><strong>test</strong> (<em>bool, Default: False</em>) – Turn on testing mode for this Manager. The Manager will not connect to any Fractal Server, and instead submits netsts worth trial tasks per quantum chemistry program it finds. These tasks are generated locally and do not need a running Fractal Server to work. Helpful for ensuring the Manager is configured correctly and the quantum chemistry codes are operating as expected.</p></li>
+<li><p><strong>ntests</strong> (<em>ConstrainedInt, Default: 5</em>) – Number of tests to run if the <cite>test</cite> flag is set to True. Total number of tests will be this number times the number of found quantum chemistry programs. Does nothing if <cite>test</cite> is False.If set to 0, then this submits no tests, but it will run through the setup and client initialization.</p></li>
+<li><p><strong>max_queued_tasks</strong> (<em>ConstrainedInt, Optional</em>) – Generally should not be set. Number of tasks to pull from the Fractal Server to keep locally at all times. If <cite>None</cite>, this is automatically computed as <cite>ceil(common.tasks_per_worker*common.max_workers*2.0) + 1</cite>. As tasks are completed, the local pool is filled back up to this value. These tasks will all attempt to be run concurrently, but concurrent tasks are limited by number of cluster jobs and tasks per job. Pulling too many of these can result in under-utilized managers from other sites and result in less FIFO returns. As such it is recommended not to touch this setting in general as you will be given enough tasks to fill your maximum throughput with a buffer (assuming the queue has them).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="cluster">
+<h2>cluster<a class="headerlink" href="#cluster" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="qcfractal.cli.qcfractal_manager.ClusterSettings">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qcfractal.cli.qcfractal_manager.</span></span><span class="sig-name descname"><span class="pre">ClusterSettings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_env_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'&lt;object</span> <span class="pre">object&gt;'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_env_file_encoding</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_secrets_dir</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_exclusivity</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scheduler</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">qcfractal.cli.qcfractal_manager.SchedulerEnum</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scheduler_options</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_startup_commands</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">walltime</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'06:00:00'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">adaptive</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">qcfractal.cli.qcfractal_manager.AdaptiveCluster</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">AdaptiveCluster.adaptive</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/qcfractal/cli/qcfractal_manager.html#ClusterSettings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.cli.qcfractal_manager.ClusterSettings" title="Permalink to this definition"></a></dt>
+<dd><p>Settings tied to the cluster you are running on. These settings are mostly tied to the nature of the cluster
+jobs you are submitting, separate from the nature of the compute tasks you will be running within them. As such,
+the options here are things like wall time (per job), which Scheduler your cluster has (like PBS or SLURM),
+etc. No additional options are allowed here.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node_exclusivity</strong> (<em>bool, Default: False</em>) – Run your cluster jobs in node-exclusivity mode. This option may not be available to all scheduler types and thus may not do anything. Related to this, the flags we have found for this option may not be correct for your scheduler and thus might throw an error. You can always add the correct flag/parameters to the <cite>scheduler_options</cite> parameter and leave this as False if you find it gives you problems.</p></li>
+<li><p><strong>scheduler</strong> (<em>{slurm,pbs,sge,moab,lsf,cobalt}, Optional</em>) – Option of which Scheduler/Queuing system your cluster uses. Note: not all scheduler options are available with every adapter.</p></li>
+<li><p><strong>scheduler_options</strong> (<em>List[str], Default: []</em>) – Additional options which are fed into the header files for your submitted jobs to your cluster’s Scheduler/Queuing system. The directives are automatically filled in, so if you want to set something like ‘#PBS -n something’, you would instead just do ‘-n something’. Each directive should be a separate string entry in the list. No validation is done on this with respect to valid directives so it is on the user to know what they need to set.</p></li>
+<li><p><strong>task_startup_commands</strong> (<em>List[str], Default: []</em>) – Additional commands to be run before starting the Workers and the task distribution. This can include commands needed to start things like conda environments or setting environment variables before executing the Workers. These commands are executed first before any of the distributed commands run and are added to the batch scripts as individual commands per entry, verbatim.</p></li>
+<li><p><strong>walltime</strong> (<em>str, Default: 06:00:00</em>) – Wall clock time of each cluster job started. Presented as a string in HH:MM:SS form, but your cluster may have a different structural syntax. This number should be set high as there should be a number of Fractal tasks which are run for each submitted cluster job. Ideally, the job will start, the Worker will land, and the Worker will crunch through as many tasks as it can; meaning the job which has a Worker in it must continue existing to minimize time spend redeploying Workers.</p></li>
+<li><p><strong>adaptive</strong> (<em>{static,adaptive}, Default: adaptive</em>) – Whether or not to use adaptive scaling of Workers or not. If set to ‘static’, a fixed number of Workers will be started (and likely <em>NOT</em> restarted when the wall clock is reached). When set to ‘adaptive’ (the default), the distributed engine will try to adaptively scale the number of Workers based on tasks in the queue. This is str instead of bool type variable in case more complex adaptivity options are added in the future.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="dask">
+<h2>dask<a class="headerlink" href="#dask" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="qcfractal.cli.qcfractal_manager.DaskQueueSettings">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qcfractal.cli.qcfractal_manager.</span></span><span class="sig-name descname"><span class="pre">DaskQueueSettings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interface</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lsf_units</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/qcfractal/cli/qcfractal_manager.html#DaskQueueSettings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.cli.qcfractal_manager.DaskQueueSettings" title="Permalink to this definition"></a></dt>
+<dd><p>Settings for the Dask Cluster class. Values set here are passed directly into the Cluster objects based on the
+<cite>cluster.scheduler</cite> settings. Although many values are set automatically from other settings, there are
+some additional values such as <cite>interface</cite> and <cite>extra</cite> which are passed through to the constructor.</p>
+<p>Valid values for this field are functions of your cluster.scheduler and no linting is done ahead of trying to pass
+these to Dask.</p>
+<p>NOTE: The parameters listed here are a special exception for additional features Fractal has engineered or
+options which should be considered for some of the edge cases we have discovered. If you try to set a value
+which is derived from other options in the YAML file, an error is raised and you are told exactly which one is
+forbidden.</p>
+<p>Please see the docs for the provider for more information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>interface</strong> (<em>str, Optional</em>) – Name of the network adapter to use as communication between the head node and the compute node.There are oddities of this when the head node and compute node use different ethernet adapter names and we have not figured out exactly which combination is needed between this and the poorly documented <cite>ip</cite> keyword which appears to be for Workers, but not the Client.</p></li>
+<li><p><strong>extra</strong> (<em>List[str], Optional</em>) – Additional flags which are fed into the Dask Worker CLI startup, can be used to overwrite pre-configured options. Do not use unless you know exactly which flags to use.</p></li>
+<li><p><strong>lsf_units</strong> (<em>str, Optional</em>) – Unit system for an LSF cluster limits (e.g. MB, GB, TB). If not set, the units are are attempted to be set from the <cite>lsf.conf</cite> file in the default locations. This does nothing if the cluster is not LSF</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="parsl">
+<h2>parsl<a class="headerlink" href="#parsl" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="qcfractal.cli.qcfractal_manager.ParslQueueSettings">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qcfractal.cli.qcfractal_manager.</span></span><span class="sig-name descname"><span class="pre">ParslQueueSettings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_env_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'&lt;object</span> <span class="pre">object&gt;'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_env_file_encoding</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_secrets_dir</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">executor</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#qcfractal.cli.qcfractal_manager.ParslExecutorSettings" title="qcfractal.cli.qcfractal_manager.ParslExecutorSettings"><span class="pre">qcfractal.cli.qcfractal_manager.ParslExecutorSettings</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">ParslExecutorSettings(address=None)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">provider</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#qcfractal.cli.qcfractal_manager.ParslProviderSettings" title="qcfractal.cli.qcfractal_manager.ParslProviderSettings"><span class="pre">qcfractal.cli.qcfractal_manager.ParslProviderSettings</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">ParslProviderSettings(partition=None,</span> <span class="pre">launcher=None)</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/qcfractal/cli/qcfractal_manager.html#ParslQueueSettings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.cli.qcfractal_manager.ParslQueueSettings" title="Permalink to this definition"></a></dt>
+<dd><p>The Parsl-specific configurations used with the <cite>common.adapter = parsl</cite> setting. The parsl config is broken up into
+a top level <cite>Config</cite> class, an <cite>Executor</cite> sub-class, and a <cite>Provider</cite> sub-class of the <cite>Executor</cite>.
+Config -&gt; Executor -&gt; Provider. Each of these have their own options, and extra values fed into the
+ParslQueueSettings are fed to the <cite>Config</cite> level.</p>
+<p>It requires both <cite>executor</cite> and <cite>provider</cite> settings, but will default fill them in and often does not need
+any further configuration which is handled by other settings in the config file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>executor</strong> (<a class="reference internal" href="#qcfractal.cli.qcfractal_manager.ParslExecutorSettings" title="qcfractal.cli.qcfractal_manager.ParslExecutorSettings"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParslExecutorSettings</span></code></a>, Optional)</p></li>
+<li><p><strong>provider</strong> (<a class="reference internal" href="#qcfractal.cli.qcfractal_manager.ParslProviderSettings" title="qcfractal.cli.qcfractal_manager.ParslProviderSettings"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParslProviderSettings</span></code></a>, Optional)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="executor">
+<h3>executor<a class="headerlink" href="#executor" title="Permalink to this headline"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="qcfractal.cli.qcfractal_manager.ParslExecutorSettings">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qcfractal.cli.qcfractal_manager.</span></span><span class="sig-name descname"><span class="pre">ParslExecutorSettings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/qcfractal/cli/qcfractal_manager.html#ParslExecutorSettings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.cli.qcfractal_manager.ParslExecutorSettings" title="Permalink to this definition"></a></dt>
+<dd><p>Settings for the Parsl Executor class. This serves as the primary mechanism for distributing Workers to jobs.
+In most cases, you will not need to set any of these options, as several options are automatically inferred
+from other settings. Any option set here is passed through to the HighThroughputExecutor class of Parsl.</p>
+<p><a class="reference external" href="https://parsl.readthedocs.io/en/latest/stubs/parsl.executors.HighThroughputExecutor.html">https://parsl.readthedocs.io/en/latest/stubs/parsl.executors.HighThroughputExecutor.html</a></p>
+<p>NOTE: The parameters listed here are a special exception for additional features Fractal has engineered or
+options which should be considered for some of the edge cases we have discovered. If you try to set a value
+which is derived from other options in the YAML file, an error is raised and you are told exactly which one is
+forbidden.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>address</strong> (<em>str, Optional</em>) – This only needs to be set in conditional cases when the head node and compute nodes use a differently named ethernet adapter.</p>
+<p>An address to connect to the main Parsl process which is reachable from the network in which Workers will be running. This can be either a hostname as returned by hostname or an IP address. Most login nodes on clusters have several network interfaces available, only some of which can be reached from the compute nodes. Some trial and error might be necessary to identify what addresses are reachable from compute nodes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="provider">
+<h3>provider<a class="headerlink" href="#provider" title="Permalink to this headline"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="qcfractal.cli.qcfractal_manager.ParslProviderSettings">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qcfractal.cli.qcfractal_manager.</span></span><span class="sig-name descname"><span class="pre">ParslProviderSettings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partition</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">launcher</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">qcfractal.cli.qcfractal_manager.ParslLauncherSettings</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/qcfractal/cli/qcfractal_manager.html#ParslProviderSettings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcfractal.cli.qcfractal_manager.ParslProviderSettings" title="Permalink to this definition"></a></dt>
+<dd><p>Settings for the Parsl Provider class. Valid values for this field depend on your choice of  cluster.scheduler and
+are defined in <a class="reference external" href="https://parsl.readthedocs.io/en/stable/userguide/execution.html#execution-providers">the Parsl docs for the providers</a> with some minor exceptions.
+The initializer function for the Parsl settings will indicate which</p>
+<p>NOTE: The parameters listed here are a special exception for additional features Fractal has engineered or
+options which should be considered for some of the edge cases we have discovered. If you try to set a value
+which is derived from other options in the YAML file, an error is raised and you are told exactly which one is
+forbidden.</p>
+<p>SLURM: <a class="reference external" href="https://parsl.readthedocs.io/en/latest/stubs/parsl.providers.SlurmProvider.html">https://parsl.readthedocs.io/en/latest/stubs/parsl.providers.SlurmProvider.html</a>
+PBS/Torque/Moab: <a class="reference external" href="https://parsl.readthedocs.io/en/latest/stubs/parsl.providers.TorqueProvider.html">https://parsl.readthedocs.io/en/latest/stubs/parsl.providers.TorqueProvider.html</a>
+SGE (Sun GridEngine): <a class="reference external" href="https://parsl.readthedocs.io/en/latest/stubs/parsl.providers.GridEngineProvider.html">https://parsl.readthedocs.io/en/latest/stubs/parsl.providers.GridEngineProvider.html</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>partition</strong> (<em>str, Optional</em>) – The name of the cluster.scheduler partition being submitted to. Behavior, valid values, and evenits validity as a set variable are a function of what type of queue scheduler your specific cluster has (e.g. this variable should NOT be present for PBS clusters). Check with your Sys. Admins and/or your cluster documentation.</p></li>
+<li><p><strong>launcher</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ParslLauncherSettings</span></code>, Optional) – The Parsl Launcher to use with your Provider. If left to <code class="docutils literal notranslate"><span class="pre">None</span></code>, defaults are assumed (check the Provider’s defaults), otherwise this should be a dictionary requiring the option <code class="docutils literal notranslate"><span class="pre">launcher_class</span></code> as a str to specify which Launcher class to load, and the remaining settings will be passed on to the Launcher’s constructor.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="managers.html" class="btn btn-neutral float-left" title="Fractal Queue Managers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="managers_hpc.html" class="btn btn-neutral float-right" title="Configuration for High-Performance Computing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2021, The Molecular Sciences Software Institute.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

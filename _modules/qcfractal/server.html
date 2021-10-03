@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>qcfractal.server &mdash; QCFractal 0+untagged.1.ge9cee03 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> QCFractal
+          </a>
+              <div class="version">
+                0+untagged.1.ge9cee03
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Install QCFractal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../setup_quickstart.html">Setup Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../setup_server.html">Server Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../setup_compute.html">Manager Setup</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Records Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../procedures.html">Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../flow.html">Fractal Call Flowcharts</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manager Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../managers.html">Fractal Queue Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../managers_config_api.html">Queue Manager API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../managers_hpc.html">Configuration for High-Performance Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../managers_samples.html">Queue Manager Example YAML Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../managers_faq.html">Queue Manager Frequent Questions and Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../managers_detailed.html">Detailed Manager Information</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server CLI and Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../server_init.html">Fractal Server Init</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server_config.html">Fractal Server Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server_start.html">Fractal Server Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server_user.html">Fractal Server User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server_upgrade.html">Fractal Server Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server_view.html">Server-side Dataset Views</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../qcarchive_overview.html">QCArchive Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">QCFractal API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../database_design.html">Database Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev_guidelines.html">Development Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">QCFractal</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      <li>qcfractal.server</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for qcfractal.server</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The FractalServer class</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">ssl</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">traceback</span>
+<span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ThreadPoolExecutor</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span>
+<span class="kn">from</span> <span class="nn">qcelemental.models</span> <span class="kn">import</span> <span class="n">ComputeError</span>
+
+<span class="kn">import</span> <span class="nn">tornado.ioloop</span>
+<span class="kn">import</span> <span class="nn">tornado.log</span>
+<span class="kn">import</span> <span class="nn">tornado.options</span>
+<span class="kn">import</span> <span class="nn">tornado.web</span>
+
+<span class="kn">from</span> <span class="nn">.extras</span> <span class="kn">import</span> <span class="n">get_information</span>
+<span class="kn">from</span> <span class="nn">.interface</span> <span class="kn">import</span> <span class="n">FractalClient</span>
+<span class="kn">from</span> <span class="nn">.queue</span> <span class="kn">import</span> <span class="n">QueueManager</span><span class="p">,</span> <span class="n">QueueManagerHandler</span><span class="p">,</span> <span class="n">ServiceQueueHandler</span><span class="p">,</span> <span class="n">TaskQueueHandler</span><span class="p">,</span> <span class="n">ComputeManagerHandler</span>
+<span class="kn">from</span> <span class="nn">.services</span> <span class="kn">import</span> <span class="n">construct_service</span>
+<span class="kn">from</span> <span class="nn">.storage_sockets</span> <span class="kn">import</span> <span class="n">ViewHandler</span><span class="p">,</span> <span class="n">storage_socket_factory</span>
+<span class="kn">from</span> <span class="nn">.storage_sockets.api_logger</span> <span class="kn">import</span> <span class="n">API_AccessLogger</span>
+<span class="kn">from</span> <span class="nn">.web_handlers</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">CollectionHandler</span><span class="p">,</span>
+    <span class="n">InformationHandler</span><span class="p">,</span>
+    <span class="n">KeywordHandler</span><span class="p">,</span>
+    <span class="n">KVStoreHandler</span><span class="p">,</span>
+    <span class="n">MoleculeHandler</span><span class="p">,</span>
+    <span class="n">OptimizationHandler</span><span class="p">,</span>
+    <span class="n">ProcedureHandler</span><span class="p">,</span>
+    <span class="n">ResultHandler</span><span class="p">,</span>
+    <span class="n">WavefunctionStoreHandler</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_build_ssl</span><span class="p">():</span>
+    <span class="kn">from</span> <span class="nn">cryptography</span> <span class="kn">import</span> <span class="n">x509</span>
+    <span class="kn">from</span> <span class="nn">cryptography.x509.oid</span> <span class="kn">import</span> <span class="n">NameOID</span>
+    <span class="kn">from</span> <span class="nn">cryptography.hazmat.primitives</span> <span class="kn">import</span> <span class="n">hashes</span>
+    <span class="kn">from</span> <span class="nn">cryptography.hazmat.backends</span> <span class="kn">import</span> <span class="n">default_backend</span>
+    <span class="kn">from</span> <span class="nn">cryptography.hazmat.primitives</span> <span class="kn">import</span> <span class="n">serialization</span>
+    <span class="kn">from</span> <span class="nn">cryptography.hazmat.primitives.asymmetric</span> <span class="kn">import</span> <span class="n">rsa</span>
+
+    <span class="kn">import</span> <span class="nn">sys</span>
+    <span class="kn">import</span> <span class="nn">socket</span>
+    <span class="kn">import</span> <span class="nn">ipaddress</span>
+    <span class="kn">import</span> <span class="nn">random</span>
+
+    <span class="n">hostname</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">()</span>
+    <span class="n">public_ip</span> <span class="o">=</span> <span class="n">ipaddress</span><span class="o">.</span><span class="n">ip_address</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">gethostbyname</span><span class="p">(</span><span class="n">hostname</span><span class="p">))</span>
+
+    <span class="n">key</span> <span class="o">=</span> <span class="n">rsa</span><span class="o">.</span><span class="n">generate_private_key</span><span class="p">(</span><span class="n">public_exponent</span><span class="o">=</span><span class="mi">65537</span><span class="p">,</span> <span class="n">key_size</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="n">default_backend</span><span class="p">())</span>
+
+    <span class="n">alt_name_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">x509</span><span class="o">.</span><span class="n">DNSName</span><span class="p">(</span><span class="n">hostname</span><span class="p">),</span> <span class="n">x509</span><span class="o">.</span><span class="n">IPAddress</span><span class="p">(</span><span class="n">ipaddress</span><span class="o">.</span><span class="n">ip_address</span><span class="p">(</span><span class="n">public_ip</span><span class="p">))]</span>
+    <span class="n">alt_names</span> <span class="o">=</span> <span class="n">x509</span><span class="o">.</span><span class="n">SubjectAlternativeName</span><span class="p">(</span><span class="n">alt_name_list</span><span class="p">)</span>
+
+    <span class="c1"># Basic data</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">x509</span><span class="o">.</span><span class="n">Name</span><span class="p">([</span><span class="n">x509</span><span class="o">.</span><span class="n">NameAttribute</span><span class="p">(</span><span class="n">NameOID</span><span class="o">.</span><span class="n">COMMON_NAME</span><span class="p">,</span> <span class="n">hostname</span><span class="p">)])</span>
+    <span class="n">basic_contraints</span> <span class="o">=</span> <span class="n">x509</span><span class="o">.</span><span class="n">BasicConstraints</span><span class="p">(</span><span class="n">ca</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">path_length</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span>
+
+    <span class="c1"># Build cert</span>
+    <span class="n">cert</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">x509</span><span class="o">.</span><span class="n">CertificateBuilder</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">subject_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">issuer_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">public_key</span><span class="p">(</span><span class="n">key</span><span class="o">.</span><span class="n">public_key</span><span class="p">())</span>
+        <span class="o">.</span><span class="n">serial_number</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="n">sys</span><span class="o">.</span><span class="n">maxsize</span><span class="p">))</span>
+        <span class="o">.</span><span class="n">not_valid_before</span><span class="p">(</span><span class="n">now</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">not_valid_after</span><span class="p">(</span><span class="n">now</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">10</span> <span class="o">*</span> <span class="mi">365</span><span class="p">))</span>
+        <span class="o">.</span><span class="n">add_extension</span><span class="p">(</span><span class="n">basic_contraints</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">add_extension</span><span class="p">(</span><span class="n">alt_names</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">hashes</span><span class="o">.</span><span class="n">SHA256</span><span class="p">(),</span> <span class="n">default_backend</span><span class="p">())</span>
+    <span class="p">)</span>  <span class="c1"># yapf: disable</span>
+
+    <span class="c1"># Build and return keys</span>
+    <span class="n">cert_pem</span> <span class="o">=</span> <span class="n">cert</span><span class="o">.</span><span class="n">public_bytes</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="n">serialization</span><span class="o">.</span><span class="n">Encoding</span><span class="o">.</span><span class="n">PEM</span><span class="p">)</span>
+    <span class="n">key_pem</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">private_bytes</span><span class="p">(</span>
+        <span class="n">encoding</span><span class="o">=</span><span class="n">serialization</span><span class="o">.</span><span class="n">Encoding</span><span class="o">.</span><span class="n">PEM</span><span class="p">,</span>
+        <span class="nb">format</span><span class="o">=</span><span class="n">serialization</span><span class="o">.</span><span class="n">PrivateFormat</span><span class="o">.</span><span class="n">TraditionalOpenSSL</span><span class="p">,</span>
+        <span class="n">encryption_algorithm</span><span class="o">=</span><span class="n">serialization</span><span class="o">.</span><span class="n">NoEncryption</span><span class="p">(),</span>
+    <span class="p">)</span>  <span class="c1"># yapf: disable</span>
+
+    <span class="k">return</span> <span class="n">cert_pem</span><span class="p">,</span> <span class="n">key_pem</span>
+
+
+<div class="viewcode-block" id="FractalServer"><a class="viewcode-back" href="../../api/qcfractal.FractalServer.html#qcfractal.FractalServer">[docs]</a><span class="k">class</span> <span class="nc">FractalServer</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="c1"># Server info options</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;QCFractal Server&quot;</span><span class="p">,</span>
+        <span class="n">port</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">7777</span><span class="p">,</span>
+        <span class="n">loop</span><span class="p">:</span> <span class="s2">&quot;IOLoop&quot;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">compress_response</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="c1"># Security</span>
+        <span class="n">security</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">allow_read</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">ssl_options</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">bool</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="c1"># Database options</span>
+        <span class="n">storage_uri</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;postgresql://localhost:5432&quot;</span><span class="p">,</span>
+        <span class="n">storage_project_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;qcfractal_default&quot;</span><span class="p">,</span>
+        <span class="n">query_limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="c1"># View options</span>
+        <span class="n">view_enabled</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">view_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="c1"># Log options</span>
+        <span class="n">logfile_prefix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">loglevel</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;info&quot;</span><span class="p">,</span>
+        <span class="n">log_apis</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">geo_file_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="c1"># Queue options</span>
+        <span class="n">queue_socket</span><span class="p">:</span> <span class="s2">&quot;BaseAdapter&quot;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">heartbeat_frequency</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">1800</span><span class="p">,</span>
+        <span class="c1"># Service options</span>
+        <span class="n">max_active_services</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="n">service_frequency</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">60</span><span class="p">,</span>
+        <span class="c1"># Testing functions</span>
+        <span class="n">skip_storage_version_check</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;QCFractal initialization</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        name : str, optional</span>
+<span class="sd">            The name of the server itself, provided when users query information</span>
+<span class="sd">        port : int, optional</span>
+<span class="sd">            The port the server will listen on.</span>
+<span class="sd">        loop : IOLoop, optional</span>
+<span class="sd">            Provide an IOLoop to use for the server</span>
+<span class="sd">        compress_response : bool, optional</span>
+<span class="sd">            Automatic compression of responses, turn on unless behind a proxy that</span>
+<span class="sd">            provides this capability.</span>
+<span class="sd">        security : Optional[str], optional</span>
+<span class="sd">            The security options for the server {None, &quot;local&quot;}. The local security</span>
+<span class="sd">            option uses the database to cache users.</span>
+<span class="sd">        allow_read : bool, optional</span>
+<span class="sd">            Allow unregistered to perform GET operations on Molecule/KeywordSets/KVStore/Results/Procedures</span>
+<span class="sd">        ssl_options : Optional[Dict[str, str]], optional</span>
+<span class="sd">            True, automatically creates self-signed SSL certificates. False, turns off SSL entirely. A user can also supply a dictionary of valid certificates.</span>
+<span class="sd">        storage_uri : str, optional</span>
+<span class="sd">            The database URI that the underlying storage socket will connect to.</span>
+<span class="sd">        storage_project_name : str, optional</span>
+<span class="sd">            The project name to use on the database.</span>
+<span class="sd">        query_limit : int, optional</span>
+<span class="sd">            The maximum number of entries a query will return.</span>
+<span class="sd">        logfile_prefix : str, optional</span>
+<span class="sd">            The logfile to use for logging.</span>
+<span class="sd">        loglevel : str, optional</span>
+<span class="sd">            The level of logging to output</span>
+<span class="sd">        queue_socket : BaseAdapter, optional</span>
+<span class="sd">            An optional Adapter to provide for server to have limited local compute.</span>
+<span class="sd">            Should only be used for testing and interactive sessions.</span>
+<span class="sd">        heartbeat_frequency : float, optional</span>
+<span class="sd">            The time (in seconds) of the heartbeat manager frequency.</span>
+<span class="sd">        max_active_services : int, optional</span>
+<span class="sd">            The maximum number of active Services that can be running at any given time.</span>
+<span class="sd">        service_frequency : float, optional</span>
+<span class="sd">            The time (in seconds) before checking and updating services.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Save local options</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="n">port</span>
+        <span class="k">if</span> <span class="n">ssl_options</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_address</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_address</span> <span class="o">=</span> <span class="s2">&quot;https://localhost:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_active_services</span> <span class="o">=</span> <span class="n">max_active_services</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">service_frequency</span> <span class="o">=</span> <span class="n">service_frequency</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">heartbeat_frequency</span> <span class="o">=</span> <span class="n">heartbeat_frequency</span>
+
+        <span class="c1"># Setup logging.</span>
+        <span class="k">if</span> <span class="n">logfile_prefix</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">tornado</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;log_file_prefix&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">logfile_prefix</span>
+
+        <span class="n">tornado</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">enable_pretty_logging</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;tornado.application&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">loglevel</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+
+        <span class="c1"># Create API Access logger class if enables</span>
+        <span class="k">if</span> <span class="n">log_apis</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">api_logger</span> <span class="o">=</span> <span class="n">API_AccessLogger</span><span class="p">(</span><span class="n">geo_file_path</span><span class="o">=</span><span class="n">geo_file_path</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">api_logger</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># Build security layers</span>
+        <span class="k">if</span> <span class="n">security</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">storage_bypass_security</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">elif</span> <span class="n">security</span> <span class="o">==</span> <span class="s2">&quot;local&quot;</span><span class="p">:</span>
+            <span class="n">storage_bypass_security</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;Security option &#39;</span><span class="si">{}</span><span class="s2">&#39; not recognized.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">security</span><span class="p">))</span>
+
+        <span class="c1"># Handle SSL</span>
+        <span class="n">ssl_ctx</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client_verify</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">ssl_options</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;No SSL files passed in, generating self-signed SSL certificate.&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Clients must use `verify=False` when connecting.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="n">cert</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="n">_build_ssl</span><span class="p">()</span>
+
+            <span class="c1"># Add quick names</span>
+            <span class="n">ssl_name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
+            <span class="n">cert_name</span> <span class="o">=</span> <span class="n">ssl_name</span> <span class="o">+</span> <span class="s2">&quot;_ssl.crt&quot;</span>
+            <span class="n">key_name</span> <span class="o">=</span> <span class="n">ssl_name</span> <span class="o">+</span> <span class="s2">&quot;_ssl.key&quot;</span>
+
+            <span class="n">ssl_options</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;crt&quot;</span><span class="p">:</span> <span class="n">cert_name</span><span class="p">,</span> <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="n">key_name</span><span class="p">}</span>
+
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">cert_name</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">handle</span><span class="p">:</span>
+                <span class="n">handle</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">cert</span><span class="p">)</span>
+
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">key_name</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">handle</span><span class="p">:</span>
+                <span class="n">handle</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+            <span class="n">ssl_ctx</span> <span class="o">=</span> <span class="n">ssl</span><span class="o">.</span><span class="n">create_default_context</span><span class="p">(</span><span class="n">ssl</span><span class="o">.</span><span class="n">Purpose</span><span class="o">.</span><span class="n">CLIENT_AUTH</span><span class="p">)</span>
+            <span class="n">ssl_ctx</span><span class="o">.</span><span class="n">load_cert_chain</span><span class="p">(</span><span class="n">ssl_options</span><span class="p">[</span><span class="s2">&quot;crt&quot;</span><span class="p">],</span> <span class="n">ssl_options</span><span class="p">[</span><span class="s2">&quot;key&quot;</span><span class="p">])</span>
+
+            <span class="c1"># Destroy keyfiles upon close</span>
+            <span class="kn">import</span> <span class="nn">atexit</span>
+            <span class="kn">import</span> <span class="nn">os</span>
+
+            <span class="n">atexit</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">,</span> <span class="n">cert_name</span><span class="p">)</span>
+            <span class="n">atexit</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">,</span> <span class="n">key_name</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client_verify</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="k">elif</span> <span class="n">ssl_options</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="n">ssl_ctx</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ssl_options</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">if</span> <span class="p">(</span><span class="s2">&quot;crt&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ssl_options</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;key&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ssl_options</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;&#39;crt&#39; (SSL Certificate) and &#39;key&#39; (SSL Key) fields are required for `ssl_options`.&quot;</span><span class="p">)</span>
+
+            <span class="n">ssl_ctx</span> <span class="o">=</span> <span class="n">ssl</span><span class="o">.</span><span class="n">create_default_context</span><span class="p">(</span><span class="n">ssl</span><span class="o">.</span><span class="n">Purpose</span><span class="o">.</span><span class="n">CLIENT_AUTH</span><span class="p">)</span>
+            <span class="n">ssl_ctx</span><span class="o">.</span><span class="n">load_cert_chain</span><span class="p">(</span><span class="n">ssl_options</span><span class="p">[</span><span class="s2">&quot;crt&quot;</span><span class="p">],</span> <span class="n">ssl_options</span><span class="p">[</span><span class="s2">&quot;key&quot;</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;ssl_options not understood&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Setup the database connection</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">storage_database</span> <span class="o">=</span> <span class="n">storage_project_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">storage_uri</span> <span class="o">=</span> <span class="n">storage_uri</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">storage</span> <span class="o">=</span> <span class="n">storage_socket_factory</span><span class="p">(</span>
+            <span class="n">storage_uri</span><span class="p">,</span>
+            <span class="n">project_name</span><span class="o">=</span><span class="n">storage_project_name</span><span class="p">,</span>
+            <span class="n">bypass_security</span><span class="o">=</span><span class="n">storage_bypass_security</span><span class="p">,</span>
+            <span class="n">allow_read</span><span class="o">=</span><span class="n">allow_read</span><span class="p">,</span>
+            <span class="n">max_limit</span><span class="o">=</span><span class="n">query_limit</span><span class="p">,</span>
+            <span class="n">skip_version_check</span><span class="o">=</span><span class="n">skip_storage_version_check</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">view_enabled</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">view_handler</span> <span class="o">=</span> <span class="n">ViewHandler</span><span class="p">(</span><span class="n">view_path</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">view_handler</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># Pull the current loop if we need it</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">loop</span> <span class="o">=</span> <span class="n">loop</span> <span class="ow">or</span> <span class="n">tornado</span><span class="o">.</span><span class="n">ioloop</span><span class="o">.</span><span class="n">IOLoop</span><span class="o">.</span><span class="n">current</span><span class="p">()</span>
+
+        <span class="c1"># Build up the application</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">objects</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;storage_socket&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="p">,</span>
+            <span class="s2">&quot;logger&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="p">,</span>
+            <span class="s2">&quot;api_logger&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_logger</span><span class="p">,</span>
+            <span class="s2">&quot;view_handler&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">view_handler</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="c1"># Public information</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s2">&quot;public_information&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="s2">&quot;heartbeat_frequency&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">heartbeat_frequency</span><span class="p">,</span>
+            <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="n">get_information</span><span class="p">(</span><span class="s2">&quot;version&quot;</span><span class="p">),</span>
+            <span class="s2">&quot;query_limit&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">get_limit</span><span class="p">(</span><span class="mf">1.0e9</span><span class="p">),</span>
+            <span class="s2">&quot;client_lower_version_limit&quot;</span><span class="p">:</span> <span class="s2">&quot;0.14.0&quot;</span><span class="p">,</span>  <span class="c1"># Must be XX.YY.ZZ</span>
+            <span class="s2">&quot;client_upper_version_limit&quot;</span><span class="p">:</span> <span class="s2">&quot;0.15.99&quot;</span><span class="p">,</span>  <span class="c1"># Must be XX.YY.ZZ</span>
+        <span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_public_information</span><span class="p">()</span>
+
+        <span class="n">endpoints</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="c1"># Generic web handlers</span>
+            <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;/information&quot;</span><span class="p">,</span> <span class="n">InformationHandler</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">),</span>
+            <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;/kvstore&quot;</span><span class="p">,</span> <span class="n">KVStoreHandler</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">),</span>
+            <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;/molecule&quot;</span><span class="p">,</span> <span class="n">MoleculeHandler</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">),</span>
+            <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;/keyword&quot;</span><span class="p">,</span> <span class="n">KeywordHandler</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">),</span>
+            <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;/collection(?:/([0-9]+)(?:/(value|entry|list|molecule))?)?&quot;</span><span class="p">,</span> <span class="n">CollectionHandler</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">),</span>
+            <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;/result&quot;</span><span class="p">,</span> <span class="n">ResultHandler</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">),</span>
+            <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;/wavefunctionstore&quot;</span><span class="p">,</span> <span class="n">WavefunctionStoreHandler</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">),</span>
+            <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;/procedure/?&quot;</span><span class="p">,</span> <span class="n">ProcedureHandler</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">),</span>
+            <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;/optimization/(.*)/?&quot;</span><span class="p">,</span> <span class="n">OptimizationHandler</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">),</span>
+            <span class="c1"># Queue Schedulers</span>
+            <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;/task_queue&quot;</span><span class="p">,</span> <span class="n">TaskQueueHandler</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">),</span>
+            <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;/service_queue&quot;</span><span class="p">,</span> <span class="n">ServiceQueueHandler</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">),</span>
+            <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;/queue_manager&quot;</span><span class="p">,</span> <span class="n">QueueManagerHandler</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">),</span>
+            <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;/manager&quot;</span><span class="p">,</span> <span class="n">ComputeManagerHandler</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">),</span>
+        <span class="p">]</span>
+
+        <span class="c1"># Build the app</span>
+        <span class="n">app_settings</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;compress_response&quot;</span><span class="p">:</span> <span class="n">compress_response</span><span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">app</span> <span class="o">=</span> <span class="n">tornado</span><span class="o">.</span><span class="n">web</span><span class="o">.</span><span class="n">Application</span><span class="p">(</span><span class="n">endpoints</span><span class="p">,</span> <span class="o">**</span><span class="n">app_settings</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">endpoints</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">endpoints</span><span class="p">])</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">http_server</span> <span class="o">=</span> <span class="n">tornado</span><span class="o">.</span><span class="n">httpserver</span><span class="o">.</span><span class="n">HTTPServer</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="p">,</span> <span class="n">ssl_options</span><span class="o">=</span><span class="n">ssl_ctx</span><span class="p">,</span> <span class="n">max_buffer_size</span><span class="o">=</span><span class="mi">250</span> <span class="o">*</span> <span class="mi">1048576</span><span class="p">,</span> <span class="n">max_body_size</span><span class="o">=</span><span class="mi">250</span> <span class="o">*</span> <span class="mi">1048576</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">http_server</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">)</span>
+
+        <span class="c1"># Add periodic callback holders</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">periodic</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c1"># Exit callbacks</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">exit_callbacks</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;FractalServer:&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;    Name:          </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;    Version:       </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">get_information</span><span class="p">(</span><span class="s2">&quot;version&quot;</span><span class="p">)))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;    Address:       </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_address</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;    Database URI:  </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">storage_uri</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;    Database Name: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">storage_project_name</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;    Query Limit:   </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">get_limit</span><span class="p">(</span><span class="mf">1.0e9</span><span class="p">)))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">loop_active</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="c1"># Create a executor for background processes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">executor</span> <span class="o">=</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">futures</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c1"># Queue manager if direct build</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">queue_socket</span> <span class="o">=</span> <span class="n">queue_socket</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">queue_socket</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">security</span> <span class="o">==</span> <span class="s2">&quot;local&quot;</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Cannot yet use local security with a internal QueueManager&quot;</span><span class="p">)</span>
+
+            <span class="k">def</span> <span class="nf">_build_manager</span><span class="p">():</span>
+                <span class="n">client</span> <span class="o">=</span> <span class="n">FractalClient</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s2">&quot;qcfractal_server&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s2">&quot;queue_manager&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">QueueManager</span><span class="p">(</span>
+                    <span class="n">client</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">queue_socket</span><span class="p">,</span>
+                    <span class="n">logger</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="p">,</span>
+                    <span class="n">manager_name</span><span class="o">=</span><span class="s2">&quot;FractalServer&quot;</span><span class="p">,</span>
+                    <span class="n">cores_per_task</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                    <span class="n">memory_per_task</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                    <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                <span class="p">)</span>
+
+            <span class="c1"># Build the queue manager, will not run until loop starts</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">futures</span><span class="p">[</span><span class="s2">&quot;queue_manager_future&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run_in_thread</span><span class="p">(</span><span class="n">_build_manager</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;FractalServer(name=&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; uri=&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_address</span><span class="si">}</span><span class="s2">&#39;)&quot;</span>
+
+    <span class="k">def</span> <span class="nf">_run_in_thread</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Runs a function in a background thread</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">executor</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;No Executor was created, but run_in_thread was called.&quot;</span><span class="p">)</span>
+
+        <span class="n">fut</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">loop</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">executor</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">fut</span>
+
+    <span class="c1">## Start/stop functionality</span>
+
+<div class="viewcode-block" id="FractalServer.start"><a class="viewcode-back" href="../../api/qcfractal.FractalServer.html#qcfractal.FractalServer.start">[docs]</a>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start_loop</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">start_periodics</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Starts up the IOLoop and periodic calls.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        start_loop : bool, optional</span>
+<span class="sd">            If False, does not start the IOLoop</span>
+<span class="sd">        start_periodics : bool, optional</span>
+<span class="sd">            If False, does not start the server periodic updates such as</span>
+<span class="sd">            Service iterations and Manager heartbeat checking.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="s2">&quot;queue_manager_future&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">futures</span><span class="p">:</span>
+
+            <span class="k">def</span> <span class="nf">start_manager</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_check_manager</span><span class="p">(</span><span class="s2">&quot;manager_build&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s2">&quot;queue_manager&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+            <span class="c1"># Call this after the loop has started</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_run_in_thread</span><span class="p">(</span><span class="n">start_manager</span><span class="p">)</span>
+
+        <span class="c1"># Add services callback</span>
+        <span class="k">if</span> <span class="n">start_periodics</span><span class="p">:</span>
+            <span class="n">nanny_services</span> <span class="o">=</span> <span class="n">tornado</span><span class="o">.</span><span class="n">ioloop</span><span class="o">.</span><span class="n">PeriodicCallback</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">update_services</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">service_frequency</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
+            <span class="n">nanny_services</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">periodic</span><span class="p">[</span><span class="s2">&quot;update_services&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nanny_services</span>
+
+            <span class="c1"># Check Manager heartbeats, 5x heartbeat frequency</span>
+            <span class="n">heartbeats</span> <span class="o">=</span> <span class="n">tornado</span><span class="o">.</span><span class="n">ioloop</span><span class="o">.</span><span class="n">PeriodicCallback</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">check_manager_heartbeats</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">heartbeat_frequency</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">*</span> <span class="mf">0.2</span>
+            <span class="p">)</span>
+            <span class="n">heartbeats</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">periodic</span><span class="p">[</span><span class="s2">&quot;heartbeats&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">heartbeats</span>
+
+            <span class="c1"># Log can take some time, update in thread</span>
+            <span class="k">def</span> <span class="nf">run_log_update_in_thread</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_run_in_thread</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">update_server_log</span><span class="p">)</span>
+
+            <span class="n">server_log</span> <span class="o">=</span> <span class="n">tornado</span><span class="o">.</span><span class="n">ioloop</span><span class="o">.</span><span class="n">PeriodicCallback</span><span class="p">(</span><span class="n">run_log_update_in_thread</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">heartbeat_frequency</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
+
+            <span class="n">server_log</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">periodic</span><span class="p">[</span><span class="s2">&quot;server_log&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">server_log</span>
+
+        <span class="c1"># Build callbacks which are always required</span>
+        <span class="n">public_info</span> <span class="o">=</span> <span class="n">tornado</span><span class="o">.</span><span class="n">ioloop</span><span class="o">.</span><span class="n">PeriodicCallback</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">update_public_information</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">heartbeat_frequency</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
+        <span class="n">public_info</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">periodic</span><span class="p">[</span><span class="s2">&quot;public_info&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">public_info</span>
+
+        <span class="c1"># Soft quit with a keyboard interrupt</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;FractalServer successfully started.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">start_loop</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">loop_active</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">loop</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="FractalServer.stop"><a class="viewcode-back" href="../../api/qcfractal.FractalServer.html#qcfractal.FractalServer.stop">[docs]</a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stop_loop</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Shuts down the IOLoop and periodic updates.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        stop_loop : bool, optional</span>
+<span class="sd">            If False, does not shut down the IOLoop. Useful if the IOLoop is externally managed.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Shut down queue manager</span>
+        <span class="k">if</span> <span class="s2">&quot;queue_manager&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_run_in_thread</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s2">&quot;queue_manager&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">stop</span><span class="p">)</span>
+
+        <span class="c1"># Close down periodics</span>
+        <span class="k">for</span> <span class="n">cb</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">periodic</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="n">cb</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+
+        <span class="c1"># Call exit callbacks</span>
+        <span class="k">for</span> <span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">exit_callbacks</span><span class="p">:</span>
+            <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c1"># Shutdown executor and futures</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">futures</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">v</span><span class="o">.</span><span class="n">cancel</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">executor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">executor</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+
+        <span class="c1"># Shutdown IOLoop if needed</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">is_running</span><span class="p">())</span> <span class="ow">and</span> <span class="n">stop_loop</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">loop</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">loop_active</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="c1"># Final shutdown</span>
+        <span class="k">if</span> <span class="n">stop_loop</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">loop</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">all_fds</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;FractalServer stopping gracefully. Stopped IOLoop.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FractalServer.add_exit_callback"><a class="viewcode-back" href="../../api/qcfractal.FractalServer.html#qcfractal.FractalServer.add_exit_callback">[docs]</a>    <span class="k">def</span> <span class="nf">add_exit_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Adds additional callbacks to perform when closing down the server.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        callback : callable</span>
+<span class="sd">            The function to call at exit</span>
+<span class="sd">        *args</span>
+<span class="sd">            Arguments to call with the function.</span>
+<span class="sd">        **kwargs</span>
+<span class="sd">            Kwargs to call with the function.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">exit_callbacks</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">callback</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">))</span></div>
+
+    <span class="c1">## Helpers</span>
+
+<div class="viewcode-block" id="FractalServer.get_address"><a class="viewcode-back" href="../../api/qcfractal.FractalServer.html#qcfractal.FractalServer.get_address">[docs]</a>    <span class="k">def</span> <span class="nf">get_address</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">endpoint</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Obtains the full URI for a given function on the FractalServer.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        endpoint : Optional[str], optional</span>
+<span class="sd">            Specifies a endpoint to provide the URI for. If None returns the server address.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            The endpoint URI</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">endpoint</span> <span class="ow">and</span> <span class="p">(</span><span class="n">endpoint</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">endpoints</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;Endpoint &#39;</span><span class="si">{}</span><span class="s2">&#39; not found.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">endpoint</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">endpoint</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_address</span> <span class="o">+</span> <span class="n">endpoint</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_address</span></div>
+
+    <span class="c1">## Updates</span>
+
+<div class="viewcode-block" id="FractalServer.update_services"><a class="viewcode-back" href="../../api/qcfractal.FractalServer.html#qcfractal.FractalServer.update_services">[docs]</a>    <span class="k">def</span> <span class="nf">update_services</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Runs through all active services and examines their current status.&quot;&quot;&quot;</span>
+
+        <span class="c1"># Grab current services</span>
+        <span class="n">current_services</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">get_services</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="s2">&quot;RUNNING&quot;</span><span class="p">)[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
+
+        <span class="c1"># Grab new services if we have open slots</span>
+        <span class="n">open_slots</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_active_services</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">current_services</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">open_slots</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">new_services</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">get_services</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="s2">&quot;WAITING&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="n">open_slots</span><span class="p">)[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
+            <span class="n">current_services</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">new_services</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_services</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Starting </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">new_services</span><span class="p">)</span><span class="si">}</span><span class="s2"> new services.&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Updating </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">current_services</span><span class="p">)</span><span class="si">}</span><span class="s2"> services.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Loop over the services and iterate</span>
+        <span class="n">running_services</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">completed_services</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">current_services</span><span class="p">:</span>
+
+            <span class="c1"># TODO HACK: remove task_id from &#39;output&#39;. This is contained in services</span>
+            <span class="c1"># created in previous versions. Doing this now, but should do a db migration</span>
+            <span class="c1"># at some point</span>
+            <span class="k">if</span> <span class="s2">&quot;output&quot;</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                <span class="n">data</span><span class="p">[</span><span class="s2">&quot;output&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;task_id&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+            <span class="c1"># Attempt to iteration and get message</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">service</span> <span class="o">=</span> <span class="n">construct_service</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+                <span class="n">finished</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">iterate</span><span class="p">()</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="n">error_message</span> <span class="o">=</span> <span class="s2">&quot;FractalServer Service Build and Iterate Error:</span><span class="se">\n</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">error_message</span><span class="p">)</span>
+                <span class="n">service</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;ERROR&quot;</span>
+                <span class="n">service</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">ComputeError</span><span class="p">(</span><span class="n">error_type</span><span class="o">=</span><span class="s2">&quot;iteration_error&quot;</span><span class="p">,</span> <span class="n">error_message</span><span class="o">=</span><span class="n">error_message</span><span class="p">)</span>
+                <span class="n">finished</span> <span class="o">=</span> <span class="kc">False</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">update_services</span><span class="p">([</span><span class="n">service</span><span class="p">])</span>
+
+            <span class="c1"># Mark procedure and service as error</span>
+            <span class="k">if</span> <span class="n">service</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s2">&quot;ERROR&quot;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">update_service_status</span><span class="p">(</span><span class="s2">&quot;ERROR&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">service</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">finished</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">False</span><span class="p">:</span>
+                <span class="c1"># Add results to procedures, remove complete_ids</span>
+                <span class="n">completed_services</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">service</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">running_services</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">completed_services</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Completed </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">completed_services</span><span class="p">)</span><span class="si">}</span><span class="s2"> services.&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Done updating services.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Add new procedures and services</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">services_completed</span><span class="p">(</span><span class="n">completed_services</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">running_services</span></div>
+
+<div class="viewcode-block" id="FractalServer.update_server_log"><a class="viewcode-back" href="../../api/qcfractal.FractalServer.html#qcfractal.FractalServer.update_server_log">[docs]</a>    <span class="k">def</span> <span class="nf">update_server_log</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Updates the servers internal log</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">log_server_stats</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="FractalServer.update_public_information"><a class="viewcode-back" href="../../api/qcfractal.FractalServer.html#qcfractal.FractalServer.update_public_information">[docs]</a>    <span class="k">def</span> <span class="nf">update_public_information</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Updates the public information data</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">get_server_stats_log</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
+
+        <span class="n">counts</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;collection&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;molecule&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;kvstore&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+            <span class="n">counts</span><span class="p">[</span><span class="s2">&quot;collection&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;collection_count&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">counts</span><span class="p">[</span><span class="s2">&quot;molecule&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;molecule_count&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">counts</span><span class="p">[</span><span class="s2">&quot;result&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;result_count&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">counts</span><span class="p">[</span><span class="s2">&quot;kvstore&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;kvstore_count&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">update</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;counts&quot;</span><span class="p">:</span> <span class="n">counts</span><span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s2">&quot;public_information&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">update</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FractalServer.check_manager_heartbeats"><a class="viewcode-back" href="../../api/qcfractal.FractalServer.html#qcfractal.FractalServer.check_manager_heartbeats">[docs]</a>    <span class="k">def</span> <span class="nf">check_manager_heartbeats</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Checks the heartbeats and kills off managers that have not been heard from.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">heartbeat_frequency</span><span class="p">)</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">get_managers</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="s2">&quot;ACTIVE&quot;</span><span class="p">,</span> <span class="n">modified_before</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">blob</span> <span class="ow">in</span> <span class="n">ret</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]:</span>
+            <span class="n">nshutdown</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">queue_reset_status</span><span class="p">(</span><span class="n">manager</span><span class="o">=</span><span class="n">blob</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">reset_running</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">manager_update</span><span class="p">(</span><span class="n">blob</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">returned</span><span class="o">=</span><span class="n">nshutdown</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="s2">&quot;INACTIVE&quot;</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s2">&quot;Hearbeat missing from </span><span class="si">{}</span><span class="s2">. Shutting down, recycling </span><span class="si">{}</span><span class="s2"> incomplete tasks.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">blob</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">nshutdown</span>
+                <span class="p">)</span>
+            <span class="p">)</span></div>
+
+<div class="viewcode-block" id="FractalServer.list_managers"><a class="viewcode-back" href="../../api/qcfractal.FractalServer.html#qcfractal.FractalServer.list_managers">[docs]</a>    <span class="k">def</span> <span class="nf">list_managers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">status</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Provides a list of managers associated with the server both active and inactive.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        status : Optional[str], optional</span>
+<span class="sd">            Filters managers by status.</span>
+<span class="sd">        name : Optional[str], optional</span>
+<span class="sd">            Filters managers by name</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        List[Dict[str, Any]]</span>
+<span class="sd">            The requested Manager data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">get_managers</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="FractalServer.client"><a class="viewcode-back" href="../../api/qcfractal.FractalServer.html#qcfractal.FractalServer.client">[docs]</a>    <span class="k">def</span> <span class="nf">client</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Builds a client from this server.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="n">FractalClient</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+    <span class="c1">### Functions only available if using a local queue_adapter</span>
+
+    <span class="k">def</span> <span class="nf">_check_manager</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">queue_socket</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
+                <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is only available if the server was initialized with a queue manager.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">func_name</span><span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Wait up to one second for the queue manager to build</span>
+        <span class="k">if</span> <span class="s2">&quot;queue_manager&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Waiting on queue_manager to build.&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+                <span class="k">if</span> <span class="s2">&quot;queue_manager&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">:</span>
+                    <span class="k">break</span>
+
+            <span class="k">if</span> <span class="s2">&quot;queue_manager&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;QueueManager never constructed.&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="FractalServer.update_tasks"><a class="viewcode-back" href="../../api/qcfractal.FractalServer.html#qcfractal.FractalServer.update_tasks">[docs]</a>    <span class="k">def</span> <span class="nf">update_tasks</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Pulls tasks from the queue_adapter, inserts them into the database,</span>
+<span class="sd">        and fills the queue_adapter with new tasks.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            Return True if the operation completed successfully</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_check_manager</span><span class="p">(</span><span class="s2">&quot;update_tasks&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">loop_active</span><span class="p">:</span>
+            <span class="c1"># Drop this in a thread so that we are not blocking each other</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_run_in_thread</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s2">&quot;queue_manager&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s2">&quot;queue_manager&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="FractalServer.await_results"><a class="viewcode-back" href="../../api/qcfractal.FractalServer.html#qcfractal.FractalServer.await_results">[docs]</a>    <span class="k">def</span> <span class="nf">await_results</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;A synchronous method for testing or small launches</span>
+<span class="sd">        that awaits task completion before adding all queued results</span>
+<span class="sd">        to the database and returning.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            Return True if the operation completed successfully</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_check_manager</span><span class="p">(</span><span class="s2">&quot;await_results&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Updating tasks&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s2">&quot;queue_manager&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">await_results</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="FractalServer.await_services"><a class="viewcode-back" href="../../api/qcfractal.FractalServer.html#qcfractal.FractalServer.await_services">[docs]</a>    <span class="k">def</span> <span class="nf">await_services</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_iter</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;A synchronous method that awaits the completion of all services</span>
+<span class="sd">        before returning.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        max_iter : int, optional</span>
+<span class="sd">            The maximum number of service iterations the server will run through. Will</span>
+<span class="sd">            terminate early if all services have completed.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            Return True if the operation completed successfully</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_check_manager</span><span class="p">(</span><span class="s2">&quot;await_services&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">await_results</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_iter</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Await services: Iteration </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+            <span class="n">running_services</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_services</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">await_results</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">running_services</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">break</span>
+
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="FractalServer.list_current_tasks"><a class="viewcode-back" href="../../api/qcfractal.FractalServer.html#qcfractal.FractalServer.list_current_tasks">[docs]</a>    <span class="k">def</span> <span class="nf">list_current_tasks</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Provides a list of tasks currently in the queue along</span>
+<span class="sd">        with the associated keys.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ret : list of tuples</span>
+<span class="sd">            All tasks currently still in the database</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_check_manager</span><span class="p">(</span><span class="s2">&quot;list_current_tasks&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s2">&quot;queue_manager&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">list_current_tasks</span><span class="p">()</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2021, The Molecular Sciences Software Institute.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

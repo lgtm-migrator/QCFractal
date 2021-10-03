@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Queue Manager Frequent Questions and Issues &mdash; QCFractal 0+untagged.1.ge9cee03 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Detailed Manager Information" href="managers_detailed.html" />
+    <link rel="prev" title="Queue Manager Example YAML Files" href="managers_samples.html" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> QCFractal
+          </a>
+              <div class="version">
+                0+untagged.1.ge9cee03
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install QCFractal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_quickstart.html">Setup Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_server.html">Server Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_compute.html">Manager Setup</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Records Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="procedures.html">Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flow.html">Fractal Call Flowcharts</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manager Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="managers.html">Fractal Queue Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_config_api.html">Queue Manager API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_hpc.html">Configuration for High-Performance Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_samples.html">Queue Manager Example YAML Files</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Queue Manager Frequent Questions and Issues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#common-questions">Common Questions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-do-i-get-more-information-from-the-manger">How do I get more information from the Manger?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#can-i-start-more-than-one-manager-at-a-time">Can I start more than one Manager at a time?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#can-i-connect-to-a-fractal-server-besides-molssi-s">Can I connect to a Fractal Server besides MolSSI’s?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#can-i-connect-to-more-than-one-fractal-server">Can I connect to more than one Fractal Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-do-i-help-contribute-compute-time-to-the-molssi-database">How do I help contribute compute time to the MolSSI database?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#i-have-this-issue-here-is-my-config-file">I have this issue, here is my config file…</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#common-issues">Common Issues</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#jobs-are-quickly-started-and-die-without-error">Jobs are quickly started and die without error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#my-conda-environments-are-not-activating">My Conda Environments are not Activating</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#my-jobs-appear-to-be-running-but-only-one-or-few-workers-are-starting">My jobs appear to be running, but only one (or few) workers are starting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="managers_detailed.html">Detailed Manager Information</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server CLI and Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="server_init.html">Fractal Server Init</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_config.html">Fractal Server Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_start.html">Fractal Server Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_user.html">Fractal Server User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_upgrade.html">Fractal Server Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_view.html">Server-side Dataset Views</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="qcarchive_overview.html">QCArchive Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">QCFractal API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database_design.html">Database Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_guidelines.html">Development Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">QCFractal</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Queue Manager Frequent Questions and Issues</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/managers_faq.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="queue-manager-frequent-questions-and-issues">
+<h1>Queue Manager Frequent Questions and Issues<a class="headerlink" href="#queue-manager-frequent-questions-and-issues" title="Permalink to this headline"></a></h1>
+<p>This page documents some of the frequent questions and issues we see with the
+Queue Managers. If this page and none of the other documentation pages have
+answered your question, please ask <a class="reference external" href="https://github.com/MolSSI/QCFractal/">on GitHub</a> or
+<a class="reference external" href="https://join.slack.com/t/qcdb/shared_invite/enQtNDIzNTQ2OTExODk0LWM3OTgxN2ExYTlkMTlkZjA0OTExZDlmNGRlY2M4NWJlNDlkZGQyYWUxOTJmMzc3M2VlYzZjMjgxMDRkYzFmOTE">join our Slack group</a> to get assistance.</p>
+<section id="common-questions">
+<h2>Common Questions<a class="headerlink" href="#common-questions" title="Permalink to this headline"></a></h2>
+<section id="how-do-i-get-more-information-from-the-manger">
+<h3>How do I get more information from the Manger?<a class="headerlink" href="#how-do-i-get-more-information-from-the-manger" title="Permalink to this headline"></a></h3>
+<p>Turn on <code class="docutils literal notranslate"><span class="pre">verbose</span></code> mode, either add the <code class="docutils literal notranslate"><span class="pre">-v</span></code> flag to the CLI, or set the
+<code class="docutils literal notranslate"><span class="pre">common.verbose</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code> in the YAML file. Setting this flag will produce
+much more detailed information. This sets the loggers to <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> level.</p>
+<p>In the future, we may allow for different levels of increased verbosity, but for now there is
+only the one level.</p>
+</section>
+<section id="can-i-start-more-than-one-manager-at-a-time">
+<h3>Can I start more than one Manager at a time?<a class="headerlink" href="#can-i-start-more-than-one-manager-at-a-time" title="Permalink to this headline"></a></h3>
+<p>Yes. This is often done if you would like to create multiple <a class="reference internal" href="managers.html#term-Task"><span class="xref std std-term">task</span></a> <a class="reference internal" href="managers.html#term-Tag"><span class="xref std std-term">tags</span></a> that
+have different resource requirements or spin up managers that can access
+different resources. Check with your cluster administrators though to find out
+their policy on multiple processes running on the clusters head node.</p>
+<p>You can reuse the same config file, just invoke the CLI again.</p>
+</section>
+<section id="can-i-connect-to-a-fractal-server-besides-molssi-s">
+<h3>Can I connect to a Fractal Server besides MolSSI’s?<a class="headerlink" href="#can-i-connect-to-a-fractal-server-besides-molssi-s" title="Permalink to this headline"></a></h3>
+<p>Yes! Just change the <code class="docutils literal notranslate"><span class="pre">server.fractal_uri</span></code> argument.</p>
+</section>
+<section id="can-i-connect-to-more-than-one-fractal-server">
+<h3>Can I connect to more than one Fractal Server<a class="headerlink" href="#can-i-connect-to-more-than-one-fractal-server" title="Permalink to this headline"></a></h3>
+<p>Yes and No. Each <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Manager</span></a> can only connect to a single <a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Fractal Server</span></a>, but
+you can start multiple managers with different config files pointing to different
+<a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Fractal Servers</span></a>.</p>
+</section>
+<section id="how-do-i-help-contribute-compute-time-to-the-molssi-database">
+<h3>How do I help contribute compute time to the MolSSI database?<a class="headerlink" href="#how-do-i-help-contribute-compute-time-to-the-molssi-database" title="Permalink to this headline"></a></h3>
+<p><a class="reference external" href="https://join.slack.com/t/qcdb/shared_invite/enQtNDIzNTQ2OTExODk0LWM3OTgxN2ExYTlkMTlkZjA0OTExZDlmNGRlY2M4NWJlNDlkZGQyYWUxOTJmMzc3M2VlYzZjMjgxMDRkYzFmOTE">Join our Slack group</a>!
+We would love to talk to you and help get you contributing as well!</p>
+</section>
+<section id="i-have-this-issue-here-is-my-config-file">
+<h3>I have this issue, here is my config file…<a class="headerlink" href="#i-have-this-issue-here-is-my-config-file" title="Permalink to this headline"></a></h3>
+<p>Happy to look at it! We only ask that you please <strong>remove the password from the config file before posting it.</strong>
+If we see a password, we’ll do our best to delete it, but
+that does not ensure someone did not see it.</p>
+</section>
+</section>
+<section id="common-issues">
+<h2>Common Issues<a class="headerlink" href="#common-issues" title="Permalink to this headline"></a></h2>
+<p>This documents some of the common issues we see.</p>
+<section id="jobs-are-quickly-started-and-die-without-error">
+<h3>Jobs are quickly started and die without error<a class="headerlink" href="#jobs-are-quickly-started-and-die-without-error" title="Permalink to this headline"></a></h3>
+<p>We see this problem with Dask often and the most common case is the head node (landing node, login node, etc.)
+has an ethernet adapter with a different name than the compute nodes. You can check this by running the command
+<code class="docutils literal notranslate"><span class="pre">ip</span> <span class="pre">addr</span></code> on both the head node and a compute node (either through an interactive job or a job which writes
+the output of that command to a file).</p>
+<p>You will see many lines of output, but there should be a block that looks like the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="p">:</span> <span class="n">lo</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">LOOPBACK</span><span class="p">,</span><span class="n">UP</span><span class="p">,</span><span class="n">LOWER_UP</span><span class="o">&gt;</span> <span class="n">mtu</span> <span class="mi">65536</span> <span class="n">qdisc</span> <span class="n">noqueue</span> <span class="n">state</span> <span class="n">UNKNOWN</span> <span class="n">qlen</span> <span class="mi">1</span>
+    <span class="n">link</span><span class="o">/</span><span class="n">loopback</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span> <span class="n">brd</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>
+    <span class="n">inet</span> <span class="mf">127.0.0.1</span><span class="o">/</span><span class="mi">8</span> <span class="n">scope</span> <span class="n">host</span> <span class="n">lo</span>
+<span class="mi">3</span><span class="p">:</span> <span class="n">eno49</span><span class="mf">.4010</span><span class="nd">@eno49</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">BROADCAST</span><span class="p">,</span><span class="n">MULTICAST</span><span class="p">,</span><span class="n">UP</span><span class="p">,</span><span class="n">LOWER_UP</span><span class="o">&gt;</span> <span class="n">mtu</span> <span class="mi">1500</span> <span class="n">qdisc</span> <span class="n">noqueue</span> <span class="n">state</span> <span class="n">UP</span> <span class="n">qlen</span> <span class="mi">1000</span>
+    <span class="n">inet</span> <span class="mf">10.</span><span class="n">XX</span><span class="o">.</span><span class="n">Y</span><span class="o">.</span><span class="n">Z</span><span class="o">/</span><span class="mi">16</span> <span class="n">brd</span> <span class="mf">10.</span><span class="n">XX</span><span class="mf">.255.255</span> <span class="n">scope</span> <span class="k">global</span> <span class="n">eno49</span><span class="mf">.4010</span>
+<span class="mi">4</span><span class="p">:</span> <span class="n">eno49</span><span class="mf">.4049</span><span class="nd">@eno49</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">BROADCAST</span><span class="p">,</span><span class="n">MULTICAST</span><span class="p">,</span><span class="n">UP</span><span class="p">,</span><span class="n">LOWER_UP</span><span class="o">&gt;</span> <span class="n">mtu</span> <span class="mi">1500</span> <span class="n">qdisc</span> <span class="n">noqueue</span> <span class="n">state</span> <span class="n">UP</span> <span class="n">qlen</span> <span class="mi">1000</span>
+    <span class="n">inet</span> <span class="mf">198.</span><span class="n">XX</span><span class="o">.</span><span class="n">YYY</span><span class="o">.</span><span class="n">ZZZ</span><span class="o">/</span><span class="mi">24</span> <span class="n">brd</span> <span class="mf">198.</span><span class="n">XX</span><span class="mf">.252.255</span> <span class="n">scope</span> <span class="k">global</span> <span class="n">eno49</span><span class="mf">.4049</span>
+</pre></div>
+</div>
+<p>the <code class="docutils literal notranslate"><span class="pre">XX</span></code>, <code class="docutils literal notranslate"><span class="pre">YYY</span></code> and <code class="docutils literal notranslate"><span class="pre">ZZZ</span></code> will have values corresponding to your cluster’s configuration.
+There are a few critical items:</p>
+<ul class="simple">
+<li><p>The headers (<code class="docutils literal notranslate"><span class="pre">lo</span></code>, <code class="docutils literal notranslate"><span class="pre">eno.49...</span></code>, yours will be different) and the addresses where he <code class="docutils literal notranslate"><span class="pre">XX</span></code> placeholders are.</p></li>
+<li><p>Ignore the <code class="docutils literal notranslate"><span class="pre">lo</span></code> adapter, every machine should have one.</p></li>
+<li><p>The head node should have a <code class="docutils literal notranslate"><span class="pre">inet</span></code> that looks like a normal IP address, and another one which
+looks like it has a <code class="docutils literal notranslate"><span class="pre">10.something</span></code> IP address.</p></li>
+<li><p>The compute node will likely have an adapter which is only the <code class="docutils literal notranslate"><span class="pre">10.something</span></code>.</p></li>
+<li><p>These <code class="docutils literal notranslate"><span class="pre">10.something</span></code> IP addresses are often intranet communication only, meaning the compute
+nodes cannot reach the broader internet</p></li>
+</ul>
+<p>The name of the ethernet adapter housing
+the <code class="docutils literal notranslate"><span class="pre">10.something</span></code> will be <em>different</em> on the head node and the compute node.</p>
+<p>In this case, in your YAML file, add a line in <code class="docutils literal notranslate"><span class="pre">dask</span></code> called <code class="docutils literal notranslate"><span class="pre">interface</span></code> and set it to the name of the
+adapter which is shared. So for this it would be:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">dask</span><span class="p">:</span>
+  <span class="nt">interface</span><span class="p">:</span> <span class="s">&quot;eno49.4049&quot;</span>
+</pre></div>
+</div>
+<p>plus all the rest of your YAML file. You can safely ignore the bit after the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> sign.</p>
+<p>If there isn’t a shared adapter name, try this instead:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">dask</span><span class="p">:</span>
+  <span class="nt">ip</span><span class="p">:</span> <span class="s">&quot;10.XX.Y.Z&quot;</span>
+</pre></div>
+</div>
+<p>Replace the <code class="docutils literal notranslate"><span class="pre">.XX.Y.Z</span></code> with the code which has the intranet IP of the <em>head node</em>. This option
+acts as a pass through to the Dask <a class="reference internal" href="managers.html#term-Worker"><span class="xref std std-term">Worker</span></a> call and tells the worker to try and connect to the
+head node at that IP address.</p>
+<p>If that still doesn’t work, contact us. We’re working to make this less manual and difficult in the future.</p>
+<p>Other variants:</p>
+<ul class="simple">
+<li><p>“My jobs start and stop instantly”</p></li>
+<li><p>“My jobs restart forever”</p></li>
+</ul>
+</section>
+<section id="my-conda-environments-are-not-activating">
+<h3>My Conda Environments are not Activating<a class="headerlink" href="#my-conda-environments-are-not-activating" title="Permalink to this headline"></a></h3>
+<p>You likely have to <code class="docutils literal notranslate"><span class="pre">source</span></code> the Conda <code class="docutils literal notranslate"><span class="pre">profile.d</span></code> again first. See also
+<a class="reference external" href="https://github.com/conda/conda/issues/8072">https://github.com/conda/conda/issues/8072</a></p>
+<p>This can also happen during testing where you will see command-line based binaries (like Psi4) pass, but Python-based
+codes (like RDKit) fail saying complaining about an import error. On cluster compute nodes, this often manifests as
+the <code class="docutils literal notranslate"><span class="pre">$PATH</span></code> variable being passed from your head node correctly to the compute node, but then the Python imports
+cannot be found because the Conda environment is not set up correctly.</p>
+<p>This problem is obfuscated by the fact that
+<a class="reference internal" href="managers.html#term-Worker"><span class="xref std std-term">workers</span></a> such as Dask Workers can still start initially despite being a Python code themselves. Many
+<a class="reference internal" href="managers.html#term-Adapter"><span class="xref std std-term">adapters</span></a> will start their programs using the absolute Python binary path which gets around the
+incomplete Conda configuration. <strong>We strongly recommend you do not try setting the absolute Python path</strong> in your
+scripts to get around this, and instead try to <code class="docutils literal notranslate"><span class="pre">source</span></code> the Conda <code class="docutils literal notranslate"><span class="pre">profile.d</span></code> first. For example, you might
+need to add something like this to your YAML file (change paths/environment names as needed):</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">cluster</span><span class="p">:</span>
+    <span class="nt">task_startup_commands</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">source ~/miniconda3/etc/profile.d/conda.sh</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">conda activate qcfractal</span>
+</pre></div>
+</div>
+<p>Other variants:</p>
+<ul class="simple">
+<li><p>“Tests from one program pass, but others don’t”</p></li>
+<li><p>“I get errors about unable to find program, but its installed”</p></li>
+<li><p>“I get path and/or import errors when testing”</p></li>
+</ul>
+</section>
+<section id="my-jobs-appear-to-be-running-but-only-one-or-few-workers-are-starting">
+<h3>My jobs appear to be running, but only one (or few) workers are starting<a class="headerlink" href="#my-jobs-appear-to-be-running-but-only-one-or-few-workers-are-starting" title="Permalink to this headline"></a></h3>
+<p>If the jobs appear to be running (and the Manager is reporting they return successfully),
+a few things may be happening.</p>
+<ul class="simple">
+<li><p>If jobs are completing very fast, the <a class="reference internal" href="managers.html#term-Adapter"><span class="xref std std-term">Adapter</span></a> may not feel like it needs to start more
+<a class="reference internal" href="managers.html#term-Worker"><span class="xref std std-term">workers</span></a>, which is fine.</p></li>
+<li><p>(Not recommended, use for debug only) Check your <code class="docutils literal notranslate"><span class="pre">manger.max_queued_tasks</span></code> arg to pull more <a class="reference internal" href="managers.html#term-Task"><span class="xref std std-term">tasks</span></a>
+from the <a class="reference internal" href="managers.html#term-Server"><span class="xref std std-term">Server</span></a> to fill the jobs you have started. This option is usually automatically calculated based on
+your <code class="docutils literal notranslate"><span class="pre">common.tasks_per_worker</span></code> and <code class="docutils literal notranslate"><span class="pre">common.max_workers</span></code> to keep all <a class="reference internal" href="managers.html#term-Worker"><span class="xref std std-term">workers</span></a> busy and
+still have a buffer.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="managers_samples.html" class="btn btn-neutral float-left" title="Queue Manager Example YAML Files" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="managers_detailed.html" class="btn btn-neutral float-right" title="Detailed Manager Information" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2021, The Molecular Sciences Software Institute.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

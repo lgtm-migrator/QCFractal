@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Changelog &mdash; QCFractal 0+untagged.1.ge9cee03 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Development Guidelines" href="dev_guidelines.html" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> QCFractal
+          </a>
+              <div class="version">
+                0+untagged.1.ge9cee03
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install QCFractal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_quickstart.html">Setup Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_server.html">Server Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_compute.html">Manager Setup</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Records Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="procedures.html">Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flow.html">Fractal Call Flowcharts</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manager Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="managers.html">Fractal Queue Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_config_api.html">Queue Manager API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_hpc.html">Configuration for High-Performance Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_samples.html">Queue Manager Example YAML Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_faq.html">Queue Manager Frequent Questions and Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_detailed.html">Detailed Manager Information</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server CLI and Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="server_init.html">Fractal Server Init</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_config.html">Fractal Server Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_start.html">Fractal Server Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_user.html">Fractal Server User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_upgrade.html">Fractal Server Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_view.html">Server-side Dataset Views</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="qcarchive_overview.html">QCArchive Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">QCFractal API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database_design.html">Database Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_guidelines.html">Development Guidelines</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">0.15.6 / 2021-06-06</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">0.15.3 / 2021-03-15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">0.15.0 / 2020-11-11</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#new-features">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enhancements">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bug-fixes">Bug Fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">0.14.0 / 2020-09-30</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">0.13.1 / 2020-02-18</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id9">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">0.13.0 / 2020-01-15</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id13">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id16">0.12.2 / 2019-12-07</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id17">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id19">0.12.1 / 2019-11-08</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id20">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id21">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id22">0.12.0 / 2019-11-06</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#highlights">Highlights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id23">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id24">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id25">Bug Fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deprecated-features">Deprecated Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optional-dependency-changes">Optional Dependency Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id26">0.11.0 / 2019-10-01</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id27">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id28">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id29">Bug Fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#documentation-improvements">Documentation Improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id30">0.10.0 / 2019-08-26</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id31">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id32">Bug Fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id33">Documentation Improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id34">0.9.0 / 2019-08-16</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id35">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id36">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id37">Bug Fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id38">Documentation Improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id39">0.8.0 / 2019-07-25</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#breaking-changes">Breaking Changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id40">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id42">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id43">Bug Fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id44">Deprecated Features</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id45">0.7.2 / 2019-05-31</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id46">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id47">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id48">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id49">0.7.1 / 2019-05-28</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id50">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id51">0.7.0 / 2019-05-27</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id52">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database-compatibility-updates">Database Compatibility Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id53">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id54">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id55">0.6.0 / 2019-03-30</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id56">Enhancements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id57">0.5.5 / 2019-03-26</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id58">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id59">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id60">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id61">0.5.4 / 2019-03-21</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id62">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id63">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id64">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id65">0.5.3 / 2019-03-13</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id66">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id67">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id68">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id69">0.5.2 / 2019-03-08</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id70">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id71">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id72">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id73">0.5.1 / 2019-03-04</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id74">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id75">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id76">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id77">0.5.0 / 2019-02-20</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id78">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id79">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id80">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#rc1-2019-02-15">0.5.0rc1 / 2019-02-15</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id81">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id82">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id83">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#a-2019-01-15">0.4.0a / 2019-01-15</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id84">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id85">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#a-2018-11-02">0.3.0a / 2018-11-02</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id86">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id87">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id88">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#a-2018-10-02">0.2.0a / 2018-10-02</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#documentation">Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id89">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id90">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id91">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#a-2018-09-04">0.1.0a / 2018-09-04</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id92">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id93">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id94">Bug Fixes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">QCFractal</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Changelog</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/changelog.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="changelog">
+<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline"></a></h1>
+<section id="id1">
+<h2>0.15.6 / 2021-06-06<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<p>Some minor additions/fixes, mostly to the user interface. The database migration in (<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/676">GH#676</a>) has been thoroughly tested,
+however please backup you database before ugrading!</p>
+<p>Client and managers should not need to be upgraded.</p>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/672">GH#672</a>) Adds ability to add compute specs to only a subset of entries in a Dataset</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/673">GH#673</a>) Allow for selecting by status in dataset get_records()</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/676">GH#676</a>) A migration for fixing fields in the database which have been changed in QCSchema/QCElemental</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/678">GH#678</a>) Fixes errors related to str vs. bytes in collection views</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/679">GH#679</a>) Fix incorrect status reporting in collections</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>0.15.3 / 2021-03-15<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<p>This is a small release focused on some database migrations to improve performance.
+This should greatly improve performance of certain actions (particularly task submission)
+with large databases.</p>
+<p>This release also drops support for python &lt; 3.7</p>
+<p>Client and managers should not need to be upgraded.</p>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/663">GH#663</a>) Adds indices to base_result and molecule (improves ability to delete orphan kvstore)</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/664">GH#664</a>) Adds indices to base_result and access_log (improves existing procedure lookup)</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>0.15.0 / 2020-11-11<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<p>This release is focused on bugfixes, and laying some foundation for larger changes to come.</p>
+<section id="new-features">
+<h3>New features<a class="headerlink" href="#new-features" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/636">GH#636</a>) Add ability to profile fractal instances</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/642">GH#642</a>) Add (experimental!) qcexport code to devtools</p></li>
+</ul>
+</section>
+<section id="enhancements">
+<h3>Enhancements<a class="headerlink" href="#enhancements" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/629">GH#629</a>) (Standard) Output of torsion drive service is now captured and stored in the procedure record</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/631">GH#631</a>) Compress errors on server</p></li>
+</ul>
+</section>
+<section id="bug-fixes">
+<h3>Bug Fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/624">GH#624</a>) Lock task queue rows to prevent multiple managers requesting the same task</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/626">GH#626</a>) Fix printing of client version during version check failure</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/632">GH#632</a>) Fix ordering of initial/final molecule in torsion drives</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/637">GH#637</a>) Fix inability to shutdown ProcessPoolExecutor workers</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/638">GH#638</a>) Fix incorrect error in datasets</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/641">GH#641</a>) Fix exception in web handler that was polluting log files</p></li>
+</ul>
+</section>
+<section id="miscellaneous">
+<h3>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/633">GH#633</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/634">GH#634</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/635">GH#635</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/639">GH#639</a>) Miscellaneous cleanup and removal of unused database columns</p></li>
+</ul>
+</section>
+</section>
+<section id="id4">
+<h2>0.14.0 / 2020-09-30<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<section id="id5">
+<h3>New Features<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/597">GH#597</a>) Add ability to query managers</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/612">GH#612</a>) Enabled compression of KVStore (generally, outputs)</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/617">GH#617</a>) Ability to control level of logging via the command line</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/620">GH#620</a>) Add ability to regenerate and modify tasks</p></li>
+</ul>
+</section>
+<section id="id6">
+<h3>Enhancements<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/592">GH#592</a> and <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/615">GH#615</a>) Improved performance of task retrieval of managers</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/620">GH#620</a>) Improve performance of task submission, and add additional logging</p></li>
+</ul>
+</section>
+<section id="id7">
+<h3>Bug Fixes<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/603">GH#603</a>) Fix error when running older computations missing ‘protocols’</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/617">GH#617</a>) Fix printing of base folder with the CLI</p></li>
+</ul>
+</section>
+</section>
+<section id="id8">
+<h2>0.13.1 / 2020-02-18<a class="headerlink" href="#id8" title="Permalink to this headline"></a></h2>
+<section id="id9">
+<h3>New Features<a class="headerlink" href="#id9" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/566">GH#566</a>) A <code class="docutils literal notranslate"><span class="pre">list_keywords</span></code> function was added to <code class="docutils literal notranslate"><span class="pre">Dataset</span></code>.</p></li>
+</ul>
+</section>
+<section id="id10">
+<h3>Enhancements<a class="headerlink" href="#id10" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/547">GH#547</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/553">GH#553</a>) Miscellaneous documentation edits and improvements.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/556">GH#556</a>) Molecule queries filtered on molecular formula no longer depend on the order of elements.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/565">GH#565</a>) <code class="docutils literal notranslate"><span class="pre">query</span></code> method for <code class="docutils literal notranslate"><span class="pre">Datasets</span></code> now returns collected records.</p></li>
+</ul>
+</section>
+<section id="id11">
+<h3>Bug Fixes<a class="headerlink" href="#id11" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/559">GH#559</a>) Fixed an issue where Docker images did not have qcfractal in their PATH.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/561">GH#561</a>) Fixed a bug that caused errors with pandas v1.0.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/564">GH#564</a>) Fixes a bug where optimization protocols were not respected during torsiondrives and grid optimizations.</p></li>
+</ul>
+</section>
+</section>
+<section id="id12">
+<h2>0.13.0 / 2020-01-15<a class="headerlink" href="#id12" title="Permalink to this headline"></a></h2>
+<section id="id13">
+<h3>New Features<a class="headerlink" href="#id13" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/541">GH#541</a>) Managers can now accept multiple tags. Tasks are pulled first in order of tag, then priority, then creation time.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/544">GH#544</a>) Adds backup/restore commands to the QCFractal CLI to allow for easier backup and restore options.</p></li>
+</ul>
+</section>
+<section id="id14">
+<h3>Enhancements<a class="headerlink" href="#id14" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/507">GH#507</a>) Automatically adds collection molecules in chunks if more than the current limit needs to be submitted.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/515">GH#515</a>) Conda environments now correspond to docker images in all deployed cases.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/524">GH#524</a>) The <code class="docutils literal notranslate"><span class="pre">delete_collection</span></code> function was added to <code class="docutils literal notranslate"><span class="pre">qcportal.FractalClient</span></code>.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/530">GH#530</a>) Adds the ability to specify cores per rank for node-parallel tasks in QCEngine.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/507">GH#507</a>) Adds a formatting and lint check to CI during pull requests.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/535">GH#535</a>) Allows dftd3 to be computed for all stoichiometries rather than just defaults.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/542">GH#542</a>) Important: TaskRecord.base_result is now an ObjectId (int or str), and no more a <code class="docutils literal notranslate"><span class="pre">DBRef</span></code>. So, code that uses <code class="docutils literal notranslate"><span class="pre">my_task.base_result.id</span></code> should change to simply use <code class="docutils literal notranslate"><span class="pre">my_task.base_result</span></code>.</p></li>
+</ul>
+</section>
+<section id="id15">
+<h3>Bug Fixes<a class="headerlink" href="#id15" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/506">GH#506</a>) Fixes repeated visualize calls where previously the visualize call would corrupt local state.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/521">GH#521</a>) Fixes an issue where ProcessPoolExecutor returned the incorrect number of currently running tasks.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/522">GH#522</a>) Fixes a bug where <code class="docutils literal notranslate"><span class="pre">ProcedureDataset.status()</span></code> failed for specifications where only a subset was computed.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/525">GH#525</a>) This PR fixes ENTRYPOINT of the qcarchive_worker_openff worker. (Conda and Docker are not friends.)</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/532">GH#532</a>) Fixes a testing subprocess routine when coverage is enabled for coverage 5.0 breaking changes.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/543">GH#543</a>) Fixes a bug where <code class="docutils literal notranslate"><span class="pre">qcfractal-server</span></code> “start” before an “upgrade” prevented the “upgrade” command from correctly running.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/545">GH#545</a>) Fixed an issue in Dataset.get_records() that could occur when the optional arguments keywords and basis were not provided.</p></li>
+</ul>
+</section>
+</section>
+<section id="id16">
+<h2>0.12.2 / 2019-12-07<a class="headerlink" href="#id16" title="Permalink to this headline"></a></h2>
+<section id="id17">
+<h3>Enhancements<a class="headerlink" href="#id17" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/477">GH#477</a>) Removes 0.12.x xfails when connecting to the server.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/481">GH#481</a>) Expands Parsl Manager Adapter to include ALCF requirements.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/483">GH#483</a>) Dataset Views are now much faster to load in HDF5.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/488">GH#488</a>) Allows gzipped dataset views.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/490">GH#490</a>) Computes checksums on gzipped dataset views.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/542">GH#542</a>) <code class="docutils literal notranslate"><span class="pre">TaskRecord.base_result</span></code> is now an <code class="docutils literal notranslate"><span class="pre">ObjectId</span></code>, and no more a <code class="docutils literal notranslate"><span class="pre">DBRef</span></code>. So, code that uses <code class="docutils literal notranslate"><span class="pre">my_task.base_result.id</span></code> should change to simply be <code class="docutils literal notranslate"><span class="pre">my_task.base_result</span></code>.</p></li>
+</ul>
+</section>
+<section id="id18">
+<h3>Bug Fixes<a class="headerlink" href="#id18" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/486">GH#486</a>) Fixes pydantic <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> issues after update.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/492">GH#492</a>) Fixes error where <code class="docutils literal notranslate"><span class="pre">ReactionDataset</span></code> didn’t allow a minimum number of n-body expansion to be added.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/493">GH#493</a>) Fixes an issue with <code class="docutils literal notranslate"><span class="pre">ReactionDataset.get_molecules</span></code> when a subset is present.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/494">GH#494</a>) Fixes an issue where queries with <code class="docutils literal notranslate"><span class="pre">limit=0</span></code> erroneously returned all results.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/496">GH#496</a>) TorsionDrive tests now avoid 90 degree angles with RDKit to avoid some linear issues in the forcefield and make them more stable.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/497">GH#497</a>) <code class="docutils literal notranslate"><span class="pre">TorsionDrive.get_history</span></code> now works for extremely large (1000+) optimizations in the procedure.</p></li>
+</ul>
+</section>
+</section>
+<section id="id19">
+<h2>0.12.1 / 2019-11-08<a class="headerlink" href="#id19" title="Permalink to this headline"></a></h2>
+<section id="id20">
+<h3>Enhancements<a class="headerlink" href="#id20" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/472">GH#472</a>) Update to GitHub ISSUE templates.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/473">GH#473</a>) Server <code class="docutils literal notranslate"><span class="pre">/information</span></code> endpoint now contains the number of records for molecules, results, procedures, and collections.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/474">GH#474</a>) Dataset Views can now be of arbitrary shape.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/475">GH#475</a>) Changes the default formatting of the codebase to Black.</p></li>
+</ul>
+</section>
+<section id="id21">
+<h3>Bug Fixes<a class="headerlink" href="#id21" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/470">GH#470</a>) Dataset fix for non-energy units.</p></li>
+</ul>
+</section>
+</section>
+<section id="id22">
+<h2>0.12.0 / 2019-11-06<a class="headerlink" href="#id22" title="Permalink to this headline"></a></h2>
+<section id="highlights">
+<h3>Highlights<a class="headerlink" href="#highlights" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>The ability to handle very large datasets (1M+ entries) quickly and efficiently.</p></li>
+<li><p>Store and compute Wavefunction information.</p></li>
+<li><p>Build, serve, and export views for Datasets that can stored in journal supplementary information or services like Zenodo.</p></li>
+<li><p>A new GUI dashboard to observe the current state of the server, see statistics, and fix issues.</p></li>
+</ul>
+</section>
+<section id="id23">
+<h3>New Features<a class="headerlink" href="#id23" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/433">GH#433</a> and <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/462">GH#462</a>) <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> and <code class="docutils literal notranslate"><span class="pre">ReactionDataset</span></code> (<code class="docutils literal notranslate"><span class="pre">interface.collections</span></code>) now have a <code class="docutils literal notranslate"><span class="pre">download`</span></code> method which
+downloads a frozen view of the dataset. This view is used to speed up calls to <code class="docutils literal notranslate"><span class="pre">get_values</span></code>, <code class="docutils literal notranslate"><span class="pre">get_molecules</span></code>,
+<code class="docutils literal notranslate"><span class="pre">get_entries</span></code>, and <code class="docutils literal notranslate"><span class="pre">list_values</span></code>.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/440">GH#440</a>) Wavefunctions can now be stored in the database using Result <code class="docutils literal notranslate"><span class="pre">protocols</span></code>.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/453">GH#453</a>) The server now periodically logs manager and current state to provide data over time.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/460">GH#460</a>) Contributed values are now in their own table to speed up access of Collections.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/461">GH#461</a>) Services now update their corresponding record every iteration. An example is a torsiondrive which now updates the <code class="docutils literal notranslate"><span class="pre">optimization_history</span></code> field each iteration.</p></li>
+</ul>
+</section>
+<section id="id24">
+<h3>Enhancements<a class="headerlink" href="#id24" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/429">GH#429</a>) Enables protocols for <code class="docutils literal notranslate"><span class="pre">OptimizationDataset</span></code> collections.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/430">GH#430</a>) Adds additional QCPortal type hints.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/433">GH#433</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/443">GH#443</a>) <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> and <code class="docutils literal notranslate"><span class="pre">ReactionDataset</span></code> (<code class="docutils literal notranslate"><span class="pre">interface.collections</span></code>) are now faster for calls to calls to <code class="docutils literal notranslate"><span class="pre">get_values</span></code>, <code class="docutils literal notranslate"><span class="pre">get_molecules</span></code>,
+<code class="docutils literal notranslate"><span class="pre">get_entries</span></code>, and <code class="docutils literal notranslate"><span class="pre">list_values</span></code> for large datasets if the server is configured to use frozen views. See “Server-side Dataset Views” documentation. Subsets
+may be passed to <code class="docutils literal notranslate"><span class="pre">get_values</span></code>, <code class="docutils literal notranslate"><span class="pre">get_molecules</span></code>, and <code class="docutils literal notranslate"><span class="pre">get_entries</span></code></p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/447">GH#447</a>) Enables the creation of plaintext (xyz and csv) output from Dataset Collections.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/455">GH#455</a>) Projection queries should now be much faster as excluded results are not pulled to the server.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/458">GH#458</a>) Collections now have a metadata field.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/463">GH#463</a>) <code class="docutils literal notranslate"><span class="pre">FractalClient.list_collections</span></code> by default only returns collections whose visibility flag is set to true,
+and whose group is “default”. This change was made to filter out in-progress, intermediate, and specialized collections.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/464">GH#464</a>) Molecule insert speeds are now 4-16x faster.</p></li>
+</ul>
+</section>
+<section id="id25">
+<h3>Bug Fixes<a class="headerlink" href="#id25" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/424">GH#424</a>) Fixes a <code class="docutils literal notranslate"><span class="pre">ReactionDataset.visualize</span></code> bug with <code class="docutils literal notranslate"><span class="pre">groupby='D3'</span></code>.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/456">GH#456</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/452">GH#452</a>) Queries that project hybrid properties should now work as expected.</p></li>
+</ul>
+</section>
+<section id="deprecated-features">
+<h3>Deprecated Features<a class="headerlink" href="#deprecated-features" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/426">GH#426</a>) In <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> and <code class="docutils literal notranslate"><span class="pre">ReactionDataset</span></code> (<code class="docutils literal notranslate"><span class="pre">interface.collections</span></code>),
+the previously deprecated functions <code class="docutils literal notranslate"><span class="pre">query</span></code>, <code class="docutils literal notranslate"><span class="pre">get_history</span></code>, and <code class="docutils literal notranslate"><span class="pre">list_history</span></code> have been removed.</p></li>
+</ul>
+</section>
+<section id="optional-dependency-changes">
+<h3>Optional Dependency Changes<a class="headerlink" href="#optional-dependency-changes" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/454">GH#454</a>) Users of the optional Parsl queue adapter are required to upgrade to Parsl v0.9.0, which fixes
+issues that caused SLURM managers to crash.</p></li>
+</ul>
+</section>
+</section>
+<section id="id26">
+<h2>0.11.0 / 2019-10-01<a class="headerlink" href="#id26" title="Permalink to this headline"></a></h2>
+<section id="id27">
+<h3>New Features<a class="headerlink" href="#id27" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/420">GH#420</a>) Pre-storage data handling through Elemental’s <code class="docutils literal notranslate"><span class="pre">Protocols</span></code> feature are now present in Fractal. Although
+only optimization protocols are implemented functionally, the database side has been upgraded to store protocol
+settings.</p></li>
+</ul>
+</section>
+<section id="id28">
+<h3>Enhancements<a class="headerlink" href="#id28" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/385">GH#385</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/404">GH#404</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/411">GH#411</a>) <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> and <code class="docutils literal notranslate"><span class="pre">ReactionDataset</span></code> have five new functions for accessing data.
+<code class="docutils literal notranslate"><span class="pre">get_values</span></code> returns the canonical headline value for a dataset (e.g. the interaction energy for S22) in data
+columns with caching, both for result-backed values and contributed values. This function replaces the now-deprecated
+<code class="docutils literal notranslate"><span class="pre">get_history</span></code> and <code class="docutils literal notranslate"><span class="pre">get_contributed_values</span></code>. <code class="docutils literal notranslate"><span class="pre">list_values</span></code> returns the list of data columns available from
+<code class="docutils literal notranslate"><span class="pre">get_values</span></code>. This function replaces the now-deprecated <code class="docutils literal notranslate"><span class="pre">list_history</span></code> and <code class="docutils literal notranslate"><span class="pre">list_contributed_values</span></code>.
+<code class="docutils literal notranslate"><span class="pre">get_records</span></code> either returns <code class="docutils literal notranslate"><span class="pre">ResultRecord</span></code> or a projection. For the case of <code class="docutils literal notranslate"><span class="pre">ReactionDataset</span></code>, the results are
+broken down into component calculations. The function replaces the now-deprecated <code class="docutils literal notranslate"><span class="pre">query</span></code>.
+<code class="docutils literal notranslate"><span class="pre">list_records</span></code> returns the list of data columns available from <code class="docutils literal notranslate"><span class="pre">get_records</span></code>.
+<code class="docutils literal notranslate"><span class="pre">get_molecules</span></code> returns the <code class="docutils literal notranslate"><span class="pre">Molecule</span></code> associated with a dataset.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/393">GH#393</a>) A new feature added to <code class="docutils literal notranslate"><span class="pre">Client</span></code> to be able to have more custom and fast queries, the <code class="docutils literal notranslate"><span class="pre">custom_query</span></code>
+method.
+Those fast queries are now used in <code class="docutils literal notranslate"><span class="pre">torsiondrive.get_final_molecules</span></code> and <code class="docutils literal notranslate"><span class="pre">torsiondrive.get_final_results</span></code>. More
+Advanced queries will be added.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/394">GH#394</a>) Adds <code class="docutils literal notranslate"><span class="pre">tag</span></code> and <code class="docutils literal notranslate"><span class="pre">manager</span></code> selector fields to <code class="docutils literal notranslate"><span class="pre">client.query_tasks</span></code>.
+This is helpful for managing jobs in the queue and detecting failures.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/400">GH#400</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/401">GH#401</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/410">GH#410</a>) Adds Dockerfiles corresponding to builds on
+<a class="reference external" href="https://cloud.docker.com/u/molssi/repository/list">Docker Hub</a>.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/406">GH#406</a>) The <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> collection’s primary indices (database level) have been updated to reflect its new
+understanding.</p></li>
+</ul>
+</section>
+<section id="id29">
+<h3>Bug Fixes<a class="headerlink" href="#id29" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/396">GH#396</a>) Fixed a bug in internal <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> function which caused <code class="docutils literal notranslate"><span class="pre">ComputeResponse</span></code> to be truncated when the
+number of calculations is larger than the query_limit.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/403">GH#403</a>) Fixed <code class="docutils literal notranslate"><span class="pre">Dataset.get_values</span></code> for any method which involved DFTD3.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/409">GH#409</a>) Fixed a compatibility bug in specific version of Intel-OpenMP by skipping version
+2019.5-281.</p></li>
+</ul>
+</section>
+<section id="documentation-improvements">
+<h3>Documentation Improvements<a class="headerlink" href="#documentation-improvements" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/399">GH#399</a>) A Kubernetes quickstart guide has been added.</p></li>
+</ul>
+</section>
+</section>
+<section id="id30">
+<h2>0.10.0 / 2019-08-26<a class="headerlink" href="#id30" title="Permalink to this headline"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Stable Beta Release</p>
+<p>This release marks Fractal’s official Stable Beta Release. This means that future, non-backwards compatible
+changes to the API will result in depreciation warnings.</p>
+</div>
+<section id="id31">
+<h3>Enhancements<a class="headerlink" href="#id31" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/356">GH#356</a>) Collections’ database representations have been improved to better support future upgrade paths.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/375">GH#375</a>) Dataset Records are now copied alongside the Collections.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/377">GH#377</a>) The <code class="docutils literal notranslate"><span class="pre">testing</span></code> suite from Fractal now exposes as a PyTest entry-point when Fractal is installed so
+that tests can be run from anywhere with the <code class="docutils literal notranslate"><span class="pre">--pyargs</span> <span class="pre">qcfractal</span></code> flag of <code class="docutils literal notranslate"><span class="pre">pytest</span></code>.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/384">GH#384</a>) “Dataset Records” and “Reaction Dataset Records” have been renamed to “Dataset Entry” and “Reaction
+Dataset Entry” respectively.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/387">GH#387</a>) The auto-documentation tech introduced in <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/321">GH#321</a> has been replaced by the improved implementation in
+Elemental.</p></li>
+</ul>
+</section>
+<section id="id32">
+<h3>Bug Fixes<a class="headerlink" href="#id32" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/388">GH#388</a>) Queue Manager shutdowns will now signal to reset any running tasks they own.</p></li>
+</ul>
+</section>
+<section id="id33">
+<h3>Documentation Improvements<a class="headerlink" href="#id33" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/372">GH#372</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/376">GH#376</a>) Installation instructions have been updated and typo-corrected such that they are accurate
+now for both Conda and PyPi.</p></li>
+</ul>
+</section>
+</section>
+<section id="id34">
+<h2>0.9.0 / 2019-08-16<a class="headerlink" href="#id34" title="Permalink to this headline"></a></h2>
+<section id="id35">
+<h3>New Features<a class="headerlink" href="#id35" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/354">GH#354</a>) Fractal now takes advantage of Elemental’s new Msgpack serialization option for Models. Serialization
+defaults to msgpack when available (<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">msgpack-python</span> <span class="pre">[-c</span> <span class="pre">conda-forge]</span></code>), falling back to JSON
+otherwise. This results in substantial speedups for both serialization and deserialization actions and should be a
+transparent replacement for users within Fractal, Engine, and Elemental themselves.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/358">GH#358</a>) Fractal Server now exposes a CLI for user/permissions management through the <code class="docutils literal notranslate"><span class="pre">qcfractal-server</span> <span class="pre">user</span></code>
+command. <a class="reference external" href="https://qcfractal.readthedocs.io/en/latest/server_user.html">See the full documentation for details</a>.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/358">GH#358</a>) Fractal Server’s CLI now supports user manipulations through the <code class="docutils literal notranslate"><span class="pre">qcfractal-server</span> <span class="pre">user</span></code> subcommand.
+This allows server administrators to control users and their access without directly interacting with the storage
+socket.</p></li>
+</ul>
+</section>
+<section id="id36">
+<h3>Enhancements<a class="headerlink" href="#id36" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/330">GH#330</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/340">GH#340</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/348">GH#348</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/349">GH#349</a>) Many Pydantic based Models attributes are now documented and in an
+on-the-fly manner derived from the Pydantic Schema of those attributes.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/335">GH#335</a>) Dataset’s <code class="docutils literal notranslate"><span class="pre">get_history</span></code> function is fixed by allowing the ability to force a new query even if one has
+already been cached.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/338">GH#338</a>) The Queue Manager which generated a <code class="docutils literal notranslate"><span class="pre">Result</span></code> is now stored in the <code class="docutils literal notranslate"><span class="pre">Result</span></code> records themselves.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/341">GH#341</a>) Skeletal Queue Manager YAML files can now be generated through the <code class="docutils literal notranslate"><span class="pre">--skel</span></code> or <code class="docutils literal notranslate"><span class="pre">--skeleton</span></code> CLI flag
+on <code class="docutils literal notranslate"><span class="pre">qcfractal-manager</span></code></p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/361">GH#361</a>) Staged DB’s in Fractal copy Alembic alongside them.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/363">GH#363</a>) A new REST API hook for services has been added so Clients can manage Services.</p></li>
+</ul>
+</section>
+<section id="id37">
+<h3>Bug Fixes<a class="headerlink" href="#id37" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/359">GH#359</a>) A <code class="docutils literal notranslate"><span class="pre">FutureWarning</span></code> from Pandas has been addressed before it becomes an error.</p></li>
+</ul>
+</section>
+<section id="id38">
+<h3>Documentation Improvements<a class="headerlink" href="#id38" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/351">GH#351</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/352">GH#352</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/353">GH#353</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/360">GH#360</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/362">GH#362</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/364">GH#364</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/366">GH#366</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/368">GH#368</a>) The documentation has been
+significantly edited to be up to date, fix numerous typos, reworded and refined for clarity, and overall flow better
+between pages.</p></li>
+</ul>
+</section>
+</section>
+<section id="id39">
+<h2>0.8.0 / 2019-07-25<a class="headerlink" href="#id39" title="Permalink to this headline"></a></h2>
+<section id="breaking-changes">
+<h3>Breaking Changes<a class="headerlink" href="#breaking-changes" title="Permalink to this headline"></a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>PostgreSQL is now the only supported database backend.</p>
+<p>Fractal has officially dropped support for MongoDB in favor of PostgreSQL as our
+database backend. Although MongoDB served the start of Fractal well, our database design
+as evolved since then and will be better served by PostgreSQL.</p>
+</div>
+</section>
+<section id="id40">
+<h3>New Features<a class="headerlink" href="#id40" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/307">GH#307</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/319">GH#319</a> <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/321">GH#321</a>) Fractal’s Server CLI has been overhauled to more intuitively and intelligently
+control Server creation, startup, configuration, and upgrade paths. This is mainly reflected in a Fractal Server
+config file, a config folder
+(default location <code class="docutils literal notranslate"><span class="pre">~/.qca</span></code>, and sub-commands <code class="docutils literal notranslate"><span class="pre">init</span></code>, <code class="docutils literal notranslate"><span class="pre">start</span></code>, <code class="docutils literal notranslate"><span class="pre">config</span></code>, and <code class="docutils literal notranslate"><span class="pre">upgrade</span></code> of the
+<code class="docutils literal notranslate"><span class="pre">qcfractal-server</span> <span class="pre">(command)</span></code> CLI.
+<a class="reference external" href="https://qcfractal.readthedocs.io/en/latest/server_config.html">See the full documentation for details</a></p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/323">GH#323</a>) First implementation of the <code class="docutils literal notranslate"><span class="pre">GridOptimizationDataset</span></code> for collecting Grid Optimization calculations.
+Not yet fully featured, but operational for users to start working with.</p></li>
+</ul>
+</section>
+<section id="id42">
+<h3>Enhancements<a class="headerlink" href="#id42" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/291">GH#291</a>) Tests have been formally added for the Queue Manager to reduce bugs in the future. They cannot test on
+actual Schedulers yet, but its a step in the right direction.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/295">GH#295</a>) Quality of life improvement for Mangers which by default will be less noisy about heartbeats and trigger
+a heartbeat less frequently. Both options can still be controlled through verbosity and a config setting.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/296">GH#296</a>) Services are now prioritized by the date they are created to properly order the compute queue.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/301">GH#301</a>) <code class="docutils literal notranslate"><span class="pre">TorsionDriveDataset</span></code> status can now be checked through the <code class="docutils literal notranslate"><span class="pre">.status()</span></code> method which shows the
+current progress of the computed data.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/310">GH#310</a>) The Client can now modify tasks and restart them if need be in the event of random failures.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/313">GH#313</a>) Queue Managers now have more detailed statistics about failure rates, and core-hours consumed (estimated)</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/314">GH#314</a>) The <code class="docutils literal notranslate"><span class="pre">PostgresHarness</span></code> has been improved to include better error handling if Postgress is not found, and
+will not try to stop/start if the target data directory is already configured and running.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/318">GH#318</a>) Large collections are now automatically paginated to improve Server/Client response time and reduce
+query sizes. See also <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/322">GH#322</a> for the Client-side requested pagination.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/322">GH#322</a>) Client’s can request paginated queries for quicker responses. See also <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/318">GH#318</a> for the Server-side
+auto-pagination.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/322">GH#322</a>) <code class="docutils literal notranslate"><span class="pre">Record</span></code> models and their derivatives now have a <code class="docutils literal notranslate"><span class="pre">get_molecule()</span></code> method for fetching the molecule
+directly.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/324">GH#324</a>) Optimization queries for its trajectory pull the entire trajectory in one go and keep the correct order.
+<code class="docutils literal notranslate"><span class="pre">get_trajectory</span></code> also pulls the correct order.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/325">GH#325</a>) Collections’ have been improved to be more efficient. Previous queries are cached locally and the
+<code class="docutils literal notranslate"><span class="pre">compute</span></code> call is now a single function, removing the need to make a separate call to the submission formation.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/326">GH#326</a>) <code class="docutils literal notranslate"><span class="pre">ReactionDataset</span></code> now explicitly groups the fragments to future-proof this method from upstream
+changes to <code class="docutils literal notranslate"><span class="pre">Molecule</span></code> fragmentation.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/329">GH#329</a>) All API requests are now logged server side anonymously.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/331">GH#331</a>) Queue Manager jobs can now auto-retry failed jobs a finite number of times through QCEngine’s retry
+capabilities. This will only catch RandomErrors and all other errors are raised normally.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/332">GH#332</a>) SQLAlchemy layer on the PostgreSQL database has received significant polish</p></li>
+</ul>
+</section>
+<section id="id43">
+<h3>Bug Fixes<a class="headerlink" href="#id43" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/291">GH#291</a>) Queue Manager documentation generation works on Pydantic 0.28+. A number as-of-yet uncaught/unseen bugs
+were revealed in tests and have been fixed as well.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/300">GH#300</a>) Errors thrown in the level between Managers and their Adapters now correctly return a <code class="docutils literal notranslate"><span class="pre">FailedOperation</span></code>
+instead of <code class="docutils literal notranslate"><span class="pre">dict</span></code> to be consistent with all other errors and not crash the Manager.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/301">GH#301</a>) Invalid passwords present a helpful error message now instead of raising an Internal Server Error to the
+user.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/306">GH#306</a>) The Manager CLI option <code class="docutils literal notranslate"><span class="pre">tasks-per-worker</span></code> is correctly hyphens instead of underscores to be consistent
+with all other flags.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/316">GH#316</a>) Queue Manager workarounds for older versions of Dask-Jobqueue and Parsl have been removed and implicit
+dependency on the newer versions of those Adapters is enforced on CLI usage of <code class="docutils literal notranslate"><span class="pre">qcfractal-manager</span></code>. These packages
+are <em>not required</em> for Fractal, so their versions are only checked when specifically used in the Managers.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/320">GH#320</a>) Duplicated <code class="docutils literal notranslate"><span class="pre">initial_molecules</span></code> in the <code class="docutils literal notranslate"><span class="pre">TorsionDriveDataset</span></code> will no longer cause a failure in adding
+them to the database while still preserving de-duplication.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/327">GH#327</a>) Jupyter Notebook syntax highlighting has been fixed on Fractal’s documentation pages.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/331">GH#331</a>) The BaseModel/Settings auto-documentation function can no longer throw an error which prevents
+using the code.</p></li>
+</ul>
+</section>
+<section id="id44">
+<h3>Deprecated Features<a class="headerlink" href="#id44" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/291">GH#291</a>) Queue Manager Template Generator CLI has been removed as its functionality is superseded by the
+<code class="docutils literal notranslate"><span class="pre">qcfractal-manager</span></code> CLI.</p></li>
+</ul>
+</section>
+</section>
+<section id="id45">
+<h2>0.7.2 / 2019-05-31<a class="headerlink" href="#id45" title="Permalink to this headline"></a></h2>
+<section id="id46">
+<h3>New Features<a class="headerlink" href="#id46" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/279">GH#279</a>) Tasks will be deleted from the <code class="docutils literal notranslate"><span class="pre">TaskQueue</span></code> once they are completed successfully.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/271">GH#271</a>) A new set of scripts have been created to facilitate migration between MongoDB and PostgreSQL.</p></li>
+</ul>
+</section>
+<section id="id47">
+<h3>Enhancements<a class="headerlink" href="#id47" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/275">GH#275</a>) Documentation has been further updated to be more contiguous between pages.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/276">GH#276</a>) Imports and type hints in Database objects have been improved to remove ambiguity and make imports easier
+to follow.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/280">GH#280</a>) Optimizations queried in the database are done with a more efficient lazy <code class="docutils literal notranslate"><span class="pre">selectin</span></code>. This should make
+queries much faster.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/281">GH#281</a>) Database Migration tech has been moved to their own folder to keep them isolated from normal
+production code. This PR also called the testing database <code class="docutils literal notranslate"><span class="pre">test_qcarchivedb</span></code> to avoid
+clashes with production DBs. Finally, a new keyword for testing geometry optimizations
+has been added.</p></li>
+</ul>
+</section>
+<section id="id48">
+<h3>Bug Fixes<a class="headerlink" href="#id48" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/280">GH#280</a>) Fixed a SQL query where <code class="docutils literal notranslate"><span class="pre">join</span></code> was set instead of <code class="docutils literal notranslate"><span class="pre">noload</span></code> in the lazy reference.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/283">GH#283</a>) The monkey-patch for Dask + LSF had a typo in the keyword for its invoke. This has
+been fixed for the monkey-patch, as the upstream change was already fixed.</p></li>
+</ul>
+</section>
+</section>
+<section id="id49">
+<h2>0.7.1 / 2019-05-28<a class="headerlink" href="#id49" title="Permalink to this headline"></a></h2>
+<section id="id50">
+<h3>Bug Fixes<a class="headerlink" href="#id50" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/277">GH#277</a>) A more informative error is thrown when Mongo is not found by <code class="docutils literal notranslate"><span class="pre">FractalSnowflake</span></code>.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/277">GH#277</a>) ID’s are no longer presented when listing Collections in Portal to minimize extra data.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/278">GH#278</a>) Fixed a bug in Portal where the Server was not reporting the correct unit.</p></li>
+</ul>
+</section>
+</section>
+<section id="id51">
+<h2>0.7.0 / 2019-05-27<a class="headerlink" href="#id51" title="Permalink to this headline"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Final MongoDB Supported Release</p>
+<p><strong>This is the last major release which support MongoDB.</strong> Fractal is moving towards a PostgreSQL for database to
+make upgrades more stable and because it is more suited to the nature of QCArchive Data. The upgrade path from
+MongoDB to PostgreSQL will be provided by the Fractal developers in the next release. Due to the complex nature
+of the upgrade, the PostgreSQL upgrade will through scripts which will be provided. After the PostgreSQL upgrade,
+there will be built-in utilities to upgrade the Database.</p>
+</div>
+<section id="id52">
+<h3>New Features<a class="headerlink" href="#id52" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/206">GH#206</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/249">GH#249</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/264">GH#264</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/267">GH#267</a>) SQL Database is now feature complete and implemented. As final testing in
+production is continued, MongoDB will be phased out in the future.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/242">GH#242</a>) Parsl can now be used as an <code class="docutils literal notranslate"><span class="pre">Adapter</span></code> in the Queue Managers.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/247">GH#247</a>) The new <code class="docutils literal notranslate"><span class="pre">OptimizationDataset</span></code> collection has been added! This collection returns a set of optimized
+molecular structures given an initial input.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/254">GH#254</a>) The QCFractal Server Dashboard is now available through a Dash interface. Although not fully featured yet,
+future updates will improve this as features are requested.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/260">GH#260</a>) Its now even easier to install Fractal/Portal through conda with pre-built environments on the
+<code class="docutils literal notranslate"><span class="pre">qcarchive</span></code> conda channel. This channel only provides environment files, no packages (and there are not plans to
+do so.)</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/269">GH#269</a>) The Fractal Snowflake project has been extended to work in Jupyter Notebooks. A Fractal Snowflake can
+be created with the <code class="docutils literal notranslate"><span class="pre">FractalSnowflakeHandler</span></code> inside of a Jupyter Session.</p></li>
+</ul>
+</section>
+<section id="database-compatibility-updates">
+<h3>Database Compatibility Updates<a class="headerlink" href="#database-compatibility-updates" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/256">GH#256</a>) API calls to Elemental 0.4 have been updated. This changes the hashing system and so upgrading your
+Fractal Server instance to this (or higher) will require an upgrade path to the indices.</p></li>
+</ul>
+</section>
+<section id="id53">
+<h3>Enhancements<a class="headerlink" href="#id53" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/238">GH#238</a>) <code class="docutils literal notranslate"><span class="pre">GridOptimizationRecord</span></code> supports the helper function <code class="docutils literal notranslate"><span class="pre">get_final_molecules</span></code> which returns the
+set of molecules at each final, optimized grid point.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/259">GH#259</a>) Both <code class="docutils literal notranslate"><span class="pre">GridOptimizationRecord</span></code> and <code class="docutils literal notranslate"><span class="pre">TorsionDriveRecord</span></code> support the helper function
+<code class="docutils literal notranslate"><span class="pre">get_final_results</span></code>, which is like <code class="docutils literal notranslate"><span class="pre">get_final_molecules</span></code>, but for x</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/241">GH#241</a>) The visualization suite with Plotly has been made more general so it can be invoked in different classes.
+This particular PR updates the TorsionDriveDataSet objects.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/243">GH#243</a>) TorsionDrives in Fractal now support the updated Torsion Drive API from the underlying package. This
+includes both the new arguments and the “extra constraints” features.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/244">GH#244</a>) Tasks which fail are now more verbose in the log as to why they failed. This is additional information
+on top of the number of pass/fail.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/246">GH#246</a>) Queue Manager <code class="docutils literal notranslate"><span class="pre">verbosity</span></code> level is now passed down into the adapter programs as well and the log
+file (if set) will continue to print to the terminal as well as the physical file.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/247">GH#247</a>) Procedure classes now all derive from a common base class to be more consistent with one another and
+for any new Procedures going forward.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/248">GH#248</a>) Jobs which fail, or cannot be returned correctly, from Queue Managers are now better handled in the
+Manager and don’t sit in the Manager’s internal buffer. They will attempt to be returned to the Server on later
+updates. If too many jobs become stale, the Manager will shut itself down for safety.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/258">GH#258</a> and <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/268">GH#268</a>) Fractal Queue Managers are now fully documented, both from the CLI and through the doc pages
+themselves. There have also been a few variables renamed and moved to be more clear the nature of what they do.
+See the PR for the renamed variables.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/251">GH#251</a>) The Fractal Server now reports valid minimum/maximum allowed client versions. The Portal Client will try
+check these numbers against itself and fail to connect if it is not within the Server’s allowed ranges. Clients
+started from Fractal’s <code class="docutils literal notranslate"><span class="pre">interface</span></code> do not make this check.</p></li>
+</ul>
+</section>
+<section id="id54">
+<h3>Bug Fixes<a class="headerlink" href="#id54" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/248">GH#248</a>) Fixed a bug in Queue Managers where the extra worker startup commands for the Dask Adapter were not being
+parsed correctly.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/250">GH#250</a>) Record objects now correctly set their provenance time on object creation, not module import.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/253">GH#253</a>) A spelling bug was fixed in GridOptimization which caused hashing to not be processed correctly.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/270">GH#270</a>) LSF clusters not in <code class="docutils literal notranslate"><span class="pre">MB</span></code> for the units on memory by config are now auto-detected (or manually set)
+without large workarounds in the YAML file and the CLI file itself. Supports documented settings of LSF 9.1.3.</p></li>
+</ul>
+</section>
+</section>
+<section id="id55">
+<h2>0.6.0 / 2019-03-30<a class="headerlink" href="#id55" title="Permalink to this headline"></a></h2>
+<section id="id56">
+<h3>Enhancements<a class="headerlink" href="#id56" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/236">GH#236</a> and <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/237">GH#237</a>) A large number of docstrings have been improved to be both more uniform,
+complete, and correct.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/239">GH#239</a>) DFT-D3 can now be queried through the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> and <code class="docutils literal notranslate"><span class="pre">ReactionDataset</span></code>.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/239">GH#239</a>) <code class="docutils literal notranslate"><span class="pre">list_collections</span></code> now returns Pandas Dataframes.</p></li>
+</ul>
+</section>
+</section>
+<section id="id57">
+<h2>0.5.5 / 2019-03-26<a class="headerlink" href="#id57" title="Permalink to this headline"></a></h2>
+<section id="id58">
+<h3>New Features<a class="headerlink" href="#id58" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/228">GH#228</a>) ReactionDatasets visualization statistics plots can now be generated through Plotly! This feature includes
+bar plots and violin plots and is designed for interactive use through websites, Jupyter notebooks, and more.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/233">GH#233</a>) TorsionDrive Datasets have custom visualization statistics through Plotly! This allows plotting 1-D
+torsion scans against other ones.</p></li>
+</ul>
+</section>
+<section id="id59">
+<h3>Enhancements<a class="headerlink" href="#id59" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/226">GH#226</a>) LSF can now be specified for the Queue Managers for Dask Managers.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/228">GH#228</a>) Plotly is an optional dependency overall, it is not required to run QCFractal or QCPortal but will be
+downloaded in some situations. If you don’t have Plotly installed, more graceful errors beyond just raw
+<code class="docutils literal notranslate"><span class="pre">ImportErrors</span></code> are given.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/234">GH#234</a>) Queue Managers now report the number of passed and failed jobs they return to the server and can also
+have verbose (debug level) outputs to the log.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/234">GH#234</a>) Dask-driven Queue Managers can now be set to simply scale up to a fixed number of workers instead of
+trying to adapt the number of workers on the fly.</p></li>
+</ul>
+</section>
+<section id="id60">
+<h3>Bug Fixes<a class="headerlink" href="#id60" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/227">GH#227</a>) SGE Clusters specified in Queue Manager under Dask correctly process <code class="docutils literal notranslate"><span class="pre">job_extra</span></code> for additional
+scheduler headers. This is implemented in a stable way such that if the upstream Dask Jobqueue implements a fix, the
+Manager will keep working without needing to get a new release.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/234">GH#234</a>) Fireworks managers now return the same pydantic models as every other manager instead of raw dictionaries.</p></li>
+</ul>
+</section>
+</section>
+<section id="id61">
+<h2>0.5.4 / 2019-03-21<a class="headerlink" href="#id61" title="Permalink to this headline"></a></h2>
+<section id="id62">
+<h3>New Features<a class="headerlink" href="#id62" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/216">GH#216</a>) Jobs submitted to the queue can now be assigned a priority to be served out to the Managers.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/219">GH#219</a>) Temporary, pop-up, local instances of <code class="docutils literal notranslate"><span class="pre">FractalServer</span></code> can now be created through the
+<code class="docutils literal notranslate"><span class="pre">FractalSnowflake</span></code>. This creates an instance of <code class="docutils literal notranslate"><span class="pre">FractalServer</span></code>, with its database structure, which is entirely
+held in temporary storage and memory, all of which is deleted upon exit/stop. This feature is designed for those
+who want to tinker with Fractal without needed to create their own database or connect to a production
+<code class="docutils literal notranslate"><span class="pre">FractalServer</span></code>.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/220">GH#220</a>) Queue Managers can now set the <code class="docutils literal notranslate"><span class="pre">scratch_directory</span></code> variable that is passed to QCEngine and its workers.</p></li>
+</ul>
+</section>
+<section id="id63">
+<h3>Enhancements<a class="headerlink" href="#id63" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/216">GH#216</a>) Queue Managers now report what programs and procedures they have access to and will only pull jobs they
+think they can execute.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/222">GH#222</a>) All of <code class="docutils literal notranslate"><span class="pre">FractalClient</span></code>’s methods now have full docstrings and type annotations for clairy</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/222">GH#222</a>) Massive overhaul to the REST interface to simplify internal calls from the client and server side.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/223">GH#223</a>) <code class="docutils literal notranslate"><span class="pre">TorsionDriveDataset</span></code> objects are modeled through pydantic objects to allow easier interface with the
+database back end and data validation.</p></li>
+</ul>
+</section>
+<section id="id64">
+<h3>Bug Fixes<a class="headerlink" href="#id64" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/215">GH#215</a>) Dask Jobqueue for the <code class="docutils literal notranslate"><span class="pre">qcfractal-manager</span></code> is now tested and working. This resolve the outstanding issue
+introduced in <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/211">GH#211</a> and pushed in v0.5.3.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/216">GH#216</a>) Tasks are now stored as <code class="docutils literal notranslate"><span class="pre">TaskRecord</span></code> pydantic objects which now preempts a bug introduced
+from providing the wrong schema.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/217">GH#217</a>) Standalone QCPortal installs now report the correct version</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/221">GH#221</a>) Fixed a bug in <code class="docutils literal notranslate"><span class="pre">ReactionDataset.query</span></code> where passing in <code class="docutils literal notranslate"><span class="pre">None</span></code> was treated as a string.</p></li>
+</ul>
+</section>
+</section>
+<section id="id65">
+<h2>0.5.3 / 2019-03-13<a class="headerlink" href="#id65" title="Permalink to this headline"></a></h2>
+<section id="id66">
+<h3>New Features<a class="headerlink" href="#id66" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/207">GH#207</a>) All compute operations can now be augmented with a <code class="docutils literal notranslate"><span class="pre">tag</span></code> which can be later consumed by different
+<code class="docutils literal notranslate"><span class="pre">QueueManager</span></code>s to only carry out computations with specified tags.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/210">GH#210</a>) Passwords in the database can now be generated for new users and user information can be updated (server-side only)</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/210">GH#210</a>) <code class="docutils literal notranslate"><span class="pre">Collections</span></code> can now be updated automatically from the defaults</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/211">GH#211</a>) The <code class="docutils literal notranslate"><span class="pre">qcfractal-manager</span></code> CLI command now accepts a config file for more complex managers through Dask JobQueue.
+As such, many of the command line flags have been altered and can be used to either spin up a PoolExecutor, or overwrite the
+config file on-the-fly. As of this PR, the Dask Jobqueue component has been untested. Future updates will indicate
+when this has been tested.</p></li>
+</ul>
+</section>
+<section id="id67">
+<h3>Enhancements<a class="headerlink" href="#id67" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/203">GH#203</a>) <code class="docutils literal notranslate"><span class="pre">FractalClient</span></code>’s <code class="docutils literal notranslate"><span class="pre">get_X</span></code> methods have been renamed to <code class="docutils literal notranslate"><span class="pre">query_X</span></code> to better reflect what they actually do.
+An exception to this is the <code class="docutils literal notranslate"><span class="pre">get_collections</span></code> method which is still a true <code class="docutils literal notranslate"><span class="pre">get</span></code>.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/207">GH#207</a>) <code class="docutils literal notranslate"><span class="pre">FractalClient.list_collections</span></code> now respects show case sensitive results and queries are case
+insensitive</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/207">GH#207</a>) <code class="docutils literal notranslate"><span class="pre">FractalServer</span></code> can now compress responses to reduce the amount of data transmitted over the serialization.
+The main benefactor here is the <code class="docutils literal notranslate"><span class="pre">OpenFFWorkflow</span></code> collection which has significant transfer speed improvements due to compression.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/207">GH#207</a>) The <code class="docutils literal notranslate"><span class="pre">OpenFFWorkflow</span></code> collection now has better validation on input and output data.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/210">GH#210</a>) The <code class="docutils literal notranslate"><span class="pre">OpenFFWorkflow</span></code> collection only stores database <code class="docutils literal notranslate"><span class="pre">id</span></code> to reduce duplication and data transfer quantities.
+This results in about a 50x duplication reduction.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/211">GH#211</a>) The <code class="docutils literal notranslate"><span class="pre">qcfractal-template</span></code> command now has fields for Fractal username and password.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/212">GH#212</a>) The docs for QCFractal and QCPortal have been split into separate structures. They will be hosted on
+separate (although linked) pages, but their content will all be kept in the QCFractal source code. QCPortal’s docs
+are for most users whereas QCFractal docs will be for those creating their own Managers, Fractal instances, and
+developers.</p></li>
+</ul>
+</section>
+<section id="id68">
+<h3>Bug Fixes<a class="headerlink" href="#id68" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/207">GH#207</a>) <code class="docutils literal notranslate"><span class="pre">FractalClient.get_collections</span></code> is now correctly case insensitive.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/210">GH#210</a>) Fixed a bug in the <code class="docutils literal notranslate"><span class="pre">iterate</span></code> method of services which returned the wrong status if everything completed right away.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/210">GH#210</a>) The <code class="docutils literal notranslate"><span class="pre">repr</span></code> of the MongoEngine Socket now displays correctly instead of crashing the socket due to missing attribute</p></li>
+</ul>
+</section>
+</section>
+<section id="id69">
+<h2>0.5.2 / 2019-03-08<a class="headerlink" href="#id69" title="Permalink to this headline"></a></h2>
+<section id="id70">
+<h3>New Features<a class="headerlink" href="#id70" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/197">GH#197</a>) New <code class="docutils literal notranslate"><span class="pre">FractalClient</span></code> instances will automatically connect to the central MolSSI Fractal Server</p></li>
+</ul>
+</section>
+<section id="id71">
+<h3>Enhancements<a class="headerlink" href="#id71" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/195">GH#195</a>) Read-only access has been granted to many objects separate from their write access.
+This is in contrast to the previous model where either there was no access security, or
+everything was access secure.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/197">GH#197</a>) Unknown stoichiometry are no longer allowed in the <code class="docutils literal notranslate"><span class="pre">ReactionDataset</span></code></p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/197">GH#197</a>) CLI for FractalServer uses Executor only to encourage using the
+Template Generator introduced in <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/177">GH#177</a>.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/197">GH#197</a>) <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> objects can now query keywords from aliases as well.</p></li>
+</ul>
+</section>
+<section id="id72">
+<h3>Bug Fixes<a class="headerlink" href="#id72" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/195">GH#195</a>) Manager cannot pull too many tasks and potentially loose data due to query limits.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/195">GH#195</a>) <code class="docutils literal notranslate"><span class="pre">Records</span></code> now correctly adds Provenance information</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/196">GH#196</a>) <code class="docutils literal notranslate"><span class="pre">compute_torsion</span></code> example update to reflect API changes</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/197">GH#197</a>) Fixed an issue where CLI input flags were not correctly overwriting default values</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/197">GH#197</a>) Fixed an issue where <code class="docutils literal notranslate"><span class="pre">Collections</span></code> were not correctly updating when the <code class="docutils literal notranslate"><span class="pre">save</span></code> function was called
+on existing objects in the database.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/197">GH#197</a>) <code class="docutils literal notranslate"><span class="pre">_qcfractal_tags</span></code> are no longer carried through the <code class="docutils literal notranslate"><span class="pre">Records</span></code> objects in errant.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/197">GH#197</a>) Stoichiometry information is no longer accepted in the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> object since this is not
+used in this class of object anymore (see <code class="docutils literal notranslate"><span class="pre">ReactionDataset</span></code>).</p></li>
+</ul>
+</section>
+</section>
+<section id="id73">
+<h2>0.5.1 / 2019-03-04<a class="headerlink" href="#id73" title="Permalink to this headline"></a></h2>
+<section id="id74">
+<h3>New Features<a class="headerlink" href="#id74" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/177">GH#177</a>) Adds a new <code class="docutils literal notranslate"><span class="pre">qcfractal-template</span></code> command to generate <code class="docutils literal notranslate"><span class="pre">qcfractal-manager</span></code> scripts.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/181">GH#181</a>) Pagination is added to queries, defaults to 1000 matches.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/185">GH#185</a>) Begins setup documentation.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/186">GH#186</a>) Begins database design documentation.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/187">GH#187</a>) Results add/update is now simplified to always store entire objects rather than update partials.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/189">GH#189</a>) All database compute records now go through a single <code class="docutils literal notranslate"><span class="pre">BaseRecord</span></code> class that validates and hashes the objects.</p></li>
+</ul>
+</section>
+<section id="id75">
+<h3>Enhancements<a class="headerlink" href="#id75" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/175">GH#175</a>) Refactors query massaging logic to a single function, ensures all program queries are lowercase, etc.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/175">GH#175</a>) Keywords are now lazy reference fields.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/182">GH#182</a>) Reworks models to have strict fields, and centralizes object hashing with many tests.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/183">GH#183</a>) Centralizes duplicate checking so that accidental mixed case duplicate results could go through.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/190">GH#190</a>) Adds QCArchive sphinx theme to the documentation.</p></li>
+</ul>
+</section>
+<section id="id76">
+<h3>Bug Fixes<a class="headerlink" href="#id76" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/176">GH#176</a>) Benchmarks folder no longer shipped with package</p></li>
+</ul>
+</section>
+</section>
+<section id="id77">
+<h2>0.5.0 / 2019-02-20<a class="headerlink" href="#id77" title="Permalink to this headline"></a></h2>
+<section id="id78">
+<h3>New Features<a class="headerlink" href="#id78" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/165">GH#165</a>) Separates datasets into a Dataset, ReactionDataset, and OptimizationDataset for future flexability.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/168">GH#168</a>) Services now save their Procedure stubs automatically, the same as normal Procedures.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/169">GH#169</a>) <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> now uses the README.md and conveys Markdown to PyPI.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/171">GH#171</a>) Molecule addition now takes in a flat list and returns a flat list of IDs rather than using a dictionary.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/173">GH#173</a>) Services now return their correspond Procedure ID fields.</p></li>
+</ul>
+</section>
+<section id="id79">
+<h3>Enhancements<a class="headerlink" href="#id79" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/163">GH#163</a>) Ignores pre-existing IDs during storage add operations.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/167">GH#167</a>) Allows empty queries to successfully return all results rather than all data in a collection.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/172">GH#172</a>) Bumps pydantic version to 0.20 and updates API.</p></li>
+</ul>
+</section>
+<section id="id80">
+<h3>Bug Fixes<a class="headerlink" href="#id80" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/170">GH#170</a>) Switches Parsl from IPPExecutor to ThreadExecutor to prevent some bad semaphore conflicts with PyTest.</p></li>
+</ul>
+</section>
+</section>
+<section id="rc1-2019-02-15">
+<h2>0.5.0rc1 / 2019-02-15<a class="headerlink" href="#rc1-2019-02-15" title="Permalink to this headline"></a></h2>
+<section id="id81">
+<h3>New Features<a class="headerlink" href="#id81" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/114">GH#114</a>) A new Collection: <code class="docutils literal notranslate"><span class="pre">Generic</span></code>, has been added to allow semi-structured user defined data to be built without relying only on implemented collections.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/125">GH#125</a>) QCElemental common pydantic models have been integrated throughout the QCFractal code base, making a common model repository for the prevalent <code class="docutils literal notranslate"><span class="pre">Molecule</span></code> object (and others) come from a single source.
+Also converted QCFractal to pass serialized pydantic objects between QCFractal and QCEngine to allow validation and (de)serialization of objects automatically.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/130">GH#130</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/142">GH#142</a>, and <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/145">GH#145</a>) Pydantic serialization has been added to all REST calls leaving and entering both QCFractal Servers and QCFractal Portals. This allows automatic REST call validation and formatting on both server and client sides.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/141">GH#141</a> and <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/152">GH#152</a>) A new GridOptimizationRecord service has been added to QCFractal. This feature supports relative starting positions from the input molecule.</p></li>
+</ul>
+</section>
+<section id="id82">
+<h3>Enhancements<a class="headerlink" href="#id82" title="Permalink to this headline"></a></h3>
+<p>General note: <code class="docutils literal notranslate"><span class="pre">Options</span></code> objects have been renamed to <code class="docutils literal notranslate"><span class="pre">KeywordSet</span></code> to better match their goal (See <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/155">GH#155</a>.)</p>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/110">GH#110</a>) QCFractal now depends on QCElemental and QCEngine to improve consistent imports.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/116">GH#116</a>) Queue Manger Adapters are now more generalized and inherit more from the base classes.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/118">GH#118</a>) Single and Optimization procedures have been streamlined to have simpler submission specifications and less redundancy.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/133">GH#133</a>) Fractal Server and Queue Manager startups are much more verbose and include version information.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/135">GH#135</a>) The TorsionDriveService has a much more regular structure based on pydantic models and a new TorsionDrive model has been created to enforce both validation and regularity.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/143">GH#143</a>) <code class="docutils literal notranslate"><span class="pre">Task``s</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">Mongo</span> <span class="pre">database</span> <span class="pre">can</span> <span class="pre">now</span> <span class="pre">be</span> <span class="pre">referenced</span> <span class="pre">by</span> <span class="pre">multiple</span> <span class="pre">``Results</span></code> and <code class="docutils literal notranslate"><span class="pre">Procedures</span></code> (i.e. a single <code class="docutils literal notranslate"><span class="pre">Result</span></code> or <code class="docutils literal notranslate"><span class="pre">Procedure</span></code> does not have ownership of a <code class="docutils literal notranslate"><span class="pre">Task</span></code>.)</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/147">GH#147</a>) Service submission has been overhauled such that all services submit to a single source. Right now, only one service can be submitted at a time (to be expanded in a future feature.)
+TorsionDrive can now have multiple molecule inputs.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/149">GH#149</a>) Package import logic has been reworked to reduce the boot-up time of QCFractal from 3000ms at the worst to about 600ms.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/150">GH#150</a>) <code class="docutils literal notranslate"><span class="pre">KeywordSet</span></code> objects are now modeled much more consistently through pydantic models and are consistently hashed to survive round trip serialization.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/153">GH#153</a>) Datasets now support option aliases which map to the consistent <code class="docutils literal notranslate"><span class="pre">KeywordSet</span></code> models from <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/150">GH#150</a>.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/155">GH#155</a>) Adding multiple <code class="docutils literal notranslate"><span class="pre">Molecule</span></code> or <code class="docutils literal notranslate"><span class="pre">Result</span></code> objects to the database at the same time now always return their Database ID’s if added, and order of returned list of ID’s matches input order.
+This PR also renamed <code class="docutils literal notranslate"><span class="pre">Options</span></code> to <code class="docutils literal notranslate"><span class="pre">KeywordSet</span></code> to properly reflect the goal of the object.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/156">GH#156</a>) Memory and Number of Cores per Task can be specified when spinning up a Queue Manager and/or Queue Adapter objects.
+These settings are passed on to QCEngine. These must be hard-set by users and no environment inspection is done. Users may continue to choose
+not to set these and QCEngine will consume everything it can when it lands on a compute.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/162">GH#162</a>) Services can now be saved and fetched from the database through MongoEngine with document validation on both actions.</p></li>
+</ul>
+</section>
+<section id="id83">
+<h3>Bug Fixes<a class="headerlink" href="#id83" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/132">GH#132</a>) Fixed MongoEngine Socket bug where calling some functions before others resulted in an error due to lack of initialized variables.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/133">GH#133</a>) <code class="docutils literal notranslate"><span class="pre">Molecule</span></code> objects cannot be oriented once they enter the QCFractal ecosystem (after optional initial orientation.) <code class="docutils literal notranslate"><span class="pre">Molecule</span></code> objects also cannot be oriented by programs invoked by the QCFractal ecosystem so orientation is preserved post-calculation.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/146">GH#146</a>) CI environments have been simplified to make maintaining them easier, improve test coverage, and find more bugs.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/158">GH#158</a>) Database addition documents in general will strip IDs from the input dictionary which caused issues from MongoEngine having a special treatment for the dictionary key “id”.</p></li>
+</ul>
+</section>
+</section>
+<section id="a-2019-01-15">
+<h2>0.4.0a / 2019-01-15<a class="headerlink" href="#a-2019-01-15" title="Permalink to this headline"></a></h2>
+<p>This is the fourth alpha release of QCFractal focusing on the database backend
+and compute manager enhancements.</p>
+<section id="id84">
+<h3>New Features<a class="headerlink" href="#id84" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/78">GH#78</a>) Migrates Mongo backend to MongoEngine.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/78">GH#78</a>) Overhauls tasks so that results or procedures own a task and ID.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/78">GH#78</a>) Results and procedures are now inserted upon creation, not just completion. Added a status field to results and procedures.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/78">GH#78</a>) Overhauls storage API to no longer accept arbitrary JSON queries, but now pinned kwargs.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/106">GH#106</a>) Compute managers now have heartbeats and tasks are recycled after a manager has not been heard from after a preset interval.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/106">GH#106</a>) Managers now also quietly shutdown on SIGTERM as well as SIGINT.</p></li>
+</ul>
+</section>
+<section id="id85">
+<h3>Bug Fixes<a class="headerlink" href="#id85" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/102">GH#102</a>) Py37 fix for pydantic and better None defaults for <code class="docutils literal notranslate"><span class="pre">options</span></code>.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/107">GH#107</a>) <code class="docutils literal notranslate"><span class="pre">FractalClient.get_collections</span></code> now raises an exception when no collection is found.</p></li>
+</ul>
+</section>
+</section>
+<section id="a-2018-11-02">
+<h2>0.3.0a / 2018-11-02<a class="headerlink" href="#a-2018-11-02" title="Permalink to this headline"></a></h2>
+<p>This is the third alpha release of QCFractal focusing on a command line
+interface and the ability to have multiple queues interacting with a central
+server.</p>
+<section id="id86">
+<h3>New Features<a class="headerlink" href="#id86" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/72">GH#72</a>) Queues are no longer required of FractalServer instances, now separate QueueManager instances can be created that push and pull tasks to the server.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/80">GH#80</a>) A <a class="reference external" href="http://parsl-project.org">Parsl</a> Queue Manager was written.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/75">GH#75</a>) CLI’s have been added for the <code class="docutils literal notranslate"><span class="pre">qcfractal-server</span></code> and <code class="docutils literal notranslate"><span class="pre">qcfractal-manager</span></code> instances.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/83">GH#83</a>) The status of server tasks and services can now be queried from a FractalClient.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/82">GH#82</a>) OpenFF Workflows can now add single optimizations for fragments.</p></li>
+</ul>
+</section>
+<section id="id87">
+<h3>Enhancements<a class="headerlink" href="#id87" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/74">GH#74</a>) The documentation now has flowcharts showing task and service pathways through the code.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/73">GH#73</a>) Collection <code class="docutils literal notranslate"><span class="pre">.data</span></code> attributes are now typed and validated with pydantic.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/85">GH#85</a>) The CLI has been enhanced to cover additional features such as <code class="docutils literal notranslate"><span class="pre">queue-manager</span></code> ping time.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/84">GH#84</a>) QCEngine 0.4.0 and geomeTRIC 0.9.1 versions are now compatible with QCFractal.</p></li>
+</ul>
+</section>
+<section id="id88">
+<h3>Bug Fixes<a class="headerlink" href="#id88" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/92">GH#92</a>) Fixes an error with query OpenFFWorkflows.</p></li>
+</ul>
+</section>
+</section>
+<section id="a-2018-10-02">
+<h2>0.2.0a / 2018-10-02<a class="headerlink" href="#a-2018-10-02" title="Permalink to this headline"></a></h2>
+<p>This is the second alpha release of QCFractal containing architectural changes
+to the relational pieces of the database. Base functionality has been expanded
+to generalize the collection idea with BioFragment and OpenFFWorkflow
+collections.</p>
+<section id="documentation">
+<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/58">GH#58</a>) A overview of the QCArchive project was added to demonstrate how all modules connect together.</p></li>
+</ul>
+</section>
+<section id="id89">
+<h3>New Features<a class="headerlink" href="#id89" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/57">GH#57</a>) OpenFFWorkflow and BioFragment collections to support OpenFF uses cases.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/57">GH#57</a>) Requested compute will now return the id of the new submissions or the id of the completed results if duplicates are submitted.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/67">GH#67</a>) The OpenFFWorkflow collection now supports querying of individual geometry optimization trajectories and associated data for each torsiondrive.</p></li>
+</ul>
+</section>
+<section id="id90">
+<h3>Enhancements<a class="headerlink" href="#id90" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/43">GH#43</a>) Services and Procedures now exist in the same unified table when complete as a single procedure can be completed in either capacity.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/44">GH#44</a>) The backend database was renamed to storage to prevent misunderstanding of the Database collection.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/47">GH#47</a>) Tests can that require an activate Mongo instance are now correctly skipped.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/51">GH#51</a>) The queue now uses a fast hash index to determine uniqueness and prevent duplicate tasks.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/52">GH#52</a>) QCFractal examples are now tested via CI.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/53">GH#53</a>) The MongoSocket <code class="docutils literal notranslate"><span class="pre">get_generic_by_id</span></code> was deprecated in favor of <code class="docutils literal notranslate"><span class="pre">get_generic</span></code> where an ID can be a search field.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/61">GH#61</a>, <a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/64">GH#64</a>) TorsionDrive now tracks tasks via ID rather than hash to ensure integrity.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/63">GH#63</a>) The Database collection was renamed Dataset to more correctly illuminate its purpose.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/65">GH#65</a>) Collection can now be aquired directly from a client via the <code class="docutils literal notranslate"><span class="pre">client.get_collection</span></code> function.</p></li>
+</ul>
+</section>
+<section id="id91">
+<h3>Bug Fixes<a class="headerlink" href="#id91" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/52">GH#52</a>) The molecular comparison technology would occasionally incorrectly orientate molecules.</p></li>
+</ul>
+</section>
+</section>
+<section id="a-2018-09-04">
+<h2>0.1.0a / 2018-09-04<a class="headerlink" href="#a-2018-09-04" title="Permalink to this headline"></a></h2>
+<p>This is the first alpha release of QCFractal containing the primary structure
+of the project and base functionality.</p>
+<section id="id92">
+<h3>New Features<a class="headerlink" href="#id92" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/41">GH#41</a>) Molecules can now be queried by molecule formula</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/39">GH#39</a>) The server can now use SSL protection and auto-generates SSL certificates if no certificates are provided.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/31">GH#31</a>) Adds authentication to the FractalServer instance.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/26">GH#26</a>) Adds TorsionDrive (formally Crank) as the first service.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/26">GH#26</a>) Adds a “services” feature which can create large-scale iterative workflows.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/21">GH#21</a>) QCFractal now maintains its own internal queue and uses queuing services such as Fireworks or Dask only for the currently running tasks</p></li>
+</ul>
+</section>
+<section id="id93">
+<h3>Enhancements<a class="headerlink" href="#id93" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/40">GH#40</a>) Examples can now be testing through PyTest.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/38">GH#38</a>) First major documentation pass.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/37">GH#37</a>) Canonicalizes string formatting to the <code class="docutils literal notranslate"><span class="pre">&quot;{}&quot;.format</span></code> usage.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/36">GH#36</a>) Fireworks workflows are now cleared once complete to keep the active entries small.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/35">GH#35</a>) The “database” table can now be updated so that database entries can now evolve over time.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/32">GH#32</a>) TorsionDrive services now track all computations that are completed rather than just the last iteration.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/30">GH#30</a>) Creates a Slack Community and auto-invite badge on the main readme.</p></li>
+<li><p>(<a class="reference external" href="https://github.com/MolSSI/QCFractal/pull/24">GH#24</a>) Remove conda-forge from conda-envs so that more base libraries can be used.</p></li>
+</ul>
+</section>
+<section id="id94">
+<h3>Bug Fixes<a class="headerlink" href="#id94" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>Innumerable bug fixes and improvements in this alpha release.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dev_guidelines.html" class="btn btn-neutral float-left" title="Development Guidelines" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2021, The Molecular Sciences Software Institute.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fractal Server Init &mdash; QCFractal 0+untagged.1.ge9cee03 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Fractal Server Config" href="server_config.html" />
+    <link rel="prev" title="Detailed Manager Information" href="managers_detailed.html" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> QCFractal
+          </a>
+              <div class="version">
+                0+untagged.1.ge9cee03
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install QCFractal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_quickstart.html">Setup Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_server.html">Server Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_compute.html">Manager Setup</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Records Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="procedures.html">Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flow.html">Fractal Call Flowcharts</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manager Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="managers.html">Fractal Queue Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_config_api.html">Queue Manager API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_hpc.html">Configuration for High-Performance Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_samples.html">Queue Manager Example YAML Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_faq.html">Queue Manager Frequent Questions and Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_detailed.html">Detailed Manager Information</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server CLI and Configuration</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Fractal Server Init</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#command-invocation">Command Invocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#command-description">Command Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#options">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="server_config.html">Fractal Server Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_start.html">Fractal Server Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_user.html">Fractal Server User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_upgrade.html">Fractal Server Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_view.html">Server-side Dataset Views</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="qcarchive_overview.html">QCArchive Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">QCFractal API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database_design.html">Database Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_guidelines.html">Development Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">QCFractal</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Fractal Server Init</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/server_init.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="fractal-server-init">
+<h1>Fractal Server Init<a class="headerlink" href="#fractal-server-init" title="Permalink to this headline"></a></h1>
+<p>The sub-command for the <code class="docutils literal notranslate"><span class="pre">qcfractal-server</span></code> CLI which initializes a new server instance, including configuring
+the PostgreSQL database if it is not setup yet.</p>
+<section id="command-invocation">
+<h2>Command Invocation<a class="headerlink" href="#command-invocation" title="Permalink to this headline"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qcfractal-server init <span class="o">[</span>&lt;options&gt;<span class="o">]</span>
+</pre></div>
+</div>
+</section>
+<section id="command-description">
+<h2>Command Description<a class="headerlink" href="#command-description" title="Permalink to this headline"></a></h2>
+<p>This command will attempt to do the following actions for the user in default mode (no args):</p>
+<ul class="simple">
+<li><p>Create the <a class="reference internal" href="glossary.html#term-Fractal-Config-Directory"><span class="xref std std-term">QCFractal Config directory</span></a></p></li>
+<li><p>Create a blank <a class="reference internal" href="server_config.html"><span class="doc">Fractal Config file</span></a> (assumes defaults)</p></li>
+<li><p>Create the folders for housing the PostgreSQL database file, which will be the home of Fractal’s data.</p></li>
+<li><p>Initialize PostgreSQL’s service at the database location from above</p></li>
+<li><p>Start the PostgreSQL server</p></li>
+<li><p>Populate the database tables and finalize everything for Fractal’s operation</p></li>
+</ul>
+<p>In most cases, the user should not have to change any configurations if they are the system owners or admins. However,
+if users want to do something different, they can write their own <a class="reference internal" href="server_config.html"><span class="doc">Config File</span></a> and
+change the settings though the CLI to start the server.</p>
+</section>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline"></a></h2>
+<p><strong>This is a set of GLOBAL level options which impact where the ``init`` command looks, and how it interacts with the config file</strong></p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">--overwrite</span></code></dt><dd><p>Control whether the rest of the settings overwrite an existing config file in the
+<a class="reference internal" href="glossary.html#term-Fractal-Config-Directory"><span class="xref std std-term">QCFractal Config directory</span></a></p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--base-folder</span> <span class="pre">[&lt;folder&gt;]</span></code></dt><dd><p>The QCFractal base directory to attach to. Default: <code class="docutils literal notranslate"><span class="pre">~/.qca/qcfractal</span></code></p>
+</dd>
+</dl>
+<p><strong>This set of options pertain to the PostgreSQL database itself</strong> and translate to the <code class="docutils literal notranslate"><span class="pre">database</span></code> header in the
+<a class="reference internal" href="server_config.html"><span class="doc">Fractal Server Config</span></a>.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">--db-port</span> <span class="pre">[&lt;port&gt;]</span></code></dt><dd><p>The PostgreSQL default port, Default <code class="docutils literal notranslate"><span class="pre">5432</span></code></p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--db-host</span> <span class="pre">[&lt;host&gt;]</span></code></dt><dd><p>Default location for the Postgres server. If not <code class="docutils literal notranslate"><span class="pre">localhost</span></code>, Fractal command lines cannot manage the instance.
+and will have to be configured in the <a class="reference internal" href="server_config.html"><span class="doc">Config File</span></a>. Default: <code class="docutils literal notranslate"><span class="pre">localhost</span></code></p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--db-username</span> <span class="pre">[&lt;user&gt;]</span></code></dt><dd><p>The postgres username to default to. <strong>Planned Feature - Currently inactive</strong>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--db-password</span> <span class="pre">[&lt;password&gt;]</span></code></dt><dd><p>The postgres password for the give user. <strong>Planned Feature - Currently inactive</strong>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--db-directory</span> <span class="pre">[&lt;dir_path&gt;]</span></code></dt><dd><p>“The physical location of the QCFractal instance data, defaults to the root
+<a class="reference internal" href="glossary.html#term-Fractal-Config-Directory"><span class="xref std std-term">Config directory</span></a>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--db-default-database</span> <span class="pre">[&lt;db_name&gt;]</span></code></dt><dd><p>The default database to connect to. Typically used if you already have a Fractal Database set up or you want to
+use a different name for the database besides the default. Default <code class="docutils literal notranslate"><span class="pre">qcfractal_default</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--db-logfile</span> <span class="pre">[&lt;logfile&gt;]</span></code></dt><dd><p>The logfile to write postgres logs. Default <code class="docutils literal notranslate"><span class="pre">qcfractal_postgres.log</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--db-own</span> <span class="pre">(True|False)</span></code></dt><dd><p>If own is True, Fractal will control the database instance. If False Postgres will expect a booted server at the
+database specification. Default <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+</dd>
+</dl>
+<p><strong>The settings below here pertain to the Fractal Server</strong> and translate to the <code class="docutils literal notranslate"><span class="pre">fractal</span></code> header in the
+<a class="reference internal" href="server_config.html"><span class="doc">Fractal Server Config</span></a>.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">--name</span> <span class="pre">[&lt;name&gt;]</span></code></dt><dd><p>The Fractal server default name. Controls how the server presents itself to connected clients.
+Default <code class="docutils literal notranslate"><span class="pre">QCFractal</span> <span class="pre">Server</span></code></p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--port</span> <span class="pre">[&lt;port&gt;]</span></code></dt><dd><p>The Fractal default port. This is the port which Fractal listens to for client connections (and for the URI).
+This is <em>separate</em> from the <code class="docutils literal notranslate"><span class="pre">--db-port</span></code> which is the port that PostgreSQL database is listening for. In general,
+these should be separate. Default <code class="docutils literal notranslate"><span class="pre">7777</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--compres-response</span> <span class="pre">(True|False)</span></code></dt><dd><p>Compress REST responses or not, should be True unless behind a proxy. Default <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--allow-read</span> <span class="pre">(True|False)</span></code></dt><dd><p>Always allows read access to record tables. Default <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--security</span> <span class="pre">[&lt;security_string&gt;]</span></code></dt><dd><p>Optional security features. Not set by default.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--query-limit</span> <span class="pre">[&lt;int_limit&gt;]</span></code></dt><dd><p>The maximum number of records to return per query. Default <code class="docutils literal notranslate"><span class="pre">1000</span></code></p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--logfile</span> <span class="pre">[&lt;log&gt;]</span></code></dt><dd><p>The logfile the Fractal Server writes to. Default <code class="docutils literal notranslate"><span class="pre">qcfractal_server.log</span></code></p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--service-frequency</span> <span class="pre">[&lt;frequency&gt;]</span></code></dt><dd><p>The frequency to update the Fractal services. Default <code class="docutils literal notranslate"><span class="pre">60</span></code></p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--max-active-services</span> <span class="pre">[&lt;max-services&gt;]</span></code></dt><dd><p>The maximum number of concurrent active services. Default <code class="docutils literal notranslate"><span class="pre">20</span></code></p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--heartbeat-frequency</span> <span class="pre">[&lt;heartbeat&gt;]</span></code></dt><dd><p>The frequency (in seconds) to check the heartbeat of <a class="reference internal" href="managers.html#term-Manager"><span class="xref std std-term">Managers</span></a>. Default <code class="docutils literal notranslate"><span class="pre">1800</span></code></p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="managers_detailed.html" class="btn btn-neutral float-left" title="Detailed Manager Information" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="server_config.html" class="btn btn-neutral float-right" title="Fractal Server Config" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2021, The Molecular Sciences Software Institute.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+FractalSnowflakeHandler
+=======================
+
+.. currentmodule:: qcfractal
+
+.. autoclass:: FractalSnowflakeHandler
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~FractalSnowflakeHandler.logfilename
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~FractalSnowflakeHandler.client
+      ~FractalSnowflakeHandler.get_address
+      ~FractalSnowflakeHandler.restart
+      ~FractalSnowflakeHandler.show_log
+      ~FractalSnowflakeHandler.start
+      ~FractalSnowflakeHandler.stop
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: logfilename
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: client
+   .. automethod:: get_address
+   .. automethod:: restart
+   .. automethod:: show_log
+   .. automethod:: start
+   .. automethod:: stop

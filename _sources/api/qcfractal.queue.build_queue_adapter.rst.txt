@@ -1,0 +1,6 @@
+build_queue_adapter
+===================
+
+.. currentmodule:: qcfractal.queue
+
+.. autofunction:: build_queue_adapter

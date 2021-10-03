@@ -1,0 +1,41 @@
+QueueManager
+============
+
+.. currentmodule:: qcfractal
+
+.. autoclass:: QueueManager
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~QueueManager.add_exit_callback
+      ~QueueManager.assert_connected
+      ~QueueManager.await_results
+      ~QueueManager.close_adapter
+      ~QueueManager.connected
+      ~QueueManager.heartbeat
+      ~QueueManager.list_current_tasks
+      ~QueueManager.name
+      ~QueueManager.shutdown
+      ~QueueManager.start
+      ~QueueManager.stop
+      ~QueueManager.test
+      ~QueueManager.update
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: add_exit_callback
+   .. automethod:: assert_connected
+   .. automethod:: await_results
+   .. automethod:: close_adapter
+   .. automethod:: connected
+   .. automethod:: heartbeat
+   .. automethod:: list_current_tasks
+   .. automethod:: name
+   .. automethod:: shutdown
+   .. automethod:: start
+   .. automethod:: stop
+   .. automethod:: test
+   .. automethod:: update

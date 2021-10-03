@@ -1,0 +1,6 @@
+storage_socket_factory
+======================
+
+.. currentmodule:: qcfractal
+
+.. autofunction:: storage_socket_factory

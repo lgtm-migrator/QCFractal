@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>qcfractal.cli.qcfractal_manager &mdash; QCFractal 0+untagged.1.ge9cee03 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> QCFractal
+          </a>
+              <div class="version">
+                0+untagged.1.ge9cee03
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">Install QCFractal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart.html">Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../setup_quickstart.html">Setup Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../setup_server.html">Server Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../setup_compute.html">Manager Setup</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Records Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../procedures.html">Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../flow.html">Fractal Call Flowcharts</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manager Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../managers.html">Fractal Queue Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../managers_config_api.html">Queue Manager API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../managers_hpc.html">Configuration for High-Performance Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../managers_samples.html">Queue Manager Example YAML Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../managers_faq.html">Queue Manager Frequent Questions and Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../managers_detailed.html">Detailed Manager Information</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server CLI and Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../server_init.html">Fractal Server Init</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../server_config.html">Fractal Server Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../server_start.html">Fractal Server Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../server_user.html">Fractal Server User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../server_upgrade.html">Fractal Server Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../server_view.html">Server-side Dataset Views</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../qcarchive_overview.html">QCArchive Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">QCFractal API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../database_design.html">Database Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev_guidelines.html">Development Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">QCFractal</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      <li>qcfractal.cli.qcfractal_manager</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for qcfractal.cli.qcfractal_manager</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">A command line interface to the qcfractal server.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">signal</span>
+<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">ceil</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="kn">import</span> <span class="nn">tornado.log</span>
+<span class="kn">import</span> <span class="nn">yaml</span>
+<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">Field</span><span class="p">,</span> <span class="n">validator</span>
+
+<span class="kn">import</span> <span class="nn">qcengine</span> <span class="k">as</span> <span class="nn">qcng</span>
+<span class="kn">import</span> <span class="nn">qcfractal</span>
+
+<span class="kn">from</span> <span class="nn">..interface.models</span> <span class="kn">import</span> <span class="n">AutodocBaseSettings</span><span class="p">,</span> <span class="n">ProtoModel</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">cli_utils</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;main&quot;</span><span class="p">]</span>
+
+<span class="n">QCA_RESOURCE_STRING</span> <span class="o">=</span> <span class="s2">&quot;--resources process=1&quot;</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;qcfractal.cli&quot;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">SettingsCommonConfig</span><span class="p">:</span>
+    <span class="n">env_prefix</span> <span class="o">=</span> <span class="s2">&quot;QCA_&quot;</span>
+    <span class="n">case_insensitive</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">extra</span> <span class="o">=</span> <span class="s2">&quot;forbid&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">AdapterEnum</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+    <span class="n">dask</span> <span class="o">=</span> <span class="s2">&quot;dask&quot;</span>
+    <span class="n">pool</span> <span class="o">=</span> <span class="s2">&quot;pool&quot;</span>
+    <span class="n">parsl</span> <span class="o">=</span> <span class="s2">&quot;parsl&quot;</span>
+
+
+<div class="viewcode-block" id="CommonManagerSettings"><a class="viewcode-back" href="../../../managers_config_api.html#qcfractal.cli.qcfractal_manager.CommonManagerSettings">[docs]</a><span class="k">class</span> <span class="nc">CommonManagerSettings</span><span class="p">(</span><span class="n">AutodocBaseSettings</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The Common settings are the settings most users will need to adjust regularly to control the nature of</span>
+<span class="sd">    task execution and the hardware under which tasks are executed on. This block is often unique to each deployment,</span>
+<span class="sd">    user, and manager and will be the most commonly updated options, even as config files are copied and reused, and</span>
+<span class="sd">    even on the same platform/cluster.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">adapter</span><span class="p">:</span> <span class="n">AdapterEnum</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="n">AdapterEnum</span><span class="o">.</span><span class="n">pool</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Which type of Distributed adapter to run tasks through.&quot;</span>
+    <span class="p">)</span>
+    <span class="n">tasks_per_worker</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="mi">1</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Number of concurrent tasks to run *per Worker* which is executed. Total number of concurrent &quot;</span>
+        <span class="s2">&quot;tasks is this value times max_workers, assuming the hardware is available. With the &quot;</span>
+        <span class="s2">&quot;pool adapter, and/or if max_workers=1, tasks_per_worker *is* the number of concurrent tasks.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">cores_per_worker</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="n">qcng</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">get_global</span><span class="p">(</span><span class="s2">&quot;ncores&quot;</span><span class="p">),</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        Number of cores to be consumed by the Worker and distributed over the tasks_per_worker. These </span>
+<span class="s2">        cores are divided evenly, so it is recommended that quotient of cores_per_worker/tasks_per_worker </span>
+<span class="s2">        be a whole number else the core distribution is left up to the logic of the adapter. The default</span>
+<span class="s2">        value is read from the number of detected cores on the system you are executing on.</span>
+<span class="s2">        </span>
+<span class="s2">        In the case of node-parallel tasks, this number means the number of cores per node.</span>
+<span class="s2">        &quot;&quot;&quot;</span><span class="p">,</span>
+        <span class="n">gt</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">memory_per_worker</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="n">qcng</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">get_global</span><span class="p">(</span><span class="s2">&quot;memory&quot;</span><span class="p">),</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Amount of memory (in GB) to be consumed and distributed over the tasks_per_worker. This memory is &quot;</span>
+        <span class="s2">&quot;divided evenly, but is ultimately at the control of the adapter. Engine will only allow each of &quot;</span>
+        <span class="s2">&quot;its calls to consume memory_per_worker/tasks_per_worker of memory. Total memory consumed by this &quot;</span>
+        <span class="s2">&quot;manager at any one time is this value times max_workers. The default value is read &quot;</span>
+        <span class="s2">&quot;from the amount of memory detected on the system you are executing on.&quot;</span><span class="p">,</span>
+        <span class="n">gt</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">max_workers</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="mi">1</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The maximum number of Workers which are allowed to be run at the same time. The total number of &quot;</span>
+        <span class="s2">&quot;concurrent tasks will maximize at this quantity times tasks_per_worker.&quot;</span>
+        <span class="s2">&quot;The total number &quot;</span>
+        <span class="s2">&quot;of Jobs on a cluster which will be started is equal to this parameter in most cases, and should &quot;</span>
+        <span class="s2">&quot;be assumed 1 Worker per Job. Any exceptions to this will be documented. &quot;</span>
+        <span class="s2">&quot;In node exclusive mode this is equivalent to the maximum number of nodes which you will consume. &quot;</span>
+        <span class="s2">&quot;This must be a positive, non zero integer.&quot;</span><span class="p">,</span>
+        <span class="n">gt</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">retries</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="mi">2</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Number of retries that QCEngine will attempt for RandomErrors detected when running &quot;</span>
+        <span class="s2">&quot;its computations. After this many attempts (or on any other type of error), the &quot;</span>
+        <span class="s2">&quot;error will be raised.&quot;</span><span class="p">,</span>
+        <span class="n">ge</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">scratch_directory</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Scratch directory for Engine execution jobs.&quot;</span><span class="p">)</span>
+    <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="kc">False</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Turn on verbose mode or not. In verbose mode, all messages from DEBUG level and up are shown, &quot;</span>
+        <span class="s2">&quot;otherwise, defaults are all used for any logger.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">nodes_per_job</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="mi">1</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The number of nodes to request per job. Only used by the Parsl adapter at present&quot;</span><span class="p">,</span> <span class="n">gt</span><span class="o">=</span><span class="mi">0</span>
+    <span class="p">)</span>
+    <span class="n">nodes_per_task</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="mi">1</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The number of nodes to use for each tasks. Only relevant for node-parallel executables.&quot;</span><span class="p">,</span> <span class="n">gt</span><span class="o">=</span><span class="mi">0</span>
+    <span class="p">)</span>
+    <span class="n">cores_per_rank</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="mi">1</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The number of cores per MPI rank for MPI-parallel applications. Only relevant for node-parallel&quot;</span>
+        <span class="s2">&quot; codes and the most relevant to codes that with hybrid MPI+OpenMP parallelism (e.g., NWChem).&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Config</span><span class="p">(</span><span class="n">SettingsCommonConfig</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="FractalServerSettings"><a class="viewcode-back" href="../../../managers_config_api.html#qcfractal.cli.qcfractal_manager.FractalServerSettings">[docs]</a><span class="k">class</span> <span class="nc">FractalServerSettings</span><span class="p">(</span><span class="n">AutodocBaseSettings</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Settings pertaining to the Fractal Server you wish to pull tasks from and push completed tasks to. Each manager</span>
+<span class="sd">    supports exactly 1 Fractal Server to be in communication with, and exactly 1 user on that Fractal Server. These</span>
+<span class="sd">    can be changed, but only once the Manager is shutdown and the settings changed. Multiple Managers however can be</span>
+<span class="sd">    started in parallel with each other, but must be done as separate calls to the CLI.</span>
+
+<span class="sd">    Caution: The password here is written in plain text, so it is up to the owner/writer of the configuration file</span>
+<span class="sd">    to ensure its security.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">fractal_uri</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="s2">&quot;localhost:7777&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Full URI to the Fractal Server you want to connect to&quot;</span><span class="p">)</span>
+    <span class="n">username</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="kc">None</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Username to connect to the Fractal Server with. When not provided, a connection is attempted &quot;</span>
+        <span class="s2">&quot;as a guest user, which in most default Servers will be unable to return results.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">password</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="kc">None</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Password to authenticate to the Fractal Server with (alongside the `username`)&quot;</span>
+    <span class="p">)</span>
+    <span class="n">verify</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Use Server-side generated SSL certification or not.&quot;</span><span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Config</span><span class="p">(</span><span class="n">SettingsCommonConfig</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="QueueManagerSettings"><a class="viewcode-back" href="../../../managers_config_api.html#qcfractal.cli.qcfractal_manager.QueueManagerSettings">[docs]</a><span class="k">class</span> <span class="nc">QueueManagerSettings</span><span class="p">(</span><span class="n">AutodocBaseSettings</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Fractal Queue Manger settings. These are options which control the setup and execution of the Fractal Manager</span>
+<span class="sd">    itself.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">manager_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="s2">&quot;unlabeled&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Name of this scheduler to present to the Fractal Server. Descriptive names help the server &quot;</span>
+        <span class="s2">&quot;identify the manager resource and assists with debugging.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">queue_tag</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="kc">None</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Only pull tasks from the Fractal Server with this tag. If not set (None/null), then pull untagged &quot;</span>
+        <span class="s2">&quot;tasks, which should be the majority of tasks. This option should only be used when you want to &quot;</span>
+        <span class="s2">&quot;pull very specific tasks which you know have been tagged as such on the server. If the server has &quot;</span>
+        <span class="s2">&quot;no tasks with this tag, no tasks will be pulled (and no error is raised because this is intended &quot;</span>
+        <span class="s2">&quot;behavior). If multiple tags are provided, tasks will be pulled (but not necessarily executed) in order of the &quot;</span>
+        <span class="s2">&quot;tags.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">log_file_prefix</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="kc">None</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Full path to save a log file to, including the filename. If not provided, information will still &quot;</span>
+        <span class="s2">&quot;be reported to terminal, but not saved. When set, logger information is sent both to this file &quot;</span>
+        <span class="s2">&quot;and the terminal.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">update_frequency</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="mi">30</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Time between heartbeats/update checks between this Manager and the Fractal Server. The lower this &quot;</span>
+        <span class="s2">&quot;value, the shorter the intervals. If you have an unreliable network connection, consider &quot;</span>
+        <span class="s2">&quot;increasing this time as repeated, consecutive network failures will cause the Manager to shut &quot;</span>
+        <span class="s2">&quot;itself down to maintain integrity between it and the Fractal Server. Units of seconds&quot;</span><span class="p">,</span>
+        <span class="n">gt</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">test</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="kc">False</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Turn on testing mode for this Manager. The Manager will not connect to any Fractal Server, and &quot;</span>
+        <span class="s2">&quot;instead submits netsts worth trial tasks per quantum chemistry program it finds. These tasks are &quot;</span>
+        <span class="s2">&quot;generated locally and do not need a running Fractal Server to work. Helpful for ensuring the &quot;</span>
+        <span class="s2">&quot;Manager is configured correctly and the quantum chemistry codes are operating as expected.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">ntests</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="mi">5</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Number of tests to run if the `test` flag is set to True. Total number of tests will be this &quot;</span>
+        <span class="s2">&quot;number times the number of found quantum chemistry programs. Does nothing if `test` is False.&quot;</span>
+        <span class="s2">&quot;If set to 0, then this submits no tests, but it will run through the setup and client &quot;</span>
+        <span class="s2">&quot;initialization.&quot;</span><span class="p">,</span>
+        <span class="n">gt</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">max_queued_tasks</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="kc">None</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Generally should not be set. Number of tasks to pull from the Fractal Server to keep locally at &quot;</span>
+        <span class="s2">&quot;all times. If `None`, this is automatically computed as &quot;</span>
+        <span class="s2">&quot;`ceil(common.tasks_per_worker*common.max_workers*2.0) + 1`. As tasks are completed, the &quot;</span>
+        <span class="s2">&quot;local pool is filled back up to this value. These tasks will all attempt to be run concurrently, &quot;</span>
+        <span class="s2">&quot;but concurrent tasks are limited by number of cluster jobs and tasks per job. Pulling too many of &quot;</span>
+        <span class="s2">&quot;these can result in under-utilized managers from other sites and result in less FIFO returns. As &quot;</span>
+        <span class="s2">&quot;such it is recommended not to touch this setting in general as you will be given enough tasks to &quot;</span>
+        <span class="s2">&quot;fill your maximum throughput with a buffer (assuming the queue has them).&quot;</span><span class="p">,</span>
+        <span class="n">gt</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+<span class="k">class</span> <span class="nc">SchedulerEnum</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+    <span class="n">slurm</span> <span class="o">=</span> <span class="s2">&quot;slurm&quot;</span>
+    <span class="n">pbs</span> <span class="o">=</span> <span class="s2">&quot;pbs&quot;</span>
+    <span class="n">sge</span> <span class="o">=</span> <span class="s2">&quot;sge&quot;</span>
+    <span class="n">moab</span> <span class="o">=</span> <span class="s2">&quot;moab&quot;</span>
+    <span class="n">lsf</span> <span class="o">=</span> <span class="s2">&quot;lsf&quot;</span>
+    <span class="n">cobalt</span> <span class="o">=</span> <span class="s2">&quot;cobalt&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">AdaptiveCluster</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+    <span class="n">static</span> <span class="o">=</span> <span class="s2">&quot;static&quot;</span>
+    <span class="n">adaptive</span> <span class="o">=</span> <span class="s2">&quot;adaptive&quot;</span>
+
+
+<div class="viewcode-block" id="ClusterSettings"><a class="viewcode-back" href="../../../managers_config_api.html#qcfractal.cli.qcfractal_manager.ClusterSettings">[docs]</a><span class="k">class</span> <span class="nc">ClusterSettings</span><span class="p">(</span><span class="n">AutodocBaseSettings</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Settings tied to the cluster you are running on. These settings are mostly tied to the nature of the cluster</span>
+<span class="sd">    jobs you are submitting, separate from the nature of the compute tasks you will be running within them. As such,</span>
+<span class="sd">    the options here are things like wall time (per job), which Scheduler your cluster has (like PBS or SLURM),</span>
+<span class="sd">    etc. No additional options are allowed here.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">node_exclusivity</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="kc">False</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Run your cluster jobs in node-exclusivity mode. This option may not be available to all scheduler &quot;</span>
+        <span class="s2">&quot;types and thus may not do anything. Related to this, the flags we have found for this option &quot;</span>
+        <span class="s2">&quot;may not be correct for your scheduler and thus might throw an error. You can always add the &quot;</span>
+        <span class="s2">&quot;correct flag/parameters to the `scheduler_options` parameter and leave this as False if you &quot;</span>
+        <span class="s2">&quot;find it gives you problems.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">scheduler</span><span class="p">:</span> <span class="n">SchedulerEnum</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="kc">None</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Option of which Scheduler/Queuing system your cluster uses. Note: not all scheduler options are &quot;</span>
+        <span class="s2">&quot;available with every adapter.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">scheduler_options</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="p">[],</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Additional options which are fed into the header files for your submitted jobs to your cluster&#39;s &quot;</span>
+        <span class="s2">&quot;Scheduler/Queuing system. The directives are automatically filled in, so if you want to set &quot;</span>
+        <span class="s2">&quot;something like &#39;#PBS -n something&#39;, you would instead just do &#39;-n something&#39;. Each directive &quot;</span>
+        <span class="s2">&quot;should be a separate string entry in the list. No validation is done on this with respect to &quot;</span>
+        <span class="s2">&quot;valid directives so it is on the user to know what they need to set.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">task_startup_commands</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="p">[],</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Additional commands to be run before starting the Workers and the task distribution. This can &quot;</span>
+        <span class="s2">&quot;include commands needed to start things like conda environments or setting environment variables &quot;</span>
+        <span class="s2">&quot;before executing the Workers. These commands are executed first before any of the distributed &quot;</span>
+        <span class="s2">&quot;commands run and are added to the batch scripts as individual commands per entry, verbatim.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">walltime</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="s2">&quot;06:00:00&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Wall clock time of each cluster job started. Presented as a string in HH:MM:SS form, but your &quot;</span>
+        <span class="s2">&quot;cluster may have a different structural syntax. This number should be set high as there should &quot;</span>
+        <span class="s2">&quot;be a number of Fractal tasks which are run for each submitted cluster job. Ideally, the job &quot;</span>
+        <span class="s2">&quot;will start, the Worker will land, and the Worker will crunch through as many tasks as it can; &quot;</span>
+        <span class="s2">&quot;meaning the job which has a Worker in it must continue existing to minimize time spend &quot;</span>
+        <span class="s2">&quot;redeploying Workers.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">adaptive</span><span class="p">:</span> <span class="n">AdaptiveCluster</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="n">AdaptiveCluster</span><span class="o">.</span><span class="n">adaptive</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Whether or not to use adaptive scaling of Workers or not. If set to &#39;static&#39;, a fixed number of &quot;</span>
+        <span class="s2">&quot;Workers will be started (and likely *NOT* restarted when the wall clock is reached). When set to &quot;</span>
+        <span class="s2">&quot;&#39;adaptive&#39; (the default), the distributed engine will try to adaptively scale the number of &quot;</span>
+        <span class="s2">&quot;Workers based on tasks in the queue. This is str instead of bool type variable in case more &quot;</span>
+        <span class="s2">&quot;complex adaptivity options are added in the future.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Config</span><span class="p">(</span><span class="n">SettingsCommonConfig</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@validator</span><span class="p">(</span><span class="s2">&quot;scheduler&quot;</span><span class="p">,</span> <span class="s2">&quot;adaptive&quot;</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_lcase</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+            <span class="n">v</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">v</span></div>
+
+
+<span class="k">class</span> <span class="nc">SettingsBlocker</span><span class="p">(</span><span class="n">AutodocBaseSettings</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Helper class to auto block certain entries, overwrite hidden methods to access&quot;&quot;&quot;</span>
+
+    <span class="n">_forbidden_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">_forbidden_name</span> <span class="o">=</span> <span class="s2">&quot;SettingsBlocker&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Enforce that the keys we are going to set remain untouched. Blocks certain keywords for the classes</span>
+<span class="sd">        they will be fed into, not whatever Fractal is using as keywords.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">bad_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">&amp;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forbidden_set</span>
+        <span class="k">if</span> <span class="n">bad_set</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
+                <span class="s2">&quot;The following items were set as part of </span><span class="si">{}</span><span class="s2">, however, &quot;</span>
+                <span class="s2">&quot;there are other config items which control these in more generic &quot;</span>
+                <span class="s2">&quot;settings locations: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_forbidden_name</span><span class="p">,</span> <span class="n">bad_set</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Config</span><span class="p">(</span><span class="n">SettingsCommonConfig</span><span class="p">):</span>
+        <span class="c1"># This overwrites the base config to allow other keywords to be fed in</span>
+        <span class="n">extra</span> <span class="o">=</span> <span class="s2">&quot;allow&quot;</span>
+
+
+<div class="viewcode-block" id="DaskQueueSettings"><a class="viewcode-back" href="../../../managers_config_api.html#qcfractal.cli.qcfractal_manager.DaskQueueSettings">[docs]</a><span class="k">class</span> <span class="nc">DaskQueueSettings</span><span class="p">(</span><span class="n">SettingsBlocker</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Settings for the Dask Cluster class. Values set here are passed directly into the Cluster objects based on the</span>
+<span class="sd">    `cluster.scheduler` settings. Although many values are set automatically from other settings, there are</span>
+<span class="sd">    some additional values such as `interface` and `extra` which are passed through to the constructor.</span>
+
+<span class="sd">    Valid values for this field are functions of your cluster.scheduler and no linting is done ahead of trying to pass</span>
+<span class="sd">    these to Dask.</span>
+
+<span class="sd">    NOTE: The parameters listed here are a special exception for additional features Fractal has engineered or</span>
+<span class="sd">    options which should be considered for some of the edge cases we have discovered. If you try to set a value</span>
+<span class="sd">    which is derived from other options in the YAML file, an error is raised and you are told exactly which one is</span>
+<span class="sd">    forbidden.</span>
+
+<span class="sd">    Please see the docs for the provider for more information.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">interface</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="kc">None</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Name of the network adapter to use as communication between the head node and the compute node.&quot;</span>
+        <span class="s2">&quot;There are oddities of this when the head node and compute node use different ethernet adapter &quot;</span>
+        <span class="s2">&quot;names and we have not figured out exactly which combination is needed between this and the &quot;</span>
+        <span class="s2">&quot;poorly documented `ip` keyword which appears to be for Workers, but not the Client.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">extra</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="kc">None</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Additional flags which are fed into the Dask Worker CLI startup, can be used to overwrite &quot;</span>
+        <span class="s2">&quot;pre-configured options. Do not use unless you know exactly which flags to use.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">lsf_units</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="kc">None</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Unit system for an LSF cluster limits (e.g. MB, GB, TB). If not set, the units are &quot;</span>
+        <span class="s2">&quot;are attempted to be set from the `lsf.conf` file in the default locations. This does nothing &quot;</span>
+        <span class="s2">&quot;if the cluster is not LSF&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">_forbidden_set</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;cores&quot;</span><span class="p">,</span> <span class="s2">&quot;memory&quot;</span><span class="p">,</span> <span class="s2">&quot;processes&quot;</span><span class="p">,</span> <span class="s2">&quot;walltime&quot;</span><span class="p">,</span> <span class="s2">&quot;env_extra&quot;</span><span class="p">,</span> <span class="s2">&quot;qca_resource_string&quot;</span><span class="p">}</span>
+    <span class="n">_forbidden_name</span> <span class="o">=</span> <span class="s2">&quot;dask_jobqueue&quot;</span></div>
+
+
+<div class="viewcode-block" id="ParslExecutorSettings"><a class="viewcode-back" href="../../../managers_config_api.html#qcfractal.cli.qcfractal_manager.ParslExecutorSettings">[docs]</a><span class="k">class</span> <span class="nc">ParslExecutorSettings</span><span class="p">(</span><span class="n">SettingsBlocker</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Settings for the Parsl Executor class. This serves as the primary mechanism for distributing Workers to jobs.</span>
+<span class="sd">    In most cases, you will not need to set any of these options, as several options are automatically inferred</span>
+<span class="sd">    from other settings. Any option set here is passed through to the HighThroughputExecutor class of Parsl.</span>
+
+<span class="sd">    https://parsl.readthedocs.io/en/latest/stubs/parsl.executors.HighThroughputExecutor.html</span>
+
+<span class="sd">    NOTE: The parameters listed here are a special exception for additional features Fractal has engineered or</span>
+<span class="sd">    options which should be considered for some of the edge cases we have discovered. If you try to set a value</span>
+<span class="sd">    which is derived from other options in the YAML file, an error is raised and you are told exactly which one is</span>
+<span class="sd">    forbidden.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">address</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="kc">None</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;This only needs to be set in conditional cases when the head node and compute nodes use a &quot;</span>
+        <span class="s2">&quot;differently named ethernet adapter.</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;An address to connect to the main Parsl process which is reachable from the network in which &quot;</span>
+        <span class="s2">&quot;Workers will be running. This can be either a hostname as returned by hostname or an IP address. &quot;</span>
+        <span class="s2">&quot;Most login nodes on clusters have several network interfaces available, only some of which can be &quot;</span>
+        <span class="s2">&quot;reached from the compute nodes. Some trial and error might be necessary to identify what &quot;</span>
+        <span class="s2">&quot;addresses are reachable from compute nodes.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">_forbidden_set</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="s2">&quot;provider&quot;</span><span class="p">,</span> <span class="s2">&quot;cores_per_worker&quot;</span><span class="p">,</span> <span class="s2">&quot;max_workers&quot;</span><span class="p">}</span>
+    <span class="n">_forbidden_name</span> <span class="o">=</span> <span class="s2">&quot;the parsl executor&quot;</span></div>
+
+
+<span class="k">class</span> <span class="nc">ParslLauncherSettings</span><span class="p">(</span><span class="n">AutodocBaseSettings</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Set the Launcher in a Parsl Provider, and its options, if not set, the defaults are used.</span>
+
+<span class="sd">    This is a rare use case where the ``launcher`` key of the Provider is needed to be set. Since it must be a class</span>
+<span class="sd">    first, you will need to specify the ``launcher_type`` options which is interpreted as the Class Name of the</span>
+<span class="sd">    Launcher to load and pass the rest of the options set here into it. Any unset key will just be left as defaults.</span>
+<span class="sd">    It is up to the user to consult the Parsl Docs for their desired Launcher&#39;s options and what they do.</span>
+
+<span class="sd">    The known launchers below are case-insensitive,</span>
+<span class="sd">    but if new launchers come out (or you are using a custom/developmental build of Parsl), then you can pass your</span>
+<span class="sd">    own Launcher in verbatim, with case sensitivity, and the Queue Manager will try to load it.</span>
+
+<span class="sd">    Known Launchers:</span>
+<span class="sd">        - ``SimpleLauncher``: https://parsl.readthedocs.io/en/latest/stubs/parsl.launchers.SimpleLauncher.html</span>
+<span class="sd">        - ``SingleNodeLauncher``: https://parsl.readthedocs.io/en/latest/stubs/parsl.launchers.SingleNodeLauncher.html</span>
+<span class="sd">        - ``SrunLauncher``: https://parsl.readthedocs.io/en/latest/stubs/parsl.launchers.SrunLauncher.html</span>
+<span class="sd">        - ``AprunLauncher``: https://parsl.readthedocs.io/en/latest/stubs/parsl.launchers.AprunLauncher.html</span>
+<span class="sd">        - ``SrunMPILauncher``: https://parsl.readthedocs.io/en/latest/stubs/parsl.launchers.SrunMPILauncher.html</span>
+<span class="sd">        - ``GnuParallelLauncher``: https://parsl.readthedocs.io/en/latest/stubs/parsl.launchers.GnuParallelLauncher.html</span>
+<span class="sd">        - ``MpiExecLauncher`` : https://parsl.readthedocs.io/en/latest/stubs/parsl.launchers.MpiExecLauncher.html</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">launcher_class</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="o">...</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Class of Launcher to use. This is a setting unique to QCArchive which is then used to pass onto &quot;</span>
+        <span class="s2">&quot;the Provider&#39;s ``launcher`` setting and the remaining keys are passed to that Launcher&#39;s options.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_launcher</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">launcher_base</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Launcher&quot;</span><span class="p">:</span>
+        <span class="n">launcher_lower</span> <span class="o">=</span> <span class="n">launcher_base</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">launcher_map</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;simplelauncher&quot;</span><span class="p">:</span> <span class="s2">&quot;SimpleLauncher&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;singlenodelauncher&quot;</span><span class="p">:</span> <span class="s2">&quot;SingleNodeLauncher&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;srunlauncher&quot;</span><span class="p">:</span> <span class="s2">&quot;SrunLauncher&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;aprunlauncher&quot;</span><span class="p">:</span> <span class="s2">&quot;AprunLauncher&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;srunmpiLauncher&quot;</span><span class="p">:</span> <span class="s2">&quot;SrunMPILauncher&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;gnuparallellauncher&quot;</span><span class="p">:</span> <span class="s2">&quot;GnuParallelLauncher&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;mpiexeclauncher&quot;</span><span class="p">:</span> <span class="s2">&quot;MpiExecLauncher&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="n">launcher_string</span> <span class="o">=</span> <span class="n">launcher_map</span><span class="p">[</span><span class="n">launcher_lower</span><span class="p">]</span> <span class="k">if</span> <span class="n">launcher_lower</span> <span class="ow">in</span> <span class="n">launcher_map</span> <span class="k">else</span> <span class="n">launcher_base</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">launcher_load</span> <span class="o">=</span> <span class="n">cli_utils</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s2">&quot;parsl.launchers&quot;</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="n">launcher_string</span><span class="p">)</span>
+            <span class="n">launcher</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">launcher_load</span><span class="p">,</span> <span class="n">launcher_string</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Could not import Parsl Launcher: </span><span class="si">{</span><span class="n">launcher_base</span><span class="si">}</span><span class="s2">. Please make sure you have Parsl &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;installed and are requesting one of the launchers within the package.&quot;</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">launcher</span>
+
+    <span class="k">def</span> <span class="nf">build_launcher</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Import and load the desired launcher&quot;&quot;&quot;</span>
+        <span class="n">launcher</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_launcher</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">launcher_class</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">launcher</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">dict</span><span class="p">(</span><span class="n">exclude</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;launcher_class&quot;</span><span class="p">}))</span>
+
+    <span class="k">class</span> <span class="nc">Config</span><span class="p">(</span><span class="n">SettingsCommonConfig</span><span class="p">):</span>
+        <span class="n">extra</span> <span class="o">=</span> <span class="s2">&quot;allow&quot;</span>
+
+
+<div class="viewcode-block" id="ParslProviderSettings"><a class="viewcode-back" href="../../../managers_config_api.html#qcfractal.cli.qcfractal_manager.ParslProviderSettings">[docs]</a><span class="k">class</span> <span class="nc">ParslProviderSettings</span><span class="p">(</span><span class="n">SettingsBlocker</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Settings for the Parsl Provider class. Valid values for this field depend on your choice of  cluster.scheduler and</span>
+<span class="sd">    are defined in `the Parsl docs for the providers</span>
+<span class="sd">    &lt;https://parsl.readthedocs.io/en/stable/userguide/execution.html#execution-providers&gt;`_ with some minor exceptions.</span>
+<span class="sd">    The initializer function for the Parsl settings will indicate which</span>
+
+<span class="sd">    NOTE: The parameters listed here are a special exception for additional features Fractal has engineered or</span>
+<span class="sd">    options which should be considered for some of the edge cases we have discovered. If you try to set a value</span>
+<span class="sd">    which is derived from other options in the YAML file, an error is raised and you are told exactly which one is</span>
+<span class="sd">    forbidden.</span>
+
+<span class="sd">    SLURM: https://parsl.readthedocs.io/en/latest/stubs/parsl.providers.SlurmProvider.html</span>
+<span class="sd">    PBS/Torque/Moab: https://parsl.readthedocs.io/en/latest/stubs/parsl.providers.TorqueProvider.html</span>
+<span class="sd">    SGE (Sun GridEngine): https://parsl.readthedocs.io/en/latest/stubs/parsl.providers.GridEngineProvider.html</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s2">&quot;max_blocks&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;``max_blocks`` is set based on ``common.max_workers`` &quot;</span> <span class="s2">&quot;and ``common.nodes_per_job``&quot;</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="n">partition</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="kc">None</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The name of the cluster.scheduler partition being submitted to. Behavior, valid values, and even&quot;</span>
+        <span class="s2">&quot;its validity as a set variable are a function of what type of queue scheduler your specific &quot;</span>
+        <span class="s2">&quot;cluster has (e.g. this variable should NOT be present for PBS clusters). &quot;</span>
+        <span class="s2">&quot;Check with your Sys. Admins and/or your cluster documentation.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">launcher</span><span class="p">:</span> <span class="n">ParslLauncherSettings</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="kc">None</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The Parsl Launcher to use with your Provider. If left to ``None``, defaults are assumed (check &quot;</span>
+        <span class="s2">&quot;the Provider&#39;s defaults), otherwise this should be a dictionary requiring the option &quot;</span>
+        <span class="s2">&quot;``launcher_class`` as a str to specify which Launcher class to load, and the remaining settings &quot;</span>
+        <span class="s2">&quot;will be passed on to the Launcher&#39;s constructor.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">_forbidden_set</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;worker_init&quot;</span><span class="p">,</span> <span class="s2">&quot;scheduler_options&quot;</span><span class="p">,</span> <span class="s2">&quot;wall_time&quot;</span><span class="p">,</span> <span class="s2">&quot;nodes_per_block&quot;</span><span class="p">}</span>
+    <span class="n">_forbidden_name</span> <span class="o">=</span> <span class="s2">&quot;parsl&#39;s provider&quot;</span></div>
+
+
+<div class="viewcode-block" id="ParslQueueSettings"><a class="viewcode-back" href="../../../managers_config_api.html#qcfractal.cli.qcfractal_manager.ParslQueueSettings">[docs]</a><span class="k">class</span> <span class="nc">ParslQueueSettings</span><span class="p">(</span><span class="n">AutodocBaseSettings</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The Parsl-specific configurations used with the `common.adapter = parsl` setting. The parsl config is broken up into</span>
+<span class="sd">    a top level `Config` class, an `Executor` sub-class, and a `Provider` sub-class of the `Executor`.</span>
+<span class="sd">    Config -&gt; Executor -&gt; Provider. Each of these have their own options, and extra values fed into the</span>
+<span class="sd">    ParslQueueSettings are fed to the `Config` level.</span>
+
+<span class="sd">    It requires both `executor` and `provider` settings, but will default fill them in and often does not need</span>
+<span class="sd">    any further configuration which is handled by other settings in the config file.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">executor</span><span class="p">:</span> <span class="n">ParslExecutorSettings</span> <span class="o">=</span> <span class="n">ParslExecutorSettings</span><span class="p">()</span>
+    <span class="n">provider</span><span class="p">:</span> <span class="n">ParslProviderSettings</span> <span class="o">=</span> <span class="n">ParslProviderSettings</span><span class="p">()</span>
+
+    <span class="k">class</span> <span class="nc">Config</span><span class="p">(</span><span class="n">SettingsCommonConfig</span><span class="p">):</span>
+        <span class="n">extra</span> <span class="o">=</span> <span class="s2">&quot;allow&quot;</span></div>
+
+
+<div class="viewcode-block" id="ManagerSettings"><a class="viewcode-back" href="../../../managers_config_api.html#qcfractal.cli.qcfractal_manager.ManagerSettings">[docs]</a><span class="k">class</span> <span class="nc">ManagerSettings</span><span class="p">(</span><span class="n">ProtoModel</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The config file for setting up a QCFractal Manager, all sub fields of this model are at equal top-level of the</span>
+<span class="sd">    YAML file. No additional top-level fields are permitted, but sub-fields may have their own additions.</span>
+
+<span class="sd">    Not all fields are required and many will depend on the cluster you are running, and the adapter you choose</span>
+<span class="sd">    to run on.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">common</span><span class="p">:</span> <span class="n">CommonManagerSettings</span> <span class="o">=</span> <span class="n">CommonManagerSettings</span><span class="p">()</span>
+    <span class="n">server</span><span class="p">:</span> <span class="n">FractalServerSettings</span> <span class="o">=</span> <span class="n">FractalServerSettings</span><span class="p">()</span>
+    <span class="n">manager</span><span class="p">:</span> <span class="n">QueueManagerSettings</span> <span class="o">=</span> <span class="n">QueueManagerSettings</span><span class="p">()</span>
+    <span class="n">cluster</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ClusterSettings</span><span class="p">]</span> <span class="o">=</span> <span class="n">ClusterSettings</span><span class="p">()</span>
+    <span class="n">dask</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">DaskQueueSettings</span><span class="p">]</span> <span class="o">=</span> <span class="n">DaskQueueSettings</span><span class="p">()</span>
+    <span class="n">parsl</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ParslQueueSettings</span><span class="p">]</span> <span class="o">=</span> <span class="n">ParslQueueSettings</span><span class="p">()</span>
+
+    <span class="k">class</span> <span class="nc">Config</span><span class="p">(</span><span class="n">ProtoModel</span><span class="o">.</span><span class="n">Config</span><span class="p">):</span>
+        <span class="n">extra</span> <span class="o">=</span> <span class="s2">&quot;forbid&quot;</span></div>
+
+
+<span class="k">def</span> <span class="nf">parse_args</span><span class="p">():</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;A CLI for a QCFractal QueueManager with a ProcessPoolExecutor, Dask, or Parsl backend. &quot;</span>
+        <span class="s2">&quot;The Dask and Parsl backends *requires* a config file due to the complexity of its setup. If a config &quot;</span>
+        <span class="s2">&quot;file is specified, the remaining options serve as CLI overwrites of the config.&quot;</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--version&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;version&quot;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">qcfractal</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--config-file&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+    <span class="c1"># Common settings</span>
+    <span class="n">common</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="s2">&quot;Common Adapter Settings&quot;</span><span class="p">)</span>
+    <span class="n">common</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--adapter&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The backend adapter to use, currently only {&#39;dask&#39;, &#39;parsl&#39;, &#39;pool&#39;} are valid.&quot;</span>
+    <span class="p">)</span>
+    <span class="n">common</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--tasks-per-worker&quot;</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The number of simultaneous tasks for the executor to run, resources will be divided evenly.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">common</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--cores-per-worker&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The number of process for each executor&#39;s Workers&quot;</span><span class="p">)</span>
+    <span class="n">common</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--memory-per-worker&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The total amount of memory on the system in GB&quot;</span><span class="p">)</span>
+    <span class="n">common</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--scratch-directory&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Scratch directory location&quot;</span><span class="p">)</span>
+    <span class="n">common</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--retries&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Number of RandomError retries per task before failing the task&quot;</span><span class="p">)</span>
+    <span class="n">common</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;-v&quot;</span><span class="p">,</span> <span class="s2">&quot;--verbose&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Increase verbosity of the logger.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># FractalClient options</span>
+    <span class="n">server</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="s2">&quot;FractalServer connection settings&quot;</span><span class="p">)</span>
+    <span class="n">server</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--fractal-uri&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;FractalServer location to pull from&quot;</span><span class="p">)</span>
+    <span class="n">server</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;-u&quot;</span><span class="p">,</span> <span class="s2">&quot;--username&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;FractalServer username&quot;</span><span class="p">)</span>
+    <span class="n">server</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;-p&quot;</span><span class="p">,</span> <span class="s2">&quot;--password&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;FractalServer password&quot;</span><span class="p">)</span>
+    <span class="n">server</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--verify&quot;</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Do verify the SSL certificate, leave off (unset) for servers with custom SSL certificates.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># QueueManager options</span>
+    <span class="n">manager</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="s2">&quot;QueueManager settings&quot;</span><span class="p">)</span>
+    <span class="n">manager</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--manager-name&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The name of the manager to start&quot;</span><span class="p">)</span>
+    <span class="n">manager</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--queue-tag&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The queue tag to pull from&quot;</span><span class="p">)</span>
+    <span class="n">manager</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--log-file-prefix&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The path prefix of the logfile to write to.&quot;</span><span class="p">)</span>
+    <span class="n">manager</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--update-frequency&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The frequency in seconds to check for complete tasks.&quot;</span><span class="p">)</span>
+    <span class="n">manager</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--max-queued-tasks&quot;</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Maximum number of tasks to hold at any given time. &quot;</span> <span class="s2">&quot;Generally should not be set.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Additional args</span>
+    <span class="n">optional</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="s2">&quot;Optional Settings&quot;</span><span class="p">)</span>
+    <span class="n">optional</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--test&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Boot and run a short test suite to validate setup&quot;</span><span class="p">)</span>
+    <span class="n">optional</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--ntests&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;How many tests per found program to run, does nothing without --test set&quot;</span>
+    <span class="p">)</span>
+    <span class="n">optional</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--schema&quot;</span><span class="p">,</span>
+        <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Display the current Schema (Pydantic) for the YAML &quot;</span>
+        <span class="s2">&quot;config file and exit. This will always show the &quot;</span>
+        <span class="s2">&quot;most up-to-date schema. It will be presented in a &quot;</span>
+        <span class="s2">&quot;JSON-like format.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">optional</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--skeleton&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;--skel&quot;</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+        <span class="n">const</span><span class="o">=</span><span class="s2">&quot;manager_config.yaml&quot;</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store&quot;</span><span class="p">,</span>
+        <span class="n">nargs</span><span class="o">=</span><span class="s2">&quot;?&quot;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Create a skeleton/example YAML config file at the specified path. This does not start &quot;</span>
+        <span class="s2">&quot;the manager and instead creates a skeleton based on all the options specified.&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Move into nested namespace</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="nb">vars</span><span class="p">(</span><span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="nf">_build_subset</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">keys</span><span class="p">):</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+            <span class="n">v</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="n">ret</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="k">return</span> <span class="n">ret</span>
+
+    <span class="c1"># Stupid we cannot inspect groups</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;common&quot;</span><span class="p">:</span> <span class="n">_build_subset</span><span class="p">(</span>
+            <span class="n">args</span><span class="p">,</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;adapter&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;tasks_per_worker&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;cores_per_worker&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;memory_per_worker&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;scratch_directory&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;retries&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;verbose&quot;</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">),</span>
+        <span class="s2">&quot;server&quot;</span><span class="p">:</span> <span class="n">_build_subset</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;fractal_uri&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="s2">&quot;username&quot;</span><span class="p">,</span> <span class="s2">&quot;verify&quot;</span><span class="p">}),</span>
+        <span class="s2">&quot;manager&quot;</span><span class="p">:</span> <span class="n">_build_subset</span><span class="p">(</span>
+            <span class="n">args</span><span class="p">,</span>
+            <span class="p">{</span><span class="s2">&quot;max_queued_tasks&quot;</span><span class="p">,</span> <span class="s2">&quot;manager_name&quot;</span><span class="p">,</span> <span class="s2">&quot;queue_tag&quot;</span><span class="p">,</span> <span class="s2">&quot;log_file_prefix&quot;</span><span class="p">,</span> <span class="s2">&quot;update_frequency&quot;</span><span class="p">,</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="s2">&quot;ntests&quot;</span><span class="p">},</span>
+        <span class="p">),</span>
+        <span class="c1"># This set is for this script only, items here should not be passed to the ManagerSettings nor any other</span>
+        <span class="c1"># classes</span>
+        <span class="s2">&quot;debug&quot;</span><span class="p">:</span> <span class="n">_build_subset</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;schema&quot;</span><span class="p">,</span> <span class="s2">&quot;skeleton&quot;</span><span class="p">}),</span>
+    <span class="p">}</span>  <span class="c1"># yapf: disable</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="s2">&quot;config_file&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">config_data</span> <span class="o">=</span> <span class="n">cli_utils</span><span class="o">.</span><span class="n">read_config_file</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="s2">&quot;config_file&quot;</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">subparser</span> <span class="ow">in</span> <span class="p">[(</span><span class="s2">&quot;common&quot;</span><span class="p">,</span> <span class="n">common</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;server&quot;</span><span class="p">,</span> <span class="n">server</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;manager&quot;</span><span class="p">,</span> <span class="n">manager</span><span class="p">)]:</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">config_data</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="n">data</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">cli_utils</span><span class="o">.</span><span class="n">argparse_config_merge</span><span class="p">(</span><span class="n">subparser</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">config_data</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;cluster&quot;</span><span class="p">,</span> <span class="s2">&quot;dask&quot;</span><span class="p">,</span> <span class="s2">&quot;parsl&quot;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">config_data</span><span class="p">:</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">config_data</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="c1"># Handle edge case where None provided here is explicitly treated as</span>
+                    <span class="c1"># &quot;do not parse&quot; by Pydantic (intended behavior) instead of the default empty dict</span>
+                    <span class="c1"># being used instead. This only happens when a user sets in the YAML file</span>
+                    <span class="c1"># the top level header and nothing below it.</span>
+                    <span class="n">data</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">return</span> <span class="n">data</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+    <span class="c1"># Grab CLI args if not present</span>
+    <span class="k">if</span> <span class="n">args</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="n">parse_args</span><span class="p">()</span>
+    <span class="n">exit_callbacks</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="s2">&quot;debug&quot;</span><span class="p">][</span><span class="s2">&quot;schema&quot;</span><span class="p">]:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">ManagerSettings</span><span class="o">.</span><span class="n">schema_json</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+            <span class="k">return</span>  <span class="c1"># We&#39;re done, exit normally</span>
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+        <span class="k">pass</span>  <span class="c1"># Don&#39;t worry if schema isn&#39;t in the list</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">debug_args</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;debug&quot;</span><span class="p">,</span> <span class="p">{})</span>  <span class="c1"># Ensure the debug key is not present</span>
+
+    <span class="c1"># Construct object</span>
+    <span class="n">settings</span> <span class="o">=</span> <span class="n">ManagerSettings</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="c1"># Handle Skeleton Generation</span>
+    <span class="k">if</span> <span class="n">debug_args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;skeleton&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
+
+        <span class="k">class</span> <span class="nc">IndentListDumper</span><span class="p">(</span><span class="n">yaml</span><span class="o">.</span><span class="n">Dumper</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Internal yaml Dumper to make lists indent in the output YAML</span>
+
+<span class="sd">            Buried inside this since its only used in &quot;skeleton,&quot; once, and then exits. Does not need to be imported</span>
+<span class="sd">            anywhere else or accessed somehow</span>
+
+<span class="sd">            Based on response:</span>
+<span class="sd">            https://stackoverflow.com/questions/25108581/python-yaml-dump-bad-indentation/39681672#39681672</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+
+            <span class="k">def</span> <span class="nf">increase_indent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">indentless</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+                <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">IndentListDumper</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">increase_indent</span><span class="p">(</span><span class="n">flow</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+
+        <span class="n">skel_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">debug_args</span><span class="p">[</span><span class="s2">&quot;skeleton&quot;</span><span class="p">])</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">skel_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">skel</span><span class="p">:</span>
+            <span class="c1"># cast to</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">json</span><span class="p">()),</span> <span class="n">Dumper</span><span class="o">=</span><span class="n">IndentListDumper</span><span class="p">,</span> <span class="n">default_flow_style</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">skel</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Skeleton Queue Manager YAML file written to </span><span class="si">{</span><span class="n">skel_path</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;Run: `qcfractal-manager --config-file=</span><span class="si">{</span><span class="n">skel_path</span><span class="si">}</span><span class="s2">` to start a manager with this configuration.&quot;</span>
+            <span class="p">)</span>
+            <span class="k">return</span>
+
+    <span class="n">logger_map</span> <span class="o">=</span> <span class="p">{</span><span class="n">AdapterEnum</span><span class="o">.</span><span class="n">pool</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">AdapterEnum</span><span class="o">.</span><span class="n">dask</span><span class="p">:</span> <span class="s2">&quot;dask_jobqueue.core&quot;</span><span class="p">,</span> <span class="n">AdapterEnum</span><span class="o">.</span><span class="n">parsl</span><span class="p">:</span> <span class="s2">&quot;parsl&quot;</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span>
+        <span class="n">adapter_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">logger_map</span><span class="p">[</span><span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">adapter</span><span class="p">])</span>
+        <span class="n">adapter_logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="s2">&quot;DEBUG&quot;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="s2">&quot;DEBUG&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">log_file_prefix</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">tornado</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;log_file_prefix&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">log_file_prefix</span>
+        <span class="c1"># Clones the log to the output</span>
+        <span class="n">tornado</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;log_to_stderr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">tornado</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">enable_pretty_logging</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">test</span><span class="p">:</span>
+        <span class="c1"># Test this manager, no client needed</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Connect to a specified fractal server</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">qcfractal</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">FractalClient</span><span class="p">(</span>
+            <span class="n">address</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">fractal_uri</span><span class="p">,</span> <span class="o">**</span><span class="n">settings</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">dict</span><span class="p">(</span><span class="n">skip_defaults</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;fractal_uri&quot;</span><span class="p">})</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Figure out per-task data</span>
+    <span class="n">node_parallel_tasks</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">nodes_per_task</span> <span class="o">&gt;</span> <span class="mi">1</span>  <span class="c1"># Whether tasks are node-parallel</span>
+    <span class="k">if</span> <span class="n">node_parallel_tasks</span><span class="p">:</span>
+        <span class="n">supported_adapters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;parsl&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">adapter</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">supported_adapters</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Node-parallel jobs are only supported with </span><span class="si">{}</span><span class="s2"> adapters&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">supported_adapters</span><span class="p">))</span>
+        <span class="c1"># Node-parallel tasks use all cores on a worker</span>
+        <span class="n">cores_per_task</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">cores_per_worker</span>
+        <span class="n">memory_per_task</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">memory_per_worker</span>
+        <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">tasks_per_worker</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&gt;1 task per node and &gt;1 node per tasks are mutually-exclusive&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">cores_per_task</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">cores_per_worker</span> <span class="o">//</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">tasks_per_worker</span>
+        <span class="n">memory_per_task</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">memory_per_worker</span> <span class="o">/</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">tasks_per_worker</span>
+    <span class="k">if</span> <span class="n">cores_per_task</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Cores per task must be larger than one!&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">adapter</span> <span class="o">==</span> <span class="s2">&quot;pool&quot;</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ProcessPoolExecutor</span>
+
+        <span class="c1"># TODO: Replace with passing via mp_context to ProcessPoolExecutor</span>
+        <span class="c1"># when python 3.6 is dead and buried</span>
+        <span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">set_start_method</span>
+
+        <span class="n">set_start_method</span><span class="p">(</span><span class="s2">&quot;spawn&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Error if the number of nodes per jobs is more than 1</span>
+        <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">nodes_per_job</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Pool adapters only run on a single local node&quot;</span><span class="p">)</span>
+        <span class="n">queue_client</span> <span class="o">=</span> <span class="n">ProcessPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">tasks_per_worker</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">adapter</span> <span class="o">==</span> <span class="s2">&quot;dask&quot;</span><span class="p">:</span>
+
+        <span class="n">dask_settings</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">dask</span><span class="o">.</span><span class="n">dict</span><span class="p">(</span><span class="n">skip_defaults</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="c1"># Checks</span>
+        <span class="k">if</span> <span class="s2">&quot;extra&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dask_settings</span><span class="p">:</span>
+            <span class="n">dask_settings</span><span class="p">[</span><span class="s2">&quot;extra&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">QCA_RESOURCE_STRING</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dask_settings</span><span class="p">[</span><span class="s2">&quot;extra&quot;</span><span class="p">]:</span>
+            <span class="n">dask_settings</span><span class="p">[</span><span class="s2">&quot;extra&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">QCA_RESOURCE_STRING</span><span class="p">)</span>
+        <span class="c1"># Scheduler opts</span>
+        <span class="n">scheduler_opts</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">scheduler_options</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+        <span class="c1"># Error if the number of nodes per jobs is more than 1</span>
+        <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">nodes_per_job</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Support for &gt;1 node per job is not yet supported by QCFractal + Dask&quot;</span><span class="p">)</span>
+            <span class="c1"># TODO (wardlt): Implement multinode jobs in Dask</span>
+
+        <span class="n">_cluster_loaders</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;slurm&quot;</span><span class="p">:</span> <span class="s2">&quot;SLURMCluster&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;pbs&quot;</span><span class="p">:</span> <span class="s2">&quot;PBSCluster&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;moab&quot;</span><span class="p">:</span> <span class="s2">&quot;MoabCluster&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;sge&quot;</span><span class="p">:</span> <span class="s2">&quot;SGECluster&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;lsf&quot;</span><span class="p">:</span> <span class="s2">&quot;LSFCluster&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="n">dask_exclusivity_map</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;slurm&quot;</span><span class="p">:</span> <span class="s2">&quot;--exclusive&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;pbs&quot;</span><span class="p">:</span> <span class="s2">&quot;-n&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;moab&quot;</span><span class="p">:</span> <span class="s2">&quot;-n&quot;</span><span class="p">,</span>  <span class="c1"># Less sure about this one</span>
+            <span class="s2">&quot;sge&quot;</span><span class="p">:</span> <span class="s2">&quot;-l exclusive=true&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;lsf&quot;</span><span class="p">:</span> <span class="s2">&quot;-x&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">node_exclusivity</span> <span class="ow">and</span> <span class="n">dask_exclusivity_map</span><span class="p">[</span><span class="n">settings</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">scheduler</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">scheduler_opts</span><span class="p">:</span>
+            <span class="n">scheduler_opts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dask_exclusivity_map</span><span class="p">[</span><span class="n">settings</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">scheduler</span><span class="p">])</span>
+
+        <span class="c1"># Create one construct to quickly merge dicts with a final check</span>
+        <span class="n">dask_construct</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;QCFractal_Dask_Compute_Executor&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;cores&quot;</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">cores_per_worker</span><span class="p">,</span>
+            <span class="s2">&quot;memory&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">memory_per_worker</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;GB&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;processes&quot;</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">tasks_per_worker</span><span class="p">,</span>  <span class="c1"># Number of workers to generate == tasks in this construct</span>
+            <span class="s2">&quot;walltime&quot;</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">walltime</span><span class="p">,</span>
+            <span class="s2">&quot;job_extra&quot;</span><span class="p">:</span> <span class="n">scheduler_opts</span><span class="p">,</span>
+            <span class="s2">&quot;env_extra&quot;</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">task_startup_commands</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">dask_settings</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Import the dask things we need</span>
+            <span class="kn">import</span> <span class="nn">dask_jobqueue</span>
+            <span class="kn">from</span> <span class="nn">dask.distributed</span> <span class="kn">import</span> <span class="n">Client</span>
+
+            <span class="n">cluster_module</span> <span class="o">=</span> <span class="n">cli_utils</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span>
+                <span class="s2">&quot;dask_jobqueue&quot;</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="n">_cluster_loaders</span><span class="p">[</span><span class="n">settings</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">scheduler</span><span class="p">]</span>
+            <span class="p">)</span>
+            <span class="n">cluster_class</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">cluster_module</span><span class="p">,</span> <span class="n">_cluster_loaders</span><span class="p">[</span><span class="n">settings</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">scheduler</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">dask_jobqueue</span><span class="o">.</span><span class="n">__version__</span> <span class="o">&lt;</span> <span class="s2">&quot;0.5.0&quot;</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ImportError</span>
+        <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">&quot;You need`dask-jobqueue &gt;= 0.5.0` to use the `dask` adapter&quot;</span><span class="p">)</span>
+
+        <span class="n">cluster</span> <span class="o">=</span> <span class="n">cluster_class</span><span class="p">(</span><span class="o">**</span><span class="n">dask_construct</span><span class="p">)</span>
+
+        <span class="c1"># Setup up adaption</span>
+        <span class="c1"># Workers are distributed down to the cores through the sub-divided processes</span>
+        <span class="c1"># Optimization may be needed</span>
+        <span class="n">workers</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">tasks_per_worker</span> <span class="o">*</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">max_workers</span>
+        <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">adaptive</span> <span class="o">==</span> <span class="n">AdaptiveCluster</span><span class="o">.</span><span class="n">adaptive</span><span class="p">:</span>
+            <span class="n">cluster</span><span class="o">.</span><span class="n">adapt</span><span class="p">(</span><span class="n">minimum</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">maximum</span><span class="o">=</span><span class="n">workers</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="s2">&quot;10s&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cluster</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">workers</span><span class="p">)</span>
+
+        <span class="n">queue_client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">adapter</span> <span class="o">==</span> <span class="s2">&quot;parsl&quot;</span><span class="p">:</span>
+
+        <span class="n">scheduler_opts</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">scheduler_options</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">settings</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">node_exclusivity</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;For now, QCFractal can only be run with Parsl in node exclusivity. This will be relaxed &quot;</span>
+                <span class="s2">&quot;in a future release of Parsl and QCFractal&quot;</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Import helpers</span>
+        <span class="n">_provider_loaders</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;slurm&quot;</span><span class="p">:</span> <span class="s2">&quot;SlurmProvider&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;pbs&quot;</span><span class="p">:</span> <span class="s2">&quot;TorqueProvider&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;moab&quot;</span><span class="p">:</span> <span class="s2">&quot;TorqueProvider&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;sge&quot;</span><span class="p">:</span> <span class="s2">&quot;GridEngineProvider&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;cobalt&quot;</span><span class="p">:</span> <span class="s2">&quot;CobaltProvider&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;lsf&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="n">_provider_loaders</span><span class="p">[</span><span class="n">settings</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">scheduler</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Parsl does not know how to handle cluster of type </span><span class="si">{</span><span class="n">settings</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">scheduler</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Headers</span>
+        <span class="n">_provider_headers</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;slurm&quot;</span><span class="p">:</span> <span class="s2">&quot;#SBATCH&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;pbs&quot;</span><span class="p">:</span> <span class="s2">&quot;#PBS&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;moab&quot;</span><span class="p">:</span> <span class="s2">&quot;#PBS&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;sge&quot;</span><span class="p">:</span> <span class="s2">&quot;#$$&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;lsf&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s2">&quot;cobalt&quot;</span><span class="p">:</span> <span class="s2">&quot;#COBALT&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="c1"># Import the parsl things we need</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">parsl</span>
+            <span class="kn">from</span> <span class="nn">parsl.config</span> <span class="kn">import</span> <span class="n">Config</span>
+            <span class="kn">from</span> <span class="nn">parsl.executors</span> <span class="kn">import</span> <span class="n">HighThroughputExecutor</span>
+            <span class="kn">from</span> <span class="nn">parsl.addresses</span> <span class="kn">import</span> <span class="n">address_by_hostname</span>
+
+            <span class="n">provider_module</span> <span class="o">=</span> <span class="n">cli_utils</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span>
+                <span class="s2">&quot;parsl.providers&quot;</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="n">_provider_loaders</span><span class="p">[</span><span class="n">settings</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">scheduler</span><span class="p">]</span>
+            <span class="p">)</span>
+            <span class="n">provider_class</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">provider_module</span><span class="p">,</span> <span class="n">_provider_loaders</span><span class="p">[</span><span class="n">settings</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">scheduler</span><span class="p">])</span>
+            <span class="n">provider_header</span> <span class="o">=</span> <span class="n">_provider_headers</span><span class="p">[</span><span class="n">settings</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">scheduler</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">parsl</span><span class="o">.</span><span class="n">__version__</span> <span class="o">&lt;</span> <span class="s2">&quot;0.9.0&quot;</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ImportError</span>
+        <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">&quot;You need `parsl &gt;=0.9.0` to use the `parsl` adapter&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">_provider_loaders</span><span class="p">[</span><span class="n">settings</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">scheduler</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;moab&quot;</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="s2">&quot;Parsl uses its TorqueProvider for Moab clusters due to the scheduler similarities. &quot;</span>
+                <span class="s2">&quot;However, if you find a bug with it, please report to the Parsl and QCFractal developers so &quot;</span>
+                <span class="s2">&quot;it can be fixed on each respective end.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Setup the providers</span>
+
+        <span class="c1"># Determine the maximum number of blocks</span>
+        <span class="c1"># TODO (wardlt): Math assumes that user does not set aside a compute node for the adapter</span>
+        <span class="n">max_nodes</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">max_workers</span> <span class="o">*</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">nodes_per_task</span>
+        <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">nodes_per_job</span> <span class="o">&gt;</span> <span class="n">max_nodes</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Number of nodes per job is more than the maximum number of nodes used by manager&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">max_nodes</span> <span class="o">%</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">nodes_per_job</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Maximum number of nodes (maximum number of workers times nodes per task) &quot;</span>
+                <span class="s2">&quot;needs to be a multiple of the number of nodes per job&quot;</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">nodes_per_job</span> <span class="o">%</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">nodes_per_task</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Number of nodes per job needs to be a multiple of the number of nodes per task&quot;</span><span class="p">)</span>
+        <span class="n">max_blocks</span> <span class="o">=</span> <span class="n">max_nodes</span> <span class="o">//</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">nodes_per_job</span>
+
+        <span class="c1"># Create one construct to quickly merge dicts with a final check</span>
+        <span class="n">common_parsl_provider_construct</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;init_blocks&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># Update this at a later time of Parsl</span>
+            <span class="s2">&quot;max_blocks&quot;</span><span class="p">:</span> <span class="n">max_blocks</span><span class="p">,</span>
+            <span class="s2">&quot;walltime&quot;</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">walltime</span><span class="p">,</span>
+            <span class="s2">&quot;scheduler_options&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">provider_header</span><span class="si">}</span><span class="s2"> &quot;</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">provider_header</span><span class="si">}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">scheduler_opts</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;nodes_per_block&quot;</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">nodes_per_job</span><span class="p">,</span>
+            <span class="s2">&quot;worker_init&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">task_startup_commands</span><span class="p">),</span>
+            <span class="o">**</span><span class="n">settings</span><span class="o">.</span><span class="n">parsl</span><span class="o">.</span><span class="n">provider</span><span class="o">.</span><span class="n">dict</span><span class="p">(</span><span class="n">skip_defaults</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;partition&quot;</span><span class="p">,</span> <span class="s2">&quot;launcher&quot;</span><span class="p">}),</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">scheduler</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;slurm&quot;</span> <span class="ow">and</span> <span class="s2">&quot;cores_per_node&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">common_parsl_provider_construct</span><span class="p">:</span>
+            <span class="n">common_parsl_provider_construct</span><span class="p">[</span><span class="s2">&quot;cores_per_node&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">cores_per_worker</span>
+        <span class="c1"># TODO: uncomment after Parsl#1416 is resolved</span>
+        <span class="c1"># if settings.cluster.scheduler.lower() == &quot;slurm&quot; and &quot;mem_per_node&quot; not in common_parsl_provider_construct:</span>
+        <span class="c1">#    common_parsl_provider_construct[&quot;mem_per_node&quot;] = settings.common.memory_per_worker</span>
+
+        <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">parsl</span><span class="o">.</span><span class="n">provider</span><span class="o">.</span><span class="n">launcher</span><span class="p">:</span>
+            <span class="n">common_parsl_provider_construct</span><span class="p">[</span><span class="s2">&quot;launcher&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">parsl</span><span class="o">.</span><span class="n">provider</span><span class="o">.</span><span class="n">launcher</span><span class="o">.</span><span class="n">build_launcher</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">scheduler</span> <span class="o">==</span> <span class="s2">&quot;slurm&quot;</span><span class="p">:</span>
+            <span class="c1"># The Parsl SLURM constructor has a strange set of arguments</span>
+            <span class="n">provider</span> <span class="o">=</span> <span class="n">provider_class</span><span class="p">(</span>
+                <span class="n">settings</span><span class="o">.</span><span class="n">parsl</span><span class="o">.</span><span class="n">provider</span><span class="o">.</span><span class="n">partition</span><span class="p">,</span>
+                <span class="n">exclusive</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">node_exclusivity</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">common_parsl_provider_construct</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">provider</span> <span class="o">=</span> <span class="n">provider_class</span><span class="p">(</span><span class="o">**</span><span class="n">common_parsl_provider_construct</span><span class="p">)</span>
+
+        <span class="c1"># The executor for Parsl is different for node parallel tasks and shared-memory tasks</span>
+        <span class="k">if</span> <span class="n">node_parallel_tasks</span><span class="p">:</span>
+            <span class="c1"># Tasks are launched from a single worker on the login node</span>
+            <span class="c1"># TODO (wardlt): Remove assumption that there is only one Parsl worker running all tasks</span>
+            <span class="n">tasks_per_job</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">nodes_per_job</span> <span class="o">//</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">nodes_per_task</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Preparing a HTEx to use node-parallel tasks with </span><span class="si">{</span><span class="n">tasks_per_job</span><span class="si">}</span><span class="s2"> workers&quot;</span><span class="p">)</span>
+            <span class="n">parsl_executor_construct</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;QCFractal_Parsl_</span><span class="si">{}</span><span class="s2">_Executor&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">scheduler</span><span class="o">.</span><span class="n">title</span><span class="p">()),</span>
+                <span class="c1"># Parsl will create one worker process per MPI task. Normally, Parsl prevents having</span>
+                <span class="c1">#  more processes than cores. However, as each worker will spend most of its time</span>
+                <span class="c1">#  waiting for the MPI task to complete, we can safely oversubscribe (e.g., more worker</span>
+                <span class="c1">#  processes than cores), which requires setting &quot;cores_per_worker&quot; to &lt;1</span>
+                <span class="s2">&quot;cores_per_worker&quot;</span><span class="p">:</span> <span class="mf">1e-6</span><span class="p">,</span>
+                <span class="s2">&quot;max_workers&quot;</span><span class="p">:</span> <span class="n">tasks_per_job</span><span class="p">,</span>
+                <span class="s2">&quot;provider&quot;</span><span class="p">:</span> <span class="n">provider</span><span class="p">,</span>
+                <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="n">address_by_hostname</span><span class="p">(),</span>
+                <span class="o">**</span><span class="n">settings</span><span class="o">.</span><span class="n">parsl</span><span class="o">.</span><span class="n">executor</span><span class="o">.</span><span class="n">dict</span><span class="p">(</span><span class="n">skip_defaults</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+            <span class="p">}</span>
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="n">parsl_executor_construct</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;QCFractal_Parsl_</span><span class="si">{}</span><span class="s2">_Executor&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">scheduler</span><span class="o">.</span><span class="n">title</span><span class="p">()),</span>
+                <span class="s2">&quot;cores_per_worker&quot;</span><span class="p">:</span> <span class="n">cores_per_task</span><span class="p">,</span>
+                <span class="s2">&quot;max_workers&quot;</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">tasks_per_worker</span><span class="p">,</span>
+                <span class="s2">&quot;provider&quot;</span><span class="p">:</span> <span class="n">provider</span><span class="p">,</span>
+                <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="n">address_by_hostname</span><span class="p">(),</span>
+                <span class="o">**</span><span class="n">settings</span><span class="o">.</span><span class="n">parsl</span><span class="o">.</span><span class="n">executor</span><span class="o">.</span><span class="n">dict</span><span class="p">(</span><span class="n">skip_defaults</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+            <span class="p">}</span>
+
+        <span class="n">queue_client</span> <span class="o">=</span> <span class="n">Config</span><span class="p">(</span>
+            <span class="n">retries</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">retries</span><span class="p">,</span> <span class="n">executors</span><span class="o">=</span><span class="p">[</span><span class="n">HighThroughputExecutor</span><span class="p">(</span><span class="o">**</span><span class="n">parsl_executor_construct</span><span class="p">)]</span>
+        <span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
+            <span class="s2">&quot;Unknown adapter type &#39;</span><span class="si">{}</span><span class="s2">&#39;, available options: </span><span class="si">{}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;This code should also be unreachable with pydantic Validation, so if &quot;</span>
+            <span class="s2">&quot;you see this message, please report it to the QCFractal GitHub&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">adapter</span><span class="p">,</span> <span class="p">[</span><span class="nb">getattr</span><span class="p">(</span><span class="n">AdapterEnum</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">AdapterEnum</span><span class="p">]</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Build out the manager itself</span>
+    <span class="c1"># Compute max tasks</span>
+    <span class="n">max_concurrent_tasks</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">tasks_per_worker</span> <span class="o">*</span> <span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">max_workers</span>
+    <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">max_queued_tasks</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># Tasks * jobs * buffer + 1</span>
+        <span class="n">max_queued_tasks</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">(</span><span class="n">max_concurrent_tasks</span> <span class="o">*</span> <span class="mf">2.00</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">max_queued_tasks</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">max_queued_tasks</span>
+
+    <span class="c1"># The queue manager is configured differently for node-parallel and single-node tasks</span>
+    <span class="n">manager</span> <span class="o">=</span> <span class="n">qcfractal</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">QueueManager</span><span class="p">(</span>
+        <span class="n">client</span><span class="p">,</span>
+        <span class="n">queue_client</span><span class="p">,</span>
+        <span class="n">max_tasks</span><span class="o">=</span><span class="n">max_queued_tasks</span><span class="p">,</span>
+        <span class="n">queue_tag</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">queue_tag</span><span class="p">,</span>
+        <span class="n">manager_name</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">manager_name</span><span class="p">,</span>
+        <span class="n">update_frequency</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">update_frequency</span><span class="p">,</span>
+        <span class="n">cores_per_task</span><span class="o">=</span><span class="n">cores_per_task</span><span class="p">,</span>
+        <span class="n">memory_per_task</span><span class="o">=</span><span class="n">memory_per_task</span><span class="p">,</span>
+        <span class="n">nodes_per_task</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">nodes_per_task</span><span class="p">,</span>
+        <span class="n">scratch_directory</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">scratch_directory</span><span class="p">,</span>
+        <span class="n">retries</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">retries</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">verbose</span><span class="p">,</span>
+        <span class="n">cores_per_rank</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">cores_per_rank</span><span class="p">,</span>
+        <span class="n">configuration</span><span class="o">=</span><span class="n">settings</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Set stats correctly since we buffer the max tasks a bit</span>
+    <span class="n">manager</span><span class="o">.</span><span class="n">statistics</span><span class="o">.</span><span class="n">max_concurrent_tasks</span> <span class="o">=</span> <span class="n">max_concurrent_tasks</span>
+
+    <span class="c1"># Add exit callbacks</span>
+    <span class="k">for</span> <span class="n">cb</span> <span class="ow">in</span> <span class="n">exit_callbacks</span><span class="p">:</span>
+        <span class="n">manager</span><span class="o">.</span><span class="n">add_exit_callback</span><span class="p">(</span><span class="n">cb</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">*</span><span class="n">cb</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">**</span><span class="n">cb</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+    <span class="c1"># Either startup the manager or run until complete</span>
+    <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">test</span><span class="p">:</span>
+        <span class="n">success</span> <span class="o">=</span> <span class="n">manager</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">ntests</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">success</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Testing was not successful, failing.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="k">for</span> <span class="n">signame</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;SIGHUP&quot;</span><span class="p">,</span> <span class="s2">&quot;SIGINT&quot;</span><span class="p">,</span> <span class="s2">&quot;SIGTERM&quot;</span><span class="p">}:</span>
+
+            <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+                <span class="n">manager</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span><span class="n">signame</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">KeyboardInterrupt</span><span class="p">()</span>
+
+            <span class="n">signal</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">signal</span><span class="p">,</span> <span class="n">signame</span><span class="p">),</span> <span class="n">stop</span><span class="p">)</span>
+
+        <span class="c1"># Blocks until signal</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">manager</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2021, The Molecular Sciences Software Institute.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

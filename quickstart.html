@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Example &mdash; QCFractal 0+untagged.1.ge9cee03 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Setup Overview" href="setup_quickstart.html" />
+    <link rel="prev" title="Install QCFractal" href="install.html" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> QCFractal
+          </a>
+              <div class="version">
+                0+untagged.1.ge9cee03
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install QCFractal</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Importing-QCFractal">Importing QCFractal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Adding-and-Querying-data">Adding and Querying data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Evaluating-a-Geometry-Optimization">Evaluating a Geometry Optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Querying-Procedures">Querying Procedures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Collections">Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Computing-with-collections">Computing with collections</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="setup_quickstart.html">Setup Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_server.html">Server Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_compute.html">Manager Setup</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Records Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="procedures.html">Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flow.html">Fractal Call Flowcharts</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manager Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="managers.html">Fractal Queue Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_config_api.html">Queue Manager API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_hpc.html">Configuration for High-Performance Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_samples.html">Queue Manager Example YAML Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_faq.html">Queue Manager Frequent Questions and Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_detailed.html">Detailed Manager Information</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server CLI and Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="server_init.html">Fractal Server Init</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_config.html">Fractal Server Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_start.html">Fractal Server Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_user.html">Fractal Server User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_upgrade.html">Fractal Server Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_view.html">Server-side Dataset Views</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="qcarchive_overview.html">QCArchive Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">QCFractal API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database_design.html">Database Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_guidelines.html">Development Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">QCFractal</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Example</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/quickstart.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="Example">
+<h1>Example<a class="headerlink" href="#Example" title="Permalink to this headline"></a></h1>
+<p>This tutorial will go over general QCFractal usage to give a feel for the ecosystem. In this tutorial, we employ Snowflake, a simple QCFractal stack which runs on a local machine for demonstration and exploration purposes.</p>
+<section id="Installation">
+<h2>Installation<a class="headerlink" href="#Installation" title="Permalink to this headline"></a></h2>
+<p>To begin this quickstart tutorial, first install the QCArchive Snowflake environment from conda:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda env create qcarchive/qcfractal-snowflake -n snowflake
+conda activate snowflake
+</pre></div>
+</div>
+<p>If you have a pre-existing environment with <code class="docutils literal notranslate"><span class="pre">qcfractal</span></code>, ensure that <code class="docutils literal notranslate"><span class="pre">rdkit</span></code> and <code class="docutils literal notranslate"><span class="pre">geometric</span></code> are installed from the <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> channel and <code class="docutils literal notranslate"><span class="pre">psi4</span></code> and <code class="docutils literal notranslate"><span class="pre">dftd3</span></code> from the <code class="docutils literal notranslate"><span class="pre">psi4</span></code> channel.</p>
+</section>
+<section id="Importing-QCFractal">
+<h2>Importing QCFractal<a class="headerlink" href="#Importing-QCFractal" title="Permalink to this headline"></a></h2>
+<p>First let us import two items from the ecosystem:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://docs.qcarchive.molssi.org/projects/qcfractal/en/latest/api/qcfractal.FractalSnowflakeHandler.html?highlight=FractalSnowflakeHandler">FractalSnowflakeHandler</a> - This is a <a class="reference external" href="https://qcarchivetutorials.readthedocs.io/projects/qcfractal/en/latest/api/qcfractal.FractalServer.html">FractalServer</a> that is temporary and is used for trying out new things.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">qcfractal.interface</span></code> is the <a class="reference external" href="https://github.com/MolSSI/QCPortal">QCPortal</a> module, but if using QCFractal it is best to import it locally.</p></li>
+</ul>
+<p>Typically we alias <code class="docutils literal notranslate"><span class="pre">qcportal</span></code> as <code class="docutils literal notranslate"><span class="pre">ptl</span></code>. We will do the same for <code class="docutils literal notranslate"><span class="pre">qcfractal.interface</span></code> so that the code can be used anywhere.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">qcfractal</span> <span class="kn">import</span> <span class="n">FractalSnowflakeHandler</span>
+<span class="kn">import</span> <span class="nn">qcfractal.interface</span> <span class="k">as</span> <span class="nn">ptl</span>
+</pre></div>
+</div>
+</div>
+<p>We can now build a temporary server which acts just like a normal server, but we have a bit more direct control of it.</p>
+<p><strong>Warning!</strong> All data is lost when this notebook shuts down! This is for demonstration purposes only! For information about how to setup a permanent QCFractal server, see the <a class="reference internal" href="setup_quickstart.html"><span class="doc">Setup Quickstart Guide</span></a>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">server</span> <span class="o">=</span> <span class="n">FractalSnowflakeHandler</span><span class="p">()</span>
+<span class="n">server</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<h3>FractalSnowflakeHandler</h3>
+<ul>
+  <li><b>Server:   &nbsp; </b>db_4dd4a305_1692_4f29_ae5a_ac4c8bcb1002</li>
+  <li><b>Address:  &nbsp; </b>https://localhost:60885</li>
+</ul></div>
+</div>
+<p>We can then build a typical <a class="reference external" href="http://docs.qcarchive.molssi.org/projects/qcportal/en/latest/client.html?highlight=fractalclient#portal-client">FractalClient</a> to automatically connect to this server using the <a class="reference external" href="http://docs.qcarchive.molssi.org/projects/qcfractal/en/latest/api/qcfractal.FractalSnowflakeHandler.html?highlight=FractalSnowflakeHandler#qcfractal.FractalSnowflakeHandler.client">client()</a> helper command. Note that the server names and addresses are identical in both the server and
+client.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">client</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="n">client</span><span class="p">()</span>
+<span class="n">client</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<h3>FractalClient</h3>
+<ul>
+  <li><b>Server:   &nbsp; </b>FractalSnowFlake_db_4dd4a</li>
+  <li><b>Address:  &nbsp; </b>https://localhost:60885/</li>
+  <li><b>Username: &nbsp; </b>None</li>
+</ul></div>
+</div>
+</section>
+<section id="Adding-and-Querying-data">
+<h2>Adding and Querying data<a class="headerlink" href="#Adding-and-Querying-data" title="Permalink to this headline"></a></h2>
+<p>A server starts with no data, so let’s add some! We can do this by adding a water molecule at a poor geometry from XYZ coordinates. Note that all internal QCFractal values are stored and used in atomic units; whereas, the standard <a class="reference external" href="http://docs.qcarchive.molssi.org/projects/qcelemental/en/latest/molecule.html?highlight=from_data#creation">Molecule.from_data()</a> assumes an input of Angstroms. We can switch this back to Bohr by adding a <code class="docutils literal notranslate"><span class="pre">units</span></code> command in the text string.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">mol</span> <span class="o">=</span> <span class="n">ptl</span><span class="o">.</span><span class="n">Molecule</span><span class="o">.</span><span class="n">from_data</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">O 0 0 0</span>
+<span class="s2">H 0 0 2</span>
+<span class="s2">H 0 2 0</span>
+<span class="s2">units bohr</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="n">mol</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "c872801ba6ef40f5bd1ba3489caabbee", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "5a86b98162284e76aa45a9e5f2c3c184", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<p>We can then measure various aspects of this molecule to determine its shape. Note that the <code class="docutils literal notranslate"><span class="pre">measure</span></code> command will provide a distance, angle, or dihedral depending if 2, 3, or 4 indices are passed in.</p>
+<p>This molecule is quite far from optimal, so let’s run an geometry optimization!</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">measure</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">measure</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+2.0
+90.0
+</pre></div></div>
+</div>
+</section>
+<section id="Evaluating-a-Geometry-Optimization">
+<h2>Evaluating a Geometry Optimization<a class="headerlink" href="#Evaluating-a-Geometry-Optimization" title="Permalink to this headline"></a></h2>
+<p>We originally installed <code class="docutils literal notranslate"><span class="pre">psi4</span></code> and <code class="docutils literal notranslate"><span class="pre">geometric</span></code>, so we can use these programs to perform a geometry optimization. In QCFractal, we call a geometry optimization a <code class="docutils literal notranslate"><span class="pre">procedure</span></code>, where <code class="docutils literal notranslate"><span class="pre">procedure</span></code> is a generic term for a higher level operation that will run multiple individual quantum chemistry energy, gradient, or Hessian evaluations. Other <code class="docutils literal notranslate"><span class="pre">procedure</span></code> examples are finite-difference computations, n-body computations, and torsiondrives.</p>
+<p>We provide a JSON-like input to the <a class="reference external" href="http://docs.qcarchive.molssi.org/projects/qcportal/en/latest/client-api.html?highlight=add_procedure#qcportal.FractalClient.add_procedure">client.add_procedure()</a> command to specify the method, basis, and program to be used. The <code class="docutils literal notranslate"><span class="pre">qc_spec</span></code> field is used in all procedures to determine the underlying quantum chemistry method behind the individual procedure. In this way, we can use any program or method that returns a energy or gradient quantity to run our
+geometry optimization! (See also <a class="reference external" href="http://docs.qcarchive.molssi.org/projects/qcportal/en/latest/client-api.html?highlight=add_procedure#qcportal.FractalClient.add_compute">add_compute()</a>.)</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">spec</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;keywords&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="s2">&quot;qc_spec&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;driver&quot;</span><span class="p">:</span> <span class="s2">&quot;gradient&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;b3lyp&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;basis&quot;</span><span class="p">:</span> <span class="s2">&quot;6-31g&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;program&quot;</span><span class="p">:</span> <span class="s2">&quot;psi4&quot;</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+
+<span class="c1"># Ask the server to compute a new computation</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">add_procedure</span><span class="p">(</span><span class="s2">&quot;optimization&quot;</span><span class="p">,</span> <span class="s2">&quot;geometric&quot;</span><span class="p">,</span> <span class="n">spec</span><span class="p">,</span> <span class="p">[</span><span class="n">mol</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">ids</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ComputeResponse(nsubmitted=1 nexisting=0)
+[&#39;1&#39;]
+</pre></div></div>
+</div>
+<p>We can see that we submitted a single task to be evaluated and the server has not seen this particular procedure before. The <code class="docutils literal notranslate"><span class="pre">ids</span></code> field returns the unique <code class="docutils literal notranslate"><span class="pre">id</span></code> of the procedure. Different procedures will always have a unique <code class="docutils literal notranslate"><span class="pre">id</span></code>, while identical procedures will always return the same <code class="docutils literal notranslate"><span class="pre">id</span></code>. We can submit the same procedure again to see this effect:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">r2</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">add_procedure</span><span class="p">(</span><span class="s2">&quot;optimization&quot;</span><span class="p">,</span> <span class="s2">&quot;geometric&quot;</span><span class="p">,</span> <span class="n">spec</span><span class="p">,</span> <span class="p">[</span><span class="n">mol</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">ids</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ComputeResponse(nsubmitted=1 nexisting=0)
+[&#39;1&#39;]
+</pre></div></div>
+</div>
+</section>
+<section id="Querying-Procedures">
+<h2>Querying Procedures<a class="headerlink" href="#Querying-Procedures" title="Permalink to this headline"></a></h2>
+<p>Once a task is submitted, it will be placed in the compute queue and evaluated. In this particular case the <a class="reference external" href="http://docs.qcarchive.molssi.org/projects/qcfractal/en/latest/api/qcfractal.FractalSnowflakeHandler.html?highlight=FractalSnowflakeHandler">FractalSnowflakeHandler</a> uses your local hardware to evaluate these jobs. We recommend avoiding large tasks!</p>
+<p>In general, the server can handle anywhere between laptop-scale resources to many hundreds of thousands of concurrent cores at many physical locations. The amount of resources to connect is up to you and the amount of compute that you require.</p>
+<p>Since we did submit a very small job it is likely complete by now. Let us query this procedure from the server using its <code class="docutils literal notranslate"><span class="pre">id</span></code> like so:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">proc</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">query_procedures</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">r</span><span class="o">.</span><span class="n">ids</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">proc</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;OptimizationRecord(id=&#39;1&#39; status=&#39;COMPLETE&#39;)&gt;
+</pre></div></div>
+</div>
+<p>This <a class="reference external" href="http://docs.qcarchive.molssi.org/projects/qcportal/en/latest/record-api.html?highlight=optimizationrecord#qcportal.models.OptimizationRecord">OptimizationRecord</a> object has many different fields attached to it so that all quantities involved in the computation can be explored. For this example, let us pull the final molecule (optimized structure) and inspect the physical dimensions.</p>
+<p>Note: if the status does not say <code class="docutils literal notranslate"><span class="pre">COMPLETE</span></code>, these fields will not be available. Try querying the procedure again in a few seconds to see if the task completed in the background.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">final_mol</span> <span class="o">=</span> <span class="n">proc</span><span class="o">.</span><span class="n">get_final_molecule</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">final_mol</span><span class="o">.</span><span class="n">measure</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">final_mol</span><span class="o">.</span><span class="n">measure</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]))</span>
+<span class="n">final_mol</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1.844111236246719
+108.30246679333517
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "c9832fcaa6524780bc83513a2b22390e", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<p>This water molecule has bond length and angle dimensions much closer to expected values. We can also plot the optimization history to see how each step in the geometry optimization affected the results. Though the chart is not too impressive for this simple molecule, it is hopefully illuminating and is available for any geometry optimization ever completed.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">proc</span><span class="o">.</span><span class="n">show_history</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<script type="text/javascript">
+window.PlotlyConfig = {MathJaxConfig: 'local'};
+if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+if (typeof require !== 'undefined') {
+require.undef("plotly");
+requirejs.config({
+    paths: {
+        'plotly': ['https://cdn.plot.ly/plotly-latest.min']
+    }
+});
+require(['plotly'], function(Plotly) {
+    window._Plotly = Plotly;
+});
+}
+</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+
+
+            <div id="b717e1fa-90d7-44d5-a927-cddc108795cf" class="plotly-graph-div" style="height:525px; width:100%;"></div>
+            <script type="text/javascript">
+                require(["plotly"], function(Plotly) {
+                    window.PLOTLYENV=window.PLOTLYENV || {};
+
+                if (document.getElementById("b717e1fa-90d7-44d5-a927-cddc108795cf")) {
+                    Plotly.newPlot(
+                        'b717e1fa-90d7-44d5-a927-cddc108795cf',
+                        [{"mode": "lines+markers", "type": "scatter", "x": [1, 2, 3, 4, 5, 6], "y": [9.189, 0.52, 0.124, 0.001, 0.0, 0.0]}],
+                        {"template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "title": {"text": "Geometry Optimization"}, "xaxis": {"range": [1, 6], "title": {"text": "Optimization Step"}}, "yaxis": {"title": {"text": "Relative Energy [kcal/mol]"}, "zeroline": true}},
+                        {"responsive": true}
+                    ).then(function(){
+
+var gd = document.getElementById('b717e1fa-90d7-44d5-a927-cddc108795cf');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })
+                };
+                });
+            </script>
+        </div></div>
+</div>
+</section>
+<section id="Collections">
+<h2>Collections<a class="headerlink" href="#Collections" title="Permalink to this headline"></a></h2>
+<p>Submitting individual procedures or single quantum chemistry tasks is not typically done as it becomes hard to track individual tasks. To help resolve this, <code class="docutils literal notranslate"><span class="pre">Collections</span></code> are different ways of organizing standard computations so that many tasks can be referenced in a more human-friendly way. In this particular case, we will be exploring an intermolecular potential dataset.</p>
+<p>To begin, we will create a new dataset and add a few intermolecular interactions to it.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">ptl</span><span class="o">.</span><span class="n">collections</span><span class="o">.</span><span class="n">ReactionDataset</span><span class="p">(</span><span class="s2">&quot;My IE Dataset&quot;</span><span class="p">,</span> <span class="n">ds_type</span><span class="o">=</span><span class="s2">&quot;ie&quot;</span><span class="p">,</span> <span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="p">,</span> <span class="n">default_program</span><span class="o">=</span><span class="s2">&quot;psi4&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>We can construct a water dimer that has fragments used in the intermolecular computation with the <code class="docutils literal notranslate"><span class="pre">--</span></code> divider. A single water molecule with ghost atoms can be extracted like so:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">water_dimer</span> <span class="o">=</span> <span class="n">ptl</span><span class="o">.</span><span class="n">Molecule</span><span class="o">.</span><span class="n">from_data</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">O 0.000000 0.000000  0.000000</span>
+<span class="s2">H 0.758602 0.000000  0.504284</span>
+<span class="s2">H 0.260455 0.000000 -0.872893</span>
+<span class="s2">--</span>
+<span class="s2">O 3.000000 0.500000  0.000000</span>
+<span class="s2">H 3.758602 0.500000  0.504284</span>
+<span class="s2">H 3.260455 0.500000 -0.872893</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+
+<span class="n">water_dimer</span><span class="o">.</span><span class="n">get_fragment</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "a83818421c2348d0bd26120cec0fc02a", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<p>Many molecular entries can be added to this dataset where each is entry is a given intermolecular complex that is given a unique name. In addition, the <code class="docutils literal notranslate"><span class="pre">add_ie_rxn</span></code> method to can automatically fragment molecules.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ds</span><span class="o">.</span><span class="n">add_ie_rxn</span><span class="p">(</span><span class="s2">&quot;water dimer&quot;</span><span class="p">,</span> <span class="n">water_dimer</span><span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">add_ie_rxn</span><span class="p">(</span><span class="s2">&quot;helium dimer&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">He 0 0 -3</span>
+<span class="s2">--</span>
+<span class="s2">He 0 0 3</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ReactionEntry(attributes={}, reaction_results={&#39;default&#39;: {}}, name=&#39;helium dimer&#39;, stoichiometry={&#39;default1&#39;: {&#39;b3855c64e9f61158f5e449e2df7b79bf1fa599d7&#39;: 2.0}, &#39;cp1&#39;: {&#39;e925ae0ef797c65c359e9c8029f0342df495d116&#39;: 2.0}, &#39;default&#39;: {&#39;a0d757c65af76f309b2685f31f63b3da781d0ba7&#39;: 1.0}, &#39;cp&#39;: {&#39;a0d757c65af76f309b2685f31f63b3da781d0ba7&#39;: 1.0}}, extras={})
+</pre></div></div>
+</div>
+<p>Once the Collection is created it can be saved to the server so that it can always be retrived at a future date</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ds</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;1&#39;
+</pre></div></div>
+</div>
+<p>The client can list all Collections currently on the server and retrive collections to be manipulated:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">client</span><span class="o">.</span><span class="n">list_collections</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>tagline</th>
+    </tr>
+    <tr>
+      <th>collection</th>
+      <th>name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>ReactionDataset</th>
+      <th>My IE Dataset</th>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_collection</span><span class="p">(</span><span class="s2">&quot;ReactionDataset&quot;</span><span class="p">,</span> <span class="s2">&quot;My IE Dataset&quot;</span><span class="p">)</span>
+<span class="n">ds</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;ReactionDataset(name=`My IE Dataset`, id=&#39;1&#39;, client=&#39;https://localhost:60885/&#39;) &gt;
+</pre></div></div>
+</div>
+</section>
+<section id="Computing-with-collections">
+<h2>Computing with collections<a class="headerlink" href="#Computing-with-collections" title="Permalink to this headline"></a></h2>
+<p>Computational methods can be applied to all of the reactions in the dataset with just a few simple lines:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ds</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="s2">&quot;B3LYP-D3&quot;</span><span class="p">,</span> <span class="s2">&quot;def2-SVP&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;ComputeResponse(nsubmitted=10 nexisting=0)&gt;
+</pre></div></div>
+</div>
+<p>By default this collection evaluates the non-counterpoise corrected interaction energy which typically requires three computations per entry (the complex and each monomer). In this case we compute the B3LYP and -D3 additive correction separately, nominally 12 total computations. However the collection is smart enough to understand that each Helium monomer is identical and does not need to be computed twice, reducing the total number of computations to 10 as shown here. We can continue to compute
+additional methods. Again, this is being evaluated on your computer! Be careful of the compute requirements.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ds</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="s2">&quot;PBE-D3&quot;</span><span class="p">,</span> <span class="s2">&quot;def2-SVP&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;ComputeResponse(nsubmitted=10 nexisting=0)&gt;
+</pre></div></div>
+</div>
+<p>A list of all methods that have been computed for this dataset can also be shown:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ds</span><span class="o">.</span><span class="n">list_values</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>stoichiometry</th>
+      <th>name</th>
+    </tr>
+    <tr>
+      <th>native</th>
+      <th>driver</th>
+      <th>program</th>
+      <th>method</th>
+      <th>basis</th>
+      <th>keywords</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="4" valign="top">True</th>
+      <th rowspan="4" valign="top">energy</th>
+      <th rowspan="4" valign="top">psi4</th>
+      <th>b3lyp</th>
+      <th>def2-svp</th>
+      <th>None</th>
+      <td>default</td>
+      <td>B3LYP/def2-svp</td>
+    </tr>
+    <tr>
+      <th>b3lyp-d3</th>
+      <th>def2-svp</th>
+      <th>None</th>
+      <td>default</td>
+      <td>B3LYP-D3/def2-svp</td>
+    </tr>
+    <tr>
+      <th>pbe</th>
+      <th>def2-svp</th>
+      <th>None</th>
+      <td>default</td>
+      <td>PBE/def2-svp</td>
+    </tr>
+    <tr>
+      <th>pbe-d3</th>
+      <th>def2-svp</th>
+      <th>None</th>
+      <td>default</td>
+      <td>PBE-D3/def2-svp</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>The above only shows what has been computed and does not pull this data from the server to your computer. To do so, the <code class="docutils literal notranslate"><span class="pre">get_history</span></code> command can be used:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DataFrame units: </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">units</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">get_values</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+DataFrame units: kcal / mol
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PBE/def2-svp</th>
+      <th>B3LYP/def2-svp</th>
+      <th>PBE-D3/def2-svp</th>
+      <th>B3LYP-D3/def2-svp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>water dimer</th>
+      <td>-5.11552</td>
+      <td>-4.75187</td>
+      <td>-5.63188</td>
+      <td>-5.57767</td>
+    </tr>
+    <tr>
+      <th>helium dimer</th>
+      <td>0.000684115</td>
+      <td>0.000674748</td>
+      <td>0.000207208</td>
+      <td>0.00017274</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>You can also visualize results and more!</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ds</span><span class="o">.</span><span class="n">visualize</span><span class="p">([</span><span class="s2">&quot;B3LYP-D3&quot;</span><span class="p">,</span> <span class="s2">&quot;PBE-D3&quot;</span><span class="p">],</span> <span class="s2">&quot;def2-SVP&quot;</span><span class="p">,</span> <span class="n">bench</span><span class="o">=</span><span class="s2">&quot;B3LYP/def2-svp&quot;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;violin&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<script type="text/javascript">
+window.PlotlyConfig = {MathJaxConfig: 'local'};
+if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+if (typeof require !== 'undefined') {
+require.undef("plotly");
+requirejs.config({
+    paths: {
+        'plotly': ['https://cdn.plot.ly/plotly-latest.min']
+    }
+});
+require(['plotly'], function(Plotly) {
+    window._Plotly = Plotly;
+});
+}
+</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+
+
+            <div id="3863cd06-77cf-47a8-b5b3-6191f6594440" class="plotly-graph-div" style="height:525px; width:100%;"></div>
+            <script type="text/javascript">
+                require(["plotly"], function(Plotly) {
+                    window.PLOTLYENV=window.PLOTLYENV || {};
+
+                if (document.getElementById("3863cd06-77cf-47a8-b5b3-6191f6594440")) {
+                    Plotly.newPlot(
+                        '3863cd06-77cf-47a8-b5b3-6191f6594440',
+                        [{"box": {"visible": true}, "name": "PBE-D3/def2-svp", "type": "violin", "y": [0.0004675397066600294, 0.8800098319745189]}, {"box": {"visible": true}, "name": "B3LYP-D3/def2-svp", "type": "violin", "y": [0.0005020075787577952, 0.8258024674929709]}],
+                        {"template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "title": {"text": "My IE Dataset Dataset Statistics"}, "yaxis": {"title": {"text": "UE [kcal / mol]"}}},
+                        {"responsive": true}
+                    ).then(function(){
+
+var gd = document.getElementById('3863cd06-77cf-47a8-b5b3-6191f6594440');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })
+                };
+                });
+            </script>
+        </div></div>
+</div>
+<p>This is only the very beginning of what you can do with QCFractal! Explore the documentation to learn more capabilities. In particular, see the <a class="reference internal" href="setup_quickstart.html"><span class="doc">next section</span></a> for a quickstart guide on how to set up QCFractal in production.</p>
+<p>If you like the project, consider starring us on <a class="reference external" href="https://github.com/MolSSI/QCFractal">GitHub</a>. If you have any questions, join our <a class="reference external" href="https://join.slack.com/t/qcdb/shared_invite/enQtNDIzNTQ2OTExODk0LWM3OTgxN2ExYTlkMTlkZjA0OTExZDlmNGRlY2M4NWJlNDlkZGQyYWUxOTJmMzc3M2VlYzZjMjgxMDRkYzFmOTE">Slack</a> channel.</p>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"015cb0544ff44c68b1c7ddb47bdb46ab": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "LinkModel", "state": {"source": ["IPY_MODEL_9d75834c00a94d828e7f1809d83aaa01", "max"], "target": ["IPY_MODEL_db6345639c3b4abc8bc70b85913b2a6c", "max_frame"]}}, "05fad9d4c5e4441a909dd93ff265a3e2": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"description_width": ""}}, "06ea71ba35874ec382c84cb58fde86e9": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "LinkModel", "state": {"source": ["IPY_MODEL_7a7355e463a0496693c118c7f18145b9", "max"], "target": ["IPY_MODEL_5a86b98162284e76aa45a9e5f2c3c184", "max_frame"]}}, "0d9dcfaed4e24f9389a2ed6c1899ba07": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "LinkModel", "state": {"source": ["IPY_MODEL_1466725088f64032bf963274418fe137", "max"], "target": ["IPY_MODEL_24e3413db2f543839da5f6836dc0bd35", "max_frame"]}}, "0e9fdcaab7d94e43ae84fa7a5a05861d": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "125ee3af34134816bf47782b423e19db": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "LinkModel", "state": {"source": ["IPY_MODEL_db8aca2c94734431ac49febea58c3955", "max"], "target": ["IPY_MODEL_c9832fcaa6524780bc83513a2b22390e", "max_frame"]}}, "129386fca991485e9033f24e15571506": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "1466725088f64032bf963274418fe137": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "IntSliderModel", "state": {"layout": "IPY_MODEL_b965e3b6c0e34eb6bbf1abb64139938b", "max": 0, "style": "IPY_MODEL_aef27dece7254fee80b2ec1e83e85564"}}, "1964a5142c1544d2bb049800cd64be8e": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "PlayModel", "state": {"layout": "IPY_MODEL_cc704e3ffa7a483f80e9ecbbb1136027", "max": 0, "style": "IPY_MODEL_05fad9d4c5e4441a909dd93ff265a3e2"}}, "1b15c8c89d00426997fb4d5b1c6cde42": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "1c9cecb68e324532ae8ac2d035a058db": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ImageModel", "state": {"layout": "IPY_MODEL_129386fca991485e9033f24e15571506", "width": "900.0"}}, "1d68b30554554033b15366756048c5fe": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "20554a9ff7dd4b50b5d0d6fe1b44d28a": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "SliderStyleModel", "state": {"description_width": ""}}, "24e3413db2f543839da5f6836dc0bd35": {"model_module": "nglview-js-widgets", "model_module_version": "2.7.1", "model_name": "NGLModel", "state": {"_camera_orientation": [0.3587346567537857, -0.461614837404882, -11.620883709617265, 0, -0.037122892737446296, 11.626306031114774, -0.4629762048047823, 0, 11.62998918062244, 0.05134994905839903, 0.3569759737757603, 0, 0, -0.4877000264823437, -0.4877000264823437, 1], "_camera_str": "orthographic", "_gui_theme": null, "_ibtn_fullscreen": "IPY_MODEL_edeebd6d76584ae0980f86d8b71d7b0b", "_igui": null, "_iplayer": "IPY_MODEL_d9ccad4633d94100a476ea61783953b6", "_ngl_color_dict": {}, "_ngl_coordinate_resource": {}, "_ngl_full_stage_parameters": {"ambientColor": 14540253, "ambientIntensity": 0.2, "backgroundColor": "white", "cameraEyeSep": 0.3, "cameraFov": 40, "cameraType": "perspective", "clipDist": 10, "clipFar": 100, "clipNear": 0, "fogFar": 100, "fogNear": 50, "hoverTimeout": 0, "impostor": true, "lightColor": 14540253, "lightIntensity": 1, "mousePreset": "default", "panSpeed": 1, "quality": "medium", "rotateSpeed": 2, "sampleLevel": 0, "tooltip": true, "workerDefault": true, "zoomSpeed": 1.2}, "_ngl_msg_archive": [{"args": [{"binary": false, "data": "\nQCElemental\n\n  3  2  0  0  0  0  0  0  0  0  0\n    0.0000    0.0836    0.0836  O  0  0     0  0  0  0  0  0\n    0.0000   -0.0716    1.0470  H  0  0     0  0  0  0  0  0\n    0.0000    1.0470   -0.0716  H  0  0     0  0  0  0  0  0\n  1  2  1  0  0  0  0\n  1  3  1  0  0  0  0\n", "type": "blob"}], "kwargs": {"defaultRepresentation": true, "ext": "sdf"}, "methodName": "loadFile", "reconstruc_color_scheme": false, "target": "Stage", "type": "call_method"}], "_ngl_original_stage_parameters": {"ambientColor": 14540253, "ambientIntensity": 0.2, "backgroundColor": "white", "cameraEyeSep": 0.3, "cameraFov": 40, "cameraType": "perspective", "clipDist": 10, "clipFar": 100, "clipNear": 0, "fogFar": 100, "fogNear": 50, "hoverTimeout": 0, "impostor": true, "lightColor": 14540253, "lightIntensity": 1, "mousePreset": "default", "panSpeed": 1, "quality": "medium", "rotateSpeed": 2, "sampleLevel": 0, "tooltip": true, "workerDefault": true, "zoomSpeed": 1.2}, "_ngl_repr_dict": {"0": {"0": {"params": {"aspectRatio": 1.5, "assembly": "default", "bondScale": 0.3, "bondSpacing": 0.75, "clipCenter": {"x": 0, "y": 0, "z": 0}, "clipNear": 0, "clipRadius": 0, "colorMode": "hcl", "colorReverse": false, "colorScale": "", "colorScheme": "element", "colorValue": 9474192, "cylinderOnly": false, "defaultAssembly": "", "depthWrite": true, "diffuse": 16777215, "diffuseInterior": false, "disableImpostor": false, "disablePicking": false, "flatShaded": false, "interiorColor": 2236962, "interiorDarkening": 0, "lazy": false, "lineOnly": false, "linewidth": 2, "matrix": {"elements": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]}, "metalness": 0, "multipleBond": "off", "opacity": 1, "openEnded": true, "quality": "high", "radialSegments": 20, "radiusData": {}, "radiusScale": 2, "radiusSize": 0.15, "radiusType": "size", "roughness": 0.4, "sele": "", "side": "double", "sphereDetail": 2, "useInteriorColor": true, "visible": true, "wireframe": false}, "type": "ball+stick"}}}, "_ngl_serialize": false, "_ngl_version": "2.0.0-dev.36", "_ngl_view_id": ["EE7E02FF-994A-4D80-92F8-0E2C0DB034A8"], "_player_dict": {}, "_scene_position": {}, "_scene_rotation": {}, "_synced_model_ids": [], "_synced_repr_model_ids": [], "_view_height": "", "_view_width": "", "background": "white", "frame": 0, "gui_style": null, "layout": "IPY_MODEL_55d4b128490943d2b3cc95d8b89b0e84", "max_frame": 0, "n_components": 1, "picked": {}}}, "2703225239ca43818fb3f9ac1c4c332b": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HBoxModel", "state": {"children": ["IPY_MODEL_e095a6b9fbde4238892a8d4f0beffa5a", "IPY_MODEL_7a7355e463a0496693c118c7f18145b9"], "layout": "IPY_MODEL_47f1749a821645f1b1379092555325a1"}}, "2733fc8e14884ec8add7cb17a36cdbe4": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "LinkModel", "state": {"source": ["IPY_MODEL_e626666f622f43599f6570cd450182ff", "max"], "target": ["IPY_MODEL_c9832fcaa6524780bc83513a2b22390e", "max_frame"]}}, "2b9eaffd6db342e7af569a4aebccf3e5": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "LinkModel", "state": {"source": ["IPY_MODEL_9f36f35dd0cd4c50b87b40313eb5220e", "value"], "target": ["IPY_MODEL_353f9341148249cea1862a06367a02c4", "value"]}}, "2c778813b97e4d03bf5922d64794c09e": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "2fda95bb194a4d8c90fa602ef57b5b6d": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "30b9574c1d234fc29fb4e3fa582b17fb": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "34b6185a0a9149d9829549d0f6ac30ae": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HBoxModel", "state": {"children": ["IPY_MODEL_db8aca2c94734431ac49febea58c3955", "IPY_MODEL_e626666f622f43599f6570cd450182ff"], "layout": "IPY_MODEL_d50680e0adf047f4bcdbc1adc0bede5d"}}, "353f9341148249cea1862a06367a02c4": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "IntSliderModel", "state": {"layout": "IPY_MODEL_b748843035524e1dae5d92778a1e692d", "max": 0, "style": "IPY_MODEL_5fda4d0a735f46cb96c7e230135dcb9d"}}, "36b12047df4f45b2b06b6f491c717544": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ImageModel", "state": {"layout": "IPY_MODEL_8122b1e63dfa4732acfb9831a3b26bc3", "width": "900.0"}}, "36eab15533df4cbfa949048607b12e2d": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "SliderStyleModel", "state": {"description_width": ""}}, "39b0b2646f444c1baa98d12487a530e7": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "IntSliderModel", "state": {"layout": "IPY_MODEL_0e9fdcaab7d94e43ae84fa7a5a05861d", "max": 0, "style": "IPY_MODEL_36eab15533df4cbfa949048607b12e2d"}}, "3c28fcb5fb904eb198b04770f8ed7680": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "3d32337d17534d5781a20a63faf8a2c6": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "SliderStyleModel", "state": {"description_width": ""}}, "3d91629d68914798ac2d51e9dcaad209": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"description_width": ""}}, "40a32baf36994b96bb268eb27396d929": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "LinkModel", "state": {"source": ["IPY_MODEL_db8aca2c94734431ac49febea58c3955", "value"], "target": ["IPY_MODEL_e626666f622f43599f6570cd450182ff", "value"]}}, "46b29a5714254a8a9ef9275508f392d9": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "LinkModel", "state": {"source": ["IPY_MODEL_9f36f35dd0cd4c50b87b40313eb5220e", "max"], "target": ["IPY_MODEL_a84cd78b6b1c49e394d064b837e455cc", "max_frame"]}}, "47f1749a821645f1b1379092555325a1": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "48f7f4ee395d45798f1e8364a3b24a5f": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "LinkModel", "state": {"source": ["IPY_MODEL_a0d24f140921447f9f036b3add9136f4", "value"], "target": ["IPY_MODEL_a83818421c2348d0bd26120cec0fc02a", "frame"]}}, "4b6bdda8d92340ceb87c0cc321f090d9": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ButtonModel", "state": {"icon": "compress", "layout": "IPY_MODEL_4f73f9d2961c4e08b9ce21bcee2bdc40", "style": "IPY_MODEL_7aea39e8426349c78db3e6cffd705234"}}, "4f73f9d2961c4e08b9ce21bcee2bdc40": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"width": "34px"}}, "501757b1f6e4410c8dd79f7220ee1c3e": {"model_module": "nglview-js-widgets", "model_module_version": "2.7.1", "model_name": "ColormakerRegistryModel", "state": {"_msg_ar": [], "_msg_q": [], "_ready": true, "layout": "IPY_MODEL_3c28fcb5fb904eb198b04770f8ed7680"}}, "52584e0ee2a44853ad0a6dbf4c9c5375": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"description_width": ""}}, "5387cc68c3624e59b090285931f76840": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "55d4b128490943d2b3cc95d8b89b0e84": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "56bd1113bd6344c0a60fe2e03d34c47c": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ImageModel", "state": {"layout": "IPY_MODEL_2c778813b97e4d03bf5922d64794c09e", "width": "900.0"}}, "57e6862900f1453bae6f4a7511cffc32": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ImageModel", "state": {"layout": "IPY_MODEL_781d4e55ba144554bd7c95b124d43de7", "width": "900.0"}}, "5a86b98162284e76aa45a9e5f2c3c184": {"model_module": "nglview-js-widgets", "model_module_version": "2.7.1", "model_name": "NGLModel", "state": {"_camera_orientation": [-8.030213412475353, -0.5629232793882898, -8.279182945268866, 0, -0.1053706430326701, 11.526945540958385, -0.6815451804346104, 0, 8.297629172679084, -0.39840204179885613, -8.021016533794372, 0, 0, -0.52920001745224, -0.52920001745224, 1], "_camera_str": "orthographic", "_gui_theme": null, "_ibtn_fullscreen": "IPY_MODEL_a05decff2bf446dd8637d3b5ab52ef17", "_igui": null, "_iplayer": "IPY_MODEL_2703225239ca43818fb3f9ac1c4c332b", "_ngl_color_dict": {}, "_ngl_coordinate_resource": {}, "_ngl_full_stage_parameters": {"ambientColor": 14540253, "ambientIntensity": 0.2, "backgroundColor": "white", "cameraEyeSep": 0.3, "cameraFov": 40, "cameraType": "perspective", "clipDist": 10, "clipFar": 100, "clipNear": 0, "fogFar": 100, "fogNear": 50, "hoverTimeout": 0, "impostor": true, "lightColor": 14540253, "lightIntensity": 1, "mousePreset": "default", "panSpeed": 1, "quality": "medium", "rotateSpeed": 2, "sampleLevel": 0, "tooltip": true, "workerDefault": true, "zoomSpeed": 1.2}, "_ngl_msg_archive": [{"args": [{"binary": false, "data": "\nQCElemental\n\n  3  2  0  0  0  0  0  0  0  0  0\n    0.0000    0.0000    0.0000  O  0  0     0  0  0  0  0  0\n    0.0000    0.0000    1.0584  H  0  0     0  0  0  0  0  0\n    0.0000    1.0584    0.0000  H  0  0     0  0  0  0  0  0\n  1  2  1  0  0  0  0\n  1  3  1  0  0  0  0\n", "type": "blob"}], "kwargs": {"defaultRepresentation": true, "ext": "sdf"}, "methodName": "loadFile", "reconstruc_color_scheme": false, "target": "Stage", "type": "call_method"}], "_ngl_original_stage_parameters": {"ambientColor": 14540253, "ambientIntensity": 0.2, "backgroundColor": "white", "cameraEyeSep": 0.3, "cameraFov": 40, "cameraType": "perspective", "clipDist": 10, "clipFar": 100, "clipNear": 0, "fogFar": 100, "fogNear": 50, "hoverTimeout": 0, "impostor": true, "lightColor": 14540253, "lightIntensity": 1, "mousePreset": "default", "panSpeed": 1, "quality": "medium", "rotateSpeed": 2, "sampleLevel": 0, "tooltip": true, "workerDefault": true, "zoomSpeed": 1.2}, "_ngl_repr_dict": {"0": {"0": {"params": {"aspectRatio": 1.5, "assembly": "default", "bondScale": 0.3, "bondSpacing": 0.75, "clipCenter": {"x": 0, "y": 0, "z": 0}, "clipNear": 0, "clipRadius": 0, "colorMode": "hcl", "colorReverse": false, "colorScale": "", "colorScheme": "element", "colorValue": 9474192, "cylinderOnly": false, "defaultAssembly": "", "depthWrite": true, "diffuse": 16777215, "diffuseInterior": false, "disableImpostor": false, "disablePicking": false, "flatShaded": false, "interiorColor": 2236962, "interiorDarkening": 0, "lazy": false, "lineOnly": false, "linewidth": 2, "matrix": {"elements": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]}, "metalness": 0, "multipleBond": "off", "opacity": 1, "openEnded": true, "quality": "high", "radialSegments": 20, "radiusData": {}, "radiusScale": 2, "radiusSize": 0.15, "radiusType": "size", "roughness": 0.4, "sele": "", "side": "double", "sphereDetail": 2, "useInteriorColor": true, "visible": true, "wireframe": false}, "type": "ball+stick"}}}, "_ngl_serialize": false, "_ngl_version": "2.0.0-dev.36", "_ngl_view_id": ["1BCCAB2E-C6AC-4874-809F-E28D9ECFEEF5"], "_player_dict": {}, "_scene_position": {}, "_scene_rotation": {}, "_synced_model_ids": [], "_synced_repr_model_ids": [], "_view_height": "", "_view_width": "", "background": "white", "frame": 0, "gui_style": null, "layout": "IPY_MODEL_b12b5c74866040b8abb9d0410ff300a4", "max_frame": 0, "n_components": 1, "picked": {}}}, "5fda4d0a735f46cb96c7e230135dcb9d": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "SliderStyleModel", "state": {"description_width": ""}}, "62f38b9bbc284ae3a45f2d01321555c7": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"description_width": ""}}, "63b16e9880244d6ca5b78f7684b830cc": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "LinkModel", "state": {"source": ["IPY_MODEL_1964a5142c1544d2bb049800cd64be8e", "value"], "target": ["IPY_MODEL_1466725088f64032bf963274418fe137", "value"]}}, "63daa86a3ec44c15b0391ee3c7bf2c06": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "LinkModel", "state": {"source": ["IPY_MODEL_9d75834c00a94d828e7f1809d83aaa01", "value"], "target": ["IPY_MODEL_b1cb0e904ed042b2909a775de4cdceed", "value"]}}, "69620f0cf57748cbb4d698cd984aa939": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HBoxModel", "state": {"children": ["IPY_MODEL_9d75834c00a94d828e7f1809d83aaa01", "IPY_MODEL_b1cb0e904ed042b2909a775de4cdceed"], "layout": "IPY_MODEL_30b9574c1d234fc29fb4e3fa582b17fb"}}, "6c374326197e43efb60ba57531399d2d": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"width": "34px"}}, "6f416140a41a46d483ad84511d75cd7f": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "702090757d5240a280b56855dc21f1a5": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "LinkModel", "state": {"source": ["IPY_MODEL_a0d24f140921447f9f036b3add9136f4", "max"], "target": ["IPY_MODEL_a83818421c2348d0bd26120cec0fc02a", "max_frame"]}}, "70bc6342036f47c48362a8e27e10dd08": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ButtonModel", "state": {"icon": "compress", "layout": "IPY_MODEL_886bafc267e4476cb691679ab30e7e8f", "style": "IPY_MODEL_a7a59a739a2e48ddb8d1d61ba9fbba55"}}, "781d4e55ba144554bd7c95b124d43de7": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "7a7355e463a0496693c118c7f18145b9": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "IntSliderModel", "state": {"layout": "IPY_MODEL_e22dfa6992a7463386b3b5c0f66410f4", "max": 0, "style": "IPY_MODEL_20554a9ff7dd4b50b5d0d6fe1b44d28a"}}, "7aea39e8426349c78db3e6cffd705234": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ButtonStyleModel", "state": {}}, "7e454d2896b040febce86a5c2825cd7d": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "LinkModel", "state": {"source": ["IPY_MODEL_e095a6b9fbde4238892a8d4f0beffa5a", "value"], "target": ["IPY_MODEL_7a7355e463a0496693c118c7f18145b9", "value"]}}, "8122b1e63dfa4732acfb9831a3b26bc3": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "83a2bfa69cae401a94606948d8284415": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "LinkModel", "state": {"source": ["IPY_MODEL_e095a6b9fbde4238892a8d4f0beffa5a", "max"], "target": ["IPY_MODEL_5a86b98162284e76aa45a9e5f2c3c184", "max_frame"]}}, "843a400e5d7149e48919b76d231c2a83": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ButtonStyleModel", "state": {}}, "84f719fa4dc549b9a0bd1b4d1aa3b7e3": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ImageModel", "state": {"layout": "IPY_MODEL_931bbbd2373f4dca844e98a679f9f2eb", "width": "900.0"}}, "86d241b733fa444689f3e70bc28c532c": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ButtonStyleModel", "state": {}}, "886bafc267e4476cb691679ab30e7e8f": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"width": "34px"}}, "8d3ee5bb32cd428c983b30bf57a7744d": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ButtonStyleModel", "state": {}}, "920d353a7a82436c89a4a271237f9c5c": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "LinkModel", "state": {"source": ["IPY_MODEL_e095a6b9fbde4238892a8d4f0beffa5a", "value"], "target": ["IPY_MODEL_5a86b98162284e76aa45a9e5f2c3c184", "frame"]}}, "931bbbd2373f4dca844e98a679f9f2eb": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "9901f9293f1f4f92899b206dbf4b8b9d": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "LinkModel", "state": {"source": ["IPY_MODEL_353f9341148249cea1862a06367a02c4", "max"], "target": ["IPY_MODEL_a84cd78b6b1c49e394d064b837e455cc", "max_frame"]}}, "995fc564127741bc94385d6382f7be7a": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ButtonModel", "state": {"icon": "compress", "layout": "IPY_MODEL_ca78176594414e46a0be8e1b13dc3174", "style": "IPY_MODEL_86d241b733fa444689f3e70bc28c532c"}}, "999c1009ac5e421f9ddcd3c432324daf": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"width": "34px"}}, "9d2e99f0d32d4e0fa83b07326e2dc79d": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "SliderStyleModel", "state": {"description_width": ""}}, "9d75834c00a94d828e7f1809d83aaa01": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "PlayModel", "state": {"layout": "IPY_MODEL_1d68b30554554033b15366756048c5fe", "max": 0, "style": "IPY_MODEL_c0b5758822ba45dea0996a573423eaad"}}, "9f36f35dd0cd4c50b87b40313eb5220e": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "PlayModel", "state": {"layout": "IPY_MODEL_d8b037e6a6194cea9f06b2e1289eef4c", "max": 0, "style": "IPY_MODEL_3d91629d68914798ac2d51e9dcaad209"}}, "9f91d5c8f76c4d4f9d83925a4c172198": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "a01dbc8e95b0425384ae15f886dc88ed": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "a05decff2bf446dd8637d3b5ab52ef17": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ButtonModel", "state": {"icon": "compress", "layout": "IPY_MODEL_999c1009ac5e421f9ddcd3c432324daf", "style": "IPY_MODEL_843a400e5d7149e48919b76d231c2a83"}}, "a0d24f140921447f9f036b3add9136f4": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "PlayModel", "state": {"layout": "IPY_MODEL_add2162ac769490d96352bc8fa3dad17", "max": 0, "style": "IPY_MODEL_62f38b9bbc284ae3a45f2d01321555c7"}}, "a1761c7f5b9648fda9c3eb974e7d6e24": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "LinkModel", "state": {"source": ["IPY_MODEL_1964a5142c1544d2bb049800cd64be8e", "value"], "target": ["IPY_MODEL_24e3413db2f543839da5f6836dc0bd35", "frame"]}}, "a19030ff2bd749f8b79a1f56cd6771db": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"description_width": ""}}, "a7a59a739a2e48ddb8d1d61ba9fbba55": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ButtonStyleModel", "state": {}}, "a83818421c2348d0bd26120cec0fc02a": {"model_module": "nglview-js-widgets", "model_module_version": "2.7.1", "model_name": "NGLModel", "state": {"_camera_orientation": [16.52960793035883, 0, 0, 0, 0, 10.27496906111685, -12.948086697441921, 0, 0, 12.948086697441921, 10.27496906111685, 0, -1.8792999982833862, -0.25, 0.1843000054359436, 1], "_camera_str": "orthographic", "_gui_theme": null, "_ibtn_fullscreen": "IPY_MODEL_4b6bdda8d92340ceb87c0cc321f090d9", "_igui": null, "_iplayer": "IPY_MODEL_affc12bc36e2481ebdda98eda9398814", "_ngl_color_dict": {}, "_ngl_coordinate_resource": {}, "_ngl_full_stage_parameters": {"ambientColor": 14540253, "ambientIntensity": 0.2, "backgroundColor": "white", "cameraEyeSep": 0.3, "cameraFov": 40, "cameraType": "perspective", "clipDist": 10, "clipFar": 100, "clipNear": 0, "fogFar": 100, "fogNear": 50, "hoverTimeout": 0, "impostor": true, "lightColor": 14540253, "lightIntensity": 1, "mousePreset": "default", "panSpeed": 1, "quality": "medium", "rotateSpeed": 2, "sampleLevel": 0, "tooltip": true, "workerDefault": true, "zoomSpeed": 1.2}, "_ngl_msg_archive": [{"args": [{"binary": false, "data": "\nQCElemental\n\n  6  4  0  0  0  0  0  0  0  0  0\n    0.0000    0.0000    0.0000  O  0  0     0  0  0  0  0  0\n    0.7586    0.0000    0.5043  H  0  0     0  0  0  0  0  0\n    0.2605    0.0000   -0.8729  H  0  0     0  0  0  0  0  0\n    3.0000    0.5000    0.0000 Gh  0  0     0  0  0  0  0  0\n    3.7586    0.5000    0.5043 Gh  0  0     0  0  0  0  0  0\n    3.2605    0.5000   -0.8729 Gh  0  0     0  0  0  0  0  0\n  1  2  1  0  0  0  0\n  1  3  1  0  0  0  0\n  4  5  1  0  0  0  0\n  4  6  1  0  0  0  0\n", "type": "blob"}], "kwargs": {"defaultRepresentation": true, "ext": "sdf"}, "methodName": "loadFile", "reconstruc_color_scheme": false, "target": "Stage", "type": "call_method"}], "_ngl_original_stage_parameters": {"ambientColor": 14540253, "ambientIntensity": 0.2, "backgroundColor": "white", "cameraEyeSep": 0.3, "cameraFov": 40, "cameraType": "perspective", "clipDist": 10, "clipFar": 100, "clipNear": 0, "fogFar": 100, "fogNear": 50, "hoverTimeout": 0, "impostor": true, "lightColor": 14540253, "lightIntensity": 1, "mousePreset": "default", "panSpeed": 1, "quality": "medium", "rotateSpeed": 2, "sampleLevel": 0, "tooltip": true, "workerDefault": true, "zoomSpeed": 1.2}, "_ngl_repr_dict": {"0": {"0": {"params": {"aspectRatio": 1.5, "assembly": "default", "bondScale": 0.3, "bondSpacing": 0.75, "clipCenter": {"x": 0, "y": 0, "z": 0}, "clipNear": 0, "clipRadius": 0, "colorMode": "hcl", "colorReverse": false, "colorScale": "", "colorScheme": "element", "colorValue": 9474192, "cylinderOnly": false, "defaultAssembly": "", "depthWrite": true, "diffuse": 16777215, "diffuseInterior": false, "disableImpostor": false, "disablePicking": false, "flatShaded": false, "interiorColor": 2236962, "interiorDarkening": 0, "lazy": false, "lineOnly": false, "linewidth": 2, "matrix": {"elements": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]}, "metalness": 0, "multipleBond": "off", "opacity": 1, "openEnded": true, "quality": "high", "radialSegments": 20, "radiusData": {}, "radiusScale": 2, "radiusSize": 0.15, "radiusType": "size", "roughness": 0.4, "sele": "", "side": "double", "sphereDetail": 2, "useInteriorColor": true, "visible": true, "wireframe": false}, "type": "ball+stick"}}}, "_ngl_serialize": false, "_ngl_version": "2.0.0-dev.36", "_ngl_view_id": ["0EEE316B-5700-444C-9E2D-417737274180"], "_player_dict": {}, "_scene_position": {}, "_scene_rotation": {}, "_synced_model_ids": [], "_synced_repr_model_ids": [], "_view_height": "", "_view_width": "", "background": "white", "frame": 0, "gui_style": null, "layout": "IPY_MODEL_b2b1882789c1462a9ac3de732491f028", "max_frame": 0, "n_components": 1, "picked": {}}}, "a84cd78b6b1c49e394d064b837e455cc": {"model_module": "nglview-js-widgets", "model_module_version": "2.7.1", "model_name": "NGLModel", "state": {"_camera_orientation": [16.52960793035883, 0, 0, 0, 0, 0.8392823288179362, -16.5082871159886, 0, 0, 16.5082871159886, 0.8392823288179362, 0, -1.8792999982833862, -0.25, 0.1843000054359436, 1], "_camera_str": "orthographic", "_gui_theme": null, "_ibtn_fullscreen": "IPY_MODEL_995fc564127741bc94385d6382f7be7a", "_igui": null, "_iplayer": "IPY_MODEL_cccabfe168dd4ebe9b7fb0cc9eefa073", "_ngl_color_dict": {}, "_ngl_coordinate_resource": {}, "_ngl_full_stage_parameters": {"ambientColor": 14540253, "ambientIntensity": 0.2, "backgroundColor": "white", "cameraEyeSep": 0.3, "cameraFov": 40, "cameraType": "perspective", "clipDist": 10, "clipFar": 100, "clipNear": 0, "fogFar": 100, "fogNear": 50, "hoverTimeout": 0, "impostor": true, "lightColor": 14540253, "lightIntensity": 1, "mousePreset": "default", "panSpeed": 1, "quality": "medium", "rotateSpeed": 2, "sampleLevel": 0, "tooltip": true, "workerDefault": true, "zoomSpeed": 1.2}, "_ngl_msg_archive": [{"args": [{"binary": false, "data": "\nQCElemental\n\n  6  4  0  0  0  0  0  0  0  0  0\n    0.0000    0.0000    0.0000  O  0  0     0  0  0  0  0  0\n    0.7586    0.0000    0.5043  H  0  0     0  0  0  0  0  0\n    0.2605    0.0000   -0.8729  H  0  0     0  0  0  0  0  0\n    3.0000    0.5000    0.0000 Gh  0  0     0  0  0  0  0  0\n    3.7586    0.5000    0.5043 Gh  0  0     0  0  0  0  0  0\n    3.2605    0.5000   -0.8729 Gh  0  0     0  0  0  0  0  0\n  1  2  1  0  0  0  0\n  1  3  1  0  0  0  0\n  4  5  1  0  0  0  0\n  4  6  1  0  0  0  0\n", "type": "blob"}], "kwargs": {"defaultRepresentation": true, "ext": "sdf"}, "methodName": "loadFile", "reconstruc_color_scheme": false, "target": "Stage", "type": "call_method"}], "_ngl_original_stage_parameters": {"ambientColor": 14540253, "ambientIntensity": 0.2, "backgroundColor": "white", "cameraEyeSep": 0.3, "cameraFov": 40, "cameraType": "perspective", "clipDist": 10, "clipFar": 100, "clipNear": 0, "fogFar": 100, "fogNear": 50, "hoverTimeout": 0, "impostor": true, "lightColor": 14540253, "lightIntensity": 1, "mousePreset": "default", "panSpeed": 1, "quality": "medium", "rotateSpeed": 2, "sampleLevel": 0, "tooltip": true, "workerDefault": true, "zoomSpeed": 1.2}, "_ngl_repr_dict": {"0": {"0": {"params": {"aspectRatio": 1.5, "assembly": "default", "bondScale": 0.3, "bondSpacing": 0.75, "clipCenter": {"x": 0, "y": 0, "z": 0}, "clipNear": 0, "clipRadius": 0, "colorMode": "hcl", "colorReverse": false, "colorScale": "", "colorScheme": "element", "colorValue": 9474192, "cylinderOnly": false, "defaultAssembly": "", "depthWrite": true, "diffuse": 16777215, "diffuseInterior": false, "disableImpostor": false, "disablePicking": false, "flatShaded": false, "interiorColor": 2236962, "interiorDarkening": 0, "lazy": false, "lineOnly": false, "linewidth": 2, "matrix": {"elements": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]}, "metalness": 0, "multipleBond": "off", "opacity": 1, "openEnded": true, "quality": "high", "radialSegments": 20, "radiusData": {}, "radiusScale": 2, "radiusSize": 0.15, "radiusType": "size", "roughness": 0.4, "sele": "", "side": "double", "sphereDetail": 2, "useInteriorColor": true, "visible": true, "wireframe": false}, "type": "ball+stick"}}}, "_ngl_serialize": false, "_ngl_version": "2.0.0-dev.36", "_ngl_view_id": ["13062166-D27B-4A34-A998-D8974637371C"], "_player_dict": {}, "_scene_position": {}, "_scene_rotation": {}, "_synced_model_ids": [], "_synced_repr_model_ids": [], "_view_height": "", "_view_width": "", "background": "white", "frame": 0, "gui_style": null, "layout": "IPY_MODEL_6f416140a41a46d483ad84511d75cd7f", "max_frame": 0, "n_components": 1, "picked": {}}}, "aaa175b67e854cb999eb18367dfdc102": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "ac25614ecb52486ea47a389d3f657458": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"width": "34px"}}, "add2162ac769490d96352bc8fa3dad17": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "aef27dece7254fee80b2ec1e83e85564": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "SliderStyleModel", "state": {"description_width": ""}}, "affc12bc36e2481ebdda98eda9398814": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HBoxModel", "state": {"children": ["IPY_MODEL_a0d24f140921447f9f036b3add9136f4", "IPY_MODEL_39b0b2646f444c1baa98d12487a530e7"], "layout": "IPY_MODEL_c9285c308ba440d2bca0d09e9b9988c9"}}, "b12b5c74866040b8abb9d0410ff300a4": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "b1cb0e904ed042b2909a775de4cdceed": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "IntSliderModel", "state": {"layout": "IPY_MODEL_cb8e617669b343e1bc7b7ac575199dc8", "max": 0, "style": "IPY_MODEL_9d2e99f0d32d4e0fa83b07326e2dc79d"}}, "b2b1882789c1462a9ac3de732491f028": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "b3bd15457c8c4aee9725c82e582a78da": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ImageModel", "state": {"layout": "IPY_MODEL_b6058b46dc114a0bbb11300ab7eb5d65", "width": "900.0"}}, "b5362ee608ed45d28c8c318ee4198127": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "b6058b46dc114a0bbb11300ab7eb5d65": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "b748843035524e1dae5d92778a1e692d": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "b965e3b6c0e34eb6bbf1abb64139938b": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "bfc30c28a6b34c53b257fe8c1b306ba7": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "LinkModel", "state": {"source": ["IPY_MODEL_9f36f35dd0cd4c50b87b40313eb5220e", "value"], "target": ["IPY_MODEL_a84cd78b6b1c49e394d064b837e455cc", "frame"]}}, "c0b5758822ba45dea0996a573423eaad": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"description_width": ""}}, "c1d4ffb6a62345d29fc4779680d9642e": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "c327a29940c64f3ea65c29812dc4b2d0": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "LinkModel", "state": {"source": ["IPY_MODEL_1964a5142c1544d2bb049800cd64be8e", "max"], "target": ["IPY_MODEL_24e3413db2f543839da5f6836dc0bd35", "max_frame"]}}, "c74c34856d7a4600bb09328edf7de03a": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "LinkModel", "state": {"source": ["IPY_MODEL_39b0b2646f444c1baa98d12487a530e7", "max"], "target": ["IPY_MODEL_a83818421c2348d0bd26120cec0fc02a", "max_frame"]}}, "c7bee0591c274ff1ab6e809927ce2023": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "LinkModel", "state": {"source": ["IPY_MODEL_b1cb0e904ed042b2909a775de4cdceed", "max"], "target": ["IPY_MODEL_db6345639c3b4abc8bc70b85913b2a6c", "max_frame"]}}, "c872801ba6ef40f5bd1ba3489caabbee": {"model_module": "nglview-js-widgets", "model_module_version": "2.7.1", "model_name": "ColormakerRegistryModel", "state": {"_msg_ar": [], "_msg_q": [], "_ready": true, "layout": "IPY_MODEL_a01dbc8e95b0425384ae15f886dc88ed"}}, "c9285c308ba440d2bca0d09e9b9988c9": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "c9832fcaa6524780bc83513a2b22390e": {"model_module": "nglview-js-widgets", "model_module_version": "2.7.1", "model_name": "NGLModel", "state": {"_camera_orientation": [6.089666284147105, 0, -9.91477087744533, 0, 0, 11.635579788068853, 0, 0, 9.91477087744533, 0, 6.089666284147105, 0, 0, -0.4877000264823437, -0.4877000264823437, 1], "_camera_str": "orthographic", "_gui_theme": null, "_ibtn_fullscreen": "IPY_MODEL_70bc6342036f47c48362a8e27e10dd08", "_igui": null, "_iplayer": "IPY_MODEL_34b6185a0a9149d9829549d0f6ac30ae", "_ngl_color_dict": {}, "_ngl_coordinate_resource": {}, "_ngl_full_stage_parameters": {"ambientColor": 14540253, "ambientIntensity": 0.2, "backgroundColor": "white", "cameraEyeSep": 0.3, "cameraFov": 40, "cameraType": "perspective", "clipDist": 10, "clipFar": 100, "clipNear": 0, "fogFar": 100, "fogNear": 50, "hoverTimeout": 0, "impostor": true, "lightColor": 14540253, "lightIntensity": 1, "mousePreset": "default", "panSpeed": 1, "quality": "medium", "rotateSpeed": 2, "sampleLevel": 0, "tooltip": true, "workerDefault": true, "zoomSpeed": 1.2}, "_ngl_msg_archive": [{"args": [{"binary": false, "data": "\nQCElemental\n\n  3  2  0  0  0  0  0  0  0  0  0\n    0.0000    0.0836    0.0836  O  0  0     0  0  0  0  0  0\n    0.0000   -0.0716    1.0470  H  0  0     0  0  0  0  0  0\n    0.0000    1.0470   -0.0716  H  0  0     0  0  0  0  0  0\n  1  2  1  0  0  0  0\n  1  3  1  0  0  0  0\n", "type": "blob"}], "kwargs": {"defaultRepresentation": true, "ext": "sdf"}, "methodName": "loadFile", "reconstruc_color_scheme": false, "target": "Stage", "type": "call_method"}], "_ngl_original_stage_parameters": {"ambientColor": 14540253, "ambientIntensity": 0.2, "backgroundColor": "white", "cameraEyeSep": 0.3, "cameraFov": 40, "cameraType": "perspective", "clipDist": 10, "clipFar": 100, "clipNear": 0, "fogFar": 100, "fogNear": 50, "hoverTimeout": 0, "impostor": true, "lightColor": 14540253, "lightIntensity": 1, "mousePreset": "default", "panSpeed": 1, "quality": "medium", "rotateSpeed": 2, "sampleLevel": 0, "tooltip": true, "workerDefault": true, "zoomSpeed": 1.2}, "_ngl_repr_dict": {"0": {"0": {"params": {"aspectRatio": 1.5, "assembly": "default", "bondScale": 0.3, "bondSpacing": 0.75, "clipCenter": {"x": 0, "y": 0, "z": 0}, "clipNear": 0, "clipRadius": 0, "colorMode": "hcl", "colorReverse": false, "colorScale": "", "colorScheme": "element", "colorValue": 9474192, "cylinderOnly": false, "defaultAssembly": "", "depthWrite": true, "diffuse": 16777215, "diffuseInterior": false, "disableImpostor": false, "disablePicking": false, "flatShaded": false, "interiorColor": 2236962, "interiorDarkening": 0, "lazy": false, "lineOnly": false, "linewidth": 2, "matrix": {"elements": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]}, "metalness": 0, "multipleBond": "off", "opacity": 1, "openEnded": true, "quality": "high", "radialSegments": 20, "radiusData": {}, "radiusScale": 2, "radiusSize": 0.15, "radiusType": "size", "roughness": 0.4, "sele": "", "side": "double", "sphereDetail": 2, "useInteriorColor": true, "visible": true, "wireframe": false}, "type": "ball+stick"}}}, "_ngl_serialize": false, "_ngl_version": "2.0.0-dev.36", "_ngl_view_id": ["9B97AA62-7A36-4D8B-870C-AFA05B27AC39"], "_player_dict": {}, "_scene_position": {}, "_scene_rotation": {}, "_synced_model_ids": [], "_synced_repr_model_ids": [], "_view_height": "", "_view_width": "", "background": "white", "frame": 0, "gui_style": null, "layout": "IPY_MODEL_c1d4ffb6a62345d29fc4779680d9642e", "max_frame": 0, "n_components": 1, "picked": {}}}, "ca78176594414e46a0be8e1b13dc3174": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"width": "34px"}}, "cb8e617669b343e1bc7b7ac575199dc8": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "cc704e3ffa7a483f80e9ecbbb1136027": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "cccabfe168dd4ebe9b7fb0cc9eefa073": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HBoxModel", "state": {"children": ["IPY_MODEL_9f36f35dd0cd4c50b87b40313eb5220e", "IPY_MODEL_353f9341148249cea1862a06367a02c4"], "layout": "IPY_MODEL_b5362ee608ed45d28c8c318ee4198127"}}, "cd4c7c153e2b475398f666f141151168": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ButtonStyleModel", "state": {}}, "d1faaffad56341c28c9da4095a28f5d8": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "LinkModel", "state": {"source": ["IPY_MODEL_9d75834c00a94d828e7f1809d83aaa01", "value"], "target": ["IPY_MODEL_db6345639c3b4abc8bc70b85913b2a6c", "frame"]}}, "d4c5355705ac439f900ec4ac9c4226d7": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "LinkModel", "state": {"source": ["IPY_MODEL_a0d24f140921447f9f036b3add9136f4", "value"], "target": ["IPY_MODEL_39b0b2646f444c1baa98d12487a530e7", "value"]}}, "d50680e0adf047f4bcdbc1adc0bede5d": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "d8b037e6a6194cea9f06b2e1289eef4c": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "d9ccad4633d94100a476ea61783953b6": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HBoxModel", "state": {"children": ["IPY_MODEL_1964a5142c1544d2bb049800cd64be8e", "IPY_MODEL_1466725088f64032bf963274418fe137"], "layout": "IPY_MODEL_5387cc68c3624e59b090285931f76840"}}, "db6345639c3b4abc8bc70b85913b2a6c": {"model_module": "nglview-js-widgets", "model_module_version": "2.7.1", "model_name": "NGLModel", "state": {"_camera_orientation": [7.589090548206325, 0, 0, 0, 0, 7.589090548206325, 0, 0, 0, 0, 7.589090548206325, 0, 0, -0.52920001745224, -0.52920001745224, 1], "_camera_str": "orthographic", "_gui_theme": null, "_ibtn_fullscreen": "IPY_MODEL_efbeb746254d47009bc50d946c65493d", "_igui": null, "_iplayer": "IPY_MODEL_69620f0cf57748cbb4d698cd984aa939", "_ngl_color_dict": {}, "_ngl_coordinate_resource": {}, "_ngl_full_stage_parameters": {"ambientColor": 14540253, "ambientIntensity": 0.2, "backgroundColor": "white", "cameraEyeSep": 0.3, "cameraFov": 40, "cameraType": "perspective", "clipDist": 10, "clipFar": 100, "clipNear": 0, "fogFar": 100, "fogNear": 50, "hoverTimeout": 0, "impostor": true, "lightColor": 14540253, "lightIntensity": 1, "mousePreset": "default", "panSpeed": 1, "quality": "medium", "rotateSpeed": 2, "sampleLevel": 0, "tooltip": true, "workerDefault": true, "zoomSpeed": 1.2}, "_ngl_msg_archive": [{"args": [{"binary": false, "data": "\nQCElemental\n\n  3  2  0  0  0  0  0  0  0  0  0\n    0.0000    0.0000    0.0000  O  0  0     0  0  0  0  0  0\n    0.0000    0.0000    1.0584  H  0  0     0  0  0  0  0  0\n    0.0000    1.0584    0.0000  H  0  0     0  0  0  0  0  0\n  1  2  1  0  0  0  0\n  1  3  1  0  0  0  0\n", "type": "blob"}], "kwargs": {"defaultRepresentation": true, "ext": "sdf"}, "methodName": "loadFile", "reconstruc_color_scheme": false, "target": "Stage", "type": "call_method"}], "_ngl_original_stage_parameters": {"ambientColor": 14540253, "ambientIntensity": 0.2, "backgroundColor": "white", "cameraEyeSep": 0.3, "cameraFov": 40, "cameraType": "perspective", "clipDist": 10, "clipFar": 100, "clipNear": 0, "fogFar": 100, "fogNear": 50, "hoverTimeout": 0, "impostor": true, "lightColor": 14540253, "lightIntensity": 1, "mousePreset": "default", "panSpeed": 1, "quality": "medium", "rotateSpeed": 2, "sampleLevel": 0, "tooltip": true, "workerDefault": true, "zoomSpeed": 1.2}, "_ngl_repr_dict": {"0": {"0": {"params": {"aspectRatio": 1.5, "assembly": "default", "bondScale": 0.3, "bondSpacing": 0.75, "clipCenter": {"x": 0, "y": 0, "z": 0}, "clipNear": 0, "clipRadius": 0, "colorMode": "hcl", "colorReverse": false, "colorScale": "", "colorScheme": "element", "colorValue": 9474192, "cylinderOnly": false, "defaultAssembly": "", "depthWrite": true, "diffuse": 16777215, "diffuseInterior": false, "disableImpostor": false, "disablePicking": false, "flatShaded": false, "interiorColor": 2236962, "interiorDarkening": 0, "lazy": false, "lineOnly": false, "linewidth": 2, "matrix": {"elements": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]}, "metalness": 0, "multipleBond": "off", "opacity": 1, "openEnded": true, "quality": "high", "radialSegments": 20, "radiusData": {}, "radiusScale": 2, "radiusSize": 0.15, "radiusType": "size", "roughness": 0.4, "sele": "", "side": "double", "sphereDetail": 2, "useInteriorColor": true, "visible": true, "wireframe": false}, "type": "ball+stick"}}}, "_ngl_serialize": false, "_ngl_version": "2.0.0-dev.36", "_ngl_view_id": ["815A1452-BFD1-49BD-8378-830F0B5863C4"], "_player_dict": {}, "_scene_position": {}, "_scene_rotation": {}, "_synced_model_ids": [], "_synced_repr_model_ids": [], "_view_height": "", "_view_width": "", "background": "white", "frame": 0, "gui_style": null, "layout": "IPY_MODEL_2fda95bb194a4d8c90fa602ef57b5b6d", "max_frame": 0, "n_components": 1, "picked": {}}}, "db8aca2c94734431ac49febea58c3955": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "PlayModel", "state": {"layout": "IPY_MODEL_aaa175b67e854cb999eb18367dfdc102", "max": 0, "style": "IPY_MODEL_a19030ff2bd749f8b79a1f56cd6771db"}}, "e095a6b9fbde4238892a8d4f0beffa5a": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "PlayModel", "state": {"layout": "IPY_MODEL_1b15c8c89d00426997fb4d5b1c6cde42", "max": 0, "style": "IPY_MODEL_52584e0ee2a44853ad0a6dbf4c9c5375"}}, "e22dfa6992a7463386b3b5c0f66410f4": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "e626666f622f43599f6570cd450182ff": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "IntSliderModel", "state": {"layout": "IPY_MODEL_9f91d5c8f76c4d4f9d83925a4c172198", "max": 0, "style": "IPY_MODEL_3d32337d17534d5781a20a63faf8a2c6"}}, "edeebd6d76584ae0980f86d8b71d7b0b": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ButtonModel", "state": {"icon": "compress", "layout": "IPY_MODEL_ac25614ecb52486ea47a389d3f657458", "style": "IPY_MODEL_8d3ee5bb32cd428c983b30bf57a7744d"}}, "efbeb746254d47009bc50d946c65493d": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ButtonModel", "state": {"icon": "compress", "layout": "IPY_MODEL_6c374326197e43efb60ba57531399d2d", "style": "IPY_MODEL_cd4c7c153e2b475398f666f141151168"}}, "fad931986afb4fba8abeabd0493c2568": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "LinkModel", "state": {"source": ["IPY_MODEL_db8aca2c94734431ac49febea58c3955", "value"], "target": ["IPY_MODEL_c9832fcaa6524780bc83513a2b22390e", "frame"]}}}, "version_major": 2, "version_minor": 0}
+</script></section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="install.html" class="btn btn-neutral float-left" title="Install QCFractal" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="setup_quickstart.html" class="btn btn-neutral float-right" title="Setup Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2021, The Molecular Sciences Software Institute.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
