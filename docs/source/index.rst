@@ -10,6 +10,10 @@ Welcome to QCArchive's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   overview
+   client/index
+   server/index
+   manager/index
 
 
 Indices and tables
