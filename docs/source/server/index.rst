@@ -1,4 +1,4 @@
-QCPortal - Client for QCFractal
+QCFractal
 =====================================
 
 .. toctree::
@@ -8,3 +8,6 @@ QCPortal - Client for QCFractal
    structure
    setup
    admin
+   configuration
+   
+   api/modules

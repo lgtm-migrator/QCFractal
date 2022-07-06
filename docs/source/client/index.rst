@@ -1,4 +1,4 @@
-QCPortal - Client for QCFractal
+QCPortal
 =====================================
 
 .. toctree::
@@ -17,3 +17,7 @@ QCPortal - Client for QCFractal
    gridoptimization
    reaction
    serveradmin
+
+   examples/index
+
+   api/modules

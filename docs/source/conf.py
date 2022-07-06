@@ -41,17 +41,20 @@ release = qcfractal.__version__
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.napoleon',
+    'nbsphinx',
+#    'sphinx.ext.mathjax',
+#    'sphinx.ext.extlinks',
 #    'sphinx.ext.doctest',
 #    'sphinx.ext.todo',
 #    'sphinx.ext.coverage',
-    'sphinx.ext.mathjax',
-    'sphinx.ext.viewcode',
-    'sphinx.ext.napoleon',
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.extlinks',
-    'sphinx_automodapi.automodapi',
-    'nbsphinx'
+#    'sphinx.ext.intersphinx',
+#    'sphinx_automodapi.automodapi',
 ]
+
+# Some options
+autodoc_typehints = 'description'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
