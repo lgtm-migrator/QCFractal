@@ -1,4 +1,4 @@
-Server installation & setup
+QCFractal Installation and Setup 
 =====================================
 
 Note about PostgreSQL

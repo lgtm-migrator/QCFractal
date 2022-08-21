@@ -5,8 +5,7 @@ QCPortal
    :maxdepth: 2
    :caption: Contents:
 
-   quickstart
-   install
+   setup
    basics
    molecule
    record_basics

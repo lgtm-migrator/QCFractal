@@ -11,9 +11,9 @@ Welcome to QCArchive's documentation!
    :caption: Contents:
 
    overview
-   client/index
-   server/index
-   manager/index
+   qcportal/index
+   qcfractal/index
+   qcfractalcompute/index
 
 
 Indices and tables
